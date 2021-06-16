@@ -1,0 +1,3 @@
+/usr/local/ssl/lib
+sudo ldconfig -v
+

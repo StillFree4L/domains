@@ -1,0 +1,197 @@
+select * from repairs
+
+CREATE TABLE IF NOT EXISTS public.repairs
+(
+    id serial NOT NULL,
+	receipt integer NOT NULL,
+	date DATE NOT NULL DEFAULT CURRENT_DATE,
+	client character varying(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	phone CHARACTER VARYING(30) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	service_name CHARACTER VARYING(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	equipment CHARACTER VARYING(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	serial_id CHARACTER VARYING(100) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	facilities CHARACTER VARYING(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	problem CHARACTER VARYING(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	username character varying(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	money integer NOT NULL DEFAULT 0,
+	result_name character varying(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	primary key (id)
+);
+ALTER TABLE public.repairs
+    OWNER to postgres;
+
+select * from services
+
+CREATE TABLE IF NOT EXISTS public.services
+(
+    id serial NOT NULL,
+	service CHARACTER VARYING(255) NOT NULL COLLATE pg_catalog."C.UTF-8" UNIQUE,
+	primary key (id,service)
+);
+ALTER TABLE public.services
+    OWNER to postgres;
+
+INSERT INTO services (service) VALUES ('Диагностика, Настройка');
+INSERT INTO services (service) VALUES ('Профилактика, Чистка, Смазка');
+INSERT INTO services (service) VALUES ('Ремонт, Замена, Установка');
+
+
+select * from results
+
+CREATE TABLE IF NOT EXISTS public.results
+(
+    id serial NOT NULL,
+	result CHARACTER VARYING(255) NOT NULL COLLATE pg_catalog."C.UTF-8" UNIQUE,
+	primary key (id,result)
+);
+ALTER TABLE public.results
+    OWNER to postgres;
+
+INSERT INTO results (result) VALUES ('Отказ от услуг');
+INSERT INTO results (result) VALUES ('Завершен');
+
+
+select * from users
+
+CREATE TABLE IF NOT EXISTS public.users
+(
+    id serial NOT NULL,
+    name CHARACTER VARYING(100) NOT NULL COLLATE pg_catalog."C.UTF-8",
+    password CHARACTER VARYING(100) NOT NULL COLLATE pg_catalog."C.UTF-8",
+    PRIMARY KEY (id)
+);
+ALTER TABLE public.users
+    OWNER to postgres;
+
+INSERT INTO users (name,password) VALUES ('alik','alik2709');
+
+CREATE TABLE IF NOT EXISTS public.master
+(
+    id serial NOT NULL,
+    name CHARACTER VARYING(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+    role CHARACTER VARYING(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+    PRIMARY KEY (id)
+);
+ALTER TABLE public.master
+    OWNER to postgres;
+
+INSERT INTO master (name) VALUES ('Курбанов Б.А.');
+
+select * from public.user
+
+CREATE TABLE IF NOT EXISTS public.user
+(
+    id serial NOT NULL,
+    username CHARACTER VARYING(255) NOT NULL UNIQUE COLLATE pg_catalog."C.UTF-8",
+	auth_key CHARACTER VARYING(32) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	password_hash CHARACTER VARYING(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+    password_reset_token CHARACTER VARYING(255) UNIQUE COLLATE pg_catalog."C.UTF-8",
+	email CHARACTER VARYING(255) NOT NULL UNIQUE COLLATE pg_catalog."C.UTF-8",
+	status smallint NOT NULL DEFAULT 10,
+	created_at integer NOT NULL,
+	updated_at integer NOT NULL,
+    PRIMARY KEY (id)
+);
+ALTER TABLE public.user
+    OWNER to postgres;
+
+CREATE TABLE repairs_audit(
+	id serial  NOT NULL,
+	operation char(1) NOT NULL,
+	changed_on TIMESTAMP(6) NOT NULL,
+	receipt integer NOT NULL,
+	date DATE NOT NULL DEFAULT CURRENT_DATE,
+	client character varying(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	phone CHARACTER VARYING(30) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	service_name CHARACTER VARYING(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	equipment CHARACTER VARYING(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	serial_id CHARACTER VARYING(100) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	facilities CHARACTER VARYING(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	problem CHARACTER VARYING(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	username character varying(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	money integer NOT NULL DEFAULT 0,
+	result_name character varying(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	primary key (id)
+);
+ALTER TABLE public.repairs_audit
+    OWNER to postgres;
+
+CREATE OR REPLACE FUNCTION process_repairs_audit() RETURNS TRIGGER AS $repairs_audit$
+    BEGIN
+        IF (TG_OP = 'DELETE') THEN
+			INSERT INTO repairs_audit(receipt,date,client,phone,service_name,equipment,serial_id,facilities,problem,username,money,result_name,changed_on,operation)
+		 	VALUES(OLD.receipt,OLD.date,OLD.client,OLD.phone,OLD.service_name,OLD.equipment,OLD.serial_id,OLD.facilities,OLD.problem,OLD.username,OLD.money,OLD.result_name,now(),'D');
+            RETURN OLD;
+        ELSIF (TG_OP = 'UPDATE') THEN
+			INSERT INTO repairs_audit(receipt,date,client,phone,service_name,equipment,serial_id,facilities,problem,username,money,result_name,changed_on,operation)
+		 	VALUES(OLD.receipt,OLD.date,OLD.client,OLD.phone,OLD.service_name,OLD.equipment,OLD.serial_id,OLD.facilities,OLD.problem,OLD.username,OLD.money,OLD.result_name,now(),'U');
+			RETURN NEW;
+        ELSIF (TG_OP = 'INSERT') THEN
+            INSERT INTO repairs_audit(receipt,date,client,phone,service_name,equipment,serial_id,facilities,problem,username,money,result_name,changed_on,operation)
+		 	VALUES(NEW.receipt,NEW.date,NEW.client,NEW.phone,NEW.service_name,NEW.equipment,NEW.serial_id,NEW.facilities,NEW.problem,NEW.username,NEW.money,NEW.result_name,now(),'I');
+			RETURN NEW;
+        END IF;
+        RETURN NULL; -- возвращаемое значение для триггера AFTER игнорируется
+    END;
+$repairs_audit$ LANGUAGE plpgsql;
+
+CREATE TRIGGER repairs_audit
+AFTER INSERT OR UPDATE OR DELETE ON repairs
+    FOR EACH ROW EXECUTE PROCEDURE process_repairs_audit();
+
+select * from repairs_audit;
+
+DROP TRIGGER repairs_audit ON repairs;
+DROP FUNCTION process_repairs_audit();
+
+select * from migration
+select * from image
+select * from repairs_audit
+select * from sertificat
+delete from sertificat where id >0
+
+CREATE TABLE IF NOT EXISTS public.sertificat
+(
+    id serial NOT NULL,
+    name CHARACTER VARYING(255) NOT NULL COLLATE pg_catalog."C.UTF-8",
+	changed_on data(6),
+    PRIMARY KEY (id)
+);
+ALTER TABLE public.sertificat
+    OWNER to postgres;
+
+
+INSERT INTO sertificat (name) VALUES ('img/sertificat/sertificat1.jpg');
+INSERT INTO sertificat (name) VALUES ('img/sertificat/sertificat2.jpg');
+INSERT INTO sertificat (name) VALUES ('img/sertificat/sertificat3.jpeg');
+INSERT INTO sertificat (name) VALUES ('img/sertificat/sertificat4.jpeg');
+INSERT INTO sertificat (name) VALUES ('img/sertificat/sertificat5.jpeg');
+INSERT INTO sertificat (name) VALUES ('img/sertificat/sertificat6.jpeg');
+
+
+
+
+
+
+
+
+
+
+
+
+
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} !^/(web)
+RewriteRule ^assets/(.*)$ /web/assets/$1 [L]
+RewriteRule ^css/(.*)$ web/css/$1 [L]
+RewriteRule ^js/(.*)$ web/js/$1 [L]
+RewriteRule ^fonts/(.*)$ web/fonts/$1 [L]
+RewriteRule ^img/(.*)$ web/img/$1 [L]
+RewriteRule (.*) /web/$1
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /web/index.php
