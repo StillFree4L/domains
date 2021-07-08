@@ -95,6 +95,10 @@ CREATE TABLE IF NOT EXISTS public.user
 ALTER TABLE public.user
     OWNER to postgres;
 
+INSERT INTO public.user (username,auth_key,password_hash,email,status,created_at,updated_at) 
+VALUES ('Разработчик','C3pJhlw8_8w6FoIOwOrzmqmF1kx1kp1V','$2y$13$i06.rAzFGX7AcfeX6x8bWObgNznT/e5W2xsOKRDNj8OABa.N.6z96',
+		'admin@mail.ru',10,1625718672,1625718672);
+
 CREATE TABLE repairs_audit(
 	id serial  NOT NULL,
 	operation char(1) NOT NULL,
@@ -144,11 +148,6 @@ select * from repairs_audit;
 DROP TRIGGER repairs_audit ON repairs;
 DROP FUNCTION process_repairs_audit();
 
-select * from migration
-select * from image
-select * from repairs_audit
-select * from sertificat
-delete from sertificat where id >0
 
 CREATE TABLE IF NOT EXISTS public.sertificat
 (
@@ -169,29 +168,5 @@ INSERT INTO sertificat (name) VALUES ('img/sertificat/sertificat5.jpeg');
 INSERT INTO sertificat (name) VALUES ('img/sertificat/sertificat6.jpeg');
 
 
-
-
-
-
-
-
-
-
-
-
-
-Options +FollowSymLinks
-IndexIgnore */*
-RewriteEngine on
-
-RewriteCond %{REQUEST_URI} !^/(web)
-RewriteRule ^assets/(.*)$ /web/assets/$1 [L]
-RewriteRule ^css/(.*)$ web/css/$1 [L]
-RewriteRule ^js/(.*)$ web/js/$1 [L]
-RewriteRule ^fonts/(.*)$ web/fonts/$1 [L]
-RewriteRule ^img/(.*)$ web/img/$1 [L]
-RewriteRule (.*) /web/$1
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /web/index.php
+php yii migration
+php yii migrate/up --migrationPath=@vendor/costa-rico/yii2-images/migrations

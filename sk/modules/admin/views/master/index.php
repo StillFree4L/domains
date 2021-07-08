@@ -20,6 +20,7 @@ $result = Master::find()->all();
                 <form action="" method="post" role="form" class="contactForm">
                     <input type="hidden" name="<?=Yii::$app->request->csrfParam; ?>" value="<?=Yii::$app->request->getCsrfToken(); ?>" />
                     <div class="text-center"><?= Html::a('Добавить мастера', ['create'], ['class' => 'btn btn-success']) ?></div><br>
+                    <?php if($result != null): ?>
                     <div class="text-center">Сегодня день рождения у мастера
                         <?php foreach ($result as $res)
                         {
@@ -30,6 +31,7 @@ $result = Master::find()->all();
                             }
                         }?>
                     </div>
+                    <?php endif; ?>
                     <div class="form-group">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

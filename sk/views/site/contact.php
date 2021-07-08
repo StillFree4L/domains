@@ -55,7 +55,7 @@ use yii\helpers\Html;
             <form action="" method="post" role="form" class="contactForm">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+                        <?= $form->field($model, 'name')->textInput(['autofocus' => true])->label('Имя') ?>
                     </div>
                     <div class="form-group col-md-6">
                         <?= $form->field($model, 'email') ?>
@@ -73,7 +73,7 @@ use yii\helpers\Html;
                     'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-9">{input}</div></div>',
                 ]) ?>
                 </div>
-                <div class="text-center"><?= Html::submitButton('Submit', [ 'name' => 'contact-button']) ?></div>
+                <div class="text-center"><?= Html::submitButton('Отправить', [ 'name' => 'contact-button']) ?></div>
             </form>
             <?php ActiveForm::end(); ?>
 <?php endif; ?>

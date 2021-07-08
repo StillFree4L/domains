@@ -27,7 +27,9 @@ $result = Repairs::find()->orderBy('id DESC')->one();
                     <input type="hidden" name="<?=Yii::$app->request->csrfParam; ?>" value="<?=Yii::$app->request->getCsrfToken(); ?>" />
 
                     <div class="text-center"><?= Html::a('Создать заказ', ['create'], ['class' => 'btn btn-success']) ?></div><br>
+                    <?php if($result != null): ?>
                     <div class="text-center">Поледний заказ пришел от <?=$result->client ?>  на сумму <?=$result->money ?> </div>
+                    <?php endif; ?>
                     <div class="form-group">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
