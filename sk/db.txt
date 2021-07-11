@@ -1,4 +1,4 @@
-select * from repairs
+﻿select * from repairs
 
 CREATE TABLE IF NOT EXISTS public.repairs
 (
@@ -50,20 +50,6 @@ ALTER TABLE public.results
 INSERT INTO results (result) VALUES ('Отказ от услуг');
 INSERT INTO results (result) VALUES ('Завершен');
 
-
-select * from users
-
-CREATE TABLE IF NOT EXISTS public.users
-(
-    id serial NOT NULL,
-    name CHARACTER VARYING(100) NOT NULL COLLATE pg_catalog."C.UTF-8",
-    password CHARACTER VARYING(100) NOT NULL COLLATE pg_catalog."C.UTF-8",
-    PRIMARY KEY (id)
-);
-ALTER TABLE public.users
-    OWNER to postgres;
-
-INSERT INTO users (name,password) VALUES ('alik','alik2709');
 
 CREATE TABLE IF NOT EXISTS public.master
 (
@@ -168,5 +154,5 @@ INSERT INTO sertificat (name) VALUES ('img/sertificat/sertificat5.jpeg');
 INSERT INTO sertificat (name) VALUES ('img/sertificat/sertificat6.jpeg');
 
 
-php yii migration
+php yii migrate
 php yii migrate/up --migrationPath=@vendor/costa-rico/yii2-images/migrations

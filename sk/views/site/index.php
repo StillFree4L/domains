@@ -184,7 +184,7 @@ $this->title = 'SK';
             </div>
 
             <div class="facts-img">
-                <img src="/img/favicon.ico" alt="" class="img-fluid">
+                <img src="/img/facts-img.png" alt="" class="img-fluid">
             </div>
 
         </div>
