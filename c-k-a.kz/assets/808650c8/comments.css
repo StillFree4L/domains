@@ -1,0 +1,46 @@
+div.comment_form
+{
+    margin-top:20px;
+    padding-top:20px;
+    border-top:1px solid #ccc;
+}
+div.comment_form textarea
+{
+    height: 100px;
+}
+
+div.commentsHeader
+{
+    font-size:1.2em;
+    color:#888;
+    margin-top:20px;
+    background-color:#eee;
+    padding:3px 5px;
+}
+div.commentslist
+{
+    border-top:1px solid #aaa;
+}
+
+div.comment
+{
+    margin-top:15px;
+}
+div.comment span.date
+{
+    font-size:0.8em;
+    font-weight:bold;
+    
+}
+div.comment span.user
+{
+    margin-left:10px;
+    color:#A54516;
+    font-weight:bold;
+}
+div.comment div.comment_text
+{
+    padding:10px 20px;
+    font-size:0.9em;
+    color:#666 !important;
+}

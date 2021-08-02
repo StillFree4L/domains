@@ -1,0 +1,314 @@
+body
+{
+    background:url(../images/background_grad_light.png) repeat-x;
+    background-color:#346a95 !important;
+    font-family:Georgia !important;
+    
+}
+div#main_bg
+{
+    background:url(../images/femida_bg_png8.png) 50% 0 no-repeat;
+    min-height:1063px;    
+}
+
+div#header_bg
+{
+    background:url(../images/header_bg.jpg);
+    background-color:#fff;
+    
+}
+
+div#header
+{
+    position:relative;    
+    min-height:230px;       
+    box-shadow:0px 1px 5px #333;
+    border:1px solid #000044;
+    border-top:0;
+    
+}
+
+a.site_logo
+{
+    position:absolute;
+    display:block;
+    top:3px;
+    left:15px;
+    width:133px;
+    height:120px;
+    z-index:8;
+    opacity:0.7;
+    
+}
+a#site_logo_ru
+{
+    background:url(../images/logo_ru.png) no-repeat;
+}
+a#site_logo_kz
+{
+    background:url(../images/logo_kz.png) no-repeat;
+}
+a#site_logo_en
+{
+    background:url(../images/logo_en.png) no-repeat;
+}
+
+span.header_site_name
+{
+    display:block;
+    position:absolute;
+    top:20px;
+    left:165px;
+    color:#fff;
+    font-size:34px;
+    z-index:1;
+    width:500px;
+    line-height:40px;
+    text-shadow:0px 1px 10px #000;
+}
+
+
+#header div.search_and_lang
+{
+    margin-top:15px;
+    margin-right:15px;
+    border:1px solid #444488;
+    border-radius:5px;
+    width:250px;
+    padding:10px;
+    position:relative;
+    box-shadow:1px 1px 5px #333;
+}
+#header div.search_and_lang_bg
+{
+    background-color:#fff;
+    background:url(../images/search_and_lang_bg.png) repeat-y;
+}
+
+
+#header div.auth
+{
+    margin-bottom:5px;
+    margin-left:2px;
+    font-size:0.8em;
+    color:#fff;
+}
+#header div.auth a
+{
+    color:#fff;
+}
+
+
+form
+{
+    margin-bottom:5px !important;
+}
+
+div.lang_sitemap
+{
+    margin-top:5px;
+}
+
+div.map
+{
+    margin-top:5px;
+    margin-right:10px;
+}
+
+a.language_link
+{
+    margin-right:4px;
+    font-size:0.8em;
+    color:#fff;
+    cursor:pointer;
+    display:inline-block;
+    padding:1px 3px;
+}
+a.language_link.active_lang {
+    color:#fff;
+    text-decoration:underline;
+}
+.map_link
+{
+    margin-left:8px;
+}
+
+
+div#page
+{
+    max-width:1000px;
+    min-width:1000px;
+    margin:0 auto;
+    position:relative;
+    
+}
+
+
+div#femida
+{
+    width:242px;
+    height:211px;
+    background:url(../images/femida_center_cut_small.png) no-repeat;
+    position:absolute;
+    margin-left:-162px;
+    left:50%;
+    top:-171px;
+    z-index:2;
+}
+
+/*
+div#femida
+{
+    width:190px;
+    height:300px;
+    background:url(../images/femida_center_small.png) no-repeat;
+    position:absolute;
+    margin-left:-95px;
+    left:50%;
+    top:43px;
+    z-index:1;
+}
+*/
+
+
+div#body
+{
+    position:relative;
+    z-index:3;
+}
+
+/*
+div#body
+{
+    
+    position:relative;    
+    z-index:1;
+    border:1px solid #000088;
+    min-height:700px;
+    box-shadow:1px 1px 5px #333;
+}
+
+div#body_bg
+{
+    background-color:#fff;
+}*/
+
+.text_color
+{
+    color:#A54516 !important;
+}
+.st
+{
+    text-shadow:0px 1px 3px #333;
+}
+
+
+div#left_content
+{
+    position:relative;
+    z-index:8;
+    float:left;
+    width:250px;
+    min-height:600px;
+}
+div#main_content
+{
+    z-index:7;
+    min-height:600px;    
+    position:relative;
+    padding:0px 10px;
+    border:1px solid #000044;
+    box-shadow:1px 1px 5px #333;
+}
+div#main_content.column2
+{
+    float:left;
+    width:728px;
+}
+div#main_content.column1
+{
+    
+}
+
+div#main_content_bg
+{
+    background-color:#fff;
+}
+
+div#page_body
+{
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+.breadcrumbs
+{
+    margin-bottom:10 !important;
+}
+
+.bg
+{
+    opacity:0.85;
+    filter:alpha(opacity=85);
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:0;
+
+}
+.cc {
+    position:relative;
+    z-index:3;
+}
+
+div#footer_bg
+{
+    background:url(../images/menu_bg.png) repeat-y;    
+    background-color:#fff;
+}
+
+div#bottom_banners
+{
+    margin-top:30px;
+    position:relative;
+    padding:15px;
+    z-index:10;
+}
+
+div#bottom_banners_bg
+{
+    background:url(../images/menu_bg.png) repeat-y;    
+}
+
+div#footer
+{
+    margin-top:60px !important;
+    height:160px !important;
+    position:relative;      
+    box-shadow:1px -1px 5px #333;
+    border:1px solid #000044;
+    border-bottom:0;
+
+}
+
+div#femida_footer
+{
+    width:169px;
+    height:215px;
+    background:url(../images/footer_femida.png) no-repeat;
+    position:absolute;
+    left:-40px;
+    top:-55px;
+    z-index:1;
+}
+
+div#footer div.footer_c
+{
+    padding-top:70px;
+    text-align:center;
+    color:#fff;
+}
+
+

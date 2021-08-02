@@ -1,0 +1,11 @@
+span.version
+{
+    font-size:1.5em;    
+}
+
+span.block_header
+{
+    font-weight:bold;
+    font-size:1.4em;
+    color:#993333;
+}

@@ -1,0 +1,22 @@
+-----------------
+CREATE TABLE `ab_attached_spravka86` (
+  `request_number` varchar(32) NOT NULL,
+  `id_spravka` varchar(1024) default NULL,
+  `spravka` mediumblob,
+  PRIMARY KEY  (`request_number`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+-----------------
+CREATE TABLE `groups` (
+  `groupID` int(11) NOT NULL auto_increment,
+  `name` varchar(256) default NULL,
+  `specializationID` int(11) default NULL,
+  `stateID` int(11) default '0',
+  `created` datetime default NULL,
+  `modified` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `deleted` datetime default NULL,
+  `clerkID` int(11) default NULL,
+  `militaryID` int(11) default NULL,
+  PRIMARY KEY  (`groupID`),
+  KEY `groups_stateID` (`stateID`),
+  KEY `groups_specializationID` (`specializationID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8

@@ -1,0 +1,18 @@
+.inline-choser .choser-item {
+    display:inline-block;
+    cursor:pointer;
+}
+.inline-choser .choser-item.active {
+    text-decoration: underline;
+    color:#666;
+}
+
+.panel-OD .inline-choser p.active
+{
+    color : #e74c3c;
+}
+
+.panel-OS .inline-choser p.active
+{
+    color : #3498db;
+}

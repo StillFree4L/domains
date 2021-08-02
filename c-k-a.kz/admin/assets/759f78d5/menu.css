@@ -1,0 +1,80 @@
+.inline-toolbar
+{
+    display:inline-block;
+    margin-bottom:0px !important;
+}
+.inline-toolbar .btn
+{
+    margin-top:-9px;
+    margin-bottom:0px !important;
+}
+
+.menu_instances_list
+{
+    max-height:200px;
+    overflow-y:auto;
+}
+
+
+.instance_container
+{
+    margin-top:5px;
+}
+.instance_item
+{
+    padding:10px;
+    color:#666;
+    border:1px solid #ccc;
+    border-radius:3px;    
+    background-color:#fff;
+    position:relative;
+    cursor:pointer;
+}
+
+.instance_item span.instance_type span.caret
+{
+    margin-top:8px;
+    border-top-color:#999;
+}
+
+.instance_item span.instance_caption
+{
+    font-weight:bold;
+    color:#666;
+    display:block;
+    margin-right:200px;
+}
+.instance_item span.instance_type
+{
+    top:50%;
+    margin-top:-10px;
+    color:#999;
+    position:absolute;
+    right:30px;
+}
+.instance_item .close
+{
+    position:absolute;
+    top:50%;
+    right:5px;
+    margin-top:-10px;
+    display:none;
+}
+
+.instance_container .instance_child_container
+{
+    
+    margin-left:15px;
+    min-height:5px;
+}
+
+.ui-state-highlight
+{
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+input.instance_caption
+{
+    margin-bottom:0 !important;
+}

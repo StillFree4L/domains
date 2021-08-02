@@ -1,0 +1,6 @@
+.cke_skin_kama input.cke_dialog_ui_input_text, .cke_skin_kama input.cke_dialog_ui_input_password
+{
+    margin-bottom:0 !important;
+    line-height:normal !important;
+    font-size:12px !important;
+}

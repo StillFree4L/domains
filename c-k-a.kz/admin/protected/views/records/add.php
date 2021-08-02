@@ -1,0 +1,21 @@
+<?php
+$this->widget("ext.EInstance.EInstanceAdd", array(
+    "model"=>$model,
+    "type"=>"2",
+    "baseFields"=>array(
+        "caption",
+        "preview",
+        "body",
+        "is_c",
+    ),
+    "baseFieldsOptions"=>array(
+        "body"=>array(
+            "ref"=>true
+        )
+    ),
+    "sideFields"=>array(
+        "state",
+        "categories"
+    )
+));
+?>

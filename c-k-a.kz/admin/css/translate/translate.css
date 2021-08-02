@@ -1,0 +1,22 @@
+div.word 
+{
+    margin-bottom:10px;
+}
+div.word input
+{
+    margin-bottom:0;
+    width:42%;
+}
+
+span.word_equals
+{
+    font-weight:bold;
+
+    display:inline-block;
+    margin: 0px 10px 0px 10px !important;
+    line-height:15px !important;
+}
+a.word_delete {
+    cursor:pointer;
+    margin-left:10px;
+}

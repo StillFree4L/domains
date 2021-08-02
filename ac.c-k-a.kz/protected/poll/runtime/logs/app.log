@@ -1,0 +1,2505 @@
+2016-02-07 03:43:09 [2.132.191.34][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-22719/data/www/test123.myad.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-02-07 03:43:09 [2.132.191.34][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.2.1744844030.1454257256'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VrZo7bliBnwAAFJTCDUAAAAB'
+    'HTTP_HOST' => 'poll.test123.myad.kz'
+    'HTTP_X_FORWARDED_FOR' => '2.132.191.34'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '2.132.191.34'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2633.3 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.2.1744844030.1454257256'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.test123.myad.kz'
+    'SERVER_ADDR' => '185.98.6.125'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '2.132.191.34'
+    'DOCUMENT_ROOT' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@myad.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'REMOTE_PORT' => '60212'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1454794989.463
+    'REQUEST_TIME' => 1454794989
+]
+2016-02-07 03:43:09 [2.132.191.34][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Module.php:461
+Stack trace:
+#0 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('favicon.ico', Array)
+#1 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/v-22719/data/www/test123.myad.kz/poll.php(14): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Страница не найдена.' in /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/web/Application.php:96
+Stack trace:
+#0 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/v-22719/data/www/test123.myad.kz/poll.php(14): yii\base\Application->run()
+#2 {main}
+2016-02-07 03:43:09 [2.132.191.34][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.2.1744844030.1454257256'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VrZo7bliBnwAAFFq@BcAAAAD'
+    'HTTP_HOST' => 'poll.test123.myad.kz'
+    'HTTP_X_FORWARDED_FOR' => '2.132.191.34'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '2.132.191.34'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2633.3 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.2.1744844030.1454257256'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.test123.myad.kz'
+    'SERVER_ADDR' => '185.98.6.125'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '2.132.191.34'
+    'DOCUMENT_ROOT' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@myad.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'REMOTE_PORT' => '60216'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/favicon.ico'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/favicon.ico'
+    'PATH_TRANSLATED' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php/favicon.ico'
+    'PHP_SELF' => '/favicon.ico'
+    'REQUEST_TIME_FLOAT' => 1454794989.707
+    'REQUEST_TIME' => 1454794989
+]
+2016-02-08 19:37:21 [5.251.180.192][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'glob\components\UsersQuery' not found' in /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Users.php:60
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-08 19:37:21 [5.251.180.192][-][-][info][application] $_GET = [
+    'access-token' => '2aefe9626bdaab51a8acff0153cc99c1'
+]
+
+$_POST = [
+    'chat_messages' => [
+        'yModel' => 'Chats'
+        'type' => 'newMessages'
+        'last_ts' => ''
+    ]
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VriaEbliBnwAABOYSPsAAAAK'
+    'HTTP_HOST' => 'poll.test123.myad.kz'
+    'HTTP_X_FORWARDED_FOR' => '5.251.180.192'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '5.251.180.192'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '95'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://test123.myad.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.103 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://test123.myad.kz/users/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.test123.myad.kz'
+    'SERVER_ADDR' => '185.98.6.125'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '5.251.180.192'
+    'DOCUMENT_ROOT' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@myad.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'REMOTE_PORT' => '57112'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'REQUEST_URI' => '/?access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1454938641.535
+    'REQUEST_TIME' => 1454938641
+]
+2016-02-08 19:37:24 [5.251.180.192][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'glob\components\UsersQuery' not found' in /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Users.php:60
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-08 19:37:24 [5.251.180.192][-][-][info][application] $_GET = [
+    'access-token' => '2aefe9626bdaab51a8acff0153cc99c1'
+]
+
+$_POST = [
+    'chat_messages' => [
+        'yModel' => 'Chats'
+        'type' => 'newMessages'
+        'last_ts' => ''
+    ]
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VriaFLliBnwAABOZTFQAAAAL'
+    'HTTP_HOST' => 'poll.test123.myad.kz'
+    'HTTP_X_FORWARDED_FOR' => '5.251.180.192'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '5.251.180.192'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '95'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://test123.myad.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.103 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://test123.myad.kz/users/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.test123.myad.kz'
+    'SERVER_ADDR' => '185.98.6.125'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '5.251.180.192'
+    'DOCUMENT_ROOT' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@myad.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'REMOTE_PORT' => '57180'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'REQUEST_URI' => '/?access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1454938644.718
+    'REQUEST_TIME' => 1454938644
+]
+2016-02-08 19:37:27 [5.251.180.192][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'glob\components\UsersQuery' not found' in /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Users.php:60
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-08 19:37:27 [5.251.180.192][-][-][info][application] $_GET = [
+    'access-token' => '2aefe9626bdaab51a8acff0153cc99c1'
+]
+
+$_POST = [
+    'chat_messages' => [
+        'yModel' => 'Chats'
+        'type' => 'newMessages'
+        'last_ts' => ''
+    ]
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VriaF7liBnwAABSUVhYAAAAA'
+    'HTTP_HOST' => 'poll.test123.myad.kz'
+    'HTTP_X_FORWARDED_FOR' => '5.251.180.192'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '5.251.180.192'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '95'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://test123.myad.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.103 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://test123.myad.kz/users/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.test123.myad.kz'
+    'SERVER_ADDR' => '185.98.6.125'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '5.251.180.192'
+    'DOCUMENT_ROOT' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@myad.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'REMOTE_PORT' => '57284'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'REQUEST_URI' => '/?access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1454938647.886
+    'REQUEST_TIME' => 1454938647
+]
+2016-02-22 00:51:48 [31.169.1.84][][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1' in /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php:825
+Stack trace:
+#0 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(825): PDOStatement->execute()
+#1 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(277): yii\db\ActiveQuery->all()
+#5 [internal function]: glob\models\Chats->_pollNewMessages(Array)
+#6 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(180): call_user_func(Array, Array)
+#7 /var/www/v-22719/data/www/test123.myad.kz/protected/global/behaviors/BackboneRequestBehavior.php(78): glob\models\Chats->pollRequest(Array)
+#8 [internal function]: glob\behaviors\BackboneRequestBehavior->backboneRequest('poll', Array)
+#9 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Component.php(282): call_user_func_array(Array, Array)
+#10 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): yii\base\Component->__call('backboneRequest', Array)
+#11 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): glob\models\Chats->backboneRequest('poll', Array)
+#12 [internal function]: app\controllers\MainController->actionIndex()
+#13 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#16 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#17 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/v-22719/data/www/test123.myad.kz/poll.php(14): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1
+The SQL being executed was: SELECT `comments`.* FROM `comments` LEFT JOIN `chat_members` `members` ON comments.target_id = members.chat_id AND comments.target_type = 6 WHERE ((`members`.`user_id` IS NULL) AND (comments.user_id != )) AND (members.visit_ts < comments.ts)' in /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Schema.php:595
+Stack trace:
+#0 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT `comment...')
+#1 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(277): yii\db\ActiveQuery->all()
+#5 [internal function]: glob\models\Chats->_pollNewMessages(Array)
+#6 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(180): call_user_func(Array, Array)
+#7 /var/www/v-22719/data/www/test123.myad.kz/protected/global/behaviors/BackboneRequestBehavior.php(78): glob\models\Chats->pollRequest(Array)
+#8 [internal function]: glob\behaviors\BackboneRequestBehavior->backboneRequest('poll', Array)
+#9 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Component.php(282): call_user_func_array(Array, Array)
+#10 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): yii\base\Component->__call('backboneRequest', Array)
+#11 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): glob\models\Chats->backboneRequest('poll', Array)
+#12 [internal function]: app\controllers\MainController->actionIndex()
+#13 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#16 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#17 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/v-22719/data/www/test123.myad.kz/poll.php(14): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1
+)
+
+2016-02-22 00:51:48 [31.169.1.84][][-][info][application] $_GET = [
+    'access-token' => '2aefe9626bdaab51a8acff0153cc99c1'
+]
+
+$_POST = [
+    'chat_messages' => [
+        'yModel' => 'Chats'
+        'type' => 'newMessages'
+    ]
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VsoHRLliBnwAACsTAL4AAAAM'
+    'HTTP_HOST' => 'poll.test123.myad.kz'
+    'HTTP_X_FORWARDED_FOR' => '31.169.1.84'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '31.169.1.84'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://test123.myad.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2652.2 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://test123.myad.kz/card/add?id=2'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.test123.myad.kz'
+    'SERVER_ADDR' => '185.98.6.125'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '31.169.1.84'
+    'DOCUMENT_ROOT' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@myad.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'REMOTE_PORT' => '60432'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'REQUEST_URI' => '/?access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1456080708.061
+    'REQUEST_TIME' => 1456080708
+]
+2016-02-22 00:51:51 [31.169.1.84][][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1' in /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php:825
+Stack trace:
+#0 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(825): PDOStatement->execute()
+#1 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(277): yii\db\ActiveQuery->all()
+#5 [internal function]: glob\models\Chats->_pollNewMessages(Array)
+#6 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(180): call_user_func(Array, Array)
+#7 /var/www/v-22719/data/www/test123.myad.kz/protected/global/behaviors/BackboneRequestBehavior.php(78): glob\models\Chats->pollRequest(Array)
+#8 [internal function]: glob\behaviors\BackboneRequestBehavior->backboneRequest('poll', Array)
+#9 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Component.php(282): call_user_func_array(Array, Array)
+#10 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): yii\base\Component->__call('backboneRequest', Array)
+#11 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): glob\models\Chats->backboneRequest('poll', Array)
+#12 [internal function]: app\controllers\MainController->actionIndex()
+#13 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#16 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#17 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/v-22719/data/www/test123.myad.kz/poll.php(14): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1
+The SQL being executed was: SELECT `comments`.* FROM `comments` LEFT JOIN `chat_members` `members` ON comments.target_id = members.chat_id AND comments.target_type = 6 WHERE ((`members`.`user_id` IS NULL) AND (comments.user_id != )) AND (members.visit_ts < comments.ts)' in /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Schema.php:595
+Stack trace:
+#0 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT `comment...')
+#1 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(277): yii\db\ActiveQuery->all()
+#5 [internal function]: glob\models\Chats->_pollNewMessages(Array)
+#6 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(180): call_user_func(Array, Array)
+#7 /var/www/v-22719/data/www/test123.myad.kz/protected/global/behaviors/BackboneRequestBehavior.php(78): glob\models\Chats->pollRequest(Array)
+#8 [internal function]: glob\behaviors\BackboneRequestBehavior->backboneRequest('poll', Array)
+#9 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Component.php(282): call_user_func_array(Array, Array)
+#10 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): yii\base\Component->__call('backboneRequest', Array)
+#11 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): glob\models\Chats->backboneRequest('poll', Array)
+#12 [internal function]: app\controllers\MainController->actionIndex()
+#13 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#16 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#17 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/v-22719/data/www/test123.myad.kz/poll.php(14): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1
+)
+
+2016-02-22 00:51:51 [31.169.1.84][][-][info][application] $_GET = [
+    'access-token' => '2aefe9626bdaab51a8acff0153cc99c1'
+]
+
+$_POST = [
+    'chat_messages' => [
+        'yModel' => 'Chats'
+        'type' => 'newMessages'
+    ]
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VsoHR7liBnwAACTDONQAAAAB'
+    'HTTP_HOST' => 'poll.test123.myad.kz'
+    'HTTP_X_FORWARDED_FOR' => '31.169.1.84'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '31.169.1.84'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://test123.myad.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2652.2 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://test123.myad.kz/card/add?id=2'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.test123.myad.kz'
+    'SERVER_ADDR' => '185.98.6.125'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '31.169.1.84'
+    'DOCUMENT_ROOT' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@myad.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'REMOTE_PORT' => '60507'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'REQUEST_URI' => '/?access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1456080711.292
+    'REQUEST_TIME' => 1456080711
+]
+2016-02-22 00:51:54 [31.169.1.84][][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1' in /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php:825
+Stack trace:
+#0 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(825): PDOStatement->execute()
+#1 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(277): yii\db\ActiveQuery->all()
+#5 [internal function]: glob\models\Chats->_pollNewMessages(Array)
+#6 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(180): call_user_func(Array, Array)
+#7 /var/www/v-22719/data/www/test123.myad.kz/protected/global/behaviors/BackboneRequestBehavior.php(78): glob\models\Chats->pollRequest(Array)
+#8 [internal function]: glob\behaviors\BackboneRequestBehavior->backboneRequest('poll', Array)
+#9 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Component.php(282): call_user_func_array(Array, Array)
+#10 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): yii\base\Component->__call('backboneRequest', Array)
+#11 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): glob\models\Chats->backboneRequest('poll', Array)
+#12 [internal function]: app\controllers\MainController->actionIndex()
+#13 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#16 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#17 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/v-22719/data/www/test123.myad.kz/poll.php(14): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1
+The SQL being executed was: SELECT `comments`.* FROM `comments` LEFT JOIN `chat_members` `members` ON comments.target_id = members.chat_id AND comments.target_type = 6 WHERE ((`members`.`user_id` IS NULL) AND (comments.user_id != )) AND (members.visit_ts < comments.ts)' in /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Schema.php:595
+Stack trace:
+#0 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT `comment...')
+#1 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(277): yii\db\ActiveQuery->all()
+#5 [internal function]: glob\models\Chats->_pollNewMessages(Array)
+#6 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(180): call_user_func(Array, Array)
+#7 /var/www/v-22719/data/www/test123.myad.kz/protected/global/behaviors/BackboneRequestBehavior.php(78): glob\models\Chats->pollRequest(Array)
+#8 [internal function]: glob\behaviors\BackboneRequestBehavior->backboneRequest('poll', Array)
+#9 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Component.php(282): call_user_func_array(Array, Array)
+#10 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): yii\base\Component->__call('backboneRequest', Array)
+#11 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): glob\models\Chats->backboneRequest('poll', Array)
+#12 [internal function]: app\controllers\MainController->actionIndex()
+#13 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#16 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#17 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/v-22719/data/www/test123.myad.kz/poll.php(14): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1
+)
+
+2016-02-22 00:51:54 [31.169.1.84][][-][info][application] $_GET = [
+    'access-token' => '2aefe9626bdaab51a8acff0153cc99c1'
+]
+
+$_POST = [
+    'chat_messages' => [
+        'yModel' => 'Chats'
+        'type' => 'newMessages'
+    ]
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VsoHSrliBnwAADABUbAAAAAF'
+    'HTTP_HOST' => 'poll.test123.myad.kz'
+    'HTTP_X_FORWARDED_FOR' => '31.169.1.84'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '31.169.1.84'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://test123.myad.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2652.2 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://test123.myad.kz/card/add?id=2'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.test123.myad.kz'
+    'SERVER_ADDR' => '185.98.6.125'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '31.169.1.84'
+    'DOCUMENT_ROOT' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@myad.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'REMOTE_PORT' => '60581'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'REQUEST_URI' => '/?access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1456080714.517
+    'REQUEST_TIME' => 1456080714
+]
+2016-02-22 00:51:57 [31.169.1.84][][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1' in /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php:825
+Stack trace:
+#0 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(825): PDOStatement->execute()
+#1 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(277): yii\db\ActiveQuery->all()
+#5 [internal function]: glob\models\Chats->_pollNewMessages(Array)
+#6 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(180): call_user_func(Array, Array)
+#7 /var/www/v-22719/data/www/test123.myad.kz/protected/global/behaviors/BackboneRequestBehavior.php(78): glob\models\Chats->pollRequest(Array)
+#8 [internal function]: glob\behaviors\BackboneRequestBehavior->backboneRequest('poll', Array)
+#9 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Component.php(282): call_user_func_array(Array, Array)
+#10 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): yii\base\Component->__call('backboneRequest', Array)
+#11 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): glob\models\Chats->backboneRequest('poll', Array)
+#12 [internal function]: app\controllers\MainController->actionIndex()
+#13 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#16 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#17 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/v-22719/data/www/test123.myad.kz/poll.php(14): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1
+The SQL being executed was: SELECT `comments`.* FROM `comments` LEFT JOIN `chat_members` `members` ON comments.target_id = members.chat_id AND comments.target_type = 6 WHERE ((`members`.`user_id` IS NULL) AND (comments.user_id != )) AND (members.visit_ts < comments.ts)' in /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Schema.php:595
+Stack trace:
+#0 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT `comment...')
+#1 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(277): yii\db\ActiveQuery->all()
+#5 [internal function]: glob\models\Chats->_pollNewMessages(Array)
+#6 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(180): call_user_func(Array, Array)
+#7 /var/www/v-22719/data/www/test123.myad.kz/protected/global/behaviors/BackboneRequestBehavior.php(78): glob\models\Chats->pollRequest(Array)
+#8 [internal function]: glob\behaviors\BackboneRequestBehavior->backboneRequest('poll', Array)
+#9 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Component.php(282): call_user_func_array(Array, Array)
+#10 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): yii\base\Component->__call('backboneRequest', Array)
+#11 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): glob\models\Chats->backboneRequest('poll', Array)
+#12 [internal function]: app\controllers\MainController->actionIndex()
+#13 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#16 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#17 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/v-22719/data/www/test123.myad.kz/poll.php(14): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1
+)
+
+2016-02-22 00:51:57 [31.169.1.84][][-][info][application] $_GET = [
+    'access-token' => '2aefe9626bdaab51a8acff0153cc99c1'
+]
+
+$_POST = [
+    'chat_messages' => [
+        'yModel' => 'Chats'
+        'type' => 'newMessages'
+    ]
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VsoHTbliBnwAACynJfMAAAAG'
+    'HTTP_HOST' => 'poll.test123.myad.kz'
+    'HTTP_X_FORWARDED_FOR' => '31.169.1.84'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '31.169.1.84'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://test123.myad.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2652.2 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://test123.myad.kz/card/add?id=2'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.test123.myad.kz'
+    'SERVER_ADDR' => '185.98.6.125'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '31.169.1.84'
+    'DOCUMENT_ROOT' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@myad.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'REMOTE_PORT' => '60676'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'REQUEST_URI' => '/?access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1456080717.775
+    'REQUEST_TIME' => 1456080717
+]
+2016-02-22 00:52:01 [31.169.1.84][][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1' in /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php:825
+Stack trace:
+#0 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(825): PDOStatement->execute()
+#1 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(277): yii\db\ActiveQuery->all()
+#5 [internal function]: glob\models\Chats->_pollNewMessages(Array)
+#6 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(180): call_user_func(Array, Array)
+#7 /var/www/v-22719/data/www/test123.myad.kz/protected/global/behaviors/BackboneRequestBehavior.php(78): glob\models\Chats->pollRequest(Array)
+#8 [internal function]: glob\behaviors\BackboneRequestBehavior->backboneRequest('poll', Array)
+#9 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Component.php(282): call_user_func_array(Array, Array)
+#10 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): yii\base\Component->__call('backboneRequest', Array)
+#11 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): glob\models\Chats->backboneRequest('poll', Array)
+#12 [internal function]: app\controllers\MainController->actionIndex()
+#13 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#16 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#17 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/v-22719/data/www/test123.myad.kz/poll.php(14): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1
+The SQL being executed was: SELECT `comments`.* FROM `comments` LEFT JOIN `chat_members` `members` ON comments.target_id = members.chat_id AND comments.target_type = 6 WHERE ((`members`.`user_id` IS NULL) AND (comments.user_id != )) AND (members.visit_ts < comments.ts)' in /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Schema.php:595
+Stack trace:
+#0 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT `comment...')
+#1 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(277): yii\db\ActiveQuery->all()
+#5 [internal function]: glob\models\Chats->_pollNewMessages(Array)
+#6 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(180): call_user_func(Array, Array)
+#7 /var/www/v-22719/data/www/test123.myad.kz/protected/global/behaviors/BackboneRequestBehavior.php(78): glob\models\Chats->pollRequest(Array)
+#8 [internal function]: glob\behaviors\BackboneRequestBehavior->backboneRequest('poll', Array)
+#9 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Component.php(282): call_user_func_array(Array, Array)
+#10 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): yii\base\Component->__call('backboneRequest', Array)
+#11 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): glob\models\Chats->backboneRequest('poll', Array)
+#12 [internal function]: app\controllers\MainController->actionIndex()
+#13 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#16 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#17 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/v-22719/data/www/test123.myad.kz/poll.php(14): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1
+)
+
+2016-02-22 00:52:01 [31.169.1.84][][-][info][application] $_GET = [
+    'access-token' => '2aefe9626bdaab51a8acff0153cc99c1'
+]
+
+$_POST = [
+    'chat_messages' => [
+        'yModel' => 'Chats'
+        'type' => 'newMessages'
+    ]
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VsoHUbliBnwAACsqFkcAAAAY'
+    'HTTP_HOST' => 'poll.test123.myad.kz'
+    'HTTP_X_FORWARDED_FOR' => '31.169.1.84'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '31.169.1.84'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://test123.myad.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2652.2 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://test123.myad.kz/card/add?id=2'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.test123.myad.kz'
+    'SERVER_ADDR' => '185.98.6.125'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '31.169.1.84'
+    'DOCUMENT_ROOT' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@myad.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'REMOTE_PORT' => '60750'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'REQUEST_URI' => '/?access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1456080721.005
+    'REQUEST_TIME' => 1456080721
+]
+2016-02-22 00:52:04 [31.169.1.84][][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1' in /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php:825
+Stack trace:
+#0 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(825): PDOStatement->execute()
+#1 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(277): yii\db\ActiveQuery->all()
+#5 [internal function]: glob\models\Chats->_pollNewMessages(Array)
+#6 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(180): call_user_func(Array, Array)
+#7 /var/www/v-22719/data/www/test123.myad.kz/protected/global/behaviors/BackboneRequestBehavior.php(78): glob\models\Chats->pollRequest(Array)
+#8 [internal function]: glob\behaviors\BackboneRequestBehavior->backboneRequest('poll', Array)
+#9 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Component.php(282): call_user_func_array(Array, Array)
+#10 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): yii\base\Component->__call('backboneRequest', Array)
+#11 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): glob\models\Chats->backboneRequest('poll', Array)
+#12 [internal function]: app\controllers\MainController->actionIndex()
+#13 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#16 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#17 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/v-22719/data/www/test123.myad.kz/poll.php(14): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1
+The SQL being executed was: SELECT `comments`.* FROM `comments` LEFT JOIN `chat_members` `members` ON comments.target_id = members.chat_id AND comments.target_type = 6 WHERE ((`members`.`user_id` IS NULL) AND (comments.user_id != )) AND (members.visit_ts < comments.ts)' in /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Schema.php:595
+Stack trace:
+#0 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(840): yii\db\Schema->convertException(Object(PDOException), 'SELECT `comment...')
+#1 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Command.php(349): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(277): yii\db\ActiveQuery->all()
+#5 [internal function]: glob\models\Chats->_pollNewMessages(Array)
+#6 /var/www/v-22719/data/www/test123.myad.kz/protected/global/models/Chats.php(180): call_user_func(Array, Array)
+#7 /var/www/v-22719/data/www/test123.myad.kz/protected/global/behaviors/BackboneRequestBehavior.php(78): glob\models\Chats->pollRequest(Array)
+#8 [internal function]: glob\behaviors\BackboneRequestBehavior->backboneRequest('poll', Array)
+#9 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Component.php(282): call_user_func_array(Array, Array)
+#10 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): yii\base\Component->__call('backboneRequest', Array)
+#11 /var/www/v-22719/data/www/test123.myad.kz/protected/poll/controllers/MainController.php(44): glob\models\Chats->backboneRequest('poll', Array)
+#12 [internal function]: app\controllers\MainController->actionIndex()
+#13 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#16 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#17 /var/www/v-22719/data/www/test123.myad.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/v-22719/data/www/test123.myad.kz/poll.php(14): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) AND (members.visit_ts < comments.ts)' at line 1
+)
+
+2016-02-22 00:52:04 [31.169.1.84][][-][info][application] $_GET = [
+    'access-token' => '2aefe9626bdaab51a8acff0153cc99c1'
+]
+
+$_POST = [
+    'chat_messages' => [
+        'yModel' => 'Chats'
+        'type' => 'newMessages'
+    ]
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VsoHVLliBnwAACSVNAgAAAAD'
+    'HTTP_HOST' => 'poll.test123.myad.kz'
+    'HTTP_X_FORWARDED_FOR' => '31.169.1.84'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '31.169.1.84'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://test123.myad.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2652.2 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://test123.myad.kz/card/add?id=2'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.test123.myad.kz'
+    'SERVER_ADDR' => '185.98.6.125'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '31.169.1.84'
+    'DOCUMENT_ROOT' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@myad.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php'
+    'REMOTE_PORT' => '60823'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'REQUEST_URI' => '/?access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-22719/data/www/test123.myad.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1456080724.316
+    'REQUEST_TIME' => 1456080724
+]
+2016-04-08 03:37:36 [5.251.129.250][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '}'' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/global/models/Users.php:314
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-04-08 03:37:36 [5.251.129.250][-][-][info][application] $_GET = [
+    'access-token' => '1cd18084cea10b26e5b20a100187fd20'
+]
+
+$_POST = [
+    'chat_messages' => [
+        'yModel' => 'Chats'
+        'type' => 'newMessages'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '5.251.129.250'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '5.251.129.250'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2700.0 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=269626'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '5.251.129.250'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '40746'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'access-token=1cd18084cea10b26e5b20a100187fd20'
+    'REQUEST_URI' => '/?access-token=1cd18084cea10b26e5b20a100187fd20'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1460065056.286
+    'REQUEST_TIME' => 1460065056
+]
+2016-04-08 03:37:40 [5.251.129.250][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '}'' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/global/models/Users.php:314
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-04-08 03:37:40 [5.251.129.250][-][-][info][application] $_GET = [
+    'access-token' => '1cd18084cea10b26e5b20a100187fd20'
+]
+
+$_POST = [
+    'chat_messages' => [
+        'yModel' => 'Chats'
+        'type' => 'newMessages'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '5.251.129.250'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '5.251.129.250'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2700.0 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=269626'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '5.251.129.250'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '40847'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'access-token=1cd18084cea10b26e5b20a100187fd20'
+    'REQUEST_URI' => '/?access-token=1cd18084cea10b26e5b20a100187fd20'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1460065060.266
+    'REQUEST_TIME' => 1460065060
+]
+2016-04-08 03:37:44 [5.251.129.250][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '}'' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/global/models/Users.php:314
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-04-08 03:37:44 [5.251.129.250][-][-][info][application] $_GET = [
+    'access-token' => '1cd18084cea10b26e5b20a100187fd20'
+]
+
+$_POST = [
+    'chat_messages' => [
+        'yModel' => 'Chats'
+        'type' => 'newMessages'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '5.251.129.250'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '5.251.129.250'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2700.0 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=269626'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '5.251.129.250'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '40952'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'access-token=1cd18084cea10b26e5b20a100187fd20'
+    'REQUEST_URI' => '/?access-token=1cd18084cea10b26e5b20a100187fd20'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1460065064.265
+    'REQUEST_TIME' => 1460065064
+]
+2016-04-08 03:37:48 [5.251.129.250][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '}'' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/global/models/Users.php:314
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-04-08 03:37:48 [5.251.129.250][-][-][info][application] $_GET = [
+    'access-token' => '1cd18084cea10b26e5b20a100187fd20'
+]
+
+$_POST = [
+    'chat_messages' => [
+        'yModel' => 'Chats'
+        'type' => 'newMessages'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '5.251.129.250'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '5.251.129.250'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2700.0 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=269626'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '5.251.129.250'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '41057'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'access-token=1cd18084cea10b26e5b20a100187fd20'
+    'REQUEST_URI' => '/?access-token=1cd18084cea10b26e5b20a100187fd20'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1460065068.267
+    'REQUEST_TIME' => 1460065068
+]
+2016-04-08 03:37:52 [5.251.129.250][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '}'' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/global/models/Users.php:314
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-04-08 03:37:52 [5.251.129.250][-][-][info][application] $_GET = [
+    'access-token' => '1cd18084cea10b26e5b20a100187fd20'
+]
+
+$_POST = [
+    'chat_messages' => [
+        'yModel' => 'Chats'
+        'type' => 'newMessages'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '5.251.129.250'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '5.251.129.250'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2700.0 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=269626'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '5.251.129.250'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '41190'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'access-token=1cd18084cea10b26e5b20a100187fd20'
+    'REQUEST_URI' => '/?access-token=1cd18084cea10b26e5b20a100187fd20'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1460065072.272
+    'REQUEST_TIME' => 1460065072
+]
+2016-04-08 03:37:56 [5.251.129.250][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '}'' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/global/models/Users.php:314
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-04-08 03:37:56 [5.251.129.250][-][-][info][application] $_GET = [
+    'access-token' => '1cd18084cea10b26e5b20a100187fd20'
+]
+
+$_POST = [
+    'chat_messages' => [
+        'yModel' => 'Chats'
+        'type' => 'newMessages'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '5.251.129.250'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '5.251.129.250'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2700.0 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=269626'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '5.251.129.250'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '41299'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'access-token=1cd18084cea10b26e5b20a100187fd20'
+    'REQUEST_URI' => '/?access-token=1cd18084cea10b26e5b20a100187fd20'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1460065076.266
+    'REQUEST_TIME' => 1460065076
+]
+2016-04-13 14:54:06 [37.99.120.94][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-04-13 14:54:06 [37.99.120.94][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '37.99.120.94'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '37.99.120.94'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; Avant Browser)'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/auth/login'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '37.99.120.94'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '60213'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1460537646.371
+    'REQUEST_TIME' => 1460537646
+]
+2016-05-10 20:07:23 [5.251.129.250][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected end of file, expecting function (T_FUNCTION)' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/global/models/Users.php:261
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-05-10 20:07:23 [5.251.129.250][-][-][info][application] $_GET = [
+    'access-token' => '2aefe9626bdaab51a8acff0153cc99c1'
+]
+
+$_POST = [
+    'chat_messages' => [
+        'yModel' => 'Chats'
+        'type' => 'newMessages'
+        'last_ts' => ''
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '5.251.129.250'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '5.251.129.250'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '95'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2723.3 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/reports/index?filter%5Bgroup_id%5D=767&filter%5Bs%5D=4&filter%5Bsubject_id%5D=3144'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '5.251.129.250'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '59103'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'REQUEST_URI' => '/?access-token=2aefe9626bdaab51a8acff0153cc99c1'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1462889243.039
+    'REQUEST_TIME' => 1462889243
+]
+2016-12-19 10:00:20 [176.222.188.250][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-19 10:00:20 [176.222.188.250][-][-][info][application] $_SERVER = [
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_STATUS' => '503'
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '176.222.188.250'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '176.222.188.250'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=444377'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '176.222.188.250'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '38520'
+    'REDIRECT_QUERY_STRING' => 'access-token=af8402af74ebc5eb1ff76a188e3c92a9'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/?access-token=af8402af74ebc5eb1ff76a188e3c92a9'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/503.html'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/503.html'
+    'PHP_SELF' => '/503.html'
+    'REQUEST_TIME_FLOAT' => 1482120020.465
+    'REQUEST_TIME' => 1482120020
+]
+2016-12-19 10:05:17 [176.222.188.250][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-19 10:05:17 [176.222.188.250][-][-][info][application] $_SERVER = [
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_STATUS' => '503'
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '176.222.188.250'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '176.222.188.250'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '95'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=446020'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '176.222.188.250'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '56966'
+    'REDIRECT_QUERY_STRING' => 'access-token=4badd5a821ac6d01fbfff0107ea6fcd1'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/?access-token=4badd5a821ac6d01fbfff0107ea6fcd1'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/503.html'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/503.html'
+    'PHP_SELF' => '/503.html'
+    'REQUEST_TIME_FLOAT' => 1482120317.403
+    'REQUEST_TIME' => 1482120317
+]
+2016-12-19 10:10:07 [176.222.188.250][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-19 10:10:07 [176.222.188.250][-][-][info][application] $_SERVER = [
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_STATUS' => '503'
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '176.222.188.250'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '176.222.188.250'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '95'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=444371'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '176.222.188.250'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '46412'
+    'REDIRECT_QUERY_STRING' => 'access-token=6cd4939237231545628ee18dba8b81f0'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/?access-token=6cd4939237231545628ee18dba8b81f0'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/503.html'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/503.html'
+    'PHP_SELF' => '/503.html'
+    'REQUEST_TIME_FLOAT' => 1482120606.542
+    'REQUEST_TIME' => 1482120606
+]
+2016-12-19 10:31:36 [176.222.188.250][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-19 10:31:36 [176.222.188.250][-][-][info][application] $_SERVER = [
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_STATUS' => '503'
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '176.222.188.250'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '176.222.188.250'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '95'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=446046'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '176.222.188.250'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '44696'
+    'REDIRECT_QUERY_STRING' => 'access-token=b6fb93ae663369b2fa5eedf47296ddf4'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/?access-token=b6fb93ae663369b2fa5eedf47296ddf4'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/503.html'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/503.html'
+    'PHP_SELF' => '/503.html'
+    'REQUEST_TIME_FLOAT' => 1482121895.098
+    'REQUEST_TIME' => 1482121895
+]
+2016-12-19 10:37:06 [176.222.188.250][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-19 10:37:06 [176.222.188.250][-][-][info][application] $_SERVER = [
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_STATUS' => '503'
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '176.222.188.250'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '176.222.188.250'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '95'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=444353'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '176.222.188.250'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '40270'
+    'REDIRECT_QUERY_STRING' => 'access-token=1673226b443104808db47d10e8b86e26'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/?access-token=1673226b443104808db47d10e8b86e26'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/503.html'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/503.html'
+    'PHP_SELF' => '/503.html'
+    'REQUEST_TIME_FLOAT' => 1482122226.441
+    'REQUEST_TIME' => 1482122226
+]
+2016-12-19 11:16:30 [176.222.188.250][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-19 11:16:30 [176.222.188.250][-][-][info][application] $_SERVER = [
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_STATUS' => '503'
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '176.222.188.250'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '176.222.188.250'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=444369'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '176.222.188.250'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '52230'
+    'REDIRECT_QUERY_STRING' => 'access-token=a1224bc4aa615794d03b0b6a98e84e43'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/?access-token=a1224bc4aa615794d03b0b6a98e84e43'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/503.html'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/503.html'
+    'PHP_SELF' => '/503.html'
+    'REQUEST_TIME_FLOAT' => 1482124589.878
+    'REQUEST_TIME' => 1482124589
+]
+2016-12-19 11:41:47 [176.222.188.250][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-19 11:41:47 [176.222.188.250][-][-][info][application] $_SERVER = [
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_STATUS' => '503'
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '176.222.188.250'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '176.222.188.250'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '95'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/index?filter%5Bs%5D=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '176.222.188.250'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '58558'
+    'REDIRECT_QUERY_STRING' => 'access-token=90db0fb9d82abf0ff4ad625adf1d81e6'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/?access-token=90db0fb9d82abf0ff4ad625adf1d81e6'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/503.html'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/503.html'
+    'PHP_SELF' => '/503.html'
+    'REQUEST_TIME_FLOAT' => 1482126107.351
+    'REQUEST_TIME' => 1482126107
+]
+2016-12-20 09:29:09 [145.249.242.254][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-20 09:29:09 [145.249.242.254][-][-][info][application] $_SERVER = [
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_STATUS' => '503'
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '145.249.242.254'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '145.249.242.254'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=442597'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '145.249.242.254'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '58838'
+    'REDIRECT_QUERY_STRING' => 'access-token=218afd82308c0a298088e4986eda9985'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/?access-token=218afd82308c0a298088e4986eda9985'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/503.html'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/503.html'
+    'PHP_SELF' => '/503.html'
+    'REQUEST_TIME_FLOAT' => 1482204548.777
+    'REQUEST_TIME' => 1482204548
+]
+2016-12-20 09:29:10 [145.249.242.254][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-20 09:29:10 [145.249.242.254][-][-][info][application] $_SERVER = [
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_STATUS' => '503'
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '145.249.242.254'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '145.249.242.254'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=442658'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '145.249.242.254'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '58866'
+    'REDIRECT_QUERY_STRING' => 'access-token=39059d876e4143856a85cd3c1681e461'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/?access-token=39059d876e4143856a85cd3c1681e461'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/503.html'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/503.html'
+    'PHP_SELF' => '/503.html'
+    'REQUEST_TIME_FLOAT' => 1482204549.524
+    'REQUEST_TIME' => 1482204549
+]
+2016-12-20 09:58:45 [145.249.242.254][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-20 09:58:45 [145.249.242.254][-][-][info][application] $_SERVER = [
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_STATUS' => '503'
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '145.249.242.254'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '145.249.242.254'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=442662'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '145.249.242.254'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '59958'
+    'REDIRECT_QUERY_STRING' => 'access-token=39059d876e4143856a85cd3c1681e461'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/?access-token=39059d876e4143856a85cd3c1681e461'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/503.html'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/503.html'
+    'PHP_SELF' => '/503.html'
+    'REQUEST_TIME_FLOAT' => 1482206324.919
+    'REQUEST_TIME' => 1482206324
+]
+2016-12-21 09:29:12 [176.223.79.187][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-21 09:29:12 [176.223.79.187][-][-][info][application] $_SERVER = [
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_STATUS' => '503'
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '176.223.79.187'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '176.223.79.187'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=440625'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '176.223.79.187'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '51084'
+    'REDIRECT_QUERY_STRING' => 'access-token=37c235392b92415484fea9af8e7d1a54'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/?access-token=37c235392b92415484fea9af8e7d1a54'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/503.html'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/503.html'
+    'PHP_SELF' => '/503.html'
+    'REQUEST_TIME_FLOAT' => 1482290951.862
+    'REQUEST_TIME' => 1482290951
+]
+2016-12-21 09:32:36 [176.223.79.187][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-21 09:32:36 [176.223.79.187][-][-][info][application] $_SERVER = [
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_STATUS' => '503'
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '176.223.79.187'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '176.223.79.187'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '95'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=444454'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '176.223.79.187'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '35442'
+    'REDIRECT_QUERY_STRING' => 'access-token=77fa0194ab3bddbd543473e636651bf6'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/?access-token=77fa0194ab3bddbd543473e636651bf6'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/503.html'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/503.html'
+    'PHP_SELF' => '/503.html'
+    'REQUEST_TIME_FLOAT' => 1482291156.288
+    'REQUEST_TIME' => 1482291156
+]
+2016-12-21 09:38:28 [176.223.79.187][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-21 09:38:28 [176.223.79.187][-][-][info][application] $_SERVER = [
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_STATUS' => '503'
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '176.223.79.187'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '176.223.79.187'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=444443'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '176.223.79.187'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '56250'
+    'REDIRECT_QUERY_STRING' => 'access-token=2dbd9dcfec5dd8471b6c6714ead37ef5'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/?access-token=2dbd9dcfec5dd8471b6c6714ead37ef5'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/503.html'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/503.html'
+    'PHP_SELF' => '/503.html'
+    'REQUEST_TIME_FLOAT' => 1482291508.019
+    'REQUEST_TIME' => 1482291508
+]
+2016-12-21 13:32:54 [176.223.79.187][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-21 13:32:54 [176.223.79.187][-][-][info][application] $_SERVER = [
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_STATUS' => '503'
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '176.223.79.187'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '176.223.79.187'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '67'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '176.223.79.187'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '34246'
+    'REDIRECT_QUERY_STRING' => 'access-token=e82be7f80d78b846135ad53438d35a51'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/?access-token=e82be7f80d78b846135ad53438d35a51'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/503.html'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/503.html'
+    'PHP_SELF' => '/503.html'
+    'REQUEST_TIME_FLOAT' => 1482305574.428
+    'REQUEST_TIME' => 1482305574
+]
+2016-12-23 13:20:21 [185.127.149.101][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-23 13:20:21 [185.127.149.101][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '185.127.149.101'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '185.127.149.101'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '185.127.149.101'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '37054'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1482477621.043
+    'REQUEST_TIME' => 1482477621
+]
+2016-12-27 09:32:34 [5.34.111.164][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-27 09:32:34 [5.34.111.164][-][-][info][application] $_SERVER = [
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_STATUS' => '503'
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '5.34.111.164'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '5.34.111.164'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '95'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=441830'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '5.34.111.164'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '43488'
+    'REDIRECT_QUERY_STRING' => 'access-token=090a0ca76b24c98836208f44d36f561c'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/?access-token=090a0ca76b24c98836208f44d36f561c'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/503.html'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/503.html'
+    'PHP_SELF' => '/503.html'
+    'REQUEST_TIME_FLOAT' => 1482809554.76
+    'REQUEST_TIME' => 1482809554
+]
+2016-12-27 09:35:01 [5.34.111.164][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2016-12-27 09:35:01 [5.34.111.164][-][-][info][application] $_SERVER = [
+    'REDIRECT_REQUEST_METHOD' => 'POST'
+    'REDIRECT_STATUS' => '503'
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '5.34.111.164'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '5.34.111.164'
+    'HTTP_CONNECTION' => 'close'
+    'CONTENT_LENGTH' => '95'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://new.c-k-a.kz'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://new.c-k-a.kz/tests/process?id=446627'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '5.34.111.164'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '54874'
+    'REDIRECT_QUERY_STRING' => 'access-token=6b734b3802ef29b7bc6ad67655f7fc6c'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/?access-token=6b734b3802ef29b7bc6ad67655f7fc6c'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/503.html'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/503.html'
+    'PHP_SELF' => '/503.html'
+    'REQUEST_TIME_FLOAT' => 1482809701.467
+    'REQUEST_TIME' => 1482809701
+]
+2017-01-25 06:51:16 [91.229.150.57][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2017-01-25 06:51:16 [91.229.150.57][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '91.229.150.57'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '91.229.150.57'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '91.229.150.57'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '49292'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1485305476.393
+    'REQUEST_TIME' => 1485305476
+]
+2017-01-25 06:51:16 [91.229.150.57][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php:461
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('favicon.ico', Array)
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Страница не найдена.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php:96
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#2 {main}
+2017-01-25 06:51:16 [91.229.150.57][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '91.229.150.57'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '91.229.150.57'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '91.229.150.57'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '49310'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/favicon.ico'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/favicon.ico'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/favicon.ico'
+    'PHP_SELF' => '/favicon.ico'
+    'REQUEST_TIME_FLOAT' => 1485305476.831
+    'REQUEST_TIME' => 1485305476
+]
+2017-01-25 07:23:53 [91.229.150.57][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2017-01-25 07:23:52 [91.229.150.57][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '91.229.150.57'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '91.229.150.57'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '91.229.150.57'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '56552'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1485307432.977
+    'REQUEST_TIME' => 1485307432
+]
+2017-01-27 12:22:41 [176.222.154.104][-][-][error][yii\web\HttpException:401] exception 'yii\web\UnauthorizedHttpException' with message 'You are requesting with an invalid credential.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php:73
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/filters/auth/AuthMethod.php(56): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/ActionFilter.php(71): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#8 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#9 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#11 {main}
+2017-01-27 12:22:41 [176.222.154.104][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '176.222.154.104'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '176.222.154.104'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '176.222.154.104'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '49938'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/'
+    'PHP_SELF' => '/'
+    'REQUEST_TIME_FLOAT' => 1485498161.03
+    'REQUEST_TIME' => 1485498161
+]
+2017-01-27 12:22:41 [176.222.154.104][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php:461
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('favicon.ico', Array)
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Страница не найдена.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php:96
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#2 {main}
+2017-01-27 12:22:41 [176.222.154.104][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '176.222.154.104'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '176.222.154.104'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '176.222.154.104'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '49990'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/favicon.ico'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/favicon.ico'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/favicon.ico'
+    'PHP_SELF' => '/favicon.ico'
+    'REQUEST_TIME_FLOAT' => 1485498161.565
+    'REQUEST_TIME' => 1485498161
+]
+2017-01-27 12:22:41 [176.222.154.104][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Module.php:461
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('favicon.ico', Array)
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Страница не найдена.' in /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/web/Application.php:96
+Stack trace:
+#0 /var/www/v-4762/data/www/ac.c-k-a.kz/protected/vendors/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/v-4762/data/www/ac.c-k-a.kz/poll.php(14): yii\base\Application->run()
+#2 {main}
+2017-01-27 12:22:41 [176.222.154.104][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'poll.c-k-a.kz'
+    'HTTP_X_FORWARDED_FOR' => '176.222.154.104'
+    'HTTP_X_FORWARDED_PROTO' => 'http'
+    'HTTP_X_REAL_IP' => '176.222.154.104'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'PATH' => '/sbin:/usr/sbin:/bin:/usr/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'poll.c-k-a.kz'
+    'SERVER_ADDR' => '185.98.6.145'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '176.222.154.104'
+    'DOCUMENT_ROOT' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'SERVER_ADMIN' => 'webmaster@c-k-a.kz'
+    'SCRIPT_FILENAME' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php'
+    'REMOTE_PORT' => '50024'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.0'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/favicon.ico'
+    'SCRIPT_NAME' => ''
+    'PATH_INFO' => '/favicon.ico'
+    'PATH_TRANSLATED' => '/var/www/v-4762/data/www/ac.c-k-a.kz/poll.php/favicon.ico'
+    'PHP_SELF' => '/favicon.ico'
+    'REQUEST_TIME_FLOAT' => 1485498161.817
+    'REQUEST_TIME' => 1485498161
+]

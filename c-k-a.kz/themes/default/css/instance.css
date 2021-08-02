@@ -1,0 +1,123 @@
+div.instance_page
+{
+    
+}
+
+.instance_caption
+{
+    font-weight:bold;
+    font-size:22px;
+    display:block;
+    margin-bottom:5px;
+    padding-bottom:5px;
+    border-bottom:1px solid #444488;
+    padding-right:60px;
+    position:relative;
+}
+
+.instance_caption span.instance_ts
+{
+    display:block;
+    font-size:10px !important;
+    font-weight:bold;
+    color:#777;
+    position:absolute;
+    right:10px;    
+    bottom:5px;
+    margin-left:5px;
+}
+
+
+
+span.instance_preview
+{
+    display:block;
+    margin-top:10px;
+}
+
+span.instance_body
+{
+    display:block;
+    margin:15px;
+    color:#555;
+    
+}
+
+div.instance_record
+{
+    margin-top:15px;    
+}
+
+div.instance_record .instance_preview
+{
+    margin:0 20px;
+    color:#555;
+}
+
+div.instance_record a.instance_caption
+{
+    font-size:14px;
+    border:0;
+    padding-bottom:0;
+}
+
+div.home_page a.instance_caption
+{
+    font-size:15px;
+}
+
+div.instance_separator
+{
+    border-bottom:1px solid #aaa;
+    margin-top:15px;
+    margin-bottom:30px;
+}
+
+div.instance_separator a.instance_comments
+{
+    font-size:0.8em;
+    font-weight:bold;
+    margin-left:5px;
+}
+
+a.instance_link
+{
+ display:inline-block;
+margin-bottom:5px;
+}
+a.instance_link:hover
+{
+    text-decoration: none;
+}
+
+div.pages-div
+{
+    text-align:center;
+}
+div.pages-div a
+{
+    display:inline-block;
+    background-color:#54abd1;
+    border:1px solid #444488;
+    border-radius:3px;
+    padding:1px 8px;
+    color:#fff;
+}
+
+div.pages-div a.current-page
+{
+    border:1px solid #66bb66;
+    background-color:#ccffcc;
+    color:#333;
+    padding:2px 9px;
+}
+
+
+/* Employees */
+a.instance_employee
+{
+    margin-right:10px;
+    margin-bottom:10px;
+    box-shadow:0px 1px 5px #333;
+    
+}
