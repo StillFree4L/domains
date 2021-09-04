@@ -1,9 +1,0 @@
-$(function() {
-
-    EFilter  = BaseWidget.extend({
-
-
-
-    })
-
-})

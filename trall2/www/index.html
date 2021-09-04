@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Tral Parking 2 Online</title>
+<style>
+/* Общие элементы, обычное состояние */
+ul.pixel-tabs {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+ul.pixel-tabs li {
+	display: inline-block;
+	line-height: 30px;
+	border: 1px solid #999;
+	border-bottom: 0 none;
+}
+ul.pixel-tabs li a.tab {
+	border-bottom: 1px solid #999;
+	background: #eee;
+	height: 29px;
+}
+ul.pixel-tabs li a {
+	display: block;
+	color: black;
+	text-decoration: none;
+	display: inline-block;
+	padding: 0px 12px;
+	white-space: nowrap;
+}
+ul.pixel-tabs li a:hover {
+	border-bottom: none;
+}
+/* Активно */
+ul.pixel-tabs li a.active-tab {
+	background: gray;
+	border-bottom: 0 none;
+}
+/* Содержание */
+.content-tab {
+	border: 1px solid #999;
+	float: left;
+	margin: -1px 0 0 0;
+	padding: 20px;
+}</style>
+</head>
+
+<body>
+<!-- Сами вкладки -->
+<ul class="pixel-tabs">
+	<li>
+       <a href="#content-one" id="one-tab" class="active-tab">View Online</a>
+    </li>
+    <li>
+       <a href="#content-two" id="two-tab" class="tab">Images Archive</a>
+    </li>
+</ul>
+
+<!-- Содержание -->
+<div class="content-tab">
+
+	<!-- Первый -->
+        <div id="content-one">
+          <iframe id="fr_content_one" name="frame_content_one" src="channel1.html" width="1330" height="780" marginheight="0" marginwidth="0"></iframe>
+        </div>
+
+	<!-- Второй -->
+	<div id="content-two" style="display:none;">
+          <iframe id="fr_content_two" name="frame_content_two" src="images.html" width="1330" height="780" marginheight="0" marginwidth="0"></iframe>
+	</div>
+
+</div> <!-- content-tab -->
+
+<script type="text/javascript">
+document.querySelector('#one-tab').onclick = function(){
+  // Табы
+  document.getElementById('one-tab').className = 'active-tab';
+  document.getElementById('two-tab').className = 'tab';
+  // Содержание
+  document.getElementById('content-one').style.display = 'block';
+  document.getElementById('content-two').style.display = 'none';
+
+}
+
+document.querySelector('#two-tab').onclick = function(){
+
+   // Табы
+
+  document.getElementById('one-tab').className = 'tab';
+
+  document.getElementById('two-tab').className = 'active-tab';
+
+  // Содержание
+
+  document.getElementById('content-one').style.display = 'none';
+
+  document.getElementById('content-two').style.display = 'block';
+
+}
+
+</script>
+
+</body>
+
+</html>
+

@@ -1,5 +1,0 @@
-2017.02.20 04:58:48	1	Начало импорта БД `nitro`
-2017.02.20 04:58:48	1	Файл: groups.sql
-2017.02.20 04:58:48	1	Импорт таблицы `groups`
-2017.02.20 04:58:48	1	Установлена кодировка соединения: `utf8`
-2017.02.20 04:58:48	4	MySQL Error: The \'InnoDB\' feature is disabled; you need MySQL built with \'InnoDB\' to have it working (C:\\AppServ\\www\\sxd\\index.php:1594)
