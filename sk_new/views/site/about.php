@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
+use timurmelnikov\widgets\WebcamShoot;
 
 $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
@@ -13,6 +14,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         This is the About page. You may modify the following file to customize its content:
     </p>
+    <?= echo WebcamShoot::widget([
+    'targetInputID' => 'textimg',
+    'targetImgID' => 'textphoto',
+]); ?>
 
     <code><?= __FILE__ ?></code>
 </div>

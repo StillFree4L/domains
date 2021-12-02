@@ -17,7 +17,7 @@ class AppAdminController extends Controller
                 'rules'=>[
                     [
                     'allow'=>true,
-                    'roles'=>['@'],
+                    'roles'=>['?'],
                     ]
                 ]
             ],

@@ -51,3 +51,12 @@ $this->title = 'My Yii Application';
 
     </div>
 </div>
+<script type="text/javascript">
+document.addEventListener("visibilitychange", function(){
+    if (document.hidden){
+        console.log('Вкладка не активна');
+    } else {
+        console.log('Вкладка активна');    
+    }
+});
+</script>

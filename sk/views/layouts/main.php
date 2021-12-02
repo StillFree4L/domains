@@ -48,16 +48,20 @@ use yii\helpers\Html;
         <nav id="nav-menu-container">
             <ul class="nav-menu">
                 <li class="menu-active"><?= Html::a('Главная', ['/site/index']) ?></li>
-                <?php if (Yii::$app->user->isGuest): ?>
+                <?php if (Yii::$app->user->isGuest): 
+                    ?>
                 <li><?= Html::a('Авторизация', ['/user/login']) ?></li>
-                <?php endif; ?>
-                <?php if (!Yii::$app->user->isGuest): ?>
+                <?php endif; 
+                ?>
+                <?php //if (!Yii::$app->user->isGuest): 
+                    ?>
                 <li><?= Html::a('Выйти', ['/user/logout']) ?></li>
                 <li><?= Html::a('Пользователи', ['/admin/auth/index']) ?></li>
                 <li><?= Html::a('Заказы', ['/admin/repairs/index']) ?></li>
                 <li><?= Html::a('Мастера', ['/admin/master/index']) ?></li>
                 <li><?= Html::a('Журнал', ['/admin/repairs-audit/index']) ?></li>
-                <?php endif; ?>
+                <?php //endif; 
+                ?>
                 <li><?= Html::a('Сертификаты', ['/site/sertificat']) ?></li>
                 <li><?= Html::a('Контакты', ['/site/contact']) ?></li>
             </ul>

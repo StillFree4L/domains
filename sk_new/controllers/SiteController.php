@@ -47,6 +47,15 @@ class SiteController extends Controller
         ];
     }
 
+    public function actionChat()
+    {
+        $model = new LoginForm();
+        return $this->render('chat', [
+            'model' => $model,
+        ]);
+    }
+
+
     /**
      * Displays homepage.
      *
@@ -162,11 +171,11 @@ class SiteController extends Controller
     public function actionContact()
     {
         $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+        /*if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
 
             return $this->refresh();
-        }
+        }*/
         return $this->render('contact', [
             'model' => $model,
         ]);
@@ -180,5 +189,24 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+    public function actionRtc()
+    {
+        return $this->render('rtc');
+    }
+    public function actionDownload()
+    {
+       if($_POST['photo'])
+       {
+            $data = $_POST['photo'];
+    list($type, $data) = explode(';', $data);
+    list(, $data)      = explode(',', $data);
+    $data = base64_decode($data);
+
+    mkdir($_SERVER['DOCUMENT_ROOT'] . "/web/photos");
+
+    file_put_contents($_SERVER['DOCUMENT_ROOT'] . "/web/photos/".time().'.png', $data);
+    die;
+       }
     }
 }

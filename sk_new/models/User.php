@@ -56,6 +56,16 @@ public function attributeLabels()
     ];
 }
 
+public function getChatname()
+    {
+        return Profile::find()->where(['id' => Yii::$app->user->id])->one()['name'];
+    }
+ 
+    public function getChaticon()
+    {
+        return Profile::find()->where(['id' => Yii::$app->user->id])->one()['photo'];
+    }
+
     public static function findIdentity($id)
     {
         return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
