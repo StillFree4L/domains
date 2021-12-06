@@ -19,7 +19,8 @@
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "costa-rico/yii2-images": "~1.0.5",
-        "kartik-v/yii2-mpdf": "dev-master"
+        "kartik-v/yii2-mpdf": "dev-master",
+        "lav45/yii2-activity-logger": "^1.8"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
@@ -37,7 +38,8 @@
         "process-timeout": 1800,
         "fxp-asset": {
             "enabled": false
-        }
+        },
+        "disable-tls": true
     },
     "scripts": {
         "post-install-cmd": [

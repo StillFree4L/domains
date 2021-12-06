@@ -77,6 +77,11 @@ class UserController extends Controller
     {
         $model = new SignupForm();
 
+        $roles = (new \yii\db\Query())
+    ->select(['name','description'])
+    ->from('auth_item')
+    ->all();
+
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
@@ -87,6 +92,7 @@ class UserController extends Controller
 
         return $this->render('signup', [
             'model' => $model,
+            'roles' => $roles,
         ]);
     }
     /**

@@ -2,12 +2,8 @@
 
 /* @var $this yii\web\View */
 
-use \app\models\Repairs;
-
-$this->title = 'SK';
-
+$this->title = 'Контакты';
 ?>
-
 
 <main id="main">
 
@@ -162,29 +158,25 @@ $this->title = 'SK';
             <div class="row counters">
 
                 <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up"><?= \app\models\Master::find()->count() ?></span>
+                    <span data-toggle="counter-up"><?= $master ?></span>
                     <p>Мастеров</p>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up"><?= Repairs::find()->count() ?></span>
+                    <span data-toggle="counter-up"><?= $repairs ?></span>
                     <p>Заказов</p>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">1,820</span>
-                    <p>Дней работаем</p>
+                    <span data-toggle="counter-up"><?=$sertificat?></span>
+                    <p>Сертификатов</p>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">5</span>
-                    <p>Лет работы</p>
+                    <span data-toggle="counter-up"><?=$services?></span>
+                    <p>Услуг</p>
                 </div>
 
-            </div>
-
-            <div class="facts-img">
-                <img src="/img/facts-img.png" alt="" class="img-fluid">
             </div>
 
         </div>
@@ -201,14 +193,15 @@ $this->title = 'SK';
             </header>
 
             <div class="owl-carousel clients-carousel">
-                <img src="/img/clients/client-1.png" alt="">
-                <img src="/img/clients/client-2.png" alt="">
-                <img src="/img/clients/client-3.png" alt="">
-                <img src="/img/clients/client-4.png" alt="">
-                <img src="/img/clients/client-5.png" alt="">
-                <img src="/img/clients/client-6.png" alt="">
-                <img src="/img/clients/client-7.png" alt="">
-                <img src="/img/clients/client-8.png" alt="">
+                <?php
+                foreach($clients as $model){
+                    foreach($model->getImages() as $img){
+                ?>
+                        <img src="<?=$img->getUrl()?>" alt="<?=$model->client?>">
+                    <?php
+                    }
+                }
+                ?>
             </div>
 
         </div>

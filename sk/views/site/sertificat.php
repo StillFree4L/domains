@@ -2,47 +2,45 @@
 use \yii\helpers\FileHelper;
 use yii\helpers\Html;
 
-$this->title = 'Наши сертификаты ';
+$this->title = 'Сертификаты';
 $this->params['breadcrumbs'][] = ['label' => 'Sertificat', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-\yii\web\YiiAsset::register($this);
-$img=\app\models\Sertificat::find()->all();
 ?>
+<main id="main">
+    <section id="contact" class="section-bg wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h3><?= Html::encode($this->title) ?></h3>
+            </div>
+            <?php if(\Yii::$app->user->can('admin')): ?>
+                <div class="text-center"><?= Html::a('Добавить сертификат', ['create'], ['class' => 'btn btn-success']) ?></div><br>
+            <?php endif; ?>
+            <div class="row portfolio-container" style="margin-bottom: 25%">
+                <?php
+                foreach($models as $model){
+                    foreach($model->getImages() as $img){
+                        ?>
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+                            <div class="portfolio-wrap" style="text-align: center">
+                                <figure>
+                                    <a href="<?= $img->getUrl('1200x1200') ?>" data-lightbox="portfolio" data-title="App 1" class="link-details" title="Preview">
+                                        <?= Html::img($img->getUrl(),['class'=>'img-fluid','alt'=>$model->name,'height'=>'100%', 'width'=>'100%']) ?>
+                                    </a>
 
-<section id="portfolio"  class="section-bg" >
-    <div class="container">
-
-        <header class="section-header">
-            <h3 class="section-title">Фото</h3>
-        </header>
-
-        <?php if (!Yii::$app->user->isGuest): ?>
-        <div class="text-center"><?= Html::a('Добавить', ['create'], ['class' => 'btn btn-success']) ?></div>
-        <?php endif; ?>
-        <br><br>
-        <div class="row portfolio-container">
-
-            <?php
-            foreach ($img as $image):
+                                </figure>
+                                <?php if(\Yii::$app->user->can('admin')): ?>
+                                    <div class="portfolio-info">
+                                        <?= Html::a('Удалить',['delete', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                }
                 ?>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
-                    <div class="portfolio-wrap">
-                        <figure>
-                            <?= Html::img('/'.$image->name,['class'=>'img-fluid','alt'=>'','height'=>'100%', 'width'=>'100%']) ?>
-                            <?php if (!Yii::$app->user->isGuest): ?>
-                            <?= Html::a('<i class="ion ion-eye"></i>',['view', 'id' => $image->id], ['class' => 'link-preview']) ?>
-                            <?= Html::a('<i class="ion ion-android-delete"></i>',['delete', 'id' => $image->id], ['class' => 'link-details','data'=>['method'=>'post']]) ?>
-                            <?php endif; ?>
-                        </figure>
-                    </div>
-                </div>
-
-            <?php
-            endforeach;
-            ?>
-
+            </div>
+            <br/>
         </div>
-
-    </div>
-</section><!-- #portfolio -->
+    </section>
+</main>

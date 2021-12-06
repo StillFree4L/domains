@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Master */
 
-$this->title = 'Добавить Мастера';
-$this->params['breadcrumbs'][] = ['label' => 'Masters', 'url' => ['index']];
+$this->title = 'Добавить сертификат';
+$this->params['breadcrumbs'][] = ['label' => 'Сертификат', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <main id="main">

@@ -5,6 +5,9 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'Регистрация';
 $this->params['breadcrumbs'][] = $this->title;
+$params = [
+        'prompt' => 'Выберите роль пользователя...'
+    ];
 ?>
 <!--==========================
   Authorization Section
@@ -27,6 +30,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="form-group">
             <?= $form->field($model, 'password')->passwordInput()->label('Пароль пользователя'); ?>
                     </div>
+                    <div class="form-group">
+            <?= $form->field($model, 'role')->dropDownList(yii\helpers\ArrayHelper::map($roles,'name','description'),$params); ?>
+            </div>
                     <div class="form-group">
                         <div class="text-center"><?= Html::submitButton('Сохранить') ?></div>
             <?php ActiveForm::end(); ?>

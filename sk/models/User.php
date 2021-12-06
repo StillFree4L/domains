@@ -7,6 +7,7 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+use lav45\activityLogger\ActiveLogBehavior;
 
 /**
  * User model
@@ -55,6 +56,17 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
         ];
     }
+    public function attributeLabels()
+    {
+        return [
+            'username' => 'Логин',
+            'password' => 'Пароль',
+            'status'=>'Статус',
+            'updated_at'=>'Дата изменения',
+            'created_at'=>'Дата создания',
+        ];
+    }
+
 
     /**
      * @inheritdoc
@@ -89,6 +101,11 @@ class User extends ActiveRecord implements IdentityInterface
     public function getId()
     {
         return $this->getPrimaryKey();
+    }
+
+    public function getRole()
+    {
+        return array_values(Yii::$app->authManager->getRolesByUser($this->id))[0];
     }
 
     /**

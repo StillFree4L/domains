@@ -41,8 +41,6 @@ use yii\helpers\Html;
     <div class="container-fluid">
         <div id="logo" class="pull-left">
             <h1><?= Html::a('SK', ['/site/index'],['options'=>['class'=>'scrollto']]) ?></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
         </div>
 
         <nav id="nav-menu-container">
@@ -53,21 +51,26 @@ use yii\helpers\Html;
                 <li><?= Html::a('Авторизация', ['/user/login']) ?></li>
                 <?php endif; 
                 ?>
-                <?php //if (!Yii::$app->user->isGuest): 
+                <?php
+                if (!Yii::$app->user->isGuest):
+                    if(\Yii::$app->user->can('user')):
                     ?>
                 <li><?= Html::a('Выйти', ['/user/logout']) ?></li>
-                <li><?= Html::a('Пользователи', ['/admin/auth/index']) ?></li>
                 <li><?= Html::a('Заказы', ['/admin/repairs/index']) ?></li>
+                <?php endif;?>
+                <?php if(\Yii::$app->user->can('admin')):?>
                 <li><?= Html::a('Мастера', ['/admin/master/index']) ?></li>
-                <li><?= Html::a('Журнал', ['/admin/repairs-audit/index']) ?></li>
-                <?php //endif; 
-                ?>
+                <li><?= Html::a('Пользователи', ['/admin/auth/index']) ?></li>
+                <li><?= Html::a('Журнал', ['/logger/default/index']) ?></li>
+                <?php endif;?>
+                <?php endif;?>
                 <li><?= Html::a('Сертификаты', ['/site/sertificat']) ?></li>
+                <li><?= Html::a('Клиенты', ['/clients/index']) ?></li>
                 <li><?= Html::a('Контакты', ['/site/contact']) ?></li>
             </ul>
-        </nav><!-- #nav-menu-container -->
+        </nav>
     </div>
-</header><!-- #header -->
+</header>
 
 <!--==========================
   Intro Section

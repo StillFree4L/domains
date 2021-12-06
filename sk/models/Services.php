@@ -41,7 +41,9 @@ class Services extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'service' => 'Service',
+            'service' => 'Услуги',
+            'updated_at'=>'Дата изменения',
+            'created_at'=>'Дата создания',
         ];
     }
 

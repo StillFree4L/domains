@@ -42,10 +42,16 @@ $this->params['breadcrumbs'][] = $this->title;
             //'id',
             'username',
             //'auth_key',
-            'password_hash',
+            //'password_hash',
             //'password_reset_token',
             'email:email',
-            'status',
+            //'status',
+            [
+                'attribute' => 'status',
+                'value' => function ($model) {
+                    if($model->status==10){return 'Активный';}else{return 'Отключен';}
+                }
+            ],
             'created_at:datetime',
             'updated_at:datetime',
         ],

@@ -16,10 +16,8 @@ use yii\db\Expression;
  */
 class Sertificat extends \yii\db\ActiveRecord
 {
-    public $imageFile;
-    /**
-     * {@inheritdoc}
-     */
+    public $gallery;
+
     public static function tableName()
     {
         return 'sertificat';
@@ -27,14 +25,9 @@ class Sertificat extends \yii\db\ActiveRecord
     public function behaviors()
     {
         return [
-            [
-                'class' => TimestampBehavior::class,
-                'attributes' => [
-                    ActiveRecord::EVENT_BEFORE_INSERT => ['changed_on'],
-                ],
-                // если вместо метки времени UNIX используется datetime:
-                'value' => new Expression('NOW()'),
-            ],
+            'image' => [
+                'class' => 'rico\yii2images\behaviors\ImageBehave',
+            ]
         ];
     }
 
@@ -45,9 +38,8 @@ class Sertificat extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
-            [['changed_on'], 'safe'],
             [['name'], 'string', 'max' => 255],
-            [['imageFile'], 'file', 'extensions' => 'png, jpg,jpeg'],
+            [['gallery'], 'file', 'extensions' => 'png, jpg,jpeg', 'maxFiles' => 2],
         ];
     }
 
@@ -59,17 +51,19 @@ class Sertificat extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Название',
-            'changed_on' => 'Changed On',
-            'imageFile'=>'Фото',
+            'gallery' => 'Фото',
         ];
     }
-    public function upload()
-    {
+    public function uploadGallery(){
         if ($this->validate()) {
-            $this->imageFile->saveAs('img/sertificat/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
-            $this->name=$this->imageFile;
+            foreach ($this->gallery as $file){
+                $path = 'upload/store/' . $file->baseName . '.' . $file->extension;
+                $file->saveAs($path);
+                $this->attachImage($path);
+                @unlink($path);
+            }
             return true;
-        } else {
+        }else{
             return false;
         }
     }

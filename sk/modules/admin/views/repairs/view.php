@@ -1,15 +1,16 @@
 <?php
 
+use yii\grid\GridView;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Repairs */
 
-$this->title = 'Клиент '.$model->id;
+$this->title = 'Клиент '.$model->client;
 $this->params['breadcrumbs'][] = ['label' => 'Repairs', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-\yii\web\YiiAsset::register($this);
 ?>
 <!--==========================
   View Users Section
@@ -42,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            //'id',
             'receipt',
             'date',
             'client',
@@ -55,6 +56,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'username',
             'money',
             'result_name',
+            'updated_at',
+            'created_at',
         ],
     ]) ?>
                     </div>
@@ -63,34 +66,142 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </section><!-- #contact -->
 
+    <section id="contact" class="section-bg wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h3>Комплектующие</h3>
+            </div>
+            <div class="form">
+                <form action="" method="post" role="form" class="contactForm">
+                    <input type="hidden" name="<?=Yii::$app->request->csrfParam; ?>" value="<?=Yii::$app->request->getCsrfToken(); ?>" />
+                    <?php if(\Yii::$app->user->can('master')):?>
+                        <div class="text-center">
+                            <?= Html::a('Добавить', ['complete-create','id' => $model->id,'type'=>'Комплектующие'], ['class' => 'btn btn-success']) ?>
+                        </div>
+                        <br>
+                    <?php endif;?>
+                    <?php if($complete): ?>
+                        <?php
+                    $price=0;
+                    $m = $model->id;
+                    foreach ($complete as $prices){
+                        $price+=$prices->price;
+                        }
+                        ?>
+                        <div class="text-center">Общая цена комплектующих: <?=$price?></div>
+                    <?php endif; ?>
+                    <div class="form-group">
+                        <?= GridView::widget([
+                            'dataProvider' => $dataProvider,
+                            'columns' => [
+                                ['class' => 'yii\grid\SerialColumn'],
+
+                                //'id',
+                                'name',
+                                'number',
+                                'price',
+
+                                [
+                                    'class' => 'yii\grid\ActionColumn','template'=>'{update} {delete}',
+                                    'urlCreator' => function ($action, $model, $key, $index) use ($m) {
+                                        if ($action === 'update') {
+                                            return Url::to(['complete-update', 'id' => $model->id,'repairs_id'=>$m,'type'=>'Комплектующие']);
+                                        }
+                                        if ($action === 'delete') {
+                                            return Url::to(['complete-delete', 'id' => $model->id,'repairs_id'=>$m,'type'=>'Комплектующие']);
+                                        }
+                                    }
+                                ],
+                            ],
+                        ]); ?>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-bg wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h3>Материалы</h3>
+            </div>
+            <div class="form">
+                <form action="" method="post" role="form" class="contactForm">
+                    <input type="hidden" name="<?=Yii::$app->request->csrfParam; ?>" value="<?=Yii::$app->request->getCsrfToken(); ?>" />
+                    <?php if(\Yii::$app->user->can('master')):?>
+                        <div class="text-center">
+                            <?= Html::a('Добавить', ['complete-create','id' => $model->id,'type'=>'Материалы'], ['class' => 'btn btn-success']) ?>
+                        </div>
+                        <br>
+                    <?php endif;?>
+                    <?php if($material): ?>
+                        <?php
+                        $price=0;
+                        $m = $model->id;
+                        foreach ($material as $prices){
+                            $price+=$prices->price;
+                        }
+                        ?>
+                        <div class="text-center">Общая цена комплектующих: <?=$price?></div>
+                    <?php endif; ?>
+                    <div class="form-group">
+                        <?= GridView::widget([
+                            'dataProvider' => $dataProviderMaterial,
+                            'columns' => [
+                                ['class' => 'yii\grid\SerialColumn'],
+
+                                //'id',
+                                'name',
+                                'number',
+                                'price',
+
+                                [
+                                    'class' => 'yii\grid\ActionColumn','template'=>'{update} {delete}',
+                                    'urlCreator' => function ($action, $model, $key, $index) use ($m) {
+                                        if ($action === 'update') {
+                                            return Url::to(['complete-update', 'id' => $model->id,'repairs_id'=>$m,'type'=>'Материалы']);
+                                        }
+                                        if ($action === 'delete') {
+                                            return Url::to(['complete-delete', 'id' => $model->id,'repairs_id'=>$m,'type'=>'Материалы']);
+                                        }
+                                    }
+                                ],
+                            ],
+                        ]); ?>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <?php
     $gallery=$model->getImages();
-    if (!$model->getImage()==null):
+    if ($model->getImage()):
     ?>
 
-    <section id="portfolio"  class="section-bg" >
+    <section id="contact" class="section-bg wow fadeInUp" >
         <div class="container">
 
             <header class="section-header">
                 <h3 class="section-title">Фото</h3>
             </header>
 
-            <div class="row portfolio-container">
+            <div class="row portfolio-container" style="margin-bottom: 25%">
 
                 <?php
                 foreach ($gallery as $img):
                 ?>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
-                    <div class="portfolio-wrap">
+                    <div class="portfolio-wrap" style="text-align: center">
                         <figure>
+                            <a href="<?= $img->getUrl('1200x1200') ?>" data-lightbox="portfolio" data-title="App 1" class="link-details" title="Preview">
                             <?= Html::img($img->getUrl('800x600'),['class'=>'img-fluid','alt'=>'']) ?>
-                            <a href="<?= $img->getUrl('1200x1200') ?>" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                            </a>
                         </figure>
-                        <div class="portfolio-info">
-                            <a href="deleteimg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview">
-                            <h4><?= Html::a('Удалить', ['deleteimg','id' => $model->id,'imgId' => $img->id], ['class' => 'btn btn-primary']) ?></h4>
-                        </div>
+                            <div class="portfolio-info">
+                                <?= Html::a('Удалить', ['deleteimg','id' => $model->id,'imgId' => $img->id], ['class' => 'btn btn-primary']) ?>
+                            </div>
                     </div>
                 </div>
 
@@ -101,9 +212,8 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
 
         </div>
-    </section><!-- #portfolio -->
+    </section>
     <?php
     endif;
     ?>
 </main>
-

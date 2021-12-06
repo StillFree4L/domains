@@ -4,29 +4,9 @@ namespace app\models;
 
 use Yii;
 
-/**
- * This is the model class for table "repairs".
- *
- * @property int $id
- * @property int $receipt
- * @property string $date
- * @property string $client
- * @property string $phone
- * @property string $service_name
- * @property string $equipment
- * @property string $serial_id
- * @property string $facilities
- * @property string $problem
- * @property string $username
- * @property int $money
- * @property string $result_name
- */
 class Repairs extends \yii\db\ActiveRecord
 {
     public $gallery;
-    /**
-     * @var mixed|null
-     */
 
     public function behaviors()
     {
@@ -81,6 +61,8 @@ class Repairs extends \yii\db\ActiveRecord
             'money' => 'Цена',
             'result_name' => 'Результат',
             'gallery' => 'Фото',
+            'updated_at'=>'Дата изменения',
+            'created_at'=>'Дата создания',
         ];
     }
 
@@ -125,6 +107,6 @@ class Repairs extends \yii\db\ActiveRecord
      */
     public function getMaster()
     {
-        return $this->hasMany(Master::className(), ['username'=>'username']);
+        return $this->hasMany(Master::className(), ['username'=>'name']);
     }
 }

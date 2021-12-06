@@ -1,5 +1,5 @@
 <?php
-
+use lav45\activityLogger\LogMessageDTO;
 use \yii\web\Request;
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
@@ -7,7 +7,9 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'log',
+    ],
     'language'=>'ru-RU',
     'charset'=>'utf-8',
     'aliases' => [
@@ -20,18 +22,45 @@ $config = [
         ],
         'yii2images' => [
             'class' => 'rico\yii2images\Module',
-            //be sure, that permissions ok
-            //if you cant avoid permission errors you have to create "images" folder in web root manually and set 777 permissions
             'imagesStorePath' => 'upload/store', //path to origin images
             'imagesCachePath' => 'upload/cache', //path to resized copies
             'graphicsLibrary' => 'GD', //but really its better to use 'Imagick'
+            'placeHolderPath' => '@webroot/upload/store/no.png'
+        ],
+        'logger' => [
+            'class' => \lav45\activityLogger\modules\Module::class,
+            'entityMap' => [
+                'master' => 'app\models\Master',
+                'repairs' => 'app\models\Repairs',
+                'results' => 'app\models\Results',
+                'user' => 'app\models\User',
+                'services' => 'app\models\Services',
+                'signup-form' => 'app\models\SignupForm',
+                'login-form' => 'app\models\LoginForm',
+            ],
         ],
     ],
     'components' => [
+        'activityLogger' => [
+            'class' => \lav45\activityLogger\Manager::class,
+            //'enabled' => YII_ENV_PROD,
+            'user' => 'user',
+            'userNameAttribute' => 'username',
+            'storage' => 'activityLoggerStorage',
+        ],
+        'activityLoggerStorage' => [
+            'class' => \lav45\activityLogger\DbStorage::class,
+            'tableName' => '{{%activity_log}}',
+            'db' => 'db',
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'HiLEapjiYBP5Y9FG7faR3cCiqy5xytwi',
             'baseUrl' => '',
+        ],
+        'authManager' => [
+            'cache' => 'cache',
+            'class' => 'yii\rbac\DbManager',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -45,9 +74,6 @@ $config = [
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
             'useFileTransport' => true,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
@@ -83,6 +109,18 @@ $config = [
             ],
         ],
     ],
+    'on beforeAction' => function(){
+        if(!Yii::$app->user->isGuest){
+        $message = Yii::createObject([
+            'class' => LogMessageDTO::class,
+            'entityName' => Yii::$app->user->identity->role->name,
+            'entityId' => Yii::$app->user->identity->role->type,
+            'action' => Yii::$app->controller->route,
+            'data' => ['Посещение'],
+        ]);
+        Yii::$app->activityLogger->log($message);
+      }
+    },
     'params' => $params,
 ];
 

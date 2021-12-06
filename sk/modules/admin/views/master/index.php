@@ -50,5 +50,5 @@ $result = Master::find()->all();
                 </form>
             </div>
         </div>
-    </section><!-- #contact -->
+    </section>
 </main>

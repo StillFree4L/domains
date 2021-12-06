@@ -41,7 +41,9 @@ class Results extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'result' => 'Result',
+            'result' => 'Результат',
+            'updated_at'=>'Дата изменения',
+            'created_at'=>'Дата создания',
         ];
     }
 

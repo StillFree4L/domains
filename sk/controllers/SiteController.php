@@ -1,8 +1,13 @@
 <?php
 
 namespace app\controllers;
+
 use app\models\ContactForm;
 use app\models\Sertificat;
+use \app\models\Master;
+use \app\models\Repairs;
+use app\models\Services;
+use app\models\Clients;
 use Yii;
 use yii\base\BaseObject;
 use yii\filters\AccessControl;
@@ -20,17 +25,6 @@ class SiteController extends Controller
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['view'],
-                'rules' => [
-                    [
-                        'actions' => ['view'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -55,25 +49,26 @@ class SiteController extends Controller
             ],
         ];
     }
-    /**
-     * Displays a single Repairs model.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($id)
+
+    /*public function actionView($id)
     {
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
-    }
+    }*/
     public function actionIndex()
     {
-        return $this->render('index');
+        $master=Master::find()->count();
+        $repairs=Repairs::find()->count();
+        $sertificat=Sertificat::find()->count();
+        $services=Services::find()->count();
+        $clients=Clients::find()->all();
+        return $this->render('index',compact('master','repairs','sertificat','services','clients'));
     }
     public function actionSertificat()
     {
-        return $this->render('sertificat');
+        $models=Sertificat::find()->all();
+        return $this->render('sertificat',compact('models'));
     }
     /**
      * Displays contact page.
@@ -95,12 +90,10 @@ class SiteController extends Controller
     public function actionCreate()
     {
         $model = new Sertificat();
-        if ($model->load(Yii::$app->request->post())) {
-            $model->name='img/sertificat/'.$model->name;
-            $model->save();
-            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-            $model->upload();
-            return $this->redirect(['sertificat', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->gallery = UploadedFile::getInstances($model,'gallery');
+            $model->uploadGallery();
+            return $this->redirect(['index']);
         }
 
         return $this->render('create', [
@@ -116,10 +109,10 @@ class SiteController extends Controller
     public function actionDelete($id)
     {
         $model = Sertificat::findOne($id);
-        unlink(Yii::getAlias('@webroot') .'/'. $model->name);
+        if($model->getImage()){$model->removeImages();}
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['sertificat']);
     }
     /**
      * Finds the Repairs model based on its primary key value.

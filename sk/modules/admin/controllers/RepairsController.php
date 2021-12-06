@@ -2,16 +2,20 @@
 
 namespace app\modules\admin\controllers;
 
-use app\modules\admin\controllers\AppAdminController;
+use app\models\Complete;
+use app\models\Master;
+use app\models\Material;
 use Yii;
 use app\models\Repairs;
+use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\Response;
 use yii\web\UploadedFile;
 use app\models\RepairsSearch;
 
-class RepairsController extends AppAdminController
+class RepairsController extends AppMasterController
 {
     /**
      * {@inheritdoc}
@@ -36,10 +40,12 @@ class RepairsController extends AppAdminController
     {
         $searchModel = new RepairsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $result = Repairs::find()->orderBy('id DESC')->limit(1)->one();
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'result'=>$result,
         ]);
     }
 
@@ -51,16 +57,72 @@ class RepairsController extends AppAdminController
      */
     public function actionView($id)
     {
+        $complete = Complete::find()->andWhere(['repairs_id'=>$id]);
+        $dataProvider = new ActiveDataProvider([
+            'query' =>$complete,
+        ]);
+        $complete=$complete->all();
+
+        $material = Material::find()->andWhere(['repairs_id'=>$id]);
+        $dataProviderMaterial = new ActiveDataProvider([
+            'query' =>$material,
+        ]);
+        $material=$material->all();
+
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'dataProvider'=>$dataProvider,
+            'dataProviderMaterial'=>$dataProviderMaterial,
+            'complete'=>$complete,
+            'material'=>$material,
         ]);
     }
 
-    /**
-     * Creates a new Repairs model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
+    public function actionCompleteCreate()
+    {
+        if(Yii::$app->request->get('type')=='Материалы')
+        {$model = new Material();}
+        else{$model = new Complete();}
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => Yii::$app->request->get('id')]);
+        }
+        $repairs = Repairs::find()->andWhere(['id'=>Yii::$app->request->get('id')])->all();
+
+        return $this->render('complete/create', [
+            'model' => $model,
+            'repairs'=>$repairs,
+            'type'=>Yii::$app->request->get('type'),
+        ]);
+    }
+    public function actionCompleteUpdate($id)
+    {
+        if(Yii::$app->request->get('type')=='Материалы')
+        {$model = new Material();}
+        else{$model = Complete::findOne($id);}
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => Yii::$app->request->get('repairs_id')]);
+        }
+        $repairs = Repairs::find()->andWhere(['id'=>Yii::$app->request->get('repairs_id')])->all();
+
+        return $this->render('complete/create', [
+            'model' => $model,
+            'repairs'=>$repairs,
+            'type'=>Yii::$app->request->get('type'),
+        ]);
+    }
+    public function actionCompleteDelete($id)
+    {
+        if(Yii::$app->request->get('type')=='Материалы') {
+            if($model = Material::findOne($id)){$model->delete();}
+        }
+        else{
+            if($model = Complete::findOne($id)){$model->delete();}
+        }
+        return $this->redirect(['view', 'id' => Yii::$app->request->get('repairs_id')]);
+    }
+
     public function actionCreate()
     {
         $model = new Repairs();
@@ -76,13 +138,6 @@ class RepairsController extends AppAdminController
         ]);
     }
 
-    /**
-     * Updates an existing Repairs model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
@@ -97,13 +152,6 @@ class RepairsController extends AppAdminController
         ]);
     }
 
-    /**
-     * Deletes an existing Repairs model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionDelete($id)
     {
         $model = $this->findModel($id);
@@ -112,13 +160,6 @@ class RepairsController extends AppAdminController
         return $this->redirect(['index']);
     }
 
-    /**
-     * Deletes an existing Repairs model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionDeleteimg($id,$imgId)
     {
         $model = $this->findModel($id);
@@ -127,7 +168,7 @@ class RepairsController extends AppAdminController
             if ($img->id == $imgId)
             {$model->removeImage($img);break;}
         }
-        return $this->redirect(["/repairs/view", "id" => $id]);
+        return $this->redirect(["view", "id" => $id]);
     }
     public function actionReportReady($id) {
         $content = $this->renderPartial('pdf-ready', [

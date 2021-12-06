@@ -54,8 +54,16 @@ $off = User::find()->where('status=0')->count();
         }return null;
                 }
             ],
-            'created_at:datetime',
-            //'updated_at:datetime',
+            [
+                'attribute'=>'updated_at',
+                'format'=>'datetime',
+                'label'=>'Дата изменения',
+            ],
+            [
+                'attribute'=>'created_at',
+                'format'=>'datetime',
+                'label'=>'Дата создания',
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

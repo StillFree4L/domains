@@ -2,14 +2,13 @@
 
 namespace app\modules\admin\controllers;
 
-use app\modules\admin\controllers\AppAdminController;
 use Yii;
 use app\models\Master;
 use yii\data\ActiveDataProvider;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-class MasterController extends AppAdminController
+class MasterController extends AppMasterController
 {
     /**
      * {@inheritdoc}

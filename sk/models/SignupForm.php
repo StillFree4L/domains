@@ -14,6 +14,7 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
+    public $role;
 
     /**
      * @inheritdoc
@@ -29,9 +30,19 @@ class SignupForm extends Model
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
+            ['role', 'string'],
             ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This email address has already been taken.'],
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+        ];
+    }
+    public function attributeLabels()
+    {
+        return [
+            'username' => 'Логин',
+            'email' => 'E-mail',
+            'role' => 'Роль',
+            'password' => 'Пароль',
         ];
     }
 
@@ -52,7 +63,20 @@ class SignupForm extends Model
         $user->email = $this->email;
         $user->setPassword($this->password);
         $user->generateAuthKey();
-        return $user->save() ? $user : null;
+
+    if($user->save()){
+        $auth = Yii::$app->authManager;
+        if($this->role){
+            $role = $auth->getRole($this->role);
+        }else{
+            $role = $auth->getRole('user');
+        }
+        $auth->assign($role, $user->id);
+
+        return $user;
     }
+    return null;
+    }
+
 
 }

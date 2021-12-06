@@ -156,3 +156,8 @@ INSERT INTO sertificat (name) VALUES ('img/sertificat/sertificat6.jpeg');
 
 php yii migrate
 php yii migrate/up --migrationPath=@vendor/costa-rico/yii2-images/migrations
+php yii migrate/up --migrationPath=@vendor/lav45/yii2-activity-logger/migrations
+php yii migrate --migrationPath=@yii/rbac/migrations/
+php yii rbac-start/init
+
+admin admin2709

@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
             <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
         </div>
         <div class="form-group">
-            <?= $form->field($model, 'imageFile')->fileInput() ?>
+            <?= $form->field($model, 'gallery[]')->fileInput(['multiple' => true, 'accept' => 'image/*']) ?>
         </div>
 
             <div class="text-center"><?= Html::submitButton('Сохранить') ?></div>

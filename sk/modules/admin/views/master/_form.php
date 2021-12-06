@@ -19,7 +19,8 @@ use yii\widgets\ActiveForm;
             <?= $form->field($model, 'date')->textInput(['type' => 'date']) ?>
         </div>
         <div class="form-group">
-    <?= $form->field($model, 'role')->dropDownList([
+            <?= $form->field($model, 'role')->textInput(['maxlength' => true]) ?>
+    <?php /*$form->field($model, 'role')->dropDownList([
         'Инженер сервиса'=>'Инженер сервиса',
         'Инженер сервиса рем сотовых устр'=>'Монтажник',
         'Инженер СБ'=>'Инженер СБ',
@@ -27,7 +28,7 @@ use yii\widgets\ActiveForm;
         'Монтажник'=>'Монтажник',
         'Главный инженер'=>'Главный инженер',
 
-    ]) ?>
+    ]) */ ?>
         </div>
 
             <div class="text-center"><?= Html::submitButton('Сохранить') ?></div>

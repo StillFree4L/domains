@@ -10,8 +10,6 @@ use \app\models\Repairs;
 
 $this->title = 'Заказы';
 $this->params['breadcrumbs'][] = $this->title;
-
-$result = Repairs::find()->orderBy('id DESC')->one();
 ?>
 <!--==========================
   Repairs Section
@@ -25,8 +23,14 @@ $result = Repairs::find()->orderBy('id DESC')->one();
             <div class="form">
                 <form action="" method="post" role="form" class="contactForm">
                     <input type="hidden" name="<?=Yii::$app->request->csrfParam; ?>" value="<?=Yii::$app->request->getCsrfToken(); ?>" />
-
-                    <div class="text-center"><?= Html::a('Создать заказ', ['create'], ['class' => 'btn btn-success']) ?></div><br>
+                    <?php if(\Yii::$app->user->can('master')):?>
+                    <div class="text-center">
+                        <?= Html::a('Создать заказ', ['create'], ['class' => 'btn btn-success']) ?>
+                        <?= Html::a('Результаты', ['results/index'], ['class' => 'btn btn-success']) ?>
+                        <?= Html::a('Услуги', ['services/index'], ['class' => 'btn btn-success']) ?>
+                    </div>
+                        <br>
+                    <?php endif;?>
                     <?php if($result != null): ?>
                     <div class="text-center">Поледний заказ пришел от <?=$result->client ?>  на сумму <?=$result->money ?> </div>
                     <?php endif; ?>
@@ -35,7 +39,7 @@ $result = Repairs::find()->orderBy('id DESC')->one();
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'rowOptions' => function($model, $key, $index, $grid) {
-            return ['class' => $model->result_name === 'Завершен' ? 'table-success' : ($model->result_name === 'Отказ от услуг' ? 'table-danger' : 'table-warning')];
+            return ['class' => 'table-success'];
         },
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
@@ -49,17 +53,30 @@ $result = Repairs::find()->orderBy('id DESC')->one();
             //'equipment',
             //'serial_id',
             //'facilities',
-            //'problem',
+            'problem',
             'username',
             'money',
             'result_name',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                    'class' => 'yii\grid\ActionColumn',
+                'visibleButtons' => [
+                        'delete' => function ($model, $key, $index) {
+                            if(\Yii::$app->user->can('master')){return $model;}
+                    },
+                    'view' => function ($model, $key, $index) {
+                            if(\Yii::$app->user->can('master')){return $model;}
+                    },
+                    'update' => function ($model, $key, $index) {
+                            if(\Yii::$app->user->can('master')){return $model;}
+                    }
+                ]
+            ],
         ],
     ]); ?>
                     </div>
                 </form>
             </div>
         </div>
-    </section><!-- #contact -->
+    </section>
 </main>
