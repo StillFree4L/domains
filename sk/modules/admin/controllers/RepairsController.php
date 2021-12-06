@@ -5,6 +5,7 @@ namespace app\modules\admin\controllers;
 use app\models\Complete;
 use app\models\Master;
 use app\models\Material;
+use app\models\Services;
 use Yii;
 use app\models\Repairs;
 use yii\data\ActiveDataProvider;
@@ -81,34 +82,46 @@ class RepairsController extends AppMasterController
     public function actionCompleteCreate()
     {
         if(Yii::$app->request->get('type')=='Материалы')
-        {$model = new Material();}
-        else{$model = new Complete();}
+        {
+            $model = new Material();
+        }
+        else{
+            $model = new Complete();
+        }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => Yii::$app->request->get('id')]);
         }
         $repairs = Repairs::find()->andWhere(['id'=>Yii::$app->request->get('id')])->all();
+        $services = Services::find()->all();
 
         return $this->render('complete/create', [
             'model' => $model,
             'repairs'=>$repairs,
+            'services'=>$services,
             'type'=>Yii::$app->request->get('type'),
         ]);
     }
     public function actionCompleteUpdate($id)
     {
         if(Yii::$app->request->get('type')=='Материалы')
-        {$model = new Material();}
-        else{$model = Complete::findOne($id);}
+        {
+            $model = new Material();
+        }
+        else{
+            $model = Complete::findOne($id);
+        }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => Yii::$app->request->get('repairs_id')]);
         }
         $repairs = Repairs::find()->andWhere(['id'=>Yii::$app->request->get('repairs_id')])->all();
+        $services = Services::find()->all();
 
         return $this->render('complete/create', [
             'model' => $model,
             'repairs'=>$repairs,
+            'services'=>$services,
             'type'=>Yii::$app->request->get('type'),
         ]);
     }
@@ -171,8 +184,12 @@ class RepairsController extends AppMasterController
         return $this->redirect(["view", "id" => $id]);
     }
     public function actionReportReady($id) {
+
+        $materials = Complete::find()->andWhere(['repairs_id'=>$id])->all();
+
         $content = $this->renderPartial('pdf-ready', [
             'model' => $this->findModel($id),
+            'materials'=>$materials,
         ]);
         $pdf = new \kartik\mpdf\Pdf([
             'mode' => \kartik\mpdf\Pdf::MODE_UTF8, // leaner size using standard fonts
@@ -194,8 +211,14 @@ class RepairsController extends AppMasterController
         return $pdf->render();
     }
     public function actionReportApp($id) {
+
+        $completes = Complete::find()->andWhere(['repairs_id'=>$id])->all();
+        $materials = Material::find()->andWhere(['repairs_id'=>$id])->all();
+
         $content = $this->renderPartial('pdf-app', [
             'model' => $this->findModel($id),
+            'materials'=>$materials,
+            'completes'=>$completes,
         ]);
         $pdf = new \kartik\mpdf\Pdf([
             'mode' => \kartik\mpdf\Pdf::MODE_UTF8, // leaner size using standard fonts

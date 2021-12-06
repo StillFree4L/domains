@@ -69,14 +69,14 @@ $this->params['breadcrumbs'][] = $this->title;
     <section id="contact" class="section-bg wow fadeInUp">
         <div class="container">
             <div class="section-header">
-                <h3>Комплектующие</h3>
+                <h3>Услуги</h3>
             </div>
             <div class="form">
                 <form action="" method="post" role="form" class="contactForm">
                     <input type="hidden" name="<?=Yii::$app->request->csrfParam; ?>" value="<?=Yii::$app->request->getCsrfToken(); ?>" />
                     <?php if(\Yii::$app->user->can('master')):?>
                         <div class="text-center">
-                            <?= Html::a('Добавить', ['complete-create','id' => $model->id,'type'=>'Комплектующие'], ['class' => 'btn btn-success']) ?>
+                            <?= Html::a('Добавить', ['complete-create','id' => $model->id,'type'=>'Услуги'], ['class' => 'btn btn-success']) ?>
                         </div>
                         <br>
                     <?php endif;?>
@@ -105,10 +105,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                     'class' => 'yii\grid\ActionColumn','template'=>'{update} {delete}',
                                     'urlCreator' => function ($action, $model, $key, $index) use ($m) {
                                         if ($action === 'update') {
-                                            return Url::to(['complete-update', 'id' => $model->id,'repairs_id'=>$m,'type'=>'Комплектующие']);
+                                            return Url::to(['complete-update', 'id' => $model->id,'repairs_id'=>$m,'type'=>'Услуги']);
                                         }
                                         if ($action === 'delete') {
-                                            return Url::to(['complete-delete', 'id' => $model->id,'repairs_id'=>$m,'type'=>'Комплектующие']);
+                                            return Url::to(['complete-delete', 'id' => $model->id,'repairs_id'=>$m,'type'=>'Услуги']);
                                         }
                                     }
                                 ],

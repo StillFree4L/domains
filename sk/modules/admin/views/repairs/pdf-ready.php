@@ -27,14 +27,22 @@
         <td style="border: 1px solid #000;border-top: 3px solid #000;border-bottom: 2px solid #000;">Цена</td>
         <td style="border: 1px solid #000;border-top: 3px solid #000;border-right: 3px solid #000;border-bottom: 2px solid #000;">Сумма</td>
     </tr>
+    <?php
+    $price=0;$i=0;
+    foreach ($materials as $material){
+        $price+=$material->price;
+    }
+    ?>
+    <?php foreach ($materials as $material){$i++;?>
     <tr>
-        <td style="border: 1px solid #000;border-top: 1px solid #000;border-left: 3px solid #000;border-bottom: 0px solid #000;">1</td>
-        <td style="border: 1px solid #000;border-top: 1px solid #000;border-bottom: 0px solid #000;text-align: center;"><?= $model->service_name ?></td>
-        <td style="border: 1px solid #000;border-top: 1px solid #000;border-bottom: 0px solid #000;text-align: center;">1</td>
+        <td style="border: 1px solid #000;border-top: 1px solid #000;border-left: 3px solid #000;border-bottom: 0px solid #000000;"><?= $i?></td>
+        <td style="border: 1px solid #000;border-top: 1px solid #000;border-bottom: 0px solid #000;text-align: left;"><?= $material->name ?></td>
+        <td style="border: 1px solid #000;border-top: 1px solid #000;border-bottom: 0px solid #000;text-align: center;"><?= $material->number ?></td>
         <td style="border: 1px solid #000;border-top: 1px solid #000;border-bottom: 0px solid #000;text-align: center;"></td>
-        <td style="border: 1px solid #000;border-top: 1px solid #000;border-bottom: 0px solid #000;text-align: center;"><?= $model->money ?></td>
-        <td style="border: 1px solid #000;border-top: 1px solid #000;border-right: 3px solid #000;border-bottom: 0px solid #000;text-align: center;"><?= $model->money ?></td>
+        <td style="border: 1px solid #000;border-top: 1px solid #000;border-bottom: 0px solid #000;text-align: center;"><?= $material->price ?></td>
+        <td style="border: 1px solid #000;border-top: 1px solid #000;border-right: 3px solid #000;border-bottom: 0px solid #000;text-align: center;"><?= $price ?></td>
     </tr>
+    <?php }?>
     <tr>
         <td colspan="6" style="border-top: 3px solid #000;"></td>
     </tr>
@@ -43,17 +51,17 @@
     </tr><br><br>
     <tr>
         <td colspan="5" style="font-weight: bold;text-align: right;">Итого:</td>
-        <td style="font-weight: bold;text-align: right;"><?= $model->money ?></td>
+        <td style="font-weight: bold;text-align: right;"><?= $price ?></td>
     </tr>
     <tr>
         <td colspan="5" style="font-weight: bold;text-align: right;">В том числе НДС:</td>
-        <td style="font-weight: bold;text-align: right;"><?= (int)(($model->money)/8.3) ?></td>
+        <td style="font-weight: bold;text-align: right;"><?= (int)(($price)/8.3) ?></td>
     </tr>
     <tr height="15px;">
         <td colspan="6"></td>
     </tr><br><br><br>
     <tr>
-        <td colspan="6">Всего оказано услуг 1, на сумму <?= $model->money ?> ТГ</td>
+        <td colspan="6">Всего оказано услуг <?=count($materials)?>, на сумму <?= $price ?> ТГ</td>
     </tr>
     <tr height="15px;">
         <td colspan="6"></td>

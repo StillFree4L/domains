@@ -39,7 +39,7 @@
         <td style="border: 1px solid #000;border-top: 3px solid #000;border-bottom: 2px solid #000;">Серийный Номер</td>
     </tr>
     <tr>
-        <td colspan="5" style="border: 1px solid #000;border-top: 1px solid #000;border-left: 3px solid #000;border-bottom: 0px solid #000;"><?= $model->service_name ?></td>
+        <td colspan="5" style="border: 1px solid #000;border-top: 1px solid #000;border-left: 3px solid #000;border-bottom: 0px solid #000;"><?= $model->equipment ?></td>
         <td style="border: 1px solid #000;border-top: 1px solid #000;border-bottom: 0px solid #000;"><?= $model->serial_id ?></td>
     </tr>
     <tr>
@@ -60,7 +60,7 @@
         <td colspan="6" style="border: 1px solid #000;border-top: 3px solid #000;border-left: 3px solid #000;border-bottom: 2px solid #000;">Сопутствующие комплектующие:</td>
     </tr>
     <tr>
-        <td colspan="6" style="border: 1px solid #000;border-top: 1px solid #000;border-left: 3px solid #000;border-bottom: 0px solid #000;"><br></td>
+        <td colspan="6" style="border: 1px solid #000;border-top: 1px solid #000;border-left: 3px solid #000;border-bottom: 0px solid #000;"><?= $model->facilities ?></td>
     </tr>
     <tr>
         <td colspan="6" style="border-top: 3px solid #000;"></td>

@@ -10,7 +10,14 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
     <form role="form" class="contactForm">
         <div class="form-group">
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?php
+    if(Yii::$app->request->get('type')=='Материалы'){
+        echo $form->field($model, 'name')->textInput(['maxlength' => true]);
+    }
+    else{
+        echo $form->field($model, 'name')->dropDownList(ArrayHelper::map($services,'service','service'),['prompt' => 'Укажите услугу...']);
+    }
+    ?>
         </div>
         <div class="form-group">
             <?= $form->field($model, 'number')->textInput(['type' => 'number']) ?>

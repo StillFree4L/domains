@@ -17,7 +17,7 @@ $this->title = $type;
                 <h3><?= Html::encode($this->title) ?></h3>
             </div>
             <div class="form">
-                <?= $this->render('_form', compact('model','repairs')) ?>
+                <?= $this->render('_form', compact('model','repairs','services')) ?>
             </div>
         </div>
     </section><!-- #contact -->
