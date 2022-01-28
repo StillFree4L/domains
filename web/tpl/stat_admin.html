@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$title$}--></title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<!--[if lte IE 6]><script type="text/javascript" src="js/iepngfix_tilebg.js"></script><![endif]-->
+<!--[if lte IE 6]><script language="JavaScript" type="text/javascript" src="js/ie.js"></script><![endif]-->
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="js/main1.js"></script>
+</head>
+<body>
+<div id="container">
+	<div class="main-indent">
+		<div class="header">
+			<h1><!--{$title$}--></h1>
+			<ul class="menu"><li><span style="font-size: 32px;top: -22px;position: relative;">China</span></li>
+              <li><a href="admin.php"><img src="img/menu5.png" width="32" height="36" alt=" " /> <span>Главная</span></a></li>
+              <li class="active"><a href="stat.php"><img src="img/menu1.png" width="32" height="36" alt=" " /> <span>Статистика</span></a></li>    
+              <li><a href="setup.php"><img src="img/menu6.png" width="32" height="36" alt=" " /> <span>Настройки</span></a></li>  
+			</ul>
+			<!-- end .menu-->
+                <div class="user-block"> <strong><!--{$login$}--></strong><br />
+				<a href="login.php?logout">выход</a> </div>
+			<!-- end .user-block-->
+		</div>
+		<!-- end .header-->
+		<div class="content">
+			<!--<div class="path"><a href="#">Главная</a> <span>→</span> Проекты</div>-->
+			
+          <div class="clearfloat"></div>
+
+
+<div><font style="color: red; size: 12pt"><!--{$error$}--></font></div>
+
+<form action="" method="post" enctype="multipart/form-data">
+<table width="100%">
+<tr>
+          <td align="left" valign="top">
+                <table width="400" border="1">
+                    <tr><td align="left" width="300"><b>Всего:</b></td><td align="left" style="padding-left: 10px;"><!--{$resume.total$}--></td></tr>
+                    <tr><td align="left" width="300"><b>Сегодня добавлено:</b></td><td align="left" style="padding-left: 10px;"><!--{$resume.daily$}--></td></tr>
+                    <tr><td align="left" width="300"><b>За текущую неделю:</b></td><td align="left" style="padding-left: 10px;"><!--{$resume.this_week$}--></td></tr>
+                    <tr><td align="left" width="300"><b>За прошлую неделю:</b></td><td align="left" style="padding-left: 10px;"><!--{$resume.last_week$}--></td></tr>
+                    <tr><td align="left" width="300"><b>Статистика за последние:</b></td><td align="left" style="padding-left: 10px;"><!--{$count_days$}--> дней</td></tr>
+                </table>
+          </td>
+          <td align="right" valign="bottom">
+                За&nbsp;(дней):&nbsp;<input type="number" id="delete_count_days" name="delete_count_days" style="width: 50px;" placeholder="дней" />
+                <input type="button" name="db_clear" id="db_clear" value="Очистить статистику" align="center"  onclick="if(confirm('Очистить базу?')){location.href='stat.php?db_clear=1&delete_count_days='+$('#delete_count_days').val()};" class="search-button" />
+          </td>
+</tr>
+</table>
+</form>
+
+        <form action="admin.php" method="post">
+
+		<table width="100%" class="table">
+		<tbody><tr>
+            <th style="text-align: center;" width="120">Дата</th>
+            <th width="150">Профиль</th>
+            <th>Сообщение</th>
+            <th>info</th>
+            </tr>
+            
+            <!--{$db_data$}-->
+            
+        </tbody>
+        </table>
+    
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tbody>
+        <tr>
+          <td align="left"><br />
+            <input name="find_txt" type="text" class="search-input" id="find_txt" title="текст для поиска" value="<!--{$find_txt$}-->"><input name="find" id="find" value="Поиск" class="search-button" type="submit"> <input name="index" id="index" value="Сбросить фильтр" class="search-button" style="display: <!--{$reset_filtr_display$}-->;" onclick="location.href='admin.php'" type="button">
+          </td>
+          <td align="right" style="padding-top: 10px;">
+                <select name="page_str" id="page_str"  title="Кол-во строк на странице">
+                <option value="25">25</option>
+                <!--{$page_str_list$}-->
+                </select>
+          </td>
+        </tr>
+        </tbody>
+    </table>
+    
+    </form>
+    <br />
+    
+    <!--{$pager$}-->
+
+		<!-- end .content-->
+		<div class="footer-place"></div>
+	</div>
+</div>
+</div>
+<!-- end #container-->
+<div class="footer"><strong><!--{$copyright$}--></strong></div>
+<!-- end .footer-->
+</body>
+</html>

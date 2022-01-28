@@ -90,11 +90,11 @@ class SiteController extends Controller
     public function actionCreate()
     {
         $model = new Sertificat();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+       /* if ($model->load(Yii::$app->request->post()) && $model->save()) {
             $model->gallery = UploadedFile::getInstances($model,'gallery');
             $model->uploadGallery();
             return $this->redirect(['index']);
-        }
+        }*/
 
         return $this->render('create', [
             'model' => $model,

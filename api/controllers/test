@@ -1,0 +1,14 @@
+$query->entity=Yii::$app->request->post('entity');
+$query->inn=Yii::$app->request->post('inn');
+$query->link=Yii::$app->request->post('link');
+$query->email=Yii::$app->request->post('email');
+$query->tel=Yii::$app->request->post('tel');
+$query->region=Yii::$app->request->post('region');
+$query->address=Yii::$app->request->post('address');
+$query->category=Yii::$app->request->post('category');
+$query->year_Foundation=Yii::$app->request->post('year_Foundation');
+$query->number_Employees=Yii::$app->request->post('number_Employees');
+$query->sales=Yii::$app->request->post('sales');
+$query->image_URL=Yii::$app->request->post('image_URL');
+$query->id_Product=Yii::$app->request->post('id_Product');
+$query->id_Decision_card=Yii::$app->request->post('id_Decision_card');

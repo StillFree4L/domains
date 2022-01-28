@@ -1,0 +1,132 @@
+
+.skills{
+    display: flex;
+}
+.skills_photo-wrapper{
+     flex-shrink: 0;
+     padding-right: 100px;
+     width: 40%;
+ }
+.skills_list{
+     flex: 1;
+     list-style-type: none;
+ }
+.skills-list_item:not(:last-child){
+    margin-bottom: 20px;
+}
+.skills-list_item:first-child{
+    margin-bottom: 60px;
+}
+.skills-list_item{
+     display: flex;
+ }
+.skills-list_key{
+     flex-shrink: 0;
+     padding-right: 10px;
+     width: 200px;
+ }
+.skills-list_label{
+     font-weight: 600;
+ }
+
+.light-bg{
+    background-color: #FFFAF2;
+}
+header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+h2{
+    font-size: 24px;
+    line-height: 1.3;
+    color: #333333;
+    margin-bottom: 75px;
+}
+p{
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333333;
+    text-align: justify;
+}
+p+p{
+    margin-top: 30px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.3;
+    color: #FFFFFF;
+}
+.header_title{
+    font-size: 24px;
+    font-weight: 600;
+
+}
+.main-nav_list{
+    display: flex;
+    list-style-type: none;
+}
+.main-nav_item:not(:last-child) {
+    margin-right: 60px;
+}
+.banner{
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+.banner_title{
+    font-size: 64px;
+    margin-bottom: 25px;
+}
+.banner_descr{
+    font-size: 24px;
+    margin-bottom: 105px;
+}
+.banner_link{
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.main-nav_link{
+    color: #FFFFFF;
+    font-size: 18px;
+    display: block;
+    text-decoration: none;
+}
+.main-nav_link:hover{
+    text-decoration: underline;
+}
+
+section{
+    padding:  90px 0 145px;
+    position: relative;
+}
+
+.s-banner{
+    background-image: url("./img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 768px;
+    padding-top: 267;
+}
+.s-banner:after {
+    content: '';
+    background: rgba(198, 108, 73, 0.3);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    position: absolute;
+    z-index: 0;
+}
+.container{
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0 165px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}

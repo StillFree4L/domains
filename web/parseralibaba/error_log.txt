@@ -1,0 +1,1444 @@
+[22-Sep-2021 11:00:48 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\JsonWireCompat::getElement() must be of the type array, null given, called in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php on line 215 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php:21
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(215): Facebook\WebDriver\Remote\JsonWireCompat::getElement(NULL)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverExpectedCondition.php(176): Facebook\WebDriver\Remote\RemoteWebDriver->findElement(Object(Facebook\WebDriver\WebDriverBy))
+#2 [internal function]: Facebook\WebDriver\WebDriverExpectedCondition::Facebook\WebDriver\{closure}(Object(Facebook\WebDriver\Remote\RemoteWebDriver))
+#3 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverWait.php(54): call_user_func(Object(Clos in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php on line 21
+[22-Sep-2021 11:28:57 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=93.0.4577.82) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(251): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[22-Sep-2021 11:30:07 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=93.0.4577.82) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:121
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('no such window', 'no such window:...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(251): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www. in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 121
+[22-Sep-2021 11:49:53 GMT] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:251
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(238): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(92): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 251
+[22-Sep-2021 12:03:37 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=93.0.4577.82) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(255): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[22-Sep-2021 12:05:42 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=93.0.4577.82) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(255): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[22-Sep-2021 12:17:24 GMT] PHP Fatal error:  require(): Failed opening required 'D:\ftp\parser_v1\web\parseralibaba/data/categories.php' (include_path='.;C:\php\pear;D:\ftp\parser_v1\web\parseralibaba/phpQuery/;D:\ftp\parser_v1\web\parseralibaba/phpQuery/plugins/') in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 133
+[22-Sep-2021 12:21:52 GMT] PHP Parse error:  syntax error, unexpected '[', expecting ']' in D:\ftp\parser_v1\web\data\categories.php on line 25
+[26-Sep-2021 09:58:46 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'not null' at line 1 in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4021
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4021): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3824): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(97): main\DatabasePerform::Execute('UPDATE `parser_...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4021
+[26-Sep-2021 10:02:29 GMT] PHP Fatal error:  Uncaught Error: Call to undefined function execute() in D:\ftp\parser_v1\web\parseralibaba\exec.php:652
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(281): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(102): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 652
+[26-Sep-2021 10:03:35 GMT] PHP Fatal error:  Uncaught Error: Call to undefined function execute() in D:\ftp\parser_v1\web\parseralibaba\exec.php:652
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(281): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(102): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 652
+[26-Sep-2021 10:11:47 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=93.0.4577.82) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(294): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[26-Sep-2021 11:34:46 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\JsonWireCompat::getElement() must be of the type array, null given, called in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php on line 215 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php:21
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(215): Facebook\WebDriver\Remote\JsonWireCompat::getElement(NULL)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverExpectedCondition.php(176): Facebook\WebDriver\Remote\RemoteWebDriver->findElement(Object(Facebook\WebDriver\WebDriverBy))
+#2 [internal function]: Facebook\WebDriver\WebDriverExpectedCondition::Facebook\WebDriver\{closure}(Object(Facebook\WebDriver\Remote\RemoteWebDriver))
+#3 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverWait.php(54): call_user_func(Object(Clos in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php on line 21
+[26-Sep-2021 11:38:59 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=93.0.4577.82) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(296): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[28-Sep-2021 13:11:01 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=94.0.4606.61) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\ex in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[28-Sep-2021 13:21:21 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=94.0.4606.61) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:121
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('no such window', 'no such window:...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(668): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www. in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 121
+[28-Sep-2021 13:24:41 GMT] PHP Fatal error:  Uncaught PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo failed: пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.  in D:\ftp\parser_v1\web\parseralibaba\Parser.php:3758
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3758): PDO->__construct('mysql:host=v632...', 'v63216hf_t2', 'dcnScNWG*BK2*Sv', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3851): main\DatabaseHandler::GetHandler('mysql')
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(72): main\DatabasePerform::GetAll('SELECT * FROM `...', Array)
+#3 {main}
+
+Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Этот хост неизвестен.  in D:\ftp\parser_v1\web\parseralibaba\Parser.php:3758
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3758): PDO->__construct('mysql:host=v632...', 'v63216hf_t2', 'dcnScNWG*BK2*Sv', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3851): main\DatabaseHandler::GetHandler('mysql')
+#2 D:\ftp\parser_v1\web\parseralibaba\exec in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 3758
+[28-Sep-2021 13:39:43 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=94.0.4606.61) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(362): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[28-Sep-2021 17:48:34 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\WebDriverCurlException: Curl error thrown for http POST to /session/b9fe04e903e87e9f1bde860dffd554e1/url with params: {"url":"https://www.alibaba.com/trade/search?IndexArea=product_en&CatId=5&SearchText=Num&moqt=10&f0=y&pricef=49,2&pricet=164&Country=CN"}
+
+Operation timed out after 130012 milliseconds with 0 bytes received in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php:332
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(386): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#3 D:\ftp\parser_v1\web\parseralib in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php on line 332
+[28-Sep-2021 17:51:08 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\WebDriverCurlException: Curl error thrown for http POST to /session/5a3dc690f33b1056b94ae7937eff012d/url with params: {"url":"https://www.alibaba.com/trade/search?IndexArea=product_en&CatId=5&SearchText=Num&moqt=10&f0=y&pricef=49,2&pricet=164&Country=CN"}
+
+Operation timed out after 130012 milliseconds with 0 bytes received in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php:332
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(386): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#3 D:\ftp\parser_v1\web\parseralib in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php on line 332
+[28-Sep-2021 17:53:55 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\WebDriverCurlException: Curl error thrown for http POST to /session/0c837d54b748ea5308e6bfa270b158dd/url with params: {"url":"https://www.alibaba.com/trade/search?IndexArea=product_en&CatId=5&SearchText=Num&moqt=10&f0=y&pricef=49,2&pricet=164&Country=CN"}
+
+Operation timed out after 130012 milliseconds with 0 bytes received in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php:332
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(386): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#3 D:\ftp\parser_v1\web\parseralib in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php on line 332
+[28-Sep-2021 17:56:49 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\WebDriverCurlException: Curl error thrown for http POST to /session/304f5ac59f99ee503963adf7e6458c4d/url with params: {"url":"https://www.alibaba.com/trade/search?IndexArea=product_en&CatId=5&SearchText=Num&moqt=10&f0=y&pricef=49,2&pricet=164&Country=CN"}
+
+Operation timed out after 130011 milliseconds with 0 bytes received in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php:332
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(386): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#3 D:\ftp\parser_v1\web\parseralib in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php on line 332
+[28-Sep-2021 17:59:43 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\WebDriverCurlException: Curl error thrown for http POST to /session/9f68f554b849bde2abd90919ec973a61/url with params: {"url":"https://www.alibaba.com/trade/search?IndexArea=product_en&CatId=5&SearchText=Num&moqt=10&f0=y&pricef=49,2&pricet=164&Country=CN"}
+
+Operation timed out after 130011 milliseconds with 0 bytes received in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php:332
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(386): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#3 D:\ftp\parser_v1\web\parseralib in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php on line 332
+[28-Sep-2021 18:02:56 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\WebDriverCurlException: Curl error thrown for http POST to /session/3eab6c23318f0c40010950577f29395d/url with params: {"url":"https://www.alibaba.com/trade/search?IndexArea=product_en&CatId=5&SearchText=Num&moqt=10&f0=y&pricef=49,2&pricet=164&Country=CN"}
+
+Operation timed out after 130011 milliseconds with 0 bytes received in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php:332
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(386): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#3 D:\ftp\parser_v1\web\parseralib in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php on line 332
+[28-Sep-2021 18:09:47 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\WebDriverCurlException: Curl error thrown for http POST to /session/5ddb3936fc8ada610bfc8c60c9e95449/url with params: {"url":"https://www.alibaba.com/trade/search?IndexArea=product_en&CatId=5&SearchText=Num&moqt=10&f0=y&pricef=49,2&pricet=164&Country=CN"}
+
+Operation timed out after 130012 milliseconds with 0 bytes received in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php:332
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(386): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#3 D:\ftp\parser_v1\web\parseralib in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php on line 332
+[30-Sep-2021 15:14:49 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parse_at' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4021
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4021): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3936): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(699): main\DatabasePerform::GetOne('SELECT count(*)...', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(370): parseUrls(Array)
+#4 D:\ftp\parser_v1\web\parseralibaba\exec.php(104): parseRows(Array)
+#5 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4021
+[30-Sep-2021 15:16:09 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parse_at' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4021
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4021): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3936): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(699): main\DatabasePerform::GetOne('SELECT count(*)...', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(370): parseUrls(Array)
+#4 D:\ftp\parser_v1\web\parseralibaba\exec.php(104): parseRows(Array)
+#5 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4021
+[30-Sep-2021 15:34:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function cmdexec() in D:\ftp\parser_v1\web\parseralibaba\exec.php:16
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 16
+[30-Sep-2021 15:58:59 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4021
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4021): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3824): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(1008): main\DatabasePerform::Execute('INSERT INTO `pa...', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(983): saveRows(Array)
+#4 D:\ftp\parser_v1\web\parseralibaba\exec.php(441): parseUrls(Array)
+#5 D:\ftp\parser_v1\web\parseralibaba\exec.php(105): parseRows(Array)
+#6 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4021
+[30-Sep-2021 16:01:37 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4021
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4021): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3824): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(1008): main\DatabasePerform::Execute('INSERT INTO `pa...', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(983): saveRows(Array)
+#4 D:\ftp\parser_v1\web\parseralibaba\exec.php(441): parseUrls(Array)
+#5 D:\ftp\parser_v1\web\parseralibaba\exec.php(105): parseRows(Array)
+#6 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4021
+[04-Oct-2021 18:08:21 GMT] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in D:\ftp\parser_v1\web\parseralibaba\functions.php on line 109
+[04-Oct-2021 18:36:28 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'results' in 'field list' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4021
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4021): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3824): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(247): main\DatabasePerform::Execute('UPDATE `parser_...', Array)
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4021
+[04-Oct-2021 18:37:55 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'results' in 'field list' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4021
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4021): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3824): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(247): main\DatabasePerform::Execute('UPDATE `parser_...', Array)
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4021
+[04-Oct-2021 18:47:01 GMT] PHP Fatal error:  Uncaught Error: Cannot increment/decrement string offsets in D:\ftp\parser_v1\web\parseralibaba\sync.php:172
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\sync.php on line 172
+[04-Oct-2021 18:48:27 GMT] PHP Fatal error:  Uncaught Error: Cannot increment/decrement string offsets in D:\ftp\parser_v1\web\parseralibaba\sync.php:172
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\sync.php on line 172
+[04-Oct-2021 18:50:49 GMT] PHP Fatal error:  Uncaught Error: [] operator not supported for strings in D:\ftp\parser_v1\web\parseralibaba\sync.php:179
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\sync.php on line 179
+[04-Oct-2021 18:51:36 GMT] PHP Fatal error:  Uncaught Error: [] operator not supported for strings in D:\ftp\parser_v1\web\parseralibaba\sync.php:179
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\sync.php on line 179
+[04-Oct-2021 18:53:26 GMT] PHP Fatal error:  Uncaught Error: [] operator not supported for strings in D:\ftp\parser_v1\web\parseralibaba\sync.php:216
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\sync.php on line 216
+[12-Oct-2021 10:20:47 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=94.0.4606.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(494): Facebook\WebDriver\Remote\RemoteWebDriv in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[12-Oct-2021 11:24:38 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from disconnected: not connected to DevTools
+  (Session info: chrome=94.0.4606.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(494): Facebook\WebDriver\Remote\RemoteWebDriver->get('https in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[15-Oct-2021 10:45:26 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=94.0.4606.81) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(495): Facebook\WebDriver\Remote\RemoteWebDriver->ge in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[19-Oct-2021 17:35:26 GMT] PHP Fatal error:  Uncaught Error: Cannot pass parameter 1 by reference in D:\ftp\parser_v1\web\parseralibaba\sync.php:71
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\sync.php on line 71
+[19-Oct-2021 17:35:33 GMT] PHP Fatal error:  Uncaught Error: Cannot pass parameter 1 by reference in D:\ftp\parser_v1\web\parseralibaba\sync.php:71
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\sync.php on line 71
+[19-Oct-2021 17:36:14 GMT] PHP Fatal error:  Uncaught PHPExcel_Reader_Exception: Could not open D:\ftp\parser_v1\web\parseralibaba/data/Categories.Tree.xlsx for reading! File does not exist. in D:\ftp\parser_v1\web\lib\PHPExcel\Reader\Excel2007.php:73
+Stack trace:
+#0 D:\ftp\parser_v1\web\lib\PHPExcel\IOFactory.php(269): PHPExcel_Reader_Excel2007->canRead('D:\\ftp\\parser_v...')
+#1 D:\ftp\parser_v1\web\lib\PHPExcel\IOFactory.php(191): PHPExcel_IOFactory::createReaderForFile('D:\\ftp\\parser_v...')
+#2 D:\ftp\parser_v1\web\lib\function.php7.php(76): PHPExcel_IOFactory::load('D:\\ftp\\parser_v...')
+#3 D:\ftp\parser_v1\web\parseralibaba\functions.php(6): xls2arr('D:\\ftp\\parser_v...')
+#4 D:\ftp\parser_v1\web\parseralibaba\sync.php(81): isSuccessDataAlibaba(Array)
+#5 {main}
+  thrown in D:\ftp\parser_v1\web\lib\PHPExcel\Reader\Excel2007.php on line 73
+[20-Oct-2021 11:41:13 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\JsonWireCompat::getElement() must be of the type array, null given, called in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebElement.php on line 105 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php:21
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebElement.php(105): Facebook\WebDriver\Remote\JsonWireCompat::getElement(NULL)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(588): Facebook\WebDriver\Remote\RemoteWebElement->findElement(Object(Facebook\WebDriver\WebDriverBy))
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(480): parseUrls(Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(120): parseRows(Array)
+#4 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php on line 21
+[20-Oct-2021 11:42:26 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\JsonWireCompat::getElement() must be of the type array, null given, called in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebElement.php on line 105 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php:21
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebElement.php(105): Facebook\WebDriver\Remote\JsonWireCompat::getElement(NULL)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(621): Facebook\WebDriver\Remote\RemoteWebElement->findElement(Object(Facebook\WebDriver\WebDriverBy))
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(480): parseUrls(Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(120): parseRows(Array)
+#4 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php on line 21
+[20-Oct-2021 14:33:20 GMT] PHP Fatal error:  Uncaught Error: Call to a member function quit() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:1059
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1059
+[21-Oct-2021 07:38:35 UTC] PHP Warning:  session_start(): Cannot send session cookie - headers already sent in D:\ftp\parser_v1\web\parseralibaba\sync.php on line 17
+[21-Oct-2021 07:38:35 UTC] PHP Stack trace:
+[21-Oct-2021 07:38:35 UTC] PHP   1. {main}() D:\ftp\parser_v1\web\parseralibaba\sync.php:0
+[21-Oct-2021 07:38:35 UTC] PHP   2. session_start() D:\ftp\parser_v1\web\parseralibaba\sync.php:17
+[21-Oct-2021 07:38:35 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent in D:\ftp\parser_v1\web\parseralibaba\sync.php on line 17
+[21-Oct-2021 07:38:35 UTC] PHP Stack trace:
+[21-Oct-2021 07:38:35 UTC] PHP   1. {main}() D:\ftp\parser_v1\web\parseralibaba\sync.php:0
+[21-Oct-2021 07:38:35 UTC] PHP   2. session_start() D:\ftp\parser_v1\web\parseralibaba\sync.php:17
+[21-Oct-2021 11:38:36 Europe/Moscow] PHP Parse error:  syntax error, unexpected ':', expecting '{' in D:\ftp\parser_v1\web\parseralibaba\vendor\symfony\polyfill-php80\bootstrap.php on line 23
+[21-Oct-2021 11:38:36 Europe/Moscow] PHP Stack trace:
+[21-Oct-2021 11:38:36 Europe/Moscow] PHP   1. {main}() D:\ftp\parser_v1\web\parseralibaba\sync.php:0
+[21-Oct-2021 11:38:36 Europe/Moscow] PHP   2. require_once() D:\ftp\parser_v1\web\parseralibaba\sync.php:56
+[21-Oct-2021 11:38:36 Europe/Moscow] PHP   3. ComposerAutoloaderInit831074f50ceca4dd1ac821b3d06e4fe9::getLoader() D:\ftp\parser_v1\web\parseralibaba\vendor\autoload.php:7
+[21-Oct-2021 11:38:36 Europe/Moscow] PHP   4. composerRequire831074f50ceca4dd1ac821b3d06e4fe9() D:\ftp\parser_v1\web\parseralibaba\vendor\composer\autoload_real.php:56
+[23-Oct-2021 15:23:29 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=94.0.4606.81) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:121
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('no such window', 'no such window:...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(506): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www. in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 121
+[23-Oct-2021 15:23:58 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=94.0.4606.81) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:121
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('no such window', 'no such window:...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(506): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www. in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 121
+[23-Oct-2021 15:24:45 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=94.0.4606.81) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:121
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('no such window', 'no such window:...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(506): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www. in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 121
+[25-Oct-2021 15:14:27 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=94.0.4606.81) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(506): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[26-Oct-2021 08:09:01 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=94.0.4606.81) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(506): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[27-Oct-2021 17:52:27 GMT] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:506
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(486): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(126): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 506
+[31-Oct-2021 21:27:00 Europe/Moscow] PHP Warning:  require_once(D:\ftp\parser_v1\web\parseralibaba/config.php): failed to open stream: No such file or directory in D:\ftp\parser_v1\web\parseralibaba\sync_brand_r.php on line 41
+[31-Oct-2021 21:27:01 Europe/Moscow] PHP Fatal error:  require_once(): Failed opening required 'D:\ftp\parser_v1\web\parseralibaba/config.php' (include_path='.;C:\php\pear') in D:\ftp\parser_v1\web\parseralibaba\sync_brand_r.php on line 41
+[02-Nov-2021 12:35:44 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=95.0.4638.54) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(506): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[09-Nov-2021 10:25:31 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=95.0.4638.69) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(506): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[09-Nov-2021 11:26:33 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=95.0.4638.69) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(506): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[17-Nov-2021 11:22:31 GMT] PHP Fatal error:  Uncaught Error: Call to a member function connect() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:136
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 136
+[17-Nov-2021 16:52:44 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=95.0.4638.69) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:121
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('no such window', 'no such window:...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(662): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www. in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 121
+[17-Nov-2021 17:44:41 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=95.0.4638.69) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(662): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[17-Nov-2021 17:44:52 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[17-Nov-2021 17:46:49 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=95.0.4638.69) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:121
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('no such window', 'no such window:...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(684): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www. in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 121
+[17-Nov-2021 17:47:25 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[17-Nov-2021 17:51:35 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parse_at' in 'order clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3861): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(260): main\DatabasePerform::GetAll('SELECT * FROM `...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[17-Nov-2021 17:51:59 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 09:17:21 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'v63216hf_t2.	parser_google_alibaba_results' doesn't exist in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3861): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(125): main\DatabasePerform::GetAll('SELECT * FROM `...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 09:17:43 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'td' in 'order clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3861): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(125): main\DatabasePerform::GetAll('SELECT * FROM `...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 09:18:40 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 09:19:08 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 09:27:06 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 09:28:01 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 09:31:24 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 09:34:18 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 09:34:58 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 09:35:37 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 09:36:41 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 09:51:21 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 09:59:22 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=96.0.4664.45) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(608): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[18-Nov-2021 10:00:33 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=96.0.4664.45) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:121
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('no such window', 'no such window:...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(608): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www. in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 121
+[18-Nov-2021 10:01:21 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=96.0.4664.45) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(608): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[18-Nov-2021 10:01:38 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 10:02:12 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 10:02:32 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 10:04:50 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 10:07:17 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 10:13:30 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 10:14:38 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 10:14:55 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 10:34:08 GMT] PHP Fatal error:  Uncaught Error: Call to a member function findElement() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:1247
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(288): parsePageByRowsKey(Array, 'https://www.ali...', Array, 0)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(280): parseItemsUrls(Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(216): parseItemsByUrls(Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(127): parseRowsByUrls(Array)
+#4 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1247
+[18-Nov-2021 10:36:21 GMT] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:1139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(288): parsePageByRowsKey(Array, 'https://www.ali...', Array, 0)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(280): parseItemsUrls(Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(216): parseItemsByUrls(Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(127): parseRowsByUrls(Array)
+#4 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1139
+[18-Nov-2021 10:37:05 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 10:44:39 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 12:47:59 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 12:49:34 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 13:08:07 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 13:13:04 GMT] PHP Fatal error:  Uncaught Error: Call to a member function findElement() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:1155
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(288): parsePageByRowsKey(Array, 'https://www.ali...', Array, 0)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(280): parseItemsUrls(Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(216): parseItemsByUrls(Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(127): parseRowsByUrls(Array)
+#4 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1155
+[18-Nov-2021 13:14:23 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 13:16:33 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 13:30:09 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 13:33:32 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 13:36:10 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 13:37:08 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 13:41:34 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 13:44:14 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 13:49:24 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[18-Nov-2021 13:54:39 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=96.0.4664.45) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(688): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[18-Nov-2021 13:55:51 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4024
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4024): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3827): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4024
+[24-Nov-2021 14:46:49 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=96.0.4664.45) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(688): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[28-Nov-2021 14:44:13 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=96.0.4664.45) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[28-Nov-2021 15:09:45 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from disconnected: not connected to DevTools
+  (Session info: chrome=96.0.4664.45) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(688): Facebook\WebDriver\Remote\RemoteWebDriver->get('https in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[29-Nov-2021 09:47:54 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=96.0.4664.45) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(688): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[29-Nov-2021 10:14:49 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=96.0.4664.45) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:121
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('no such window', 'no such window:...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(815): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www. in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 121
+[17-Dec-2021 10:56:40 GMT] PHP Fatal error:  Uncaught Error: Call to a member function quit() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:1624
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1624
+[19-Dec-2021 15:57:09 GMT] PHP Fatal error:  Uncaught Error: Call to a member function quit() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:1624
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1624
+[28-Dec-2021 08:11:28 GMT] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:818
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(798): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(277): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 818
+[28-Dec-2021 08:23:47 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\JsonWireCompat::getElement() must be of the type array, null given, called in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebElement.php on line 105 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php:21
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebElement.php(105): Facebook\WebDriver\Remote\JsonWireCompat::getElement(NULL)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(1093): Facebook\WebDriver\Remote\RemoteWebElement->findElement(Object(Facebook\WebDriver\WebDriverBy))
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(798): parseUrls(Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(277): parseRows(Array)
+#4 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php on line 21
+[28-Dec-2021 08:28:00 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from disconnected: not connected to DevTools
+  (Session info: chrome=96.0.4664.110) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(1072): Facebook\WebDriver\Remote\RemoteWebDriver->get('htt in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[28-Dec-2021 08:31:07 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=96.0.4664.110) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(1072): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\e in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[28-Dec-2021 08:33:32 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=96.0.4664.110) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(1072): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\e in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[29-Dec-2021 10:15:33 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\InvalidArgumentException: invalid argument
+  (Session info: chrome=96.0.4664.110) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:99
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('invalid argumen...', 'invalid argumen...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(1061): Facebook\WebDriver\Remote\RemoteWebDriver->get(NULL)
+#4 D:\ftp\parser_v1\web\parseralibaba\exec.php(787): parseUrls(Arr in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 99
+[08-Jan-2022 14:43:35 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\WebDriverCurlException: Curl error thrown for http DELETE to /session/33c289a1b3b1a3fd2f68c91c83c71e2a
+
+Failed to connect to localhost port 4444: Connection refused in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php:332
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(316): Facebook\WebDriver\Remote\RemoteWebDriver->execute('quit')
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(1652): Facebook\WebDriver\Remote\RemoteWebDriver->quit()
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php on line 332
+[08-Jan-2022 14:47:05 UTC] PHP Warning:  session_start(): Cannot send session cookie - headers already sent in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 17
+[08-Jan-2022 14:47:05 UTC] PHP Stack trace:
+[08-Jan-2022 14:47:05 UTC] PHP   1. {main}() D:\ftp\parser_v1\web\parseralibaba\exec.php:0
+[08-Jan-2022 14:47:05 UTC] PHP   2. session_start() D:\ftp\parser_v1\web\parseralibaba\exec.php:17
+[08-Jan-2022 14:47:05 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 17
+[08-Jan-2022 14:47:05 UTC] PHP Stack trace:
+[08-Jan-2022 14:47:05 UTC] PHP   1. {main}() D:\ftp\parser_v1\web\parseralibaba\exec.php:0
+[08-Jan-2022 14:47:05 UTC] PHP   2. session_start() D:\ftp\parser_v1\web\parseralibaba\exec.php:17
+[08-Jan-2022 15:18:00 GMT] PHP Fatal error:  Uncaught Error: Call to a member function quit() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:1641
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1641
+[08-Jan-2022 15:19:36 GMT] PHP Fatal error:  Uncaught Error: Call to a member function quit() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:1641
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1641
+[08-Jan-2022 15:22:23 UTC] PHP Warning:  session_start(): Cannot send session cookie - headers already sent in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 17
+[08-Jan-2022 15:22:23 UTC] PHP Stack trace:
+[08-Jan-2022 15:22:23 UTC] PHP   1. {main}() D:\ftp\parser_v1\web\parseralibaba\exec.php:0
+[08-Jan-2022 15:22:23 UTC] PHP   2. session_start() D:\ftp\parser_v1\web\parseralibaba\exec.php:17
+[08-Jan-2022 15:22:23 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 17
+[08-Jan-2022 15:22:23 UTC] PHP Stack trace:
+[08-Jan-2022 15:22:23 UTC] PHP   1. {main}() D:\ftp\parser_v1\web\parseralibaba\exec.php:0
+[08-Jan-2022 15:22:23 UTC] PHP   2. session_start() D:\ftp\parser_v1\web\parseralibaba\exec.php:17
+[08-Jan-2022 15:22:59 GMT] PHP Fatal error:  Uncaught Error: Call to a member function quit() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:1641
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1641
+[08-Jan-2022 15:36:59 GMT] PHP Fatal error:  Uncaught Error: Call to a member function quit() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:1641
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1641
+[08-Jan-2022 15:39:05 GMT] PHP Fatal error:  Uncaught Error: Call to a member function quit() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:1641
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1641
+[08-Jan-2022 15:47:18 GMT] PHP Fatal error:  Uncaught Error: Call to a member function quit() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:1641
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1641
+[11-Jan-2022 09:46:44 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\JsonWireCompat::getElement() must be of the type array, null given, called in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebElement.php on line 105 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php:21
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebElement.php(105): Facebook\WebDriver\Remote\JsonWireCompat::getElement(NULL)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(991): Facebook\WebDriver\Remote\RemoteWebElement->findElement(Object(Facebook\WebDriver\WebDriverBy))
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(754): parseUrls(Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(257): parseRows(Array)
+#4 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php on line 21
+[11-Jan-2022 11:38:35 GMT] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:774
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(754): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(257): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 774
+[11-Jan-2022 13:27:07 GMT] PHP Fatal error:  Uncaught Error: Call to undefined method Facebook\WebDriver\WebDriverBy::click() in D:\ftp\parser_v1\web\parseralibaba\exec.php:1137
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(754): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(257): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1137
+[11-Jan-2022 13:35:29 GMT] PHP Fatal error:  Uncaught Error: Call to a member function getMouse() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:1137
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(754): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(257): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1137
+[11-Jan-2022 13:36:52 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\RemoteMouse::mouseMove() must be an instance of Facebook\WebDriver\Interactions\Internal\WebDriverCoordinates or null, instance of Facebook\WebDriver\WebDriverPoint given, called in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 917 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteMouse.php:181
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(917): Facebook\WebDriver\Remote\RemoteMouse->mouseMove(Object(Facebook\WebDriver\WebDriverPoint))
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(754): parseUrls(Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(257): parseRows(Array)
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteMouse.php on line 181
+[11-Jan-2022 13:54:18 GMT] PHP Fatal error:  Uncaught Error: Call to undefined method Facebook\WebDriver\Remote\RemoteMouse::findElement() in D:\ftp\parser_v1\web\parseralibaba\exec.php:921
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(754): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(257): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 921
+[11-Jan-2022 13:55:51 GMT] PHP Fatal error:  Uncaught Error: Call to protected method Facebook\WebDriver\Remote\RemoteMouse::moveIfNeeded() from context '' in D:\ftp\parser_v1\web\parseralibaba\exec.php:921
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(754): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(257): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 921
+[11-Jan-2022 13:56:52 GMT] PHP Fatal error:  Uncaught Error: Call to private method Facebook\WebDriver\Remote\RemoteMouse::createMoveAction() from context '' in D:\ftp\parser_v1\web\parseralibaba\exec.php:921
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(754): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(257): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 921
+[11-Jan-2022 14:59:14 GMT] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:774
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(754): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(257): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 774
+[11-Jan-2022 17:58:58 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=96.0.4664.110) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(774): Facebook\WebDriver\Remote\RemoteWebDri in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[11-Jan-2022 18:11:48 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from disconnected: not connected to DevTools
+  (Session info: chrome=96.0.4664.110) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(774): Facebook\WebDriver\Remote\RemoteWebDriver->get('http in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[11-Jan-2022 18:13:52 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from disconnected: not connected to DevTools
+  (Session info: chrome=96.0.4664.110) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(774): Facebook\WebDriver\Remote\RemoteWebDriver->get('http in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[11-Jan-2022 18:14:13 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from disconnected: not connected to DevTools
+  (Session info: chrome=96.0.4664.110) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(774): Facebook\WebDriver\Remote\RemoteWebDriver->get('http in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[11-Jan-2022 18:16:31 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\WebDriverCurlException: Curl error thrown for http POST to /session/17a4608db262e4232dadbe806c54c4c4/url with params: {"url":"https://www.alibaba.com/trade/search?IndexArea=product_en&CatId=15&SearchText=Glencairn+Whisky+Glass+in+Gift+Carton%2C+Set+of+2+in&moqt=239&ta=y&f0=y&pricef=6.1&pricet=6.25&Country=CN"}
+
+Operation timed out after 130011 milliseconds with 0 bytes received in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php:332
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(774): Facebook\WebDriver\Remote\RemoteWebDriver->get( in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php on line 332
+[11-Jan-2022 18:23:56 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=96.0.4664.110) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(774): Facebook\WebDriver\Remote\RemoteWebDriver->g in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[11-Jan-2022 18:40:58 GMT] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:774
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(754): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(257): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 774
+[11-Jan-2022 19:14:22 GMT] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:774
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(754): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(257): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 774
+[12-Jan-2022 12:12:16 GMT] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:774
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(754): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(257): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 774
+[12-Jan-2022 13:31:43 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(774): Facebook\WebDriver\Remote\RemoteWebDriver->ge in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[12-Jan-2022 14:36:16 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\ex in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[12-Jan-2022 15:18:19 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(775): Facebook\WebDriver\Remote\RemoteWebDriver->get('https://www.ali...')
+#4 D:\ftp\parser_v1\web\parseralibaba\exe in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[12-Jan-2022 15:58:53 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(272): Facebook\WebDriver\Remote\RemoteWebDriver->execute('getPageSource')
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(1231): Facebook\WebDriver\Remote\RemoteWebDriver->getPageSource()
+#4 D:\ftp\parser_v1\web\parseralibaba\exec.php( in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[17-Jan-2022 09:55:02 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\InvalidArgumentException: invalid argument
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:99
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('invalid argumen...', 'invalid argumen...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(777): Facebook\WebDriver\Remote\RemoteWebDriver->get('h')
+#4 D:\ftp\parser_v1\web\parseralibaba\exec.php(755): parseUrls(Array) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 99
+[17-Jan-2022 09:55:37 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\InvalidArgumentException: invalid argument
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:99
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('invalid argumen...', 'invalid argumen...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(777): Facebook\WebDriver\Remote\RemoteWebDriver->get('h')
+#4 D:\ftp\parser_v1\web\parseralibaba\exec.php(755): parseUrls(Array) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 99
+[17-Jan-2022 14:56:57 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\WebDriverCurlException: Curl error thrown for http POST to /session/a9d54bb3bc7b586da4ac9913e52d1876/url with params: {"url":"https://www.alibaba.com/trade/search?IndexArea=product_en&SearchText=OneGrill+4PM05+Stainless+Steel+Grill+Rotisserie&assessment_company=ASS&moqt=22&ta=y&f0=y&pricef=0.1&pricet=31.63&Country=CN"}
+
+Operation timed out after 130011 milliseconds with 0 bytes received in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php:332
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(777): Facebook\WebDriver\Remote\RemoteWebDri in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php on line 332
+[17-Jan-2022 15:05:04 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:121
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('no such window', 'no such window:...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(335): Facebook\WebDriver\Remote\RemoteWebDriver->execute('executeScript', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(824): Facebook\WebDriver\Remote\RemoteWebDriver->execute in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 121
+[17-Jan-2022 15:13:01 GMT] PHP Fatal error:  Uncaught Error: Call to a member function click() on array in D:\ftp\parser_v1\web\parseralibaba\exec.php:1760
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(755): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(258): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1760
+[17-Jan-2022 15:30:01 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(777): Facebook\WebDriver\Remote\RemoteWebDriver->ge in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[17-Jan-2022 15:30:08 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in D:\ftp\parser_v1\web\parseralibaba\Parser.php:3760
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3760): PDO->__construct('mysql:host=v632...', 'v63216hf_t2', 'dcnScNWG*BK2*Sv', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3856): main\DatabaseHandler::GetHandler('mysql')
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(63): main\DatabasePerform::GetAll('SELECT * FROM `...', Array)
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 3760
+[17-Jan-2022 15:43:15 GMT] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:777
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(755): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(258): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 777
+[17-Jan-2022 15:52:14 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\RemoteWebElement::findElements() must be an instance of Facebook\WebDriver\WebDriverBy, string given, called in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1796 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebElement.php:116
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(1796): Facebook\WebDriver\Remote\RemoteWebElement->findElements('.field-title')
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(755): parseUrls(Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(258): parseRows(Array)
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebElement.php on line 116
+[17-Jan-2022 15:58:44 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\JsonWireCompat::getElement() must be of the type array, null given, called in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php on line 215 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php:21
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(215): Facebook\WebDriver\Remote\JsonWireCompat::getElement(NULL)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverExpectedCondition.php(176): Facebook\WebDriver\Remote\RemoteWebDriver->findElement(Object(Facebook\WebDriver\WebDriverBy))
+#2 [internal function]: Facebook\WebDriver\WebDriverExpectedCondition::Facebook\WebDriver\{closure}(Object(Facebook\WebDriver\Remote\RemoteWebDriver))
+#3 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverWait.php(54): call_user_func(Object(Clos in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php on line 21
+[17-Jan-2022 16:00:31 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\RemoteWebElement::findElements() must be an instance of Facebook\WebDriver\WebDriverBy, string given, called in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1801 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebElement.php:116
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(1801): Facebook\WebDriver\Remote\RemoteWebElement->findElements('.field-title')
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(755): parseUrls(Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(258): parseRows(Array)
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebElement.php on line 116
+[17-Jan-2022 16:09:00 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(335): Facebook\WebDriver\Remote\RemoteWebDriver->execute('executeScript', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(816): Facebook\WebDriver\Remote\RemoteWebDriver->executeScript('window.scrollTo...')
+#4 D:\ftp\parser_v1\w in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[17-Jan-2022 16:11:05 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(335): Facebook\WebDriver\Remote\RemoteWebDriver->execute('executeScript', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(816): Facebook\WebDriver\Remote\RemoteWebDriver->executeScript('window.scrollTo...')
+#4 D:\ftp\parser_v1\w in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[17-Jan-2022 16:11:33 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: session deleted because of page crash
+from unknown error: cannot determine loading status
+from tab crashed
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(777): Facebook\WebDriver\Remo in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[17-Jan-2022 16:13:17 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(335): Facebook\WebDriver\Remote\RemoteWebDriver->execute('executeScript', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(828): Facebook\WebDriver\Remote\RemoteWebDriver->executeScript('window.scrollTo...')
+#4 D:\ftp\parser_v1\w in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[17-Jan-2022 16:13:30 GMT] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:777
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(755): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(258): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 777
+[18-Jan-2022 09:49:22 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(335): Facebook\WebDriver\Remote\RemoteWebDriver->execute('executeScript', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(816): Facebook\WebDriver\Remote\RemoteWebDriver->executeScript('window.scrollTo...')
+#4 D:\ftp\parser_v1\w in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[18-Jan-2022 09:55:23 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\ex in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[18-Jan-2022 10:52:55 GMT] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in D:\ftp\parser_v1\web\parseralibaba\exec.php:824
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(802): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(258): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 824
+[18-Jan-2022 13:06:03 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\JsonWireCompat::getElement() must be of the type array, null given, called in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php on line 215 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php:21
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(215): Facebook\WebDriver\Remote\JsonWireCompat::getElement(NULL)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverExpectedCondition.php(176): Facebook\WebDriver\Remote\RemoteWebDriver->findElement(Object(Facebook\WebDriver\WebDriverBy))
+#2 [internal function]: Facebook\WebDriver\WebDriverExpectedCondition::Facebook\WebDriver\{closure}(Object(Facebook\WebDriver\Remote\RemoteWebDriver))
+#3 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverWait.php(54): call_user_func(Object(Clos in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php on line 21
+[18-Jan-2022 14:04:42 GMT] PHP Fatal error:  Uncaught Error: Call to undefined method Facebook\WebDriver\WebDriverBy::ssSelector() in D:\ftp\parser_v1\web\parseralibaba\exec.php:1055
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(802): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(258): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1055
+[18-Jan-2022 14:10:19 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\JsonWireCompat::getElement() must be of the type array, null given, called in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php on line 215 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php:21
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(215): Facebook\WebDriver\Remote\JsonWireCompat::getElement(NULL)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverExpectedCondition.php(176): Facebook\WebDriver\Remote\RemoteWebDriver->findElement(Object(Facebook\WebDriver\WebDriverBy))
+#2 [internal function]: Facebook\WebDriver\WebDriverExpectedCondition::Facebook\WebDriver\{closure}(Object(Facebook\WebDriver\Remote\RemoteWebDriver))
+#3 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverWait.php(54): call_user_func(Object(Clos in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php on line 21
+[18-Jan-2022 14:56:51 GMT] PHP Fatal error:  Uncaught Error: Class 'Facebook\WebDriver\WebDriverActions' not found in D:\ftp\parser_v1\web\parseralibaba\exec.php:1009
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(802): parseUrls(Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(258): parseRows(Array)
+#2 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1009
+[18-Jan-2022 15:00:06 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Interactions\WebDriverActions::moveToElement() must implement interface Facebook\WebDriver\WebDriverElement, instance of Facebook\WebDriver\WebDriverBy given, called in D:\ftp\parser_v1\web\parseralibaba\exec.php on line 1009 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Interactions\WebDriverActions.php:182
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\exec.php(1009): Facebook\WebDriver\Interactions\WebDriverActions->moveToElement(Object(Facebook\WebDriver\WebDriverBy))
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(802): parseUrls(Array)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(258): parseRows(Array)
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Interactions\WebDriverActions.php on line 182
+[19-Jan-2022 09:09:07 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\JsonWireCompat::getElement() must be of the type array, null given, called in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php on line 215 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php:21
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(215): Facebook\WebDriver\Remote\JsonWireCompat::getElement(NULL)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverExpectedCondition.php(176): Facebook\WebDriver\Remote\RemoteWebDriver->findElement(Object(Facebook\WebDriver\WebDriverBy))
+#2 [internal function]: Facebook\WebDriver\WebDriverExpectedCondition::Facebook\WebDriver\{closure}(Object(Facebook\WebDriver\Remote\RemoteWebDriver))
+#3 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverWait.php(54): call_user_func(Object(Clos in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php on line 21
+[19-Jan-2022 09:46:21 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\JsonWireCompat::getElement() must be of the type array, null given, called in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php on line 215 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php:21
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(215): Facebook\WebDriver\Remote\JsonWireCompat::getElement(NULL)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverExpectedCondition.php(176): Facebook\WebDriver\Remote\RemoteWebDriver->findElement(Object(Facebook\WebDriver\WebDriverBy))
+#2 [internal function]: Facebook\WebDriver\WebDriverExpectedCondition::Facebook\WebDriver\{closure}(Object(Facebook\WebDriver\Remote\RemoteWebDriver))
+#3 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverWait.php(54): call_user_func(Object(Clos in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php on line 21
+[19-Jan-2022 09:47:59 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\JsonWireCompat::getElement() must be of the type array, null given, called in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php on line 215 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php:21
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(215): Facebook\WebDriver\Remote\JsonWireCompat::getElement(NULL)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverExpectedCondition.php(176): Facebook\WebDriver\Remote\RemoteWebDriver->findElement(Object(Facebook\WebDriver\WebDriverBy))
+#2 [internal function]: Facebook\WebDriver\WebDriverExpectedCondition::Facebook\WebDriver\{closure}(Object(Facebook\WebDriver\Remote\RemoteWebDriver))
+#3 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverWait.php(54): call_user_func(Object(Clos in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php on line 21
+[19-Jan-2022 10:08:06 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\JsonWireCompat::getElement() must be of the type array, null given, called in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php on line 215 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php:21
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(215): Facebook\WebDriver\Remote\JsonWireCompat::getElement(NULL)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverExpectedCondition.php(176): Facebook\WebDriver\Remote\RemoteWebDriver->findElement(Object(Facebook\WebDriver\WebDriverBy))
+#2 [internal function]: Facebook\WebDriver\WebDriverExpectedCondition::Facebook\WebDriver\{closure}(Object(Facebook\WebDriver\Remote\RemoteWebDriver))
+#3 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverWait.php(54): call_user_func(Object(Clos in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php on line 21
+[19-Jan-2022 10:14:04 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(817): Facebook\WebDriver\Remote\RemoteWebDriv in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[19-Jan-2022 12:21:34 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\JsonWireCompat::getElement() must be of the type array, null given, called in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php on line 215 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php:21
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(215): Facebook\WebDriver\Remote\JsonWireCompat::getElement(NULL)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverExpectedCondition.php(176): Facebook\WebDriver\Remote\RemoteWebDriver->findElement(Object(Facebook\WebDriver\WebDriverBy))
+#2 [internal function]: Facebook\WebDriver\WebDriverExpectedCondition::Facebook\WebDriver\{closure}(Object(Facebook\WebDriver\Remote\RemoteWebDriver))
+#3 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverWait.php(54): call_user_func(Object(Clos in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php on line 21
+[19-Jan-2022 12:26:10 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\JsonWireCompat::getElement() must be of the type array, null given, called in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php on line 215 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php:21
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(215): Facebook\WebDriver\Remote\JsonWireCompat::getElement(NULL)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverExpectedCondition.php(176): Facebook\WebDriver\Remote\RemoteWebDriver->findElement(Object(Facebook\WebDriver\WebDriverBy))
+#2 [internal function]: Facebook\WebDriver\WebDriverExpectedCondition::Facebook\WebDriver\{closure}(Object(Facebook\WebDriver\Remote\RemoteWebDriver))
+#3 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\WebDriverWait.php(54): call_user_func(Object(Clos in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php on line 21
+[19-Jan-2022 12:27:44 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:121
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('no such window', 'no such window:...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(335): Facebook\WebDriver\Remote\RemoteWebDriver->execute('executeScript', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(864): Facebook\WebDriver\Remote\RemoteWebDriver->execute in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 121
+[19-Jan-2022 12:30:44 GMT] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Facebook\WebDriver\Remote\JsonWireCompat::getElement() must be of the type array, null given, called in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebElement.php on line 105 and defined in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php:21
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebElement.php(105): Facebook\WebDriver\Remote\JsonWireCompat::getElement(NULL)
+#1 D:\ftp\parser_v1\web\parseralibaba\exec.php(1339): Facebook\WebDriver\Remote\RemoteWebElement->findElement(Object(Facebook\WebDriver\WebDriverBy))
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(795): parseUrls(Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(258): parseRows(Array)
+#4 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\JsonWireCompat.php on line 21
+[19-Jan-2022 12:39:51 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(335): Facebook\WebDriver\Remote\RemoteWebDriver->execute('executeScript', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(1108): Facebook\WebDriver\Remote\RemoteWebDriver->executeScript('window.scrollTo...')
+#4 D:\ftp\parser_v1\ in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[19-Jan-2022 12:41:56 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'info' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4031
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4031): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3863): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(235): main\DatabasePerform::GetAll('SELECT * FROM `...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4031
+[19-Jan-2022 12:42:42 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'info' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4031
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4031): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3863): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(235): main\DatabasePerform::GetAll('SELECT * FROM `...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4031
+[19-Jan-2022 12:49:02 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4031
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4031): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3829): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4031
+[19-Jan-2022 12:51:09 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4031
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4031): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3829): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4031
+[19-Jan-2022 14:30:34 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4031
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4031): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3829): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4031
+[19-Jan-2022 14:31:44 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4031
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4031): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3829): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4031
+[19-Jan-2022 14:34:05 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4031
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4031): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3829): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4031
+[19-Jan-2022 14:36:04 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(2292): Facebook\WebDriver\Remote\RemoteWebDriver->g in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[19-Jan-2022 14:37:12 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4031
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4031): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3829): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4031
+[19-Jan-2022 14:38:39 GMT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'parser_alibaba_results.asin' in 'where clause' in D:\ftp\parser_v1\web\parseralibaba\Parser.php:4031
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\Parser.php(4031): PDOStatement->execute()
+#1 D:\ftp\parser_v1\web\parseralibaba\Parser.php(3829): main\DatabasePerform::PrepareAndExecute(Object(PDOStatement), NULL)
+#2 D:\ftp\parser_v1\web\parseralibaba\sync.php(72): main\DatabasePerform::Execute('DELETE FROM `pa...')
+#3 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\Parser.php on line 4031
+[19-Jan-2022 17:26:33 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(335): Facebook\WebDriver\Remote\RemoteWebDriver->execute('executeScript', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(1113): Facebook\WebDriver\Remote\RemoteWebDriver->executeScript('window.scrollTo...')
+#4 D:\ftp\parser_v1\ in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[19-Jan-2022 17:26:35 GMT] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(335): Facebook\WebDriver\Remote\RemoteWebDriver->execute('executeScript', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(1113): Facebook\WebDriver\Remote\RemoteWebDriver->executeScript('window.scrollTo...')
+#4 D:\ftp\parser_v1\ in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[21-Jan-2022 13:20:20 Europe/Moscow] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnknownErrorException: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:139
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('unknown error', 'unknown error: ...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(250): Facebook\WebDriver\Remote\RemoteWebDriver->execute('get', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\ex in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 139
+[21-Jan-2022 13:21:51 Europe/Moscow] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(335): Facebook\WebDriver\Remote\RemoteWebDriver->execute('executeScript', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(873): Facebook\WebDriver\Remote\RemoteWebDriver->executeScript('window.scrollTo...')
+#4 D:\ftp\parser_v1\w in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[21-Jan-2022 13:22:49 Europe/Moscow] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(335): Facebook\WebDriver\Remote\RemoteWebDriver->execute('executeScript', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(1117): Facebook\WebDriver\Remote\RemoteWebDriver->executeScript('window.scrollTo...')
+#4 D:\ftp\parser_v1\ in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[21-Jan-2022 14:18:45 Europe/Moscow] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\WebDriverCurlException: Curl error thrown for http GET to /session/f481692a995229b62289a021d309e43f/source
+
+Operation timed out after 130011 milliseconds with 0 bytes received in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php:332
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(272): Facebook\WebDriver\Remote\RemoteWebDriver->execute('getPageSource')
+#2 D:\ftp\parser_v1\web\parseralibaba\exec.php(1582): Facebook\WebDriver\Remote\RemoteWebDriver->getPageSource()
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(804): parseUrls(Array)
+#4 D:\ftp\parser_v1\web\parseralibaba\exec.php(262): parseRows(Array)
+#5 {main}
+  thrown in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php on line 332
+[21-Jan-2022 14:24:15 Europe/Moscow] PHP Fatal error:  Uncaught Facebook\WebDriver\Exception\UnrecognizedExceptionException: chrome not reachable
+  (Session info: chrome=97.0.4692.71) in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php:145
+Stack trace:
+#0 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\HttpCommandExecutor.php(371): Facebook\WebDriver\Exception\WebDriverException::throwException('chrome not reac...', 'chrome not reac...', Array)
+#1 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(591): Facebook\WebDriver\Remote\HttpCommandExecutor->execute(Object(Facebook\WebDriver\Remote\WebDriverCommand))
+#2 D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Remote\RemoteWebDriver.php(335): Facebook\WebDriver\Remote\RemoteWebDriver->execute('executeScript', Array)
+#3 D:\ftp\parser_v1\web\parseralibaba\exec.php(1115): Facebook\WebDriver\Remote\RemoteWebDriver->executeScript('window.scrollTo...')
+#4 D:\ftp\parser_v1\ in D:\ftp\parser_v1\web\parseralibaba\vendor\php-webdriver\webdriver\lib\Exception\WebDriverException.php on line 145
+[26-Jan-2022 09:43:08 Europe/Moscow] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in C:\OpenServer\domains\web\config.inc.php on line 109
+[26-Jan-2022 09:43:12 Europe/Moscow] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in C:\OpenServer\domains\web\parseralibaba\exec.php:827
+Stack trace:
+#0 C:\OpenServer\domains\web\parseralibaba\exec.php(805): parseUrls()
+#1 C:\OpenServer\domains\web\parseralibaba\exec.php(262): parseRows()
+#2 {main}
+  thrown in C:\OpenServer\domains\web\parseralibaba\exec.php on line 827
+[26-Jan-2022 09:43:35 Europe/Moscow] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in C:\OpenServer\domains\web\config.inc.php on line 109
+[26-Jan-2022 09:43:39 Europe/Moscow] PHP Fatal error:  Uncaught Error: Call to a member function get() on null in C:\OpenServer\domains\web\parseralibaba\exec.php:827
+Stack trace:
+#0 C:\OpenServer\domains\web\parseralibaba\exec.php(805): parseUrls()
+#1 C:\OpenServer\domains\web\parseralibaba\exec.php(262): parseRows()
+#2 {main}
+  thrown in C:\OpenServer\domains\web\parseralibaba\exec.php on line 827

@@ -1,0 +1,5 @@
+[25-Oct-2021 20:47:53 Europe/Moscow] PHP Fatal error:  Uncaught Error: Cannot use object of type DateTime as array in D:\ftp\parser_v1\web\stat.php:51
+Stack trace:
+#0 {main}
+  thrown in D:\ftp\parser_v1\web\stat.php on line 51
+[19-Jan-2022 13:01:41 Europe/Moscow] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in D:\ftp\parser_v1\web\lib\mysql_base.inc.php7.php on line 74

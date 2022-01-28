@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$title$}--></title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<!--[if lte IE 6]><script type="text/javascript" src="js/iepngfix_tilebg.js"></script><![endif]-->
+<!--[if lte IE 6]><script language="JavaScript" type="text/javascript" src="js/ie.js"></script><![endif]-->
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="js/main_setup_hh.js"></script>
+</head>
+<body>
+<style>
+	h3 {
+		font-family: Arial;
+		font-size: 18px;
+	}
+
+	tr h3 {
+		margin-top: 30px;
+	}
+
+	.invalid {
+		color:  red;
+		font-weight: bold;
+	}
+
+	table {
+		width:  100%;
+		border: 2px solid red;
+	}
+
+	.tcols-container {
+		width: 100%;
+		margin-bottom: 40px;
+	}
+
+	.tcol {
+		width:  33.33%;
+		max-width:  340px;
+		/*position: relative;*/
+		float:  left;
+		/*display: block;*/
+	}
+
+	h1 {
+		font-family: Arial;
+	}
+
+	.headers {
+		display: inline-block;
+	}
+
+	.tr {
+		width:  100%;
+		margin: 3px 0 10px 0;
+	}
+
+	#results-count {
+		text-align: right;
+	}
+
+	.parser-start .container {
+		display: inline-block;
+		width: 100%;
+	}
+
+	.parser-start div {
+		float: left;
+		margin-right: 20px;
+	}
+
+	.parser-start .lines {
+		display: inline-block;
+	}
+	.parser-start .lines span {
+		/*border:  1px solid red;*/
+		vertical-align: bottom;
+		margin-right: 15px;
+	}
+
+	.parser-start #search-button {
+		background-color: #d9d9d9;
+		border:  1px solid grey;
+		padding: 6px 16px;
+	}
+
+	.parser-start #reference {
+		float: right;
+		font-weight: bold;
+		font-size: 21px;
+		margin-right: 0;
+	}
+
+	.select-config * {
+		margin-right: 10px;
+	}
+
+	#config-inp {
+		width:  0;
+		/*height: 0;*/
+		/*border: 0;*/
+	}
+</style>
+<div id="container">
+	<div class="main-indent">
+		<div class="header">
+			<h1><!--{$title$}--></h1>
+			<ul class="menu"><li><span style="font-size: 32px;top: -22px;position: relative;">China</span></li>
+              <li><a href="admin.php"><img src="img/menu5.png" width="32" height="36" alt=" " /> <span>Главная</span></a></li>
+              <li><a href="stat.php"><img src="img/menu1.png" width="32" height="36" alt=" " /> <span>Статистика</span></a></li>    
+              <li><a href="setup.php"><img src="img/menu6.png" width="32" height="36" alt=" " /> <span>Настройки</span></a></li>  
+
+			</ul>
+			<!-- end .menu-->
+                <div class="user-block"> <strong><!--{$login$}--></strong><br />
+                <a href="login.php?logout">выход</a> </div>
+			<!-- end .user-block-->
+		</div>
+		<!-- end .header-->
+	  <!-- <div class="content"> -->
+	  	<div class="headers">
+			<h1>Google Parser</h1>
+			<h4 id="results-count">Найдено результатов: <!--{$results_find$}--></h4>
+		</div>
+		<div class="clearfloat"></div>
+		<div class="content">
+		<div><font style="color: red; size: 12pt"><!--{$saved_text$}--></font></div>		    
+			<div class="parser-start">
+			  	<h2>Run parser</h2>
+			  	<div class="container">
+			  		<div id="search-button"><a href="parser.php?action=run">Run</a></div>
+			  		<div class="lines">
+				  		<span><input id="restore" type="checkbox" name="restore" data-checked="<!--{$restore_last$}-->"/>Restore from last parsing</span>
+				  		<span><b>Last parsing:</b> <em><!--{$last_parsing$}--></em></span>
+				  		<span><b><!--{$restore_from$}-->/<!--{$input_table_rows$}--></b></span>
+			  		</div>
+				  	<div id="reference"><a href="reference.php">Справочник</a></div>
+			  	</div>
+			  <!-- </span> -->
+			</div>
+			  <div class="examples">
+				<h2>Пример поискового запроса</h2>
+				<div class="query" id="query-text">
+					<span style="margin-right: 10px;font-weight: bold;" class="query-asin"></span><span id="t"></span>
+					<span style="margin-left: 10px;color: red;" class="query-message"></span>
+				</div>
+				<div class="query-url"><a style="cursor: pointer;"></a></div>
+				<br>
+				<div class="buttons">
+					<span class="search-button" id="prev" onclick="load_query('-')">&#10094; Prev</span>
+					<span class="search-button" id="next" onclick="load_query('+')">Next &#10095;</span>
+				</div>
+			</div>
+			<h2>Настройки парсера</h2>
+			<div class="select-config">
+				<span id="config-path"><!--{$config_path$}--></span>
+				<input id="config-inp" type="file" accept=".json">
+				<a id="config-save-link" href="parser.php?loadconfig=<!--{$config_path$}-->" class="search-button">Load</a>
+
+				<br>
+
+				<form action="parser.php" method="post">
+					<span>Create new config</span>
+					<input type="hidden" name="newconfig" />
+					<input type="text" placeholder="New config name" name="configname"/>
+					<input type="submit" value="Create" />
+				</form>
+
+			</div>
+			<br>
+		<form action="parser.php" method="post" enctype="multipart/form-data">
+		    <div class="tcols-container">
+			<div class="tcol">
+				<div>
+					<td><h3 style="margin-top: 0;">Общие настройки:</h3></td>
+				</div>
+		    	<div>
+			      <td align="left"><b>Country</b></td>
+			    </div>
+			    <div class="tr">
+			      <td align="left">
+			      	<select class="select" name="country" data-value="<!--{$country$}-->" style="width: 200px;">
+			      		<option value="all">All</option>
+			      		<option value="US">US</option>
+			      		<option value="CA">CA</option>
+			      		<option value="UK">UK</option>
+			      		<option value="DE">DE</option>
+			      		<option value="PL">PL</option>
+			      		<option value="CZ">CZ</option>
+			      		<option value="ES">ES</option>
+			      		<option value="IT">IT</option>
+			      		<option value="FR">FR</option>
+			      		<option value="CN">CN</option>
+			      	</select>
+			      </td>
+			    </div>
+			    <div>
+			      <td align="left"><b>Currency</b></td>
+			    </div>
+			    <div class="tr">
+			      <td align="left">
+			      	<select class="select" name="currency" data-value="<!--{$currency$}-->" style="width: 200px;">
+			      		<option value="$">$</option>
+			      		<option value="£">£</option>
+			      		<option value="€">€</option>
+			      	</select>
+			      </td>
+			    </div>
+			    <div>
+			      <td align="left"><b>Last update</b></td>
+			    </div>
+			    <div class="tr">
+			      <td align="left">
+			      	<select class="select" name="update_date" data-value="<!--{$update_date$}-->" style="width: 200px;">
+			      		<option value="all">Any</option>
+			      		<option value="d">Last day</option>
+			      		<option value="w">Last week</option>
+			      		<option value="m">Last month</option>
+			      		<option value="y">Last year</option>
+			      	</select>
+			      </td>
+			    </div>
+			    <input style="display: none;" id="res-last-cp" type="checkbox" name="restore" data-checked="<!--{$restore_last$}-->">
+			    <div>
+			      <td align="left"><b>Results count</b></td>
+			    </div>
+			    <div class="tr">
+			      <td align="left"><input type="text" name="results_count" value="<!--{$results_count$}-->" class="inp" style="width: 100px;" /></td>
+			    </div>
+			    <div>
+			      <td align="left"><b>URLs per site limit</b></td>
+			    </div>
+			    <div class="tr">
+			      <td align="left"><input type="text" name="urls_limit" value="<!--{$urls_limit$}-->" class="inp" style="width: 100px;" /></td>
+			    </div>
+			    <div class="tr">
+			      <td align="left"><input type="checkbox" name="use_eng" data-checked="<!--{$use_eng$}-->"/>Search interface language: English</td>
+			    </div>
+			    <div class="tr">
+			      <td align="left"><input type="checkbox" name="use_eng" data-checked="<!--{$use_site_categories$}-->"/>Search by site: use categories</td>
+			    </div>
+			</div>
+
+		    <div class="tcol">
+			    <div>
+			    	<td><h3>Поля:</h3></td>
+				</div>
+
+			    <div>
+			      <td align="left"><b>Mode</b></td>
+			    </div>
+			    <div class="tr">
+			      <td align="left">
+			      	<select class="select" name="mode" data-value="<!--{$mode$}-->" style="width: 200px;">
+			      		<option value="prod_code">Product Code UPC/EAN</option>
+			      		<option value="partnum">Product Code Code/Model</option>
+			      		<option value="title">Product Title</option>
+			      	</select>
+			      </td>
+			    </div>
+			    <div>
+			      <td align="left"><b>Produc Code (UPC/EAN)</b></td>
+			    </div>
+			    <div class="tr">
+			      <td align="left">
+			      	<select class="select" name="product_code" data-value="<!--{$product_code$}-->" style="width: 200px;">
+			      		<option value="UPC">UPC</option>
+			      		<option value="EAN">EAN</option>
+			      		<option value="UPC/EAN">UPC/EAN</option>
+			      	</select>
+			      </td>
+			    </div>
+			    <div>
+			      <td align="left"><b>Part Number/Model</b></td>
+			    </div>
+			    <div class="tr">
+			      <td align="left">
+			      	<select class="select" name="partnum_model" data-value="<!--{$partnum_model$}-->" style="width: 200px;">
+			      		<option value="partnum">Part Number</option>
+			      		<option value="model">Model</option>
+			      		<option value="partnum_model">Part Number and Model</option>
+			      	</select>
+			      </td>
+			    </div>
+			    <div>
+			      <td align="left"><b>Part number minimum chars count</b></td>
+			    </div>
+			    <div class="tr">
+			      <td align="left"><input type="text" name="partnum_model_minchars" value="<!--{$partnum_model_minchars$}-->" class="inp" style="width: 100px;" /></td>
+			    </div>
+			    <div class="tr">
+			      <td align="left"><input type="checkbox" name="use_brand" data-checked="<!--{$use_brand$}-->"/>Use fields Brand/Manufacturer</td>
+			    </div>
+			    <div>
+			      <td align="left"><b>Brand/Manufacturer</b></td>
+			    </div>
+			    <div class="tr">
+			      <td align="left">
+			      	<select class="select" name="manuf_brand" data-value="<!--{$manuf_brand$}-->" style="width: 200px;">
+			      		<option value="Brand/Manufacturer">Brand/Manufacturer</option>
+			      		<option value="Manufacturer/Brand">Manufacturer/Brand</option>
+			      	</select>
+			      </td>
+			    </div>
+			    <div class="tr">
+			      <td align="left"><input type="checkbox" name="exact_match" data-checked="<!--{$exact_match$}-->"/>Exact match</td>
+			    </div>
+		   </div>
+
+		  <div class="tcol">
+			<div class="tr">
+		    	<td><h3>Цены:</h3></td>
+			</div>
+
+		    <div>
+		      <td align="left"><b>Use FBA\FBM</b></td>
+		    </div>
+		    <div class="tr">
+		      <td align="left">
+		      	<select class="select" name="fba_fbm" data-value="<!--{$fba_fbm$}-->" style="width: 200px;">
+		      		<option value="fba">FBA</option>
+		      		<option value="fbm">FBM</option>
+		      	</select>
+		      </td>
+		    </div>
+		    
+		    <div>
+		      <td align="left"><b>Select price function</b></td>
+		    </div>
+		    <div class="tr">
+		      <td align="left">
+		      	<select class="select" name="select_price" data-value="<!--{$select_price$}-->" style="width: 200px;">
+		      		<option value="min">min</option>
+		      		<option value="max">max</option>
+		      	</select>
+		      </td>
+		    </div>
+		    <div>
+		      <td align="left"><b>Minimal and Maximal price</b></td>
+		    </div>
+		    <div class="tr">
+		      <td align="left"><input type="text" name="min_price" value="<!--{$min_price$}-->" class="inp" style="width: 100px;" /></td>
+		      <td align="left"><input type="text" name="max_price" value="<!--{$max_price$}-->" class="inp" style="width: 100px;" /></td>
+		    </div>
+		    <div>
+		      <td align="left"><b>ROI</b></td>
+		    </div>
+		    <div class="tr">
+		      <td align="left"><input type="text" name="ROI" value="<!--{$ROI$}-->" class="inp" style="width: 100px;" /></td>
+		    </div>
+		    <div class="tr">
+		      <td align="left"><input type="checkbox" name="use_fba" data-checked="<!--{$use_fba$}-->"/>Use FBA Fees</td>
+		    </div>
+		    <div>
+		      <td align="left"><b>Margin</b></td>
+		    </div>
+		    <div class="tr">
+		      <td align="left"><input type="text" name="margin" value="<!--{$margin$}-->" class="inp" style="width: 100px;" /></td>
+		    </div>
+		    <div>
+		      <td align="left"><b>Ship&PP</b></td>
+		    </div>
+		    <div class="tr">
+		      <td align="left"><input type="text" name="ship_pp" value="<!--{$ship_pp$}-->" class="inp" style="width: 100px;" /></td>
+		    </div>
+		 </div>
+		</div>
+
+
+		    <div class="tr">
+		    	<td><h3>Дополнительно:</h3></td>
+			</div>
+
+			<div class="tr">
+		      <td align="left"><b>Search by site</b></td>
+		    </div>
+		    <div class="tr">
+		      <td align="left">
+		      	<input type="text" name="sitename" value="<!--{$sitename$}-->" class="inp" style="width: 600px;" />
+		      	<input type="checkbox" name="use_site" data-checked="<!--{$use_site$}-->"/>Use this field
+		      	<a href="reference.php" style="margin-left: 15px;">Открыть справочник</a>
+		      </td>
+		    </div>
+
+		    <div class="tr">
+		      <td align="left"><b>Query begin</b></td>
+		    </div>
+		    <div class="tr">
+		      <td align="left">
+		      	<input type="text" name="query_begin" value="<!--{$query_begin$}-->" class="inp" style="width: 600px;" />
+		      	<input type="checkbox" name="use_qbegin" data-checked="<!--{$use_qbegin$}-->"/>Use this field
+		      </td>
+		    </div>
+		    <div class="tr">
+		      <td align="left"><b>Query end</b></td>
+		    </div>
+		    <div class="tr">
+		      <td align="left">
+		      	<input type="text" name="query_end" value="<!--{$query_end$}-->" class="inp" style="width: 600px;" />
+		      	<input type="checkbox" name="use_qend" data-checked="<!--{$use_qend$}-->"/>Use this field
+		      </td>
+		    </div>
+		    <div class="tr">
+		      <td align="left"><b>Примечание</b></td>
+		    </div>
+		    <div class="tr">
+		      <td align="left">
+		      	<textarea name="notes" id="" cols="100" rows="10"><!--{$notes$}--></textarea>
+		      </td>
+		    </div>
+		    <div class="tr">
+		      <td align="left"><br />
+		      	<input type="submit" name="save" value="Сохранить" class="search-button" />
+		      </td>
+		    </div>
+		</form>
+		<!-- </div> -->
+	</div>
+<!-- end #container-->
+<!-- end .footer-->
+
+</body>
+<script>
+		var xmlhttp = new XMLHttpRequest();
+		this.index = -1;
+
+		xmlhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		        reqListener(this.responseText);
+		    }
+		};
+
+		function open_browser(url) {
+			var xh = new XMLHttpRequest();
+
+			xh.open("GET", "parser.php?browser_url=" + url, true);
+			xh.send();
+		}
+
+		function load_query(type) {
+			(type == "+") ? (this.index+=1) : (this.index-=1);
+			if(this.index < 0) { this.index+=1; return 0; }
+
+			xmlhttp.open("GET", "parser.php?query=" + this.index, true);
+			xmlhttp.send();
+		}
+
+		var query_url = "";
+		$(".query-url a").click(function() {open_browser("\"" + query_url + "\"")});
+
+		function reqListener (data) {
+			var data = $.parseJSON(data);
+	
+			if(data == "LIMIT") {
+				this.index-=1;
+				return 0;
+			};
+		  $("#query-text #t").text(data.query);
+		  $("#query-text .query-asin").text(data.asin);
+
+		  $(".query-url a").text(data.query_url);
+		  query_url = data.query_url;
+
+		  $(".query-message").text(data.message);
+		}
+
+		function show_config() {
+			var config_input = $("#config-inp")
+			config_input.change(function() {
+				var parray = $(this).attr("value").split("\\");
+				var filename = parray[parray.length - 1]
+
+				$("#config-path").text(
+					filename
+				)
+				$("#config-save-link").attr("href", "parser.php?loadconfig=" + $("#config-path").text())
+			})
+
+			load_query("+");
+			var selects = $("select");
+
+			$.each(selects, function() {
+				var value = $(this).data("value");
+
+				$(this).children().each(function() {
+					if($(this).attr("value") == value) {
+						$(this).attr("selected", "selected");
+					}
+				});
+			});
+
+			var checkboxes = $("input[type='checkbox']");
+
+			checkboxes.each(function() {
+				if($(this).data("checked") == 1) {
+					$(this).attr("checked", "checked");
+				}
+			});
+
+			$("#restore").change(function() {
+				var attr = $(this).attr("checked");
+				// alert(attr)
+
+				if(attr === "checked") {
+					attr = true
+				} else {
+					attr = false
+				}
+
+				// alert(attr)
+
+				$("#res-last-cp").attr("checked", attr);
+			})
+		}
+
+		window.onload = show_config;
+
+	</script>
+</html>

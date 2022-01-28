@@ -1,0 +1,1 @@
+<a class="active"><font size="1"><!--{$page_num$}--></font></a>

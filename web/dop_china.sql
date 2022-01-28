@@ -1,0 +1,1 @@
+INSERT INTO `parser_china_conf_list` (`parser_id`, `type`, `value`) VALUES ('brand', 'save_parser_info', '1');

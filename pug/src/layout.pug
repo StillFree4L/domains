@@ -1,0 +1,14 @@
+block variables
+    - var title = 'Это мой сайт'
+
+doctype html
+html(lang="ru")
+    head
+        title #{title}
+        block scripts
+        style
+            include css/main.css
+    body
+        block header
+        block content
+        block footer

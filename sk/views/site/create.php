@@ -8,6 +8,8 @@ use yii\helpers\Html;
 $this->title = 'Добавить сертификат';
 $this->params['breadcrumbs'][] = ['label' => 'Сертификат', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+var_dump(Yii::$app->request->post());
 ?>
 <main id="main">
     <section id="contact" class="section-bg wow fadeInUp">

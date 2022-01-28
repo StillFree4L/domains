@@ -1,0 +1,9 @@
+header
+    .container
+        .header
+            span.header_title
+            nav.main-nav
+                ul.main-nav_list
+                    each link in ['Home','About','Skills','Portfolio','Contact']
+                        li.main-nav_item
+                            a(href="").main-nav_link=link
