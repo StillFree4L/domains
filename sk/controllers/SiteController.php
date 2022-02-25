@@ -16,6 +16,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use yii\web\UploadedFile;
+use app\models\Tgram;
 
 class SiteController extends Controller
 {
@@ -34,6 +35,12 @@ class SiteController extends Controller
         ];
     }
 
+    public function beforeAction($action)
+    {
+        $this->enableCsrfValidation = false;
+        return parent::beforeAction($action);
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -48,6 +55,16 @@ class SiteController extends Controller
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
         ];
+    }
+
+    public function actionChatbot()
+    {
+        return $this->renderpartial('chatbot');
+    }
+
+    public function actionData()
+    {
+        return $this->renderpartial('data');
     }
 
     /*public function actionView($id)
@@ -90,11 +107,11 @@ class SiteController extends Controller
     public function actionCreate()
     {
         $model = new Sertificat();
-       /* if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             $model->gallery = UploadedFile::getInstances($model,'gallery');
             $model->uploadGallery();
             return $this->redirect(['index']);
-        }*/
+        }
 
         return $this->render('create', [
             'model' => $model,

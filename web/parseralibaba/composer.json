@@ -1,6 +1,0 @@
-{
-    "require": {
-        "php-webdriver/webdriver": "^1.11",
-        "phpoffice/phpexcel": "^1.8"
-    }
-}

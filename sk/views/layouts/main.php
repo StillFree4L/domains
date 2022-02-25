@@ -19,7 +19,9 @@ use yii\helpers\Html;
     <title><?= Html::encode($this->title) ?></title>
     <link href="/img/free-icon-computing-90808.png" rel="icon">
     <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
 <?php
+
     $this->registerCssFile('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700');
     $this->registerCssFile('@web/lib/bootstrap/css/bootstrap.min.css');
     $this->registerCssFile('@web/lib/font-awesome/css/font-awesome.min.css');
@@ -28,12 +30,16 @@ use yii\helpers\Html;
     $this->registerCssFile('@web/lib/owlcarousel/assets/owl.carousel.min.css');
     $this->registerCssFile('@web/lib/lightbox/css/lightbox.min.css');
     $this->registerCssFile('@web/css/style.css');
+
     ?>
     <?php $this->head() ?>
+
 </head>
 
 <body>
 <?php $this->beginBody() ?>
+
+
 <!--==========================
   Header
 ============================-->
@@ -184,10 +190,19 @@ use yii\helpers\Html;
             </div>
         </div>
     </div>
+
 </footer><!-- #footer -->
 
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 <?php
+$this->registerCssFile('@web/chatbot/chatbot.css');
+?>
+<div class="chatbot__btn">
+    <div class="chatbot__tooltip d-none">Есть вопрос?</div>
+</div>
+
+<?php
+
 $this->registerJsFile('@web/lib/jquery/jquery.min.js');
 $this->registerJsFile('@web/lib/jquery/jquery-migrate.min.js');
 $this->registerJsFile('@web/lib/bootstrap/js/bootstrap.bundle.min.js');
@@ -203,8 +218,70 @@ $this->registerJsFile('@web/lib/lightbox/js/lightbox.min.js');
 $this->registerJsFile('@web/lib/touchSwipe/jquery.touchSwipe.min.js');
 $this->registerJsFile('@web/contactform/contactform.js');
 $this->registerJsFile('@web/js/main.js');
+$this->registerJsFile('@web/chatbot/fp2.js');
+$this->registerJsFile('@web/chatbot/chatbot.js');
+
 ?>
+
 <?php $this->endBody() ?>
+<script>
+    const configChatbot = {};
+
+    configChatbot.btn = '.chatbot__btn';
+    configChatbot.key = 'fingerprint';
+
+    configChatbot.replicas = '/site/data';
+    const json = JSON.stringify(configChatbot.replicas);
+
+    configChatbot.root = SimpleChatbot.createTemplate();
+    configChatbot.url = '/site/chatbot';
+
+    //let chatbot = null;
+    let fingerprint = localStorage.getItem(configChatbot.key);
+    if (!fingerprint) {
+        Fingerprint2.get(function (components) {
+            fingerprint = Fingerprint2.x64hash128(components.map(function (pair) {
+                return pair.value
+            }).join(), 31)
+            localStorage.setItem(configChatbot.key, fingerprint)
+        });
+    }
+    // при клике по кнопке configChatbot.btn
+    document.querySelector(configChatbot.btn).onclick = function (e) {
+        let chatbot = null;
+        this.classList.add('d-none');
+        const $tooltip = this.querySelector('.chatbot__tooltip');
+        if ($tooltip) {
+            $tooltip.classList.add('d-none');
+        }
+        configChatbot.root.classList.toggle('chatbot_hidden');
+        if (chatbot) {
+            return;
+        }
+        // получение json-файла, содержащего сценарий диалога для чат-бота через AJAX
+        const request = new XMLHttpRequest();
+        request.open('GET', configChatbot.replicas, true);
+        request.responseType = 'json';
+        request.onload = function () {
+            const status = request.status;
+            if (status === 200) {
+                const data = request.response;
+                // для поддержки IE11
+                if (typeof data === 'string') {
+                    configChatbot.replicas = JSON.parse(data);
+                } else {
+                    configChatbot.replicas = data;
+                }
+                // инициализация SimpleChatbot
+                chatbot = new SimpleChatbot(configChatbot);
+                chatbot.init();
+            } else {
+                console.log(status, request.response);
+            }
+        };
+        request.send();
+    };
+</script>
 </body>
 </html>
 <?php $this->endPage() ?>

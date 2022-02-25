@@ -111,10 +111,12 @@ $config = [
     ],
     'on beforeAction' => function(){
         if(!Yii::$app->user->isGuest){
+            $roles = (new \yii\db\Query())->from('auth_assignment')->where(['user_id'=>Yii::$app->user->identity->id])->limit(1)->one();
+            $roles = (new \yii\db\Query())->from('auth_item')->where(['name'=>$roles['item_name']])->limit(1)->one();
         $message = Yii::createObject([
             'class' => LogMessageDTO::class,
-            'entityName' => Yii::$app->user->identity->role->name,
-            'entityId' => Yii::$app->user->identity->role->type,
+            'entityName' => Yii::$app->user->identity->username,
+            'entityId' => $roles['type'],
             'action' => Yii::$app->controller->route,
             'data' => ['Посещение'],
         ]);

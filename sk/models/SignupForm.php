@@ -50,10 +50,10 @@ class SignupForm extends Model
      * Signs user up.
      *
      * @return User|null the saved model or null if saving fails
+     * @throws \Exception
      */
-    public function signup()
+   /* public function signup()
     {
-
         if (!$this->validate()) {
             return null;
         }
@@ -71,12 +71,38 @@ class SignupForm extends Model
         }else{
             $role = $auth->getRole('user');
         }
-        $auth->assign($role, $user->id);
+        //var_dump($this->role);
+        $auth->assign($role, $user->getId());
 
         return $user;
     }
     return null;
+    }*/
+
+    public function signup()
+    {
+        if ($this->validate()) {
+            $user = new User();
+            $user->username = $this->username;
+            $user->email = $this->email;
+            $user->setPassword($this->password);
+            $user->generateAuthKey();
+            $user->save(false);
+
+            // нужно добавить следующие три строки:
+          /*  $auth = Yii::$app->authManager;
+            if($this->role){
+                $role = $auth->getRole($this->role);
+            }else{
+                $role = $auth->getRole('user');
+            }
+          */
+            $connection = Yii::$app->db;
+            $connection->createCommand()->insert('auth_assignment', ['item_name' => $this->role, 'user_id' => $user->getId(), 'created_at' => time()])->execute();
+
+            return $user;
+        }
+
+        return null;
     }
-
-
 }

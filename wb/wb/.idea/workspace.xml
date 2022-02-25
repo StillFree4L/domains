@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="431672eb-9bc1-4861-9ff1-fa79379ba6e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../sk/views/site/chatbot.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../sk/views/site/chats/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../sk/views/site/chats/test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../sk/web/chatbot/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sk/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sk/config/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/config/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sk/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/controllers/SiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sk/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sk/models/SignupForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/models/SignupForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sk/runtime/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sk/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/views/layouts/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sk/views/site/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/views/site/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sk/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/views/site/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sk/views/user/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/views/user/signup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sk/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/web/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/.idea/vil.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/__index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/cache/stocks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NJRCI6ImY5MmY5Y2NmLTE5ZmUtNDQ4Ny04NmI3LWRjMmM3NjgzNGVjZSJ9.KdO7hVoY5hNmAciFrcK8zfxr6blu8AEe-qNx8IrfsDM-4132" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/cache/wb-cache/M2ZjZGI0YTUtNWRjMi00ODI4LTk0YjYtMjVhZDg3YTM1NTZl-1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/cache/wb-cache/M2ZjZGI0YTUtNWRjMi00ODI4LTk0YjYtMjVhZDg3YTM1NTZl-2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/cookies.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/bootstrap-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/bootstrap-theme.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/closelabel.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/images/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/images/bui.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/images/cbui.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/images/ddui.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/images/mbui.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/images/sb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/nextlabel.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/pickmeup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/prevlabel.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/slimbox2-rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/slimbox2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/fonts/Arial-ItalicMT.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/head.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/http.lib.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/js/ext-all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/js/jquery-1.7.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/js/jquery-3.4.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/js/jquery-ui-1.8.18.custom.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/js/jquery.datetimepicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/js/jquery.datetimepicker.full.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/js/jquery.datetimepicker.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/js/jquery.datetimepicker.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/js/locale-ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/js/npm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/js/pickmeup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/js/slimbox2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil/test" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="25HvYmWqWx2WMilvorYrDjYCXNb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cache/wb-cache" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\vil\cache\wb-cache" />
+      <recent name="C:\OpenServer\domains\vil\cache" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\vil\cache" />
+      <recent name="C:\OpenServer\domains\vil\update" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="431672eb-9bc1-4861-9ff1-fa79379ba6e8" name="Default Changelist" comment="" />
+      <created>1645196875785</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1645196875785</updated>
+      <workItem from="1645196878422" duration="7002000" />
+      <workItem from="1645209002301" duration="3407000" />
+      <workItem from="1645259641685" duration="2763000" />
+      <workItem from="1645281905738" duration="18430000" />
+      <workItem from="1645301694771" duration="2134000" />
+      <workItem from="1645347212186" duration="7940000" />
+      <workItem from="1645355763042" duration="3842000" />
+      <workItem from="1645365859253" duration="1092000" />
+      <workItem from="1645437222505" duration="9902000" />
+      <workItem from="1645451987532" duration="570000" />
+      <workItem from="1645452789808" duration="841000" />
+      <workItem from="1645454376368" duration="378000" />
+      <workItem from="1645454867721" duration="3000" />
+      <workItem from="1645462918915" duration="405000" />
+      <workItem from="1645466392269" duration="8582000" />
+      <workItem from="1645476976913" duration="151000" />
+      <workItem from="1645509602762" duration="12488000" />
+      <workItem from="1645543677639" duration="4566000" />
+      <workItem from="1645548758782" duration="4488000" />
+      <workItem from="1645555506331" duration="5430000" />
+      <workItem from="1645592771454" duration="15444000" />
+      <workItem from="1645638478724" duration="9529000" />
+      <workItem from="1645648257062" duration="29000" />
+      <workItem from="1645679717776" duration="13164000" />
+      <workItem from="1645694026559" duration="66000" />
+      <workItem from="1645694606765" duration="295000" />
+      <workItem from="1645695118023" duration="52000" />
+      <workItem from="1645696306498" duration="2585000" />
+      <workItem from="1645706414696" duration="30191000" />
+      <workItem from="1645737230449" duration="466000" />
+      <workItem from="1645772089927" duration="195000" />
+      <workItem from="1645772550390" duration="18708000" />
+      <workItem from="1645795045106" duration="2831000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="559" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1645795723233">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="559" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1645795723233" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1645713746531">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1645713746531" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1645546406442">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1645546406442" />
+  </component>
+</project>

@@ -93,6 +93,7 @@ class UserController extends Controller
         return $this->render('signup', [
             'model' => $model,
             'roles' => $roles,
+            //'user' => $user,
         ]);
     }
     /**

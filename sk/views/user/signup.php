@@ -8,6 +8,7 @@ $this->params['breadcrumbs'][] = $this->title;
 $params = [
         'prompt' => 'Выберите роль пользователя...'
     ];
+//var_dump($user);
 ?>
 <!--==========================
   Authorization Section

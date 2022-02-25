@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Контакты';
+$this->title = 'Главная';
 ?>
 
 <main id="main">
@@ -39,7 +39,7 @@ $this->title = 'Контакты';
     <!--==========================
     About Us Section
     ============================-->
-    <section id="about">
+    <section id="about" style="z-index: auto">
         <div class="container">
 
             <header class="section-header">
