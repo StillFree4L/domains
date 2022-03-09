@@ -20,70 +20,69 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="431672eb-9bc1-4861-9ff1-fa79379ba6e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../sk/views/site/chatbot.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../sk/views/site/chats/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../sk/views/site/chats/test" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../sk/web/chatbot/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sk/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sk/config/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/config/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sk/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sk/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sk/models/SignupForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/models/SignupForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sk/runtime/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sk/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/views/layouts/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sk/views/site/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/views/site/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sk/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/views/site/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sk/views/user/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/views/user/signup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sk/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/web/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/.idea/vil.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/__index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/cache/stocks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NJRCI6ImY5MmY5Y2NmLTE5ZmUtNDQ4Ny04NmI3LWRjMmM3NjgzNGVjZSJ9.KdO7hVoY5hNmAciFrcK8zfxr6blu8AEe-qNx8IrfsDM-4132" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/cache/wb-cache/M2ZjZGI0YTUtNWRjMi00ODI4LTk0YjYtMjVhZDg3YTM1NTZl-1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/cache/wb-cache/M2ZjZGI0YTUtNWRjMi00ODI4LTk0YjYtMjVhZDg3YTM1NTZl-2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/cookies.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/bootstrap-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/bootstrap-theme.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/bootstrap-theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/closelabel.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/images/bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/images/bui.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/images/cbui.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/images/ddui.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/images/mbui.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/images/sb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/nextlabel.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/pickmeup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/prevlabel.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/slimbox2-rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/slimbox2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/fonts/Arial-ItalicMT.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/head.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/http.lib.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/js/ext-all.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/js/jquery-1.7.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/js/jquery-3.4.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/js/jquery-ui-1.8.18.custom.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/js/jquery.datetimepicker.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/js/jquery.datetimepicker.full.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/js/jquery.datetimepicker.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/js/jquery.datetimepicker.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/js/locale-ru.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/js/npm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/js/pickmeup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/js/slimbox2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vil/test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sk/runtime/debug/index.data" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/runtime/debug/index.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sk/runtime/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../sk/runtime/logs/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/.idea/jsonSchemas.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/.idea/vil.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/cache/NGQ0M2ZiMmYtMmZmYS00NGUzLWE5ODktMzIxNThmMzY3NTkw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/cache/NGQ0M2ZiMmYtMmZmYS00NGUzLWE5ODktMzIxNThmMzY3NTkw-1-on" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/cache/NGQ0M2ZiMmYtMmZmYS00NGUzLWE5ODktMzIxNThmMzY3NTkw-2-on" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/cache/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NJRCI6ImRlMTExOTk0LTJlMjEtNGRhNy05Mzc0LTRiOTI2YjQwNTNhMiJ9.wBbe_HlSf2AFYvQfaPaJzWbWjr5Ro6JJ1Cq6U6HiD1U-stocks.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/cache/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NJRCI6ImRlMTExOTk0LTJlMjEtNGRhNy05Mzc0LTRiOTI2YjQwNTNhMiJ9.wBbe_HlSf2AFYvQfaPaJzWbWjr5Ro6JJ1Cq6U6HiD1U-stocks_old.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/cookies.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/bootstrap-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/bootstrap-theme.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/closelabel.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/images/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/images/bui.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/images/cbui.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/images/ddui.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/images/mbui.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/images/sb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/nextlabel.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/pickmeup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/prevlabel.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/slimbox2-rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/slimbox2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/fonts/Arial-ItalicMT.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/func.lib.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/head.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/http.lib.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/js/ext-all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/js/jquery-1.7.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/js/jquery-3.4.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/js/jquery-ui-1.8.18.custom.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/js/jquery.datetimepicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/js/jquery.datetimepicker.full.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/js/jquery.datetimepicker.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/js/jquery.datetimepicker.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/js/locale-ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/js/npm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/js/pickmeup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/js/slimbox2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/key.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/ld/head.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/ld/http.lib.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/ld/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/ld/key.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/ld/report.lib.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/report.lib.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/update/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/update/json/5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vil — копия (3)/update/update.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +91,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -161,6 +167,22 @@
       <workItem from="1645772089927" duration="195000" />
       <workItem from="1645772550390" duration="18708000" />
       <workItem from="1645795045106" duration="2831000" />
+      <workItem from="1645815314993" duration="231000" />
+      <workItem from="1645815616273" duration="279000" />
+      <workItem from="1645816520083" duration="10219000" />
+      <workItem from="1645864850815" duration="598000" />
+      <workItem from="1645865542688" duration="109000" />
+      <workItem from="1645887817996" duration="22999000" />
+      <workItem from="1645915081748" duration="2500000" />
+      <workItem from="1645956181610" duration="25191000" />
+      <workItem from="1646023942663" duration="37872000" />
+      <workItem from="1646072954575" duration="12752000" />
+      <workItem from="1646117058411" duration="1927000" />
+      <workItem from="1646129158557" duration="901000" />
+      <workItem from="1646285965432" duration="10212000" />
+      <workItem from="1646297952669" duration="1299000" />
+      <workItem from="1646301984577" duration="15957000" />
+      <workItem from="1646659561384" duration="1091000" />
     </task>
     <servers />
   </component>
@@ -180,17 +202,21 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="559" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1645795723233">
+    <state x="0" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1646058194150">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="559" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1645795723233" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1645713746531">
+    <state x="0" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1646058194150" />
+    <state x="559" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1646309528822">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1645713746531" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1645546406442">
+    <state x="559" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1646309528822" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1645973293316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1645546406442" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1645973293316" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1646304206175">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1646304206175" />
   </component>
 </project>

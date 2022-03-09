@@ -1,19 +1,9 @@
 <?php
-if ($_GET['type'] == 8)
-{
+//себестоимость
+
     $ss_dop_fields = $USER['dp_list'];
     if (trim($ss_dop_fields) == '') {
-        $dp_save_list = 2;
-        if($dp_save_list){
-            $ss_dop_contents = json_decode(file_get_contents('update/json/list.json'));
-            if ($ss_dop_contents != '') {
-                foreach ($ss_dop_contents as $ss_dop_content) {
-                    if ($ss_dop_content->dp_save_list == $dp_save_list) {
-                        $ss_dop_fields = $ss_dop = $ss_dop_content->list;
-                    }
-                }
-            }
-        }
+        $ss_dop_fields = $ss_dop = dop_list('2');
     }
     if (trim($ss_dop_fields) == '') $ss_dop_fields = "Затраты на поиск товара\n Затраты на забор товара\n Затраты на услуги фулфилмента\n Затраты на фото/видео материалы\n Затраты на внутреннюю рекламу\n Затраты на внешнюю рекламу\n Затраты на самовыкупы\n Затраты прочие";
 
@@ -57,32 +47,31 @@ if ($_GET['type'] == 8)
 
 function save_list()
 {
-	$.post("/wb/update/update.php", {dp_save_list:'.$dp_save_list.', list:$("#dop_fileds").val()}, function (dt){
+	$.post("/wb/update/update.php", {dp_save_list:2, list:$("#dop_fileds").val()}, function (dt){
 		document.location.reload();
 	});
 }
 
 function number_update_all(){
-    var input = document.querySelectorAll(\'input.inputValueAll\');
-    var inputval = "";
+    let input = document.querySelectorAll(\'input.inputValueAll\');
+    let len = Ext.select("td.x-grid-cell-ss_all").elements.length;
     
-    var i = 0;
-    var j = 0;
+    let i = 0;
+    let j = 0;
     while (i < input.length) {
-        if(input[i].value != "" && input[i].value != null){
-            j = 0
-            inputval = document.querySelectorAll("#"+input[i].getAttribute("sf"));
-            //console.log(inputval);
-        while (j < inputval.length) {
-            if(inputval[j].getAttribute("incomeid") != null && inputval[j].getAttribute("incomeid") != ""){
-                number_update(inputval[j].getAttribute(\'idd\'),input[i].value,input[i].getAttribute(\'sf\'),inputval[j].getAttribute(\'incomeid\'),inputval[j].getAttribute(\'supplierarticle\'),inputval[j].getAttribute(\'barcode\'));
+        if(input[i].value && input[i].value != "" && input[i].value != null && input[i].getAttribute("sf") != ""){
+            inputs = document.querySelectorAll("input.inputValue#"+input[i].getAttribute("sf"));
+            if (len > 0){
+                j = 0;
+                while (j < len-1){
+                   number_update("Data-"+(j+1),input[i].value,input[i].getAttribute("sf"),inputs[j].getAttribute("incomeId"),inputs[j].getAttribute("supplierArticle"),inputs[j].getAttribute("barcode"))
+                    j++;
+                }
             }
-            j++
-            
-        }
         }
         i++;
     }
+    document.location.reload();
     setTimeout(function () {document.location.reload();}, 2000);
 }
 </script>
@@ -116,7 +105,6 @@ function number_update_all(){
                         and $g->barcode == $correct_line->barcode) {
                         foreach ($correct_line as $key => $datumm) {
                             if ($key == $fieldsum) {
-
                                     $g->$fieldsum = $g->quantity * $datumm;
                                 //if ($g->supplierArticle=='6х2,5спб112' and $fieldsum=='Zatraty_na_poisk_tovara'){var_dump($g->Zatraty_na_poisk_tovara);}
                             }
@@ -176,7 +164,6 @@ function number_update_all(){
         else if (isset($_GET['f1']))
         {
             if ($g->supplierArticle != $_GET['f1']) continue;
-
         }
         else
         {
@@ -223,7 +210,9 @@ ss_all
         {
             $g->save_codes = $g->incomeId . '_' . $g->barcode;
 
-            $g->incomeId = 1 /*. ' шт.'*/;
+            if (!isset($_GET['f2'])){
+                $g->incomeId = 1;
+            }
         }
         if ($g->date){
             $g->date = date('d.m.Y',strtotime($g->date));
@@ -299,4 +288,3 @@ ss_all
 
     }*/
 
-}

@@ -328,7 +328,6 @@ function card_info($array,$barcode,$results,$infos){
                     if ($info->nmId == $nomenclature->nmId) {
                         $array['discountPercent'] = $info->discount;
                         $array['promoCodeDiscount'] = $info->promoCode;
-                       // $array['priceWithDisc'] = $info->price;
                     }
                 }
                 $array['nmId'] = $nomenclature->nmId;
@@ -339,13 +338,11 @@ function card_info($array,$barcode,$results,$infos){
                         }
                     }
                 }
-             //   $array['date'] = $result->createdAt;
                 $array['lastChangeDate'] = $result->updatedAt;
                 $array['cancel_dt'] = $nomenclature->updatedAt;
             }
         }
     }
-    //var_dump($array);
     return $array;
 }
 
@@ -357,7 +354,7 @@ function card_info_stocks($array,$barcode,$results,$infos){
                     if ($info->nmId == $nomenclature->nmId) {
                         $array['Discount'] = $info->discount;
                         $array['promoCodeDiscount'] = $info->promoCode;
-                        $array['price_min_discount'] = $info->price;
+                       // $array['price_min_discount'] = $info->price;
                     }
                 }
                 $array['nmId'] = $nomenclature->nmId;
@@ -395,6 +392,7 @@ function orders_object($r){
     $i = 0;
     foreach ($r as $col) {
         if (($_GET['type'] == 10 and ($col->userStatus == 1 or $col->userStatus == 3 or $col->userStatus == 5)) or ($_GET['type'] == 2)) {
+            $arr[$i]['v'] = 'new';
             $arr[$i] = stock_barcode($arr[$i], $col);
             $arr[$i]['number'] = $col->orderId;
             $arr[$i]['date'] = strpos($col->dateCreated, '.') !== FALSE ? strtok($col->dateCreated, '.') : $col->dateCreated;
@@ -450,6 +448,7 @@ function sales_object($r){
     $i = 0;
     foreach ($r as $col){
         if($col->userStatus==2) {
+            $arr[$i]['v'] = 'new';
             $arr[$i] = stock_barcode($arr[$i],$col);
             $arr[$i]['number'] = '';
             $arr[$i]['date'] = strpos($col->dateCreated, '.') !== FALSE ? strtok($col->dateCreated, '.') : $col->dateCreated;
@@ -501,14 +500,14 @@ function stocks_object($r){
     foreach ($r->stocks as $col){
         $arr[$i]['v'] = 'new';
         $arr[$i]['supplierArticle'] = $col->article;
-        $arr[$i]['techSize'] = $col->size;
+        $arr[$i]['techSize'] = 12345;//$col->size;
         $arr[$i]['barcode'] = $col->barcode;
-        $arr[$i]['quantity'] = $col->stock;
+      //  $arr[$i]['quantity'] = $col->stock;
         $arr[$i] = card_info_stocks($arr[$i],$col->article,$results,$infos);
       //  $arr[$i]['isSupply'] = '';
       //  $arr[$i]['isRealization'] = '';
-     //   $arr[$i]['quantityFull'] = '';
-     //   $arr[$i]['quantityNotInOrders'] = '';
+      //  $arr[$i]['quantityFull'] = $col->stock;
+      //  $arr[$i]['quantityNotInOrders'] = $col->stock;
         $arr[$i]['warehouseName'] = $col->warehouseName;
      //   $arr[$i]['inWayToClient'] = '';
      //   $arr[$i]['inWayFromClient'] = '';
@@ -541,7 +540,7 @@ function http_json($api_url,$v=false){
     {
         $r = $r0 = http($api_url);
         $wbt++;
-        if ($wbt > 10) break;
+        if ($wbt > 10) {break;return null;}
     }
     if ($v){
         return type_object(json_decode($r));
@@ -554,11 +553,12 @@ function array_unite($rs=null,$rs_new=null,$rs_sales=null){
     $array = array();
     $date = 0;
 
-    if($_GET['type'] == 1){
+    if($_GET['type'] == 1 or $_GET['type'] == 10){
         $cdt = 'lastChangeDate';
     }else{
         $cdt = 'date';
     }
+
     if ($rs) {
         foreach ($rs as $r) {
             $array[] = $r;
@@ -582,6 +582,17 @@ function array_unite($rs=null,$rs_new=null,$rs_sales=null){
             }
         }
     }
+
+    if ($_GET['type']==10){
+        $arr = array();
+        foreach ($array as $item) {
+            if ($item->isCancel==1 or $item->finishedPrice < 0){
+                $arr[] = $item;
+            }
+        }
+        $array = $arr;
+    }
+
     return json_encode($array);
 }
 /*
@@ -621,7 +632,7 @@ function api_object($wb_key,$api_url='',$api_url_new='',$api_url_sales=''){
 */
 //валидация ключа - форма
 function api_valid($r_url_new){
-    if ($r_url_new){
+    if ($r_url_new!=null){
         if ($r_url_new!=""){
             if ($r_url_new!="invalid token"
                 or $r_url_new!='supplier key not found'
@@ -636,12 +647,264 @@ function api_valid($r_url_new){
                 }
                 return '<font color="green">валиден</font>';
             }else{
-                return '<font color="red">ключ api новый не валиден</font>';
+                return '<font color="red">не валиден</font>';
             }
         }else{
-            return '<font color="red">не валиден или нет ответа от сервера</font>';
+            return '<font color="#ff7f50">нет ответа от сервера api, повторите проверку позднее</font>';
         }
     }else{
-        return '<font color="red">api запрос отсутствует или ключ не валиден</font>';
+        return '<font color="#ff7f50">нет ответа от сервера api, повторите проверку позднее</font>';
     }
+}
+
+function arr_fbs_fbo($r){
+    $dir = 'cache/stocks';
+    $arr = array();
+    $fileName = $dir . '/' . $GLOBALS['auth'] . '-stocks.txt';
+    $fileName_old = $dir . '/' . $GLOBALS['auth'] . '-stocks_old.txt';
+    $lines = file($fileName);
+    $lines_old = file($fileName_old);
+    foreach ($r as $g){
+        foreach ($lines as $line_num => $line){
+            $line = json_decode($line);
+            if ($line->barcode == $g->barcode){
+                $g->fbs = $line->stock;
+            }
+        }
+        foreach ($lines_old as $line_num => $line){
+            $line = json_decode($line);
+            if ($line->barcode == $g->barcode and $_GET['type'] !=6){
+                $g->techSize = $line->techSize;
+               // $g->quantity += $line->quantity;
+                $g->fbo += $line->quantity;
+                $g->isSupply = $line->isSupply;
+                $g->isRealization = $line->isRealization;
+               // $g->quantityFull = $line->quantityFull;
+             //   $g->quantityNotInOrders = $line->quantityNotInOrders;
+            }elseif ($_GET['type'] ==6 and $line->nmId == $g->nmId){
+               // if (!$g->quantity){$g->quantity = $line->quantity;}
+                if (!$g->isSupply){$g->isSupply = $line->isSupply;}
+                if (!$g->isRealization){$g->isRealization = $line->isRealization;}
+               // if (!$g->quantityFull){$g->quantityFull = $line->quantityFull;}
+               // if (!$g->quantityNotInOrders){$g->quantityNotInOrders = $line->quantityNotInOrders;}
+                if (!$g->SCCode){$g->SCCode = $line->SCCode;}
+                if (!$g->daysOnSite){$g->daysOnSite = $line->daysOnSite;}
+                $g->fbo += $line->quantity;
+            }
+        }
+        $g->fbs_fbo = $g->fbs + $g->fbo;
+        $arr[] = $g;
+    }
+    return $arr;
+}
+
+function arr_postav($r){
+    $arr = array();
+    $fileName_orders = 'cache/wb-cache/'.$GLOBALS['wb_key_new'].'-2-'.$GLOBALS['config_return'];
+    $lines_orders = file_get_contents($fileName_orders);
+    $lines_orders = explode('@@---@@', $lines_orders)[1];
+
+    if (json_decode($lines_orders) == NULL || strpos($lines_orders, 'can\'t decode supplier key') !== false) {
+        $fileName_old = 'cache/stocks/'.$GLOBALS['auth'].'-stocks_old.txt';
+        $lines_old = file($fileName_old);
+
+        if ($lines_old[0] != NULL){
+            foreach ($r as $k=>$g) {
+                foreach ($lines_old as $line_num => $line) {
+                    $line = json_decode($line);
+                    if ($line->barcode == $g->barcode or $line->supplierArticle == $g->supplierArticle or $line->supplierArticle == $g->sa_name){
+                        if ($_GET['type'] != 9){
+                            $g->brand = $line->brand;
+                            $g->subject = $line->subject;
+                        }
+                        $g->category = $line->category;
+                    }
+                }
+                $arr[$k] = $g;
+            }
+        }
+    }else{
+        foreach ($r as $k=>$g){
+            foreach (json_decode($lines_orders) as $item){
+                if ($item->barcode == $g->barcode or $item->supplierArticle == $g->supplierArticle or $line->supplierArticle == $g->sa_name) {
+                    if ($_GET['type'] != 9){
+                        $g->brand = $item->brand;
+                        $g->subject = $item->subject;
+                    }
+                    $g->category = $item->category;
+                }
+            }
+            $arr[$k] = $g;
+        }
+    }
+    return $arr;
+}
+
+function speed_fbo_fbs($tbl_rows){
+    $rows = $tbl_rows;
+    if ($_GET['type'] != 2){
+        $file_orders = 'cache/wb-cache/' . $GLOBALS['wb_key_new'] . '-2-' . $GLOBALS['config_return'];
+        file_put_contents($file_orders, '', FILE_APPEND);
+        $orders = file_get_contents($file_orders);
+        $orders2 = explode('@@---@@', $orders);
+        $orders_rows = json_decode($orders2[1]);
+    }else{
+        $orders_rows = $tbl_rows;
+    }
+
+    if ($_GET['type'] != 1){
+        $file_sales = 'cache/wb-cache/' . $GLOBALS['wb_key_new'] . '-1-' . $GLOBALS['config_return'];
+        file_put_contents($file_sales, '', FILE_APPEND);
+        $sales = file_get_contents($file_sales);
+        $sales2 = explode('@@---@@', $sales);
+        $sales_rows = json_decode($sales2[1]);
+    }else{
+        $sales_rows = $tbl_rows;
+    }
+
+    if ($_GET['type'] != 6){
+        $file_stock = 'cache/wb-cache/' . $GLOBALS['wb_key_new'] . '-6';
+        file_put_contents($file_stock, '', FILE_APPEND);
+        $stock = file_get_contents($file_stock);
+        $stock2 = explode('@@---@@', $stock);
+        $tbl_rows = json_decode($stock2[1]);
+    }
+
+    if ($tbl_rows){
+        foreach ($tbl_rows as $g) {
+            $cnt_refund_sales = $cnt_sales = 0;
+            $cnt_refund_sales30 = $cnt_sales30 = 0;
+            $cnt_refund_orders = $cnt_orders = 0;
+            $cnt_refund_orders30 = $cnt_orders30 = 0;
+            $idps = $idps30 = array();
+            if ($sales_rows) {
+                foreach ($sales_rows as $sale_row) {
+                    if ($sale_row->nmId == $g->nmId) {
+                        $cdt = $sale_row->lastChangeDate;
+                        if (strtotime($cdt) >= strtotime(date('Y-m-d', time() - 60 * 60 * 24 * 7))) {
+                            if ($sale_row->totalPrice < 0) {
+                                $cnt_refund_sales++;
+                            } else {
+                                $cnt_sales++;
+                                $idps[$sale_row->odid] = 1;
+                            }
+                        }
+                        if (strtotime($cdt) >= time() - 60 * 60 * 24 * 30) {
+
+                            if ($sale_row->totalPrice < 0) {
+                                $cnt_refund_sales30++;
+                            } else {
+                                $cnt_sales30++;
+                                $idps30[$sale_row->odid] = 1;
+                            }
+                        }
+                    }
+                }
+            }
+            if ($orders_rows) {
+                foreach ($orders_rows as $sale_row) {
+                    if ($sale_row->nmId == $g->nmId) {
+                        $cdt = $sale_row->lastChangeDate;
+                        if (strtotime($cdt) >= strtotime(date('Y-m-d', time() - 60 * 60 * 24 * 7))) {
+                            if ($sale_row->isCancel) {
+                                $cnt_refund_orders++;
+                            } else {
+                                if (!isset($idps[$sale_row->odid])) {
+                                    $cnt_orders++;
+                                }
+                            }
+                        }
+                        if (strtotime($cdt) >= time() - 60 * 60 * 24 * 30) {
+                            if ($sale_row->isCancel) {
+                                $cnt_refund_orders30++;
+                            } else {
+                                if (!isset($idps30[$sale_row->odid])) {
+                                    $cnt_orders30++;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if ($cnt_orders + $cnt_sales != 0) {
+                $g->ref_7 = ($cnt_refund_sales + $cnt_refund_orders);
+                $g->refa_7 = ($cnt_orders + $cnt_sales);
+                $g->refund_7 = intval(($cnt_refund_sales + $cnt_refund_orders) / ($cnt_orders + $cnt_sales) * 100) . '% <br>';
+                $g->refund_7 .= ($cnt_refund_sales + $cnt_refund_orders) . ' / ' . ($cnt_orders + $cnt_sales);
+            }
+
+            if ($cnt_orders30 + $cnt_sales30 != 0) {
+                $g->ref_30 .= ($cnt_refund_sales30 + $cnt_refund_orders30);
+                $g->refa_30 .= ($cnt_orders30 + $cnt_sales30);
+                $g->refund_30 = intval(round(($cnt_refund_sales30 + $cnt_refund_orders30) / ($cnt_orders30 + $cnt_sales30) * 100, 2)) . '% <br> ';
+                $g->refund_30 .= ($cnt_refund_sales30 + $cnt_refund_orders30) . ' / ' . ($cnt_orders30 + $cnt_sales30);
+            }
+            $g->speed_30 = round($cnt_sales30 / 30, 1);
+            $g->speed_7 = round($cnt_sales / 7, 1);
+            $g->speed_7_order = round($cnt_orders / 7, 1);
+            $g->speed = '~ ' . intval(round($g->quantity / ($cnt_sales / 7), 1));
+        }
+    }
+    foreach ($rows as $k=>$row) {
+        foreach ($tbl_rows as $g){
+            if ($row->nmId == $g->nmId){
+                $rows[$k]->refund_7 = $g->refund_7;
+                $rows[$k]->refund_30 = $g->refund_30;
+                $rows[$k]->speed_30 = $g->speed_30;
+                $rows[$k]->speed_7 = $g->speed_7;
+                $rows[$k]->speed_7_order = $g->speed_7_order;
+                $rows[$k]->speed = $g->speed;
+            }
+        }
+    }
+    return $rows;
+}
+
+function sebes_pribil($rows){
+    $file_stock = 'cache/wb-cache/' . $GLOBALS['wb_key_new'] . '-8';
+    file_put_contents($file_stock, '', FILE_APPEND);
+    $stock = file_get_contents($file_stock);
+    $stock2 = explode('@@---@@', $stock);
+    $tbl_rows = json_decode($stock2[1]);
+    foreach ($rows as $key=>$row) {
+        foreach ($tbl_rows as $tbl_row) {
+            if ($row->barcode == $tbl_row->barcode
+                and $row->sa_name == $tbl_row->supplierArticle){
+                $rows[$key]->incomeId = $tbl_row->incomeId;
+               // $rows[$key]->category = $tbl_row->category;
+                $rows[$key]->status = $tbl_row->status;
+            }
+        }
+    }
+    return $rows;
+}
+
+
+
+function file_read($name){
+    $dir = $_SERVER['DOCUMENT_ROOT'].'/wb/update/json/';
+    $dir_file = 'update/json/';
+    $arr = array();
+    $files = scandir($dir);
+    $files = array_diff($files , array('..', '.'));
+
+    foreach($files as $file){
+        $file3 = substr($file, 0, strpos($file, "-"));
+        if(basename($file3,'.json') == $name){
+
+            $read = json_decode(file_get_contents($dir_file.$file));
+           // var_dump($read);
+            $arr = array_merge($arr, (array) $read);
+
+        }
+    }
+    return $arr;
+}
+
+function dop_list($dp_save_list){
+    $ss_dop_contents = json_decode(file_get_contents('update/json/list.json'));
+    if ($ss_dop_contents != '' and $ss_dop_contents->dp_save_list == $dp_save_list) {
+        $ss_dop_fields = $ss_dop_contents->list;
+    }
+    return $ss_dop_fields;
 }

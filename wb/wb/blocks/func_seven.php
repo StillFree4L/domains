@@ -1,6 +1,6 @@
 <?php
-if ($_GET['type'] == 7)
-{
+//поставки
+
     if (isset($_GET['rid']))
     {
         echo "<h4 style='margin-bottom:10px;'><a style='margin-left:10px;' href='?page=wb&type=7&dt=" . $_GET['dt'] . "''>Все поставки</a>  / Поставка № <a href='?page=wb&type=7&rid=$_GET[rid]&dt=" . $_GET['dt'] . "'>" . $_GET['rid'] . '</a></h4>';
@@ -118,17 +118,7 @@ for(j=0;j < dp_krows.length; j++)
 
     $ss_dop_fields = $USER['dp_list'];
     if (trim($ss_dop_fields) == '') {
-        $dp_save_list = 2;
-        if($dp_save_list){
-            $ss_dop_contents = json_decode(file_get_contents('update/json/list.json'));
-            if ($ss_dop_contents != '') {
-                foreach ($ss_dop_contents as $ss_dop_content) {
-                    if ($ss_dop_content->dp_save_list == $dp_save_list) {
-                        $ss_dop_fields = $ss_dop = $ss_dop_content->list;
-                    }
-                }
-            }
-        }
+        $ss_dop_fields = $ss_dop = dop_list('2');
     }
     if (trim($ss_dop_fields) == ''){
         $ss_dop_fields = $ss_dop = "Затраты на поиск товара\n Затраты на забор товара\n Затраты на услуги фулфилмента\n Затраты на фото/видео материалы\n Затраты на внутреннюю рекламу\n Затраты на внешнюю рекламу\n Затраты на самовыкупы\n Затраты прочие";
@@ -144,7 +134,7 @@ for(j=0;j < dp_krows.length; j++)
     echo '<script>
 function save_list()
 {
-	$.post("/wb/update/update.php", {dp_save_list:'.$dp_save_list.', list:$("#dop_fileds").val()}, function (dt){
+	$.post("/wb/update/update.php", {dp_save_list:2, list:$("#dop_fileds").val()}, function (dt){
 		document.location.reload();
 	});
 }
@@ -377,4 +367,3 @@ function save_list()
             echo "<script>dp_krows.push('{$g->incomeId2}_{$g->barcode}')</script>";
         }
     }
-}
