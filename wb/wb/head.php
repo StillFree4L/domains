@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta name="interkassa-verification" content="c63409235ebf92d92d822e6130359df7" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 <!--<script src="js/jquery-1.7.1.min.js"></script>-->
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/style.css" />
 	<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
 
-  
+
 <script>
 function really_delete()
 {
@@ -22,19 +22,28 @@ function really_delete()
 	return res;
 }
 </script>
-
 <style type="text/css">
+    ::-moz-selection {color: #fff; background: #3399FF; text-shadow: none;}
+
+    ::selection {color: #fff; background: #3399FF; text-shadow: none;}
+
 	.table tr:hover
 	{
 		background: #eee;
 	}
 
-	.table 
+	.table
 	{
 		font-size: 14px;
 	}
 .inputValue{
-    width: 70px;
+  width: 70px;
+  border: 1px solid #a49f9f;
+  border-radius: 5%;
+  height: 25px;
+}
+.x-grid-cell-inner {
+  text-align:center !important;
 }
     .tbl td
     {
@@ -46,7 +55,7 @@ function really_delete()
         color: #000000;
     }
     .dropbtn {
-        font-size: 20px;
+        font-size: 13px;
         border: none;
         cursor: pointer;
     }
@@ -55,8 +64,8 @@ function really_delete()
     .dropdown {
         position: absolute;
         display: inline-block;
-        left:300px;
-        top:4.5%;
+        left:215px;
+        top: 12px;
     }
 
     /* Выпадающее содержимое (скрыто по умолчанию) */
@@ -80,6 +89,5 @@ function really_delete()
 
 </head>
 <body>
-  
-  <div style="padding-top: 30px;">
 
+  <div>

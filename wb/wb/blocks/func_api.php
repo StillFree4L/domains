@@ -26,11 +26,15 @@
         $api_url = 'https://suppliers-stats.wildberries.ru/api/v1/supplier/reportDetailByPeriod?dateFrom=' . $dt1 . '&key=' . $USER['wb_key'] . '&limit=1000000&rrdid=0&dateto=' . date('Y-m-d');
         $tbl_keys = ($pribil_keys);
     }
-    elseif ($_GET['type'] == 6)
+    elseif (in_array($_GET['type'],[6,11]))
     {
         $api_url_new = 'https://suppliers-api.wildberries.ru/api/v2/stocks?skip=0&take=1000';
         $api_url = 'https://suppliers-stats.wildberries.ru/api/v1/supplier/stocks?dateFrom=' . $dt1 . 'T00:00:00.000Z&key=' . $USER['wb_key'];
-        $tbl_keys = ($sklad_keys);
+        if($calc_keys){
+          $tbl_keys = ($calc_keys);
+        }else{
+          $tbl_keys = ($sklad_keys);
+        }
     }
     elseif ($_GET['type'] == 7)
     {
@@ -61,7 +65,7 @@
         $tbl_keys = ($orders_keys);
     }
     if ($_GET['type'] == 1 or $_GET['type'] == 2){
-        $fileN = 'cache/wb-cache/' . $GLOBALS['wb_key_new'] . '-' . $_GET['type'].'-'.$GLOBALS['config_return'];
+        $fileN = 'cache/wb-cache/' . $GLOBALS['wb_key_new'] . '-' . $_GET['type'].'-on';
     }else{
         $fileN = 'cache/wb-cache/' . $GLOBALS['wb_key_new'] . '-' . $_GET['type'];
     }

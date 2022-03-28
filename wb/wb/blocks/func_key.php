@@ -28,8 +28,10 @@ $lines[0]=trim($lines[0]);
 $lines[1]=trim($lines[1]);
 $lines[2]=trim($lines[2]);
 $lines[3]=trim($lines[3]);
+$perc=trim($lines[4]);
+$pay=trim($lines[5]);
 
-if (($_POST['key1'] or $_POST['key2'] or $_POST['key3'] or $_GET['r'])
+if (($_POST['key1'] or $_POST['key2'] or $_POST['key3'] or $_POST['key4'] or $_POST['key5'] or $_GET['r'])
     and (($_POST['key1'] != $lines[0])
         or ($_POST['key2'] != $lines[1])
         or ($_POST['key3'] != $lines[2])
@@ -46,13 +48,20 @@ if (($_POST['key1'] or $_POST['key2'] or $_POST['key3'] or $_GET['r'])
     if ($_GET['r'] != '' or $_GET['r'] != null){
         $lines[3] = $_GET['r'];
     }
-    file_put_contents($fileName, $lines[0].PHP_EOL.$lines[1].PHP_EOL.$lines[2].PHP_EOL.$lines[3].PHP_EOL);
+    if ($_POST['key4'] != '' and $_POST['key4'] != null){
+        $lines[4] = $_POST['key4'];
+    }
+    if ($_POST['key5']){
+        $lines[5] = $pay = $_POST['key5'];
+    }
+
+    file_put_contents($fileName, $lines[0].PHP_EOL.$lines[1].PHP_EOL.$lines[2].PHP_EOL.$lines[3].PHP_EOL.$lines[4].PHP_EOL.$lines[5].PHP_EOL);
 }
 
 //---------------------------------------------
-$auth = $lines[0];//'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NJRCI6ImRlMTExOTk0LTJlMjEtNGRhNy05Mzc0LTRiOTI2YjQwNTNhMiJ9.wBbe_HlSf2AFYvQfaPaJzWbWjr5Ro6JJ1Cq6U6HiD1U';
-$USER['wb_key'] = $lines[1];//'NGQ0M2ZiMmYtMmZmYS00NGUzLWE5ODktMzIxNThmMzY3NTkw';
-$supplierId = $lines[2];//'b541a87c-d482-4161-9f30-5edc1fded445';
+$auth = $lines[0];
+$USER['wb_key'] = $lines[1];
+$supplierId = $lines[2];
 
 $wb_key_new = $USER['wb_key'];
 $config_return = $lines[3];

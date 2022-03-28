@@ -26,7 +26,8 @@ $tpl_input = [
     5=>"realizationreport_id='{realizationreport_id}' onblur=\"number_update('{id}',this.value,this.id,{realizationreport_id})\"",
     7=>"hidden='false' incomeId='".$_GET['rid']."' barcode='{barcode}' supplierArticle='{supplierArticle}' onblur=\"number_update('{id}',this.value,this.id,".$_GET['rid'].",'{supplierArticle}',{barcode})\"",
     8=>"idd='{id}' hidden='false' incomeId='{incomeId}' barcode='{barcode}' supplierArticle='{supplierArticle}' onblur=\"number_update('{id}',this.value,this.id,{incomeId},'{supplierArticle}',{barcode})\"",
-    9=>"hidden='false' realizationreport_id='{realizationreport_id}' onblur=\"number_update('{id}',this.value,this.id,{realizationreport_id})\"",
+    9=>"hidden='false' idd='{id}' realizationreport_id='{realizationreport_id}' onblur=\"number_update('{id}',this.value,this.id,{realizationreport_id})\"",
+    11=>"idd='{id}' supplierArticle='{supplierArticle}' barcode='{barcode}'  onblur=\"number_update('{id}',this.value,this.id,'{supplierArticle}','{barcode}')\"",
 ];
 $tpl_a = [
     'Obschaya_sebestoimosty_edinicy_tovara'=>'inputSum',
@@ -44,6 +45,9 @@ $tpl_a_div = [
 $or = ['storage_cost','acceptance_fee','other_deductions'];
 $ss_dops = explode("\n",$ss_dop);
 $ss_dopp[] = 'Stoimosty_edinicy_tovara';
+
+$calc_dops = ['strikethrough_price','totalPrice','stoimost','zatrat','sale_percent','wb_commission','cost_delivery','nalog7','ransom','defect','cost_amout'];
+$calc_divs = ['pribil','marga','sale_total','cost_defect','cost_log','cost_wb_commission'];
 
 //константы для ссылок
 $f1 = (isset($_GET['f1']) ? "&f1={$_GET['f1']}" : (isset($_GET['rid']) ? "&f1={$_GET['rid']}" : "")); //(isset($_GET['f1']) ? "&f1={$_GET['f1']}" : "");
@@ -69,7 +73,7 @@ foreach ($tbl_keys as $k => $str){
         'hideable' => true,
         'useNull' => true,
         'defaultValue' => '---',
-        'xtype'=>'templatecolumn',
+        //'xtype'=>'templatecolumn',
     ];
     //не скрывать в отчетах реализаций
     if ((in_array($k,$hidden) and $_GET['type'] == 5 and !$_GET['rid']) or ($_GET['type'] == 5 and $_GET['rid'])){
@@ -103,8 +107,8 @@ foreach ($tbl_keys as $k => $str){
 
         $column['tpl'] = "<a href='?page=wb&type=".$_GET['type'].$f1."&".$tpl[$_GET['type']]."'>{".$k."}</a>";
     }
-    elseif (in_array($k,$or) or ((($_GET['f1'] and $_GET['type']==8) or ($_GET['rid'] and $_GET['type']==7))
-            and in_array(ru2Lat($k),$ss_dopp))){
+    elseif ((in_array($k,$or) or ((($_GET['f1'] and $_GET['type']==8) or ($_GET['rid'] and $_GET['type']==7)) and in_array(ru2Lat($k),$ss_dopp)))
+      or ($_GET['type'] != 11/* and in_array($k,$calc_dops)*/)){
 
         $column['tpl'] = "<input type=\"text\" id='$k' ".$tpl_input[$_GET['type']]." class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');\" value='{".$k."}'>";
     }
@@ -112,7 +116,9 @@ foreach ($tbl_keys as $k => $str){
 
         $column['tpl'] = "<a href='?page=wb&type=".$_GET['type'].$f1."&dt=".$_GET['dt']."'><div class='".$tpl_a[$k]."' ".$tpl_a_div[$_GET['type']].">{" . $k . "}</div></a>";
     }
-    else{
+    /*elseif($_GET['type'] == 11 and in_array($k,$calc_divs)){
+      //  $column['tpl'] = "<a id='$k' idd={id} href='?page=wb&type=".$_GET['type'].$f1."&dt=" . $_GET['dt']."&f2=".$k."&f3={".$k."}'>{".$k."}</a>";
+    }*/else if($_GET['type'] != 11){
         $column['tpl'] = "<a href='?page=wb&type=".$_GET['type'].$f1."&dt=" . $_GET['dt']."&f2=".$k."&f3={".$k."}'>{".$k."}</a>";
     }
     $columns[] = (object) $column;

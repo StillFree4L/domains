@@ -7,10 +7,10 @@ http_load_proxy_list('proxy.txt');
 do
 {
 	http_sel_rand_proxy();
-	http_del_cookie();	
+	http_del_cookie();
 
 	$r = http($URL_PARSE);
-	
+
 	global $HTTP_CUR_PROXY;var_dump($HTTP_CUR_PROXY);
 }
 while(strstr($r, 'Realty.View.')===false || strstr($r, 'error-page__error-name')!==false);
@@ -20,8 +20,8 @@ while(strstr($r, 'Realty.View.')===false || strstr($r, 'error-page__error-name')
 //----------------------------
 // post headers
 
-	$ps = http($p['phone_ajax'], 1, 
-						array('secretFormValue'=>$secretFormValue), 
+	$ps = http($p['phone_ajax'], 1,
+						array('secretFormValue'=>$secretFormValue),
 						array(	'X-Request-Value: '.$XHeader, //'127199414a555248458411710c244f75',
 								'X-Requested-With:XMLHttpRequest'
 							)
@@ -81,7 +81,7 @@ function http($url, $post=0, $ps = 0, $headers = 1)
   global $HTTP_USER_PASS;
   if (trim($HTTP_USER_PASS) != '')
   {
-    curl_setopt($red_book_cms, CURLOPT_USERPWD, $HTTP_USER_PASS);  
+    curl_setopt($red_book_cms, CURLOPT_USERPWD, $HTTP_USER_PASS);
   }
 
 
@@ -95,10 +95,10 @@ function http($url, $post=0, $ps = 0, $headers = 1)
 //  curl_setopt($red_book_cms, CURLOPT_TIMEOUT, 3);
 
 //echo " -proxy:$HTTP_CUR_PROXY - ";
-curl_setopt($red_book_cms, CURLOPT_CONNECTTIMEOUT, 3); 
+curl_setopt($red_book_cms, CURLOPT_CONNECTTIMEOUT, 3);
 //curl_setopt($red_book_cms, CURLOPT_TIMEOUT, 2);
 //    curl_setopt($red_book_cms, CURLOPT_NOSIGNAL, 1);
-    curl_setopt($red_book_cms, CURLOPT_TIMEOUT_MS, 5000);
+    curl_setopt($red_book_cms, CURLOPT_TIMEOUT_MS, 10000);
 
 
 //$url = 'http://whoer.net/';
@@ -168,7 +168,7 @@ curl_setopt($red_book_cms, CURLOPT_CONNECTTIMEOUT, 3);
 
 function http_del_cookie()
 {
-  global $HTTP_COOKIE_FILE;  
+  global $HTTP_COOKIE_FILE;
   file_put_contents($HTTP_COOKIE_FILE, '');
 	@unlink($HTTP_COOKIE_FILE);
 }
@@ -879,25 +879,28 @@ function sebes_pribil($rows){
     return $rows;
 }
 
-
-
 function file_read($name){
-    $dir = $_SERVER['DOCUMENT_ROOT'].'/wb/update/json/';
     $dir_file = 'update/json/';
-    $arr = array();
-    $files = scandir($dir);
-    $files = array_diff($files , array('..', '.'));
+    $arr = [];
+    $files=glob($dir_file.$name."-*.json"/*,GLOB_BRACE*/);
 
     foreach($files as $file){
-        $file3 = substr($file, 0, strpos($file, "-"));
-        if(basename($file3,'.json') == $name){
+        if (preg_match('|json/(.*?)-|si', $file, $fileName)){
 
-            $read = json_decode(file_get_contents($dir_file.$file));
-           // var_dump($read);
-            $arr = array_merge($arr, (array) $read);
-
+          if($fileName[1] == $name){
+            $read = file_get_contents($file);
+            if($read){
+              $read = json_decode($read);
+              $arr = array_merge($arr, (array) $read);
+            }else{
+              continue;
+            }
+          }
+        }else{
+          continue;
         }
     }
+
     return $arr;
 }
 

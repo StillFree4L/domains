@@ -1,10 +1,32 @@
 <?php
 //наименования столбцов
-
+if ($_GET['type'] == 11){
+  $calc_keys = "supplierArticle Артикул
+  barcode Баркод
+  subject Предмет
+  category Категория
+  brand Бренд
+strikethrough_price Зачеркнутая цена
+sale_percent Скидка, %
+sale_total Скидка, цена
+totalPrice Розничная цена
+stoimost Стоимость товара
+zatrat Затраты
+wb_commission Комиссия WB
+cost_delivery Стоимость доставки
+cost_amout Стоимость возврата
+cost_log Стоимость логистики
+nalog7 Налоги
+ransom % выкупа
+defect % брака
+cost_defect Затраты на брак
+pribil Прибыль
+marga Маржинальность";
+}
 if (!isset($_GET['rid']) and $_GET['type'] == 9){
     $pribil_keys = 'realizationreport_id Номер отчета
 rr_dt Дата операции
-quantity Количество
+quantity Количество продаж
 retail_amount Сумма продаж(Возвратов)
 storage_cost Стоимость хранения
 acceptance_fee Стоимость платной приемки
@@ -135,9 +157,9 @@ barcode Баркод
 supplierArticle Артикул
 nmId Код WB
 techSize Размер
-fbs ФБС
-fbo ФБО
-fbs_fbo ФБС+ФБО
+fbs ФБС, остаток
+fbo ФБО, остаток
+fbs_fbo ФБС+ФБО, остаток
 quantity Кол-во, доступное для продажи
 quantityNotInOrders Кол-во не в заказе
 quantityFull Кол-во полное
@@ -213,9 +235,9 @@ lastChangeDate дата изменения
 supplierArticle артикул
 techSize размер
 barcode Баркод
-fbs ФБС
-fbo ФБО
-fbs_fbo ФБС+ФБО
+fbs ФБС, остаток
+fbo ФБО, остаток
+fbs_fbo ФБС+ФБО, остаток
 quantity кол-во
 totalPrice цена до скидки/промо/спп
 discountPercent итоговый дисконт
@@ -245,9 +267,9 @@ lastChangeDate дата изменения
 supplierArticle артикул
 techSize размер
 barcode Баркод
-fbs ФБС
-fbo ФБО
-fbs_fbo ФБС+ФБО
+fbs ФБС, остаток
+fbo ФБО, остаток
+fbs_fbo ФБС+ФБО, остаток
 quantity кол-во
 totalPrice начальная розничная цена
 discountPercent скидка на товар
@@ -286,9 +308,9 @@ lastChangeDate дата изменения
 supplierArticle артикул
 techSize размер
 barcode Баркод
-fbs ФБС
-fbo ФБО
-fbs_fbo ФБС+ФБО
+fbs ФБС, остаток
+fbo ФБО, остаток
+fbs_fbo ФБС+ФБО, остаток
 quantity кол-во
 totalPrice цена до скидки/промо/спп
 discountPercent дисконт
@@ -343,6 +365,9 @@ $orders_sales_keys = make_tbl_keys($orders_sales_keys);
 $postav_keys = make_tbl_keys($postav_keys);
 $sklad_keys = make_tbl_keys($sklad_keys);
 $sebes_keys = make_tbl_keys($sebes_keys);
+if($calc_keys){
+  $calc_keys = make_tbl_keys($calc_keys);
+}
 
 if (!function_exists('mb_ucfirst') && function_exists('mb_substr')) {
     function mb_ucfirst($string) {

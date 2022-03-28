@@ -3,21 +3,21 @@
 function api_filter($line){
     $l = $line;
     if ($_GET['type']==1 or $_GET['type']==2){
-        if ($GLOBALS['config_return']!='off'){
+      //  if ($GLOBALS['config_return']!='off'){
             if ($_GET['type']==1 and (($l->doc_type_name == 'Продажа' and  $l->supplier_oper_name == 'Продажа'
                 and $l->delivery_amount == 0 and $l->return_amount == 0)
                 or (($l->doc_type_name == 'Возврат' and  $l->supplier_oper_name == 'Возврат'
-                        and $l->delivery_amount == 0 and $l->return_amount == 0) or ($l->doc_type_name == 'Продажа' and  $l->supplier_oper_name == 'Логистика'
-                        and $l->delivery_amount == 0 and $l->return_amount > 0)))){
+                        and $l->delivery_amount == 0 and $l->return_amount == 0)/* or ($l->doc_type_name == 'Продажа' and  $l->supplier_oper_name == 'Логистика'
+                      and $l->delivery_amount == 0 and $l->return_amount > 0)*/))){
                 return true;
             }elseif ($_GET['type']==2 and (($l->doc_type_name == 'Продажа' and  $l->supplier_oper_name == 'Логистика'
                 and $l->delivery_amount > 0 and $l->return_amount == 0)
-                    or (($l->doc_type_name == 'Возврат' and  $l->supplier_oper_name == 'Возврат'
-                    and $l->delivery_amount == 0 and $l->return_amount == 0) or ($l->doc_type_name == 'Продажа' and  $l->supplier_oper_name == 'Логистика'
+                    or (/*($l->doc_type_name == 'Возврат' and  $l->supplier_oper_name == 'Возврат'
+                    and $l->delivery_amount == 0 and $l->return_amount == 0) or */($l->doc_type_name == 'Продажа' and  $l->supplier_oper_name == 'Логистика'
                     and $l->delivery_amount == 0 and $l->return_amount > 0)))){
                 return true;
             }
-        }else{
+      /*  }else{
             if ($_GET['type']==1 and $l->doc_type_name == 'Продажа' and  $l->supplier_oper_name == 'Продажа'
                 and $l->delivery_amount == 0 and $l->return_amount == 0){
                 return true;
@@ -25,7 +25,7 @@ function api_filter($line){
                 and $l->delivery_amount > 0 and $l->return_amount == 0){
                 return true;
             }
-        }
+        }*/
     }
     /*if ($_GET['type']==1 and $l->doc_type_name == 'Продажа' and  $l->supplier_oper_name == 'Продажа'
         and $l->delivery_amount == 0 and $l->return_amount == 0){
@@ -56,6 +56,8 @@ function sales_object_report($r){
         $arr[$i]['barcode'] = $col->barcode;
         $arr[$i]['quantity'] = $col->quantity;
         $arr[$i]['totalPrice'] = $col->retail_price;
+        $arr[$i]['doc_type_name'] = $col->doc_type_name;
+        $arr[$i]['supplier_oper_name'] = $col->supplier_oper_name;
         $arr[$i]['discountPercent'] = $col->product_discount_for_report;
         $arr[$i]['isRealization'] = $col->suppliercontract_code ;
         $arr[$i]['promoCodeDiscount'] = $col->supplier_promo ;
@@ -69,6 +71,11 @@ function sales_object_report($r){
         $arr[$i]['nmId'] = $col->nm_id;
         $arr[$i]['subject'] = $col->subject_name;
         $arr[$i]['brand'] = $col->brand_name;
+        if ($l->doc_type_name == 'Возврат' and  $l->supplier_oper_name == 'Возврат'
+                    and $l->delivery_amount == 0 and $l->return_amount == 0){
+            $arr[$i]['isCancel'] = 1;
+            $arr[$i]['cancel_dt'] = $col->rr_dt;
+        }
         $i++;
         //if ($i>0)break;
     }
@@ -145,7 +152,8 @@ function orders_object_report($r){
         $arr[$i]['barcode'] = $col->barcode;
         $arr[$i]['quantity'] = $col->quantity;
         $arr[$i]['totalPrice'] = $col->retail_price;
-       // $arr[$i]['doc_type_name'] = $col->doc_type_name
+        $arr[$i]['supplier_oper_name'] = $col->supplier_oper_name;
+        $arr[$i]['doc_type_name'] = $col->doc_type_name;
         $arr[$i]['discountPercent'] = $col->product_discount_for_report;
         $arr[$i]['finishedPrice '] = $col->retail_price_withdisc_rub;
         $arr[$i]['warehouseName'] = $col->office_name;
@@ -154,10 +162,8 @@ function orders_object_report($r){
         $arr[$i]['nmId'] = $col->nm_id;
         $arr[$i]['subject'] = $col->subject_name;
         $arr[$i]['brand'] = $col->brand_name;
-        if (($col->doc_type_name == 'Возврат' and $col->supplier_oper_name == 'Возврат'
-                and $col->delivery_amount == 0 and $col->return_amount == 0)
-            or ($col->doc_type_name == 'Продажа' and $col->supplier_oper_name == 'Логистика'
-                and $col->delivery_amount == 0 and $col->return_amount > 0)){
+        if ($col->doc_type_name == 'Продажа' and $col->supplier_oper_name == 'Логистика'
+                and $col->delivery_amount == 0 and $col->return_amount > 0){
             $arr[$i]['isCancel'] = 1;
             $arr[$i]['cancel_dt'] = $col->rr_dt;
         }
@@ -171,7 +177,7 @@ function orders_object_report($r){
 function report_cache(){
     $dir = 'cache/report';
     if ($_GET['type']==1 or $_GET['type']==2){
-        $fileName = $dir.'/'.$GLOBALS['wb_key_new'] . '-'.$_GET['type'].'-'.$GLOBALS['config_return'].'.txt';
+        $fileName = $dir.'/'.$GLOBALS['wb_key_new'] . '-'.$_GET['type'].'-on.txt';
     }else{
         $fileName = $dir.'/'.$GLOBALS['wb_key_new'] . '-'.$_GET['type'].'.txt';
     }

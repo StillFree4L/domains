@@ -66,7 +66,7 @@ a {cursor: pointer; outline: none; text-decoration: none;}
 
 #file-form:active::before {color: #696969; text-shadow: 0px 1px 0px rgba(255,255,255,0.53);}
 
-#file-button {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #999; width: auto; height: auto; padding: 6px; text-indent: -9999px; position: absolute; top: 0; left; 0; margin: 0; display: block; cursor: pointer;}
+#file-button {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #999; width: auto; height: auto; padding: 6px; text-indent: -9999px; position: absolute; top: 0; left: 0; margin: 0; display: block; cursor: pointer;}
 /* End File Button */
 
 /* Start Rectangular Button */
