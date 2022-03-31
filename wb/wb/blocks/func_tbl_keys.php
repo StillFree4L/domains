@@ -11,7 +11,7 @@ sale_percent Скидка, %
 sale_total Скидка, руб
 totalPrice Розничная цена
 stoimost Стоимость товара
-zatrat Затраты
+zatrat Доп расходы
 wb_commission Комиссия WB, %
 cost_wb_commission Комиссия WB, руб
 cost_delivery Стоимость доставки

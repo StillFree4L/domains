@@ -36,6 +36,9 @@ function really_delete()
 	{
 		font-size: 14px;
 	}
+  .grid-data-empty{
+    text-align: center;
+  }
 .inputValue{
   width: 70px;
   border: 1px solid #a49f9f;
@@ -55,17 +58,10 @@ function really_delete()
         color: #000000;
     }
     .dropbtn {
-        font-size: 13px;
+      background: url(css/images/key.png) no-repeat 8px;
+      background-size: auto 80%;
         border: none;
         cursor: pointer;
-    }
-
-    /* Контейнер <div> - необходим для размещения выпадающего содержимого */
-    .dropdown {
-        position: absolute;
-        display: inline-block;
-        left:215px;
-        top: 12px;
     }
 
     /* Выпадающее содержимое (скрыто по умолчанию) */
@@ -85,6 +81,51 @@ function really_delete()
         width: 100px;
         display: inline-block;
     }
+    input#btn_pd_del_val{
+      background: url(css/images/remove.png) no-repeat 8px;
+      background-size: auto 70%;
+    }
+    input#btn_pd_clear_val{
+      background: url(css/images/clears.png) no-repeat 8px;
+      background-size: auto 70%;
+    }
+    input#btn_pd_val{
+    background: white;
+    }
+    input#btn_pd_redact_val{
+      background: url(css/images/redact.png) no-repeat 8px;
+      background-size: auto 70%;
+    }
+
+.btn_focus_val:focus{
+  background-color: gray;
+}
+
+    input#btn_pd_val:focus{
+      background: gray;
+    }
+
+    .loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4,end) 1500ms infinite;
+  animation: ellipsis steps(4,end) 1500ms infinite;
+  content: "....................."; /* ascii code for the ellipsis character */
+  width: 5px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 20px;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 20px;
+  }
+}
 </style>
 
 </head>

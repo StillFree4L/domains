@@ -7,7 +7,7 @@ require_once('blocks/func_tbl_keys.php');
 //if (!isset($_GET['dt'])) $_GET['dt'] = date('Y-m-d', time());
 //if (!isset($_GET['type'])) $_GET['type'] = 2;
 
-$v_api = ["success"=>false,"message"=>"Error!"];
+$v_api = ["success"=>false,"message"=>'<font color="red">Нет данных</font>'];
 if (trim($USER['wb_key']) != '')
 {
     require_once('blocks/func_api.php');
@@ -18,7 +18,6 @@ if (trim($USER['wb_key']) != '')
               if (in_array($_GET['type'], [1,2,10])){$r_url_report =  json_decode(report_cache());}
 
               if ($api_url){$r_url = http_json($api_url);}
-            //  var_dump($r_url);
               if ($api_url_sales){$r_url_sales = http_json($api_url_sales);}
               if ($api_url_new){$r_url_new = http_json($api_url_new,true);}
 
@@ -26,13 +25,15 @@ if (trim($USER['wb_key']) != '')
                   $r = array_unite($r_url, $r_url_new, $r_url_sales);
               }
 
-            if ( time() - intval($buf2[0]) > (60*60*24*2) or ($r and !in_array($r,[null,"[]","","can't decode supplier key","unauthorized","invalid token","supplier key not found"]))){
+            if ((time() - intval($buf2[0]) > (60*60*24*2) or ($r and !in_array($r,[null,"[]","","can't decode supplier key","unauthorized","invalid token","supplier key not found"]))) and $r_url_report){
               $r = json_decode($r);
               if ($r_url_report or $r){$r = unity_report($r_url_report, $r);}
             }
 
               if ($r and !in_array($r,[null,"[]","","can't decode supplier key","unauthorized","invalid token","supplier key not found"])){
-                //  $r = json_decode($r);
+                  $r = json_decode($r);
+
+
                 //  if ($r_url_report and $r){$r = unity_report($r_url_report, $r);}
 
                   if (in_array($_GET['type'], [1, 2, 6, 10])) {
@@ -50,14 +51,14 @@ if (trim($USER['wb_key']) != '')
 
                   if (!in_array($r[0], [null, ""])) {
                       $v_api["success"] = true;
-                      $v_api["message"] = "Data updated successfully!";
+                      $v_api["message"] = '<font color="green">Данные обновлены. <a href="#" style="color: green;text-decoration: none;" onclick="parent.location.reload(); return false;">Перезагрузите страницу</a></font>';
                       file_put_contents($fileN, time() . '@@---@@' . json_encode($r), LOCK_EX);
                   }
-              }else{$v_api["message"] .= " Data missing or no response from api server.";}
+              }else{$v_api["message"] = '<font color="red">Данные отсутствуют или нет ответа от API-сервера. <a href="#" style="color: green;text-decoration: none;" onclick="parent.location.reload(); return false;">Попробуйте позднее</a></font>';}
           }
       }else{
           $v_api["success"] = true;
-          $v_api["message"] = "Data is available!";
+          $v_api["message"] = '<font color="red">Нет данных</font>';
       }
 }
 echo json_encode($v_api);

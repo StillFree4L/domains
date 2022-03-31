@@ -73,8 +73,10 @@ foreach ($tbl_keys as $k => $str){
         'hideable' => true,
         'useNull' => true,
         'defaultValue' => '---',
-        //'xtype'=>'templatecolumn',
     ];
+    if($_GET['type'] != 11){
+      $column['xtype'] = 'templatecolumn';
+    }
     //не скрывать в отчетах реализаций
     if ((in_array($k,$hidden) and $_GET['type'] == 5 and !$_GET['rid']) or ($_GET['type'] == 5 and $_GET['rid'])){
         $column['hidden'] = false;
@@ -108,7 +110,7 @@ foreach ($tbl_keys as $k => $str){
         $column['tpl'] = "<a href='?page=wb&type=".$_GET['type'].$f1."&".$tpl[$_GET['type']]."'>{".$k."}</a>";
     }
     elseif ((in_array($k,$or) or ((($_GET['f1'] and $_GET['type']==8) or ($_GET['rid'] and $_GET['type']==7)) and in_array(ru2Lat($k),$ss_dopp)))
-      or ($_GET['type'] != 11/* and in_array($k,$calc_dops)*/)){
+      and $_GET['type'] != 11){
 
         $column['tpl'] = "<input type=\"text\" id='$k' ".$tpl_input[$_GET['type']]." class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');\" value='{".$k."}'>";
     }
@@ -118,7 +120,7 @@ foreach ($tbl_keys as $k => $str){
     }
     /*elseif($_GET['type'] == 11 and in_array($k,$calc_divs)){
       //  $column['tpl'] = "<a id='$k' idd={id} href='?page=wb&type=".$_GET['type'].$f1."&dt=" . $_GET['dt']."&f2=".$k."&f3={".$k."}'>{".$k."}</a>";
-    }*/else if($_GET['type'] != 11){
+    }*/elseif($_GET['type'] != 11){
         $column['tpl'] = "<a href='?page=wb&type=".$_GET['type'].$f1."&dt=" . $_GET['dt']."&f2=".$k."&f3={".$k."}'>{".$k."}</a>";
     }
     $columns[] = (object) $column;

@@ -30,9 +30,9 @@
     {
         $api_url_new = 'https://suppliers-api.wildberries.ru/api/v2/stocks?skip=0&take=1000';
         $api_url = 'https://suppliers-stats.wildberries.ru/api/v1/supplier/stocks?dateFrom=' . $dt1 . 'T00:00:00.000Z&key=' . $USER['wb_key'];
-        if($calc_keys){
+        if($calc_keys and $_GET['type'] == 11){
           $tbl_keys = ($calc_keys);
-        }else{
+        }else if($_GET['type'] == 6){
           $tbl_keys = ($sklad_keys);
         }
     }
@@ -74,3 +74,6 @@
     file_put_contents($fileN, '', FILE_APPEND);
     $buf = file_get_contents($fileN);
     $buf2 = explode('@@---@@', $buf);
+
+
+    //var_dump(json_decode (json_decode($buf2[1])));

@@ -98,7 +98,7 @@ function http($url, $post=0, $ps = 0, $headers = 1)
 curl_setopt($red_book_cms, CURLOPT_CONNECTTIMEOUT, 3);
 //curl_setopt($red_book_cms, CURLOPT_TIMEOUT, 2);
 //    curl_setopt($red_book_cms, CURLOPT_NOSIGNAL, 1);
-    curl_setopt($red_book_cms, CURLOPT_TIMEOUT_MS, 10000);
+    curl_setopt($red_book_cms, CURLOPT_TIMEOUT_MS, 60000);
 
 
 //$url = 'http://whoer.net/';
@@ -500,7 +500,7 @@ function stocks_object($r){
     foreach ($r->stocks as $col){
         $arr[$i]['v'] = 'new';
         $arr[$i]['supplierArticle'] = $col->article;
-        $arr[$i]['techSize'] = 12345;//$col->size;
+        $arr[$i]['techSize'] = $col->size;
         $arr[$i]['barcode'] = $col->barcode;
       //  $arr[$i]['quantity'] = $col->stock;
         $arr[$i] = card_info_stocks($arr[$i],$col->article,$results,$infos);
@@ -595,41 +595,7 @@ function array_unite($rs=null,$rs_new=null,$rs_sales=null){
 
     return json_encode($array);
 }
-/*
-function api_object($wb_key,$api_url='',$api_url_new='',$api_url_sales=''){
-    if (!file_exists('cache/wb-cache')) {mkdir('cache/wb-cache', 0777, true);}
-    $buf = file_get_contents('cache/wb-cache/' . $wb_key . '-' . $_GET['type']);
-    $buf2 = explode('@@---@@', $buf);
-    if ($buf == "" || json_decode($buf2[1]) == NULL || time() - intval($buf2[0]) > 60*60*2 || strpos($buf, 'can\'t decode supplier key') !== false)
-    {
-        //var_dump('api_url - '.$api_url.'api_url_new - '.$api_url_new.'api_url_sales - '.$api_url_sales);
-        if ($api_url_new!='' and $api_url!='' and $api_url_sales!=''){$r = array_unite(http_json($api_url),http_json($api_url_new,true),http_json($api_url_sales));}
-        elseif ($api_url_new!='' and $api_url!='' and $api_url_sales==''){$r = array_unite(http_json($api_url),http_json($api_url_new,true));}
-        elseif ($api_url_new=='' and $api_url!='' and $api_url_sales==''){$r =  json_encode(http_json($api_url));}
-        elseif ($api_url_new!='' and $api_url=='' and $api_url_sales==''){$r =  json_encode(http_json($api_url_new,true));}
-        elseif ($api_url_new!='' and $api_url=='' and $api_url_sales!=''){$r = array_unite(null,http_json($api_url_new,true),http_json($api_url_sales));}
-        else{$r='';}
 
-        //var_dump($r);
-
-        if ($r != '' && json_decode($r) !== NULL)
-        {
-            file_put_contents('cache/wb-cache/' . $wb_key . '-' . $_GET['type'], time() . '@@---@@' . $r);
-        }
-        else
-        {
-            $buf = explode('@@---@@', $buf);
-            $r = $r0 = $buf[1];
-        }
-    }
-    else
-    {
-        $r = $r0 = $buf2[1];
-    }
-    //var_dump($r);
-    return json_decode($r);
-}
-*/
 //валидация ключа - форма
 function api_valid($r_url_new){
     if ($r_url_new!=null){
@@ -743,7 +709,7 @@ function arr_postav($r){
 function speed_fbo_fbs($tbl_rows){
     $rows = $tbl_rows;
     if ($_GET['type'] != 2){
-        $file_orders = 'cache/wb-cache/' . $GLOBALS['wb_key_new'] . '-2-' . $GLOBALS['config_return'];
+        $file_orders = 'cache/wb-cache/' . $GLOBALS['wb_key_new'] . '-2-on';
         file_put_contents($file_orders, '', FILE_APPEND);
         $orders = file_get_contents($file_orders);
         $orders2 = explode('@@---@@', $orders);
@@ -753,7 +719,7 @@ function speed_fbo_fbs($tbl_rows){
     }
 
     if ($_GET['type'] != 1){
-        $file_sales = 'cache/wb-cache/' . $GLOBALS['wb_key_new'] . '-1-' . $GLOBALS['config_return'];
+        $file_sales = 'cache/wb-cache/' . $GLOBALS['wb_key_new'] . '-1-on';
         file_put_contents($file_sales, '', FILE_APPEND);
         $sales = file_get_contents($file_sales);
         $sales2 = explode('@@---@@', $sales);

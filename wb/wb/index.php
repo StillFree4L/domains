@@ -24,7 +24,9 @@ include('head.php');
 
 <script async type="text/javascript">
 setTimeout(() => {
-        $.get("/wb/load.php?type="+<?=$_GET['type']?>, function (dt){});
+        $.get("/wb/load.php?type="+<?=$_GET['type']?>, function (dt){
+          if($('.grid-data-empty')[0]){$('.grid-data-empty')[0].innerHTML = JSON.parse(dt).message;}
+        });
         $.get("/wb/valid.php", function (dt){
             document.querySelectorAll('label#api_old')[0].innerHTML = 'Ключ api старый: '+JSON.parse(dt).data.url;
             document.querySelectorAll('label#api_new')[0].innerHTML = 'Ключ api новый: '+JSON.parse(dt).data.url_new;
@@ -34,9 +36,9 @@ setTimeout(() => {
 </script>
 
 <div class="panel panel-default" style="margin: 0px 10px 10px 10px;">
-    <div class="panel-heading"><h4 style="font-size: 13px;">Продажи и заказы Wildberries</h4>
+    <div class="panel-heading" style="display: flex;"><h4 style="font-size: 13px;">Продажи и заказы Wildberries</h4>
         <div class="dropdown" style="z-index: 99;">
-            <button onclick="myFunction()" class="dropbtn"><i class="fa fa-key dropbtn"></i></button>
+          <input class='dropbtn' title='Очистить строку'  value='' style='' onclick="myFunction()">
             <div id="myDropdown" class="dropdown-content">
                 <form method="post">
                     <fieldset>
@@ -207,20 +209,22 @@ if (in_array($_GET['type'],[2,1,10])){
             $dt1_bar = minusDate($_GET['dt'],date('d-m-Y'));
             //$dt1_bar = date('Y-m-d', strtotime($_GET['dt']) - (strtotime(date('d-m-Y')) - strtotime($_GET['dt'])));
         }
+    } else if($_GET['dt1'] == $_GET['dt2']) {
+      $dt2_bar_org = $dt1_bar_org = $_GET['dt1'];
+      $dt2_bar = $dt1_bar = date("Y-m-d", strtotime("-1 DAY",strtotime($_GET['dt1'])));
     } else {
         //фильтр по периодам
         $dt2_bar = $dt1_bar_org = $_GET['dt1'];
         $dt2_bar_org = $_GET['dt2'];
-        if ($_GET['dt1'] == date('Y-m-d') and $_GET['dt2'] == date('Y-m-d')) {
+        if ($_GET['dt1'] == date('Y-m-d') or $_GET['dt2'] == date('Y-m-d')) {
             $dt1_bar = date("Y-m-d", strtotime("-1 DAY"));
-        } else {
-
+        }else {
             $dt1_bar = minusDate($_GET['dt1'],$_GET['dt2']);
-           // echo '<pre>'; var_dump($dt1_bar.' - '.$dt2_bar);
         }
 
     }
-   // echo '<pre>'; var_dump($dt1_bar.' - '.$dt2_bar);
+  //  echo '<pre>'; var_dump($dt1_bar.' - '.$dt2_bar);
+//  echo '<pre>'; var_dump($dt1_bar_org.' - '.$dt2_bar_org);
     require_once('blocks/bar/func.php');
    // echo '<pre>'; var_dump($data_bar);
 }
@@ -1120,11 +1124,13 @@ if(!in_array($_GET['type'],[7,8,9,5,11]) or ($_GET['type'] == 5 and $_GET['rid']
     $whileTbar = true;
 }
 
-if($_GET['type'] == 11){
+if($_GET['type'] == 11 and $data){
   foreach ($correct_lines_products as $key => $value) {
     array_unshift($data, $value);
   }
 }
+
+
 
 ?>
 
@@ -1181,13 +1187,24 @@ while(ij < columns.length){
       return "<input type=\"text\" id="+ids+" idd='"+y.id+"' onblur=\"number_update_add('"+numberId+"',this.value,this.id,this.getAttribute('idd'))\" class='inputValue' value='"+obj+"'>";
     }
   }
-  else if(ij > 20 || ij === 17 || ij === 14 || ij === 9){
+  else if(ij > 20 || ij === 18 || ij === 17 || ij === 14 || ij === 9){
     columns[ij].renderer = function(obj, x, y) {
       if(!obj){obj='';}
       let ids = x.classes[1].split('x-grid-cell-')[1]
       return "<a id="+ids+" idd='"+y.id+"' href='?page=wb&type=<?=$_GET['type']?>'>"+obj+"</a>";
     }
 
+  }else if(ij == 16){
+    columns[ij].renderer = function(obj, x, y) {
+      if(!obj){obj="33";}
+      let ids = x.classes[1].split('x-grid-cell-')[1];
+
+      if(!y.data.checkbox_del){
+        return "<input type=\"text\" id="+ids+" idd='"+y.id+"' onblur=\"number_update('"+y.id+"',this.value,this.id,'"+y.data.supplierArticle+"','"+y.data.barcode+"')\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');\" value='"+obj+"'>";
+      }
+      let numberId = y.data.checkbox_del;
+      return "<input type=\"text\" id="+ids+" idd='"+y.id+"' onblur=\"number_update_add('"+numberId+"',this.value,this.id,this.getAttribute('idd'))\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');\" value='"+obj+"'>";
+    }
   }else if(ij > 1){
     columns[ij].renderer = function(obj, x, y) {
       if(!obj){obj="";}
@@ -1210,11 +1227,31 @@ while(ij < columns.length){
   ij++;
 }
 
-
 <?php endif; ?>
 
-  //if(v.includes('inputValue') && v.includes('addInput')){}
-  //console.log(columns);
+<?php if(!in_array($_GET['type'],[7,8,9,10,11])): ?>
+
+  let colAll = {};
+  let ij=0;
+  let sums = <?=json_encode($sums_report)?>;
+  while (ij < columns.length) {
+    colAll[columns[ij].dataIndex] = ij;
+    ij++;
+  }
+
+  ij=0;
+  while (ij < sums.length) {
+    if(colAll[sums[ij].replace("\r", "")]){
+      columns[colAll[sums[ij].replace("\r", "")]].renderer = function(obj, x, y) {
+        var re = /\B(?=(\d{3})+(?!\d))/g;
+        if(!isNaN(obj)){return obj.toFixed(2).replace(re, " ");}
+        return obj;
+      }
+    }
+    ij++;
+  }
+<?php endif; ?>
+
 
     <?php
     if (in_array($_GET['type'],[6,7,8,9]) && document.referrer && document.location.href && document.referrer !== document.location.href){
@@ -1258,6 +1295,7 @@ while(ij < columns.length){
         });
 
         store.load();
+        Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());
 
         grid = Ext.create('Ext.grid.Panel', {
             renderTo: 'grid<?php echo $dom; ?>',
@@ -1290,7 +1328,7 @@ while(ij < columns.length){
                 },
                 preserveScrollOnRefresh: true,
                 deferEmptyText: true,
-                emptyText: '<div class="grid-data-empty">Нет результатов</div>'
+                emptyText: '<div class="grid-data-empty"><font class="loading" color="#0059fc">Получение данных</font></div>'
             },
             tbar:[
 
@@ -1387,7 +1425,7 @@ while(ij < columns.length){
                   let re = /\B(?=(\d{3})+(?!\d))/g;
                     var gridColums = view.getGridColumns();
                     var column = gridColums[tip.triggerElement.cellIndex];
-                    var coltip = view.getRecord(tip.triggerElement.parentNode).get(column.dataIndex);
+                  //  var coltip = view.getRecord(tip.triggerElement.parentNode).get(column.dataIndex);
                   //  if (coltip) {
                   //      var val = column.text + ': ' + (Number(coltip).toFixed(2).replace(re, " "));
                   //  }else{

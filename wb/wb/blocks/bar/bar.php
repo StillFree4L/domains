@@ -265,10 +265,15 @@ if(!$bool){
     foreach ($dates['column2'] as $key => $date) {
         $dates['column2'][$dates['column1'][$key]] = strtotime($date) * 1000;
     }
+}else  if($_GET['dt1'] == $_GET['dt2']){
+  $lenghtDate = [
+          'Текущий период'=>[$_GET['dt1'] ? date('d.m.Y',strtotime($_GET['dt1'])) : date('d.m.Y',strtotime($_GET['dt']))],
+          'Предыдущий период'=>[$_GET['dt1'] ?  date("d.m.Y", strtotime("-1 DAY",strtotime($_GET['dt1']))) :  date("d.m.Y", strtotime("-1 DAY",strtotime($_GET['dt'])))],
+     ];
 }else{
     $lenghtDate = [
             'Текущий период'=>[$_GET['dt1'] ? date('d.m.Y',strtotime($_GET['dt1'])).' - '.date('d.m.Y',strtotime($_GET['dt2'])) : date('d.m.Y',strtotime($_GET['dt']))],
-            'Предыдущий период'=>[$_GET['dt1'] ?  date("Y-m-d", strtotime("-1 DAY",strtotime($_GET['dt2']))).' - '.$_GET['dt2'] :  date("Y-m-d", strtotime("-1 DAY",strtotime($_GET['dt'])))],
+            'Предыдущий период'=>[$_GET['dt1'] ?  date("d.m.Y", strtotime("-1 DAY",strtotime($_GET['dt2']))).' - '.$_GET['dt2'] :  date("d.m.Y", strtotime("-1 DAY",strtotime($_GET['dt'])))],
        ];
  }
 
