@@ -89,7 +89,7 @@ foreach ($tbl_keys as $k => $str){
     }
     //редактируемые ячейки
     if ((in_array($_GET['type'],[5,9]) and $k=='realizationreport_id') or ($_GET['type'] == 7 and $k=='incomeId') or ($_GET['type'] == 8 and $k=='supplierArticle') ){
-        $column['tpl'] = "<a href='?page=wb&type=".$_GET['type'].'&'.$tpl[$_GET['type']].'\'><img '.(in_array($_GET['type'],[8,9]) ? 'hidden' : '').' height="20px" style="vertical-align: middle;" src="https://v1.iconsearch.ru/uploads/icons/gnomeicontheme/24x24/stock_list_bullet.png">{'.$k.'}</a>';
+        $column['tpl'] = "<a href='?page=wb&type=".$_GET['type'].'&'.$tpl[$_GET['type']].'\'><img height="20px" style="vertical-align: middle;" src="https://v1.iconsearch.ru/uploads/icons/gnomeicontheme/24x24/stock_list_bullet.png">{'.$k.'}</a>';
     }
     elseif (!$_GET['rid'] and !in_array($k,$or) and in_array($_GET['type'],[5])){
         $column['tpl'] = "<a href='?page=wb&type=".$_GET['type'].$f1."&".$tpl[$_GET['type']]."'>{".$k."}</a>";

@@ -58,6 +58,7 @@ function sales_object_report($r){
         $arr[$i]['totalPrice'] = $col->retail_price;
         $arr[$i]['doc_type_name'] = $col->doc_type_name;
         $arr[$i]['supplier_oper_name'] = $col->supplier_oper_name;
+        $arr[$i]['return_amount'] = $col->return_amount;
         $arr[$i]['discountPercent'] = $col->product_discount_for_report;
         $arr[$i]['isRealization'] = $col->suppliercontract_code ;
         $arr[$i]['promoCodeDiscount'] = $col->supplier_promo ;
@@ -99,7 +100,7 @@ function unity_report($r,$r_apies){
         }
         $odid[] = $rs->odid;
     }
-    if ($r_apies and $_GET['type'] != 10){
+  if ($r_apies /* and $_GET['type'] != 10*/){
     foreach ($r as $rs) {
         foreach ($r_apies as $r_api) {
             if ($rs->barcode == $r_api->barcode and $rs->odid == $r_api->odid) {
@@ -153,6 +154,7 @@ function orders_object_report($r){
         $arr[$i]['quantity'] = $col->quantity;
         $arr[$i]['totalPrice'] = $col->retail_price;
         $arr[$i]['supplier_oper_name'] = $col->supplier_oper_name;
+        $arr[$i]['return_amount'] = $col->return_amount;
         $arr[$i]['doc_type_name'] = $col->doc_type_name;
         $arr[$i]['discountPercent'] = $col->product_discount_for_report;
         $arr[$i]['finishedPrice '] = $col->retail_price_withdisc_rub;
@@ -181,8 +183,9 @@ function report_cache(){
     }else{
         $fileName = $dir.'/'.$GLOBALS['wb_key_new'] . '-'.$_GET['type'].'.txt';
     }
-   // $fileName = $dir.'/'.$GLOBALS['wb_key_new'] . '-'.$_GET['type'].'-'.$GLOBALS['config_return'].'.txt';
+
     $http = 'https://suppliers-stats.wildberries.ru/api/v1/supplier/reportDetailByPeriod?dateFrom=' . date('Y-m-d', time() - 60 * 60 * 24 * 80) . '&key=' . $GLOBALS['wb_key_new'] . '&limit=1000000&rrdid=0&dateto=' . date('Y-m-d');
+
     if (!file_exists($dir)) {mkdir($dir, 0777, true);}
     file_put_contents($fileName, '',FILE_APPEND);
     $this_week = strtotime(date('Y-m-d'));

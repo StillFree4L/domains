@@ -10,7 +10,7 @@
         $tbl_keys = ($sales_keys);
 
     }
-    /*elseif ($_GET['type']d == 4)
+    /*elseif ($_GET['type'] == 4)
     {
         //$api_url_new = 'https://suppliers-api.wildberries.ru/api/v2/orders?date_start='.$dt1.'T00:00:00.000Z&take=1000&skip=0';
         $api_url = 'https://suppliers-stats.wildberries.ru/api/v1/supplier/sales?dateFrom=' . $dt1 . 'T00:00:00.000Z&key=' . $USER['wb_key'];
@@ -74,6 +74,3 @@
     file_put_contents($fileN, '', FILE_APPEND);
     $buf = file_get_contents($fileN);
     $buf2 = explode('@@---@@', $buf);
-
-
-    //var_dump(json_decode (json_decode($buf2[1])));

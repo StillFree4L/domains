@@ -10,7 +10,13 @@
     }
 
     $dp_save_list = 2;
-    $ss_dop_fields = $ss_dop = dop_list('2');
+    $ss_dop_fields = $USER['dp_list'];
+    if (trim($ss_dop_fields) == '') {
+      $result = mysqli_query($link, 'SELECT * FROM `list` WHERE `userId`='.$USER["id"].' limit 1');
+      foreach ($result as $key => $value) {
+        $ss_dop_fields = $ss_dop = $value['list'];
+      }
+    }
     $sums = explode("\n", ('cost_amount
 retail_price
 retail_amount
@@ -32,16 +38,38 @@ ppvz_vw_nds'));
     foreach ($sums_pr as $sum) {
         $sum = trim($sum);
         $sum_lat = ru2Lat($sum);
+        $sums[] = ru2Lat($sum);
         $ss_dom_lat[$sum_lat] = $sum;
     }
 
-    if(!isset($_GET['rid'])){
-        $correct_lines = file_read('7');
+  //  var_dump($sums);
+
+    if($_GET['type']==9){
+      $result = mysqli_query($link, 'SELECT * FROM `goods` WHERE `userId`='.$USER["id"].' and `type`=7');
+      //var_dump($result);
+    /*  if ($result == false) {
+        print(mysqli_error($link));
+      }*/
     }
+
+    /*if(!isset($_GET['rid'])){
+        $correct_lines = file_read('7');
+    }*/
 
     $last_key = - 1;
     foreach ($tbl_rows as $g)
     {
+      if($result){
+        foreach ($result as $key => $value) {
+
+        if($g->sa_name ==$value['supplierArticle'] and $g->barcode == $value['barcode']){
+          $tmp = $value['name'];
+          $g->$tmp = (int)$value['value'];
+
+        }
+      }
+    }
+
         $g->rr_dt = date('d.m.Y H:i:s', strtotime($g->rr_dt));
         $g->sale_dt = date('d.m.Y H:i:s', strtotime($g->sale_dt));
         $g->order_dt = date('d.m.Y H:i:s', strtotime($g->order_dt));
@@ -93,6 +121,8 @@ ppvz_vw_nds'));
         $g->realizationreport_id2 = $g->realizationreport_id;
     }
 
+
+/*
 foreach ($reps as $keys=>$g) {
     foreach ($ss_dom_lat as $k=>$item){
         foreach ($correct_lines as $key => $correct_line) {
@@ -103,9 +133,10 @@ foreach ($reps as $keys=>$g) {
             }
         }
     }
-}
+}*/
+
     $tbl_rows = $reps;
-    
+
     $tbl_keys = $pribil_keys;
 
     foreach ($ss_dom_lat as $key => $item) {

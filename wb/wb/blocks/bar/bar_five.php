@@ -45,7 +45,7 @@ foreach ($bar['money'] as $key=>$item){
     $columnArr['date'][] = $key*1000;
 }
 
-$hide = (array)$status_checkbox->hide;
+$hide = (array)json_decode($hideCheckbox);
 $finished = [];
 $hideShow = false;
 
@@ -220,7 +220,7 @@ Highcharts.setOptions({
             }
         }
 
-        $.post("/wb/update/update.php", {hide: hide});
+        $.post("/wb/update.php", {hide: hide});
     }
 
     function checkboxButton(){
@@ -231,15 +231,12 @@ Highcharts.setOptions({
         if (series[0].type === 'line') {
           $('#check')[0].className = "btn btn-sm btn1 btn-warning";
             cdt = 'spline';
-            cdtSt = false;
         } else {
           $('#check')[0].className = "btn btn-sm btn1 btn-color";
             cdt = 'line';
-            cdtSt = true;
         }
 
-        $.get("/wb/update/update.php?status=" + cdtSt, function (dt) {
-        });
+        $.get("/wb/update.php?status=" + cdt, function (dt) {});
         let i = 0;
         const cdLine = [];
         while (i < series.length) {
@@ -382,7 +379,7 @@ Highcharts.setOptions({
                                 hide[series[i].name] = series[i].visible;
                             }
                         }
-                        $.post("/wb/update/update.php", {hide:hide});
+                        $.post("/wb/update.php", {hide:hide});
                     },
                 }
             }

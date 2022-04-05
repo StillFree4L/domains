@@ -3,28 +3,33 @@
 
     $ss_dop_fields = $USER['dp_list'];
     if (trim($ss_dop_fields) == '') {
-        $ss_dop_fields = $ss_dop = dop_list('2');
+      $result = mysqli_query($link, 'SELECT * FROM `list` WHERE `userId`='.$USER["id"].' limit 1');
+      foreach ($result as $key => $value) {
+        $ss_dop_fields = $ss_dop = $value['list'];
+      }
     }
 
     if (trim($ss_dop_fields) == '') $ss_dop_fields = "Затраты на поиск товара\n Затраты на забор товара\n Затраты на услуги фулфилмента\n Затраты на фото/видео материалы\n Затраты на внутреннюю рекламу\n Затраты на внешнюю рекламу\n Затраты на самовыкупы\n Затраты прочие";
     if (!isset($_GET['f1'])) echo "<input class='btn btn-default' id='btn_pd_lst' value='Редактировать список полей' style='margin-left:10px;width: 260px;' onclick='$(\"#dop_fields_div\").toggle();$(\"#set_fields_div\").hide(); $(\"#btn_pd_lst\").addClass(\"btn-warning\");$(\"#btn_pd_val\").removeClass(\"btn-warning\");'> ";
     if (isset($_GET['f1'])) echo "<input class='btn btn-default' id='btn_pd_val'  value='Установить значение поля для всех поставок ' style='margin-left:10px;width: 360px;' onclick='$(\"#dop_fields_div\").hide();$(\"#set_fields_div\").toggle(); $(\"#btn_pd_lst\").removeClass(\"btn-warning\");$(\"#btn_pd_val\").addClass(\"btn-warning\");'> ";
 
-    echo '<div id="dop_fields_div" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; background: #efefef; display: none; padding: 10px; margin: 10px; border: 1px solid #ccc; "><img onclick="$(\'#dop_fields_div\').toggle();" style="cursor:pointer; float: right;" src="https://v1.iconsearch.ru/uploads/icons/bnw/32x32/fileclose.png"> <b>Список Ваших полей для вычета - общие на каждую поставку</b>';
-    echo "<textarea class='form-control' style='height: 150px;' id='dop_fileds' >$ss_dop_fields</textarea><td style='width: 10px;'> <input class='btn btn-success' value='Сохранить список полей' onclick='save_list();'> </div>";
+    echo '<div id="dop_fields_div" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; background: #efefef; display: none; padding: 10px; margin: 10px; border: 1px solid #ccc; "><img onclick="$(\'#dop_fields_div\').toggle();" style="width: 20px; cursor:pointer; float: right;" src="https://v1.iconsearch.ru/uploads/icons/bnw/32x32/fileclose.png"> Список Ваших полей для вычета - общие на каждую поставку';
+    echo "<textarea class='form-control' style='margin-top: 10px; margin-bottom: 10px;height: 150px;' id='dop_fileds' >$ss_dop_fields</textarea><td style='width: 10px;'> <input style='width: 200px;' class='btn btn-success' value='Сохранить список полей' onclick='save_list();'> </div>";
 
     $ss_dop_fields = 'Стоимость единицы товара' . "\n" . $ss_dop_fields;
     $ss_dop_fields = explode("\n", trim($ss_dop_fields));
+    $ss_dom_lat=[];
 
     foreach ($ss_dop_fields as & $sf)
     {
         $sf = trim($sf);
+        $ss_dom_lat[]=ru2Lat($sf);
         if ($sf == '') continue;
         $tbl_keys[ru2Lat($sf)] = $sf;
     }
 
-    echo '<br clear=all><div id="set_fields_div" style="float: left; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; background: #efefef; display: none; padding: 10px; margin: 10px; border: 1px solid #ccc; "> <img onclick="$(\'#set_fields_div\').toggle();" style="cursor:pointer; float: right;" src="https://v1.iconsearch.ru/uploads/icons/bnw/32x32/fileclose.png">   <b>Установка значения полей для всех поставок по артикулу</b>';
-    echo "<hr><input type=button  onclick='number_update_all();' class='btn btn-success' value='Сохранить значения'>";
+    echo '<br clear=all><div id="set_fields_div" style="float: left; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; background: #efefef; display: none; padding: 10px; margin: 10px; border: 1px solid #ccc; "> <img onclick="$(\'#set_fields_div\').toggle();" style="width: 20px;cursor:pointer; float: right;" src="https://v1.iconsearch.ru/uploads/icons/bnw/32x32/fileclose.png"> Установка значения полей для всех поставок по артикулу';
+    echo "<input type=button style='margin-left: 20px;'  onclick='number_update_all();' class='btn btn-success' value='Сохранить значения'>";
     echo '<table class="items table table-striped" style="width: 700px;margin-top: 20px;"><tr><th>Поле</th><th>Значение</th></tr>';
 
     foreach ($ss_dop_fields as $k => & $sf)
@@ -41,31 +46,28 @@
 
 function save_list()
 {
-	$.post("/wb/update/update.php", {dp_save_list:2, list:$("#dop_fileds").val()}, function (dt){
+	$.post("/wb/update.php", {list: String($("#dop_fileds").val())}, function (dt){
 		document.location.reload();
 	});
 }
 
 function number_update_all(){
-    let input = document.querySelectorAll(\'input.inputValueAll\');
-    let len = Ext.select("td.x-grid-cell-ss_all").elements.length;
-
-    let i = 0;
-    let j = 0;
-    while (i < input.length) {
-        if(input[i].value && input[i].value != "" && input[i].value != null && input[i].getAttribute("sf") != ""){
-            inputs = document.querySelectorAll("input.inputValue#"+input[i].getAttribute("sf"));
-            if (len > 0){
-                j = 0;
-                while (j < len-1){
-                   number_update("Data-"+(j+1),input[i].value,input[i].getAttribute("sf"),inputs[j].getAttribute("incomeId"),inputs[j].getAttribute("supplierArticle"),inputs[j].getAttribute("barcode"))
-                    j++;
-                }
-            }
+  let map = store.data.map,ss_dops = '.json_encode($ss_dom_lat).',all = {},i=0,j=0,
+    allInp = document.querySelectorAll("input.inputValueAll"),ij=0;
+  for (var ma in map){
+    j=0;
+      while(j<allInp.length){
+        if(allInp[j].value!=""){
+          all[ij]={incomeId: map[ma].data.incomeId, supplierArticle: map[ma].data.supplierArticle, barcode: map[ma].data.barcode, name: allInp[j].getAttribute("sf"), value: allInp[j].value};
         }
-        i++;
-    }
-    setTimeout(function () {document.location.reload();}, 1000);
+        j++;
+        ij++;
+      }
+    i++;
+  }
+  $.post("/wb/update.php?all=8", {all:all}, function (dt){
+	   setTimeout(function () {document.location.reload();}, 1000);
+	});
 }
 </script>
 
@@ -76,9 +78,17 @@ function number_update_all(){
       $templateHTML = "<a href='?page=wb&type=8&dt=" . $_GET['dt'] . "''>Себестоимость</a>  / Артикул <a href='?page=wb&type=8&f1=$_GET[f1]&dt=" . $_GET['dt'] . "'>" . $_GET['f1'] . '</a>';
     }
 
-    if (!$_GET['f1']){
-        $correct_lines = file_read('7');
+    if($_GET['type']==8 and !$_GET['f1']){
+      $result = mysqli_query($link, 'SELECT * FROM `goods` WHERE `userId`='.$USER["id"].' and `type`=7');
+
+    /*  if ($result == false) {
+        print(mysqli_error($link));
+      }*/
     }
+
+    /*if (!$_GET['f1']){
+        $correct_lines = file_read('7');
+    }*/
 
     $sums = explode("\n", trim('Стоимость единицы товара
         '.$ss_dop));
@@ -86,23 +96,15 @@ function number_update_all(){
     $last_key = - 1;
     foreach ($tbl_rows as $kkk => & $g)
     {
-        foreach ($sums as $fieldsum)
-        {
-            $fieldsum = ru2Lat(trim($fieldsum));
-            if ($correct_lines){
-                foreach ($correct_lines as $keys => $correct_line) {
-                    if ($g->incomeId == $correct_line->incomeId
-                        and $g->supplierArticle == $correct_line->supplierArticle
-                        and $g->barcode == $correct_line->barcode) {
-                        foreach ($correct_line as $key => $datumm) {
-                            if ($key == $fieldsum) {
-                                    $g->$fieldsum = intval($g->quantity) * intval($datumm);
-                            }
-                        }
-                    }
-                }
-            }
+      if(!$_GET['f1']){
+          foreach ($result as $key => $value) {
+          if($g->incomeId == $value['incomeId'] and $g->supplierArticle ==$value['supplierArticle'] and $g->barcode == $value['barcode']){
+          //  var_dump($value);
+            $tmp = $value['name'];
+            $g->$tmp = intval((int)$g->quantity * (int)$value['value']);
+          }
         }
+      }
 
         $g->kkk = $kkk;
 

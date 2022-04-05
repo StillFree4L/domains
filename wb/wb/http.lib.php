@@ -15,8 +15,6 @@ do
 }
 while(strstr($r, 'Realty.View.')===false || strstr($r, 'error-page__error-name')!==false);
 
-
-
 //----------------------------
 // post headers
 
@@ -26,8 +24,6 @@ while(strstr($r, 'Realty.View.')===false || strstr($r, 'error-page__error-name')
 								'X-Requested-With:XMLHttpRequest'
 							)
 		);
-
-
 */
 
 global $HTTP_COOKIE_FILE;
@@ -207,7 +203,35 @@ return $url;
 //кэшир склад старов api
 function stock_cache_old(){
     $dir = 'cache/stocks';
-    $fileName = $dir.'/'.$GLOBALS['auth'].'-stocks_old.txt';
+    $fileName = $dir.'/'.$GLOBALS['wb_key_new'].'-stocks_old.txt';
+    $http = 'https://suppliers-stats.wildberries.ru/api/v1/supplier/stocks?dateFrom=2000-03-25T21:00:00.000Z&key='.$GLOBALS['wb_key_new'];
+    if (!file_exists($dir)) {
+        mkdir($dir, 0777, true);
+    }
+    file_put_contents($fileName, '',FILE_APPEND);
+    $lines = file($fileName);
+    if ($lines[0] == "" || json_decode($lines[1]) == NULL || time() - intval($lines[0]) > 60*5){
+        $r = http($http);
+        if ($r==''){
+            $r = http($http);
+        }
+        if ($r!='') {
+            file_put_contents($fileName, time() . PHP_EOL);
+            foreach (json_decode($r) as $rs) {
+                file_put_contents($fileName, json_encode($rs).PHP_EOL, FILE_APPEND);
+            }
+            return true;
+        }
+        return false;
+    }else{
+        return false;
+    }
+}
+
+//кэшир склад new api
+function stock_cache_new(){
+    $dir = 'cache/stocks';
+    $fileName = $dir.'/'.$GLOBALS['wb_key_new'].'-stocks_old.txt';
     $http = 'https://suppliers-stats.wildberries.ru/api/v1/supplier/stocks?dateFrom=2000-03-25T21:00:00.000Z&key='.$GLOBALS['wb_key_new'];
     if (!file_exists($dir)) {
         mkdir($dir, 0777, true);
@@ -386,6 +410,7 @@ function orders_object($r){
     $infos = http_new_url($url2);
 
     stock_cache_old();
+    stock_cache_new();
 
     $r = $r->orders;
     $arr = array();
@@ -627,7 +652,7 @@ function arr_fbs_fbo($r){
     $dir = 'cache/stocks';
     $arr = array();
     $fileName = $dir . '/' . $GLOBALS['auth'] . '-stocks.txt';
-    $fileName_old = $dir . '/' . $GLOBALS['auth'] . '-stocks_old.txt';
+    $fileName_old = $dir . '/' . $GLOBALS['wb_key_new'] . '-stocks_old.txt';
     $lines = file($fileName);
     $lines_old = file($fileName_old);
     foreach ($r as $g){
@@ -671,7 +696,7 @@ function arr_postav($r){
     $lines_orders = explode('@@---@@', $lines_orders)[1];
 
     if (json_decode($lines_orders) == NULL || strpos($lines_orders, 'can\'t decode supplier key') !== false) {
-        $fileName_old = 'cache/stocks/'.$GLOBALS['auth'].'-stocks_old.txt';
+        $fileName_old = 'cache/stocks/'.$GLOBALS['wb_key_new'].'-stocks_old.txt';
         $lines_old = file($fileName_old);
 
         if ($lines_old[0] != NULL){
@@ -876,4 +901,20 @@ function dop_list($dp_save_list){
         $ss_dop_fields = $ss_dop_contents->list;
     }
     return $ss_dop_fields;
+}
+
+function writeStatus($link,$userId,$type,$status){
+  $result = mysqli_query($link, 'SELECT count(id)>0 FROM `wb_data` WHERE userId='.$userId.' and type='.$type);
+  $row = mysqli_fetch_row($result);
+
+  if ($row[0]>0){
+    $result = mysqli_query($link, 'UPDATE `wb_data` SET status="'.$status.'" WHERE userId='.$userId.' and type='.$type);
+  }else{
+    $result = mysqli_query($link, 'INSERT INTO `wb_data` (userId,type,status) VALUES('.$userId.','.$type.','.$status.')');
+  }
+  if ($result == false) {
+    print(mysqli_error($link));
+    return false;
+  }
+  return true;
 }

@@ -16,18 +16,19 @@ if ($tbl_rows && $_GET['type'] != 5 && $_GET['type'] != 6 && $_GET['type'] != 8 
             $g->finishedPrice = $g->totalPrice-(($g->totalPrice*$g->discountPercent)/100);
         }
 
-        if($_GET['type'] == 10 and $g->totalPrice>0){
-            $g->totalPrice *=-1;
+        if($_GET['type'] == 10 and $g->doc_type_name == 'Возврат'){
+            $g->qualification = 'Отмененные продажи';
         }
-        if($_GET['type'] == 10 and $g->finishedPrice>0){
-            $g->finishedPrice *=-1;
+        elseif($_GET['type'] == 10){
+            $g->qualification = 'Отмененные заказы';
         }
-        if($config_return=='off' and ($g->isCancel or $g->finishedPrice < 0) and ($_GET['type'] == 1 or $_GET['type'] == 2)){
+
+        if($config_return=='off' and ($g->isCancel == 1 || $g->forPay < 0 || $g->doc_type_name == 'Возврат' || $g->finishedPrice < 0 || $g->RED == 1) and ($_GET['type'] == 1 or $_GET['type'] == 2)){
             continue;
         }
 
         $flag = 1;
-        $cdt_bar = $g->date;
+        //$cdt_bar = $g->date;
         $cdt_bar = $g->lastChangeDate;
         $last_key_bar = - 1;
 
@@ -37,7 +38,7 @@ if ($tbl_rows && $_GET['type'] != 5 && $_GET['type'] != 6 && $_GET['type'] != 8 
             $cdt_bar = $g->date;
         }
         if ($_GET['type'] == 1) {
-            $cdt_bar = $g->lastChangeDate;
+            $cdt_bar = $g->date;
         }
         if ($_GET['type'] == 2) {
             $cdt_bar = $g->date;
@@ -157,12 +158,12 @@ if ($tbl_rows_bar and count($tbl_rows_bar)) {
             $g->Discount = $g->Discount/$g->coun;
         }
         //по умолчанию 0
-        foreach ($sums_null as $fie) {
+      /*  foreach ($sums_null as $fie) {
             $fie = trim($fie);
             if (!$g->$fie) {
                 $g->$fie = '0';
             }
-        }
+        }*/
         //кол-во по умолч 1
         if (!$g->quantity and $_GET['type'] != 5) {
             $g->quantity = 1;
@@ -176,7 +177,6 @@ if ($tbl_rows_bar and count($tbl_rows_bar)) {
 
         foreach ($sums as $fieldsum) {
             $fieldsum = trim($fieldsum);
-
             $g->$fieldsum = abs($g->$fieldsum);
         }
 

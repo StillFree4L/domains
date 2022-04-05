@@ -62,6 +62,7 @@ function really_delete()
       background-size: auto 80%;
         border: none;
         cursor: pointer;
+        width: 30px;
     }
 
     /* Выпадающее содержимое (скрыто по умолчанию) */
@@ -89,7 +90,7 @@ function really_delete()
       background: url(css/images/clears.png) no-repeat 8px;
       background-size: auto 70%;
     }
-    input#btn_pd_val{
+    input#btn_pd_plus_val{
     background: white;
     }
     input#btn_pd_redact_val{
@@ -101,7 +102,7 @@ function really_delete()
   background-color: gray;
 }
 
-    input#btn_pd_val:focus{
+    input#btn_pd_plus_val:focus{
       background: gray;
     }
 
@@ -126,6 +127,22 @@ function really_delete()
     width: 20px;
   }
 }
+
+.btn-color {
+  background: #fff;
+}
+.btn1 {
+  margin-right: 3px;
+  border: 1px solid #ccc;
+}
+
+.x-grid-cell {
+  user-select: text !important;
+  -webkit-user-select: text!important;
+  -moz-user-select: text!important;
+  -khtml-user-select: text!important;
+}
+
 </style>
 
 </head>

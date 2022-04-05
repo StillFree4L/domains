@@ -233,8 +233,6 @@ if($series){
     }
 }
 
-
-
 //валидация по валютам
 if($columnArr['dataTotal1'] and $columnArr['dataTotal2']){
     $columnArr['full'] = array_merge($columnArr['dataTotal1'],$columnArr['dataTotal2']);
@@ -258,6 +256,7 @@ $dataArr['Предыдущий период'][] = $series['sum']['dataQuan2'];
 
 //даты предыдущего периода
 if(!$bool){
+    //echo '<pre>';var_dump($dates['column2']);
     $lenghtDate = [
             'Текущий период'=>[$dates['column1'][0].' - '.$dates['column1'][count($dates['column1'])-1]],
             'Предыдущий период'=>[$dates['column2'][0].' - '.$dates['column2'][count($dates['column2'])-1]],
@@ -266,11 +265,13 @@ if(!$bool){
         $dates['column2'][$dates['column1'][$key]] = strtotime($date) * 1000;
     }
 }else  if($_GET['dt1'] == $_GET['dt2']){
+
   $lenghtDate = [
           'Текущий период'=>[$_GET['dt1'] ? date('d.m.Y',strtotime($_GET['dt1'])) : date('d.m.Y',strtotime($_GET['dt']))],
           'Предыдущий период'=>[$_GET['dt1'] ?  date("d.m.Y", strtotime("-1 DAY",strtotime($_GET['dt1']))) :  date("d.m.Y", strtotime("-1 DAY",strtotime($_GET['dt'])))],
      ];
 }else{
+
     $lenghtDate = [
             'Текущий период'=>[$_GET['dt1'] ? date('d.m.Y',strtotime($_GET['dt1'])).' - '.date('d.m.Y',strtotime($_GET['dt2'])) : date('d.m.Y',strtotime($_GET['dt']))],
             'Предыдущий период'=>[$_GET['dt1'] ?  date("d.m.Y", strtotime("-1 DAY",strtotime($_GET['dt2']))).' - '.$_GET['dt2'] :  date("d.m.Y", strtotime("-1 DAY",strtotime($_GET['dt'])))],
@@ -350,19 +351,16 @@ if(!$bool){
 //кнопка сглаживание
     function checkboxButton(){
         let cdt;
-        let cdtSt;
         var series = $('#container').highcharts().series;
 
         if (series[0].type === 'line') {
           $('#check')[0].className = "btn btn-sm btn1 btn-warning";
             cdt = 'spline';
-            cdtSt = false;
         } else {
           $('#check')[0].className = "btn btn-sm btn1 btn-color";
             cdt = 'line';
-            cdtSt = true;
         }
-        $.get("/wb/update/update.php?status=" + cdtSt, function (dt) {
+        $.get("/wb/update.php?status=" + cdt, function (dt) {
         });
         let i = 0;
         while (i < series.length) {
@@ -382,7 +380,7 @@ if(!$bool){
         series[0].setData(<?=json_encode($dataArr['dataTotal1'])?>);
         <?=is_array($dataArr['dataTotal2']) ? 'series[1].setData('.json_encode($dataArr['dataTotal2']).');' : ''?>
         valut = ' руб';
-        $.get("/wb/update/update.php?option=total", function (dt){});
+        $.get("/wb/update.php?option=total", function (dt){});
     }
 //кнопка кол-во
     function quanButton(){
@@ -392,7 +390,7 @@ if(!$bool){
         series[0].setData(<?=json_encode($dataArr['dataQuan1'])?>);
         <?=is_array($dataArr['dataQuan2']) ? 'series[1].setData('.json_encode($dataArr['dataQuan2']).');' : ''?>
         valut = ' шт';
-        $.get("/wb/update/update.php?option=quan", function (dt){});
+        $.get("/wb/update.php?option=quan", function (dt){});
     }
 //глобальные настройки
     Highcharts.setOptions({

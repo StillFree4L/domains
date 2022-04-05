@@ -18,40 +18,134 @@ if (trim($USER['wb_key']) != '')
 }
 
 include('head.php');
+
+//var_dump(http("/wb/load.php?type=2"));
+
 ?>
 
-<script async type="text/javascript">
-setTimeout(() => {
-        $.get("/wb/load.php?type="+<?=$_GET['type']?>, function (dt){});
-        $.get("/wb/valid.php", function (dt){
-            document.querySelectorAll('label#api_old')[0].innerHTML = 'Ключ api старый: '+JSON.parse(dt).data.url;
-            document.querySelectorAll('label#api_new')[0].innerHTML = 'Ключ api новый: '+JSON.parse(dt).data.url_new;
-            document.querySelectorAll('label#api_supplier')[0].innerHTML = 'Ключ поставщика: '+JSON.parse(dt).data.url_supplier;
+<script defer type="text/javascript">
+
+$.ajax({
+  method: "GET",
+  url: "/wb/load.php?type=1",
+}).done(function() {
+  $.ajax({
+    method: "GET",
+    url: "/wb/load.php?type=2",
+  }).done(function() {
+    $.ajax({
+      method: "GET",
+      url: "/wb/load.php?type=5",
+    }).done(function() {
+      $.ajax({
+        method: "GET",
+        url: "/wb/load.php?type=6",
+      }).done(function() {
+        $.ajax({
+          method: "GET",
+          url: "/wb/load.php?type=7",
+        }).done(function() {
+          $.ajax({
+            method: "GET",
+            url: "/wb/load.php?type=8",
+          }).done(function() {
+            $.ajax({
+              method: "GET",
+              url: "/wb/load.php?type=9",
+            }).done(function() {
+              $.ajax({
+                method: "GET",
+                url: "/wb/load.php?type=10",
+              }).done(function() {
+                $.ajax({
+                  method: "GET",
+                  url: "/wb/load.php?type=11",
+                }).done(function() {
+                });
+              });
+            });
+          });
         });
-}, 2000);
-/*
-setTimeout(() => {
-        $.get("/wb/load.php?type="+<?=$_GET['type']?>, function (dt){});
-        $.get("/wb/valid.php", function (dt){
-            document.querySelectorAll('label#api_old')[0].innerHTML = 'Ключ api старый: '+JSON.parse(dt).data.url;
-            document.querySelectorAll('label#api_new')[0].innerHTML = 'Ключ api новый: '+JSON.parse(dt).data.url_new;
-            document.querySelectorAll('label#api_supplier')[0].innerHTML = 'Ключ поставщика: '+JSON.parse(dt).data.url_supplier;
+      });
+    });
+  });
+});
+
+ function typeLoad() {
+    $.ajax({
+      method: "GET",
+      url: "/wb/load.php?type=1&forcibly=on",
+    }).done(function() {
+      $.ajax({
+        method: "GET",
+        url: "/wb/load.php?type=2&forcibly=on",
+      }).done(function() {
+        $.ajax({
+          method: "GET",
+          url: "/wb/load.php?type=5&forcibly=on",
+        }).done(function() {
+          $.ajax({
+            method: "GET",
+            url: "/wb/load.php?type=6&forcibly=on",
+          }).done(function() {
+            $.ajax({
+              method: "GET",
+              url: "/wb/load.php?type=7&forcibly=on",
+            }).done(function() {
+              $.ajax({
+                method: "GET",
+                url: "/wb/load.php?type=8&forcibly=on",
+              }).done(function() {
+                $.ajax({
+                  method: "GET",
+                  url: "/wb/load.php?type=9&forcibly=on",
+                }).done(function() {
+                  $.ajax({
+                    method: "GET",
+                    url: "/wb/load.php?type=10&forcibly=on",
+                  }).done(function() {
+                    $.ajax({
+                      method: "GET",
+                      url: "/wb/load.php?type=11&forcibly=on",
+                    }).done(function(dt) {
+                      if($('.loadForcibly')[0]){$('.loadForcibly')[0].innerHTML = JSON.parse(dt).message;}
+                    });
+                  });
+                });
+              });
+            });
+          });
         });
-}, 10000);
-*/
+      });
+    });
+ }
+
+typeLoad();
+
+setTimeout(() => {
+  $.get("/wb/load.php?type=<?=$_GET['type']?>", function (dt){
+    if($('.grid-data-empty')[0]){$('.grid-data-empty')[0].innerHTML = JSON.parse(dt).message;}
+  });
+  $.get("/wb/valid.php", function (dt){
+      document.querySelectorAll('label#api_old')[0].innerHTML = 'Ключ api старый: '+JSON.parse(dt).data.url;
+      document.querySelectorAll('label#api_new')[0].innerHTML = 'Ключ api новый: '+JSON.parse(dt).data.url_new;
+      document.querySelectorAll('label#api_supplier')[0].innerHTML = 'Ключ поставщика: '+JSON.parse(dt).data.url_supplier;
+  });
+}, 1000);
+
 </script>
 
 <div class="panel panel-default" style="margin: 0px 10px 10px 10px;">
-    <div class="panel-heading"><h4 style="font-size: 13px;">Продажи и заказы Wildberries</h4>
+    <div class="panel-heading" style="display: flex;"><h4 style="font-size: 13px;">Продажи и заказы Wildberries</h4>
         <div class="dropdown" style="z-index: 99;">
-            <button onclick="myFunction()" class="dropbtn"><i class="fa fa-key dropbtn"></i></button>
+          <input class='dropbtn' title='Очистить строку'  value='' style='' onclick="myFunction()">
             <div id="myDropdown" class="dropdown-content">
                 <form method="post">
                     <fieldset>
-                        <p><label id="api_new" for="api">Ключ api новый: <font color="coral">проверка...</font></label><input style="width: 100%" type="text" name="key1" id="api" placeholder="<?=($lines[0] ? 'введен' : 'не введен')?>"></p>
-                        <p><label id="api_old" style="padding-top: 5px" for="stats">Ключ api старый: <font color="coral">проверка...</font></label><input style="width: 100%" type="text" name="key2" id="stats" value="<?=$lines[1]?>"></p>
-                        <p><label id="api_supplier" style="padding-top: 5px" for="supplierId">Ключ поставщика: <font color="coral">проверка...</font></label><input style="width: 100%" type="text" name="key3" id="supplierId" value="<?=$lines[2]?>"></p>
-                        <p><label id="api_nalog" style="padding-top: 5px; margin-right:5px;" for="nalog">Процент налога: </label><input style="width: 3%" type="text" name="key4" id="nalog" value="<?=$lines[4]?>">
+                        <p><label id="api_new" for="api">Ключ api новый: <font color="coral">проверка...</font></label><input style="width: 100%" type="text" name="key1" id="api" placeholder="<?=($auth ? 'введен' : 'не введен')?>"></p>
+                        <p><label id="api_old" style="padding-top: 5px" for="stats">Ключ api старый: <font color="coral">проверка...</font></label><input style="width: 100%" type="text" name="key2" id="stats" value="<?=$wb_key_new?>"></p>
+                        <p><label id="api_supplier" style="padding-top: 5px" for="supplierId">Ключ поставщика: <font color="coral">проверка...</font></label><input style="width: 100%" type="text" name="key3" id="supplierId" value="<?=$supplierId?>"></p>
+                        <p><label id="api_nalog" style="padding-top: 5px; margin-right:5px;" for="nalog">Процент налога: </label><input style="width: 3%" type="text" name="key4" id="nalog" value="<?=$perc?>">
                           <label id="api_doh" style="padding-top: 5px; margin-right:5px;" for="doh1"><input type="radio" name="key5" value="off" id="doh1" <?=$pay=='off' ? "checked" : ""?>> Доходы</label>
                           <label id="api_doh" style="padding-top: 5px; margin-right:5px;" for="doh2"><input type="radio" name="key5" value="on" id="doh2" <?=$pay=='on' ? "checked" : ""?>> Доходы - Расходы</label>
                         </p>
@@ -60,6 +154,9 @@ setTimeout(() => {
                 </form>
             </div>
         </div>
+        <h4 style="font-size: 13px;"><?=$buf2[0] ? date('d.m.Y H:i:s',$buf2[0]) : $buf2[0]?></h4>
+        <button class="btn btn-sm btn1 btn-color" id="quan" onclick="typeLoad();$('.loadForcibly').show();" style="margin-left: 10px;font-size: 10px;padding: 0px 5px;margin-top: px;">Обновить</button>
+        <h4 style="font-size: 13px; display:none" class="loadForcibly"><font class="loading" color="#0059fc">Получение данных</font></h4>
 
     </div>
     <script type="text/javascript">
@@ -121,20 +218,23 @@ if (!in_array($_GET['type'],[5,6,8,9,11]))
 
 <?php } ?>
 
-
-
 <?php if (in_array($_GET['type'],[2,1,10,9,5])):
 
-  function typeLine($status){
-      if($status == 'false'){$cdt = 'spline';}
-      else{$cdt ='line';}
-      return $cdt;
+  $resultCheckbox = mysqli_query($link, 'SELECT name,value FROM `params` WHERE userId='.$USER["id"]);
+
+  foreach ($resultCheckbox as $key => $value) {
+    if($value['name'] == 'status'){
+      $statusCheckbox = $value['value'];
+    }
+    if($value['name'] == 'option'){
+      $optionCheckbox = $value['value'];
+    }
+    if($value['name'] == 'hide'){
+      $hideCheckbox = $value['value'];
+    }
   }
 
-  $status_checkbox = json_decode(file_get_contents("update/json/bar.json"));
-  $statusCheckbox = typeLine($status_checkbox->status);
-  $optionCheckbox = $status_checkbox->option;
-  if($status_checkbox->option == "total"){
+  if($optionCheckbox == "total"){
       $optionCheckbox = ' руб';
   }else{
       $optionCheckbox = ' шт';
@@ -142,15 +242,7 @@ if (!in_array($_GET['type'],[5,6,8,9,11]))
 
 
   ?>
-<style>
-.btn-color{
-  background: #fff;
-}
-.btn1{
-  margin-right: 3px;
-  border: 1px solid #ccc;
-}
-</style>
+
 <?php endif;?>
 
 <?php if (in_array($_GET['type'],[2,1,10])):?>
@@ -202,7 +294,6 @@ if (in_array($_GET['type'],[2,1,10])){
         $dt1_bar = date("Y-m-d", strtotime("-1 DAY"));
     } else {
         $dt1_bar = minusDate($_GET['dt'],date('d-m-Y'));
-        //$dt1_bar = date('Y-m-d', strtotime($_GET['dt']) - (strtotime(date('d-m-Y')) - strtotime($_GET['dt'])));
     }
 
     if ($_GET['dt'] and !$_GET['dt1']) {
@@ -213,24 +304,25 @@ if (in_array($_GET['type'],[2,1,10])){
             $dt1_bar = date("Y-m-d", strtotime("-1 DAY"));
         } else {
             $dt1_bar = minusDate($_GET['dt'],date('d-m-Y'));
-            //$dt1_bar = date('Y-m-d', strtotime($_GET['dt']) - (strtotime(date('d-m-Y')) - strtotime($_GET['dt'])));
         }
+    } else if($_GET['dt1'] == $_GET['dt2']) {
+      $dt2_bar_org = $dt1_bar_org = $_GET['dt1'];
+      $dt2_bar = $dt1_bar = date("Y-m-d", strtotime("-1 DAY",strtotime($_GET['dt1'])));
     } else {
         //фильтр по периодам
         $dt2_bar = $dt1_bar_org = $_GET['dt1'];
         $dt2_bar_org = $_GET['dt2'];
-        if ($_GET['dt1'] == date('Y-m-d') and $_GET['dt2'] == date('Y-m-d')) {
-            $dt1_bar = date("Y-m-d", strtotime("-1 DAY"));
-        } else {
-
+      //  if ($_GET['dt1'] == date('Y-m-d') or $_GET['dt2'] == date('Y-m-d')) {
+        //    $dt1_bar = date("Y-m-d", strtotime("-1 DAY"));
+      //  }else {
             $dt1_bar = minusDate($_GET['dt1'],$_GET['dt2']);
-           // echo '<pre>'; var_dump($dt1_bar.' - '.$dt2_bar);
-        }
+          //  echo '<pre>';var_dump($dt1_bar);
+      //  }
 
+        //echo '<pre>';var_dump(  $dt1_bar.' - '.  $dt2_bar);
     }
-   // echo '<pre>'; var_dump($dt1_bar.' - '.$dt2_bar);
+
     require_once('blocks/bar/func.php');
-   // echo '<pre>'; var_dump($data_bar);
 }
 
 
@@ -240,7 +332,6 @@ if ($tbl_rows && !in_array($_GET['type'],[5,6,8,9,11]))
 
     foreach ($tbl_rows as $g)
     {
-
         if ($g->discountPercent==0 and $g->finishedPrice){
             $g->discountPercent = 100-(($g->finishedPrice*100)/$g->totalPrice);
         }
@@ -255,7 +346,7 @@ if ($tbl_rows && !in_array($_GET['type'],[5,6,8,9,11]))
             $g->qualification = 'Отмененные заказы';
         }
 
-        if($config_return=='off' and ($g->isCancel or $g->finishedPrice < 0) and ($_GET['type'] == 1 or $_GET['type'] == 2)){
+        if($config_return=='off' and ($g->isCancel == 1 || $g->forPay < 0 || $g->doc_type_name == 'Возврат' || $g->finishedPrice < 0 || $g->RED == 1) and ($_GET['type'] == 1 or $_GET['type'] == 2)){
             continue;
         }
 
@@ -471,10 +562,20 @@ if ($_GET['type'] == 2 || $_GET['type'] == 3)
         // echo "<h4><a href='?page=wb&type='.$_GET['type'].'&dt=". $_GET['dt'] ."''>Все отчеты</a>  / Поставка № <a href='?page=wb&type=7&rid=$_GET[rid]&dt=" .$_GET['dt']. "'>" . $_GET['rid'] . '</a> по штрихкоду: ' .$_GET['bc'] . '</h4>';
     }
     elseif (isset($_GET['f1'])) {
+        if(is_numeric($_GET['f1'])){
+            $tmpN = number_format((string)$_GET['f1'], 2, '.', ' ');
+        }else{
+            $tmpN = $_GET['f1'];
+        }
         $templateHTML = "<a href='?page=wb&type=" . $_GET['type'] . "&dt=" . $_GET['dt'] . "''>Заказы</a>  / Баркод № <a href='?page=wb&type=" . $_GET['type'] . "&f1={$_GET['f1']}&dt=" . $_GET['dt'] . "'>" . $_GET['f1'] . '</a>';
     }
     elseif (isset($_GET['f2'])) {
-        $templateHTML = "<a href='?page=wb&type=" . $_GET['type'] . "&dt=" . $_GET['dt'] . "''>Заказы</a>  / " . (isset($tbl_keys[$_GET['f2']]) ? mb_ucfirst($tbl_keys[$_GET['f2']]) : '') . ": <a href='?page=wb&type=" . $_GET['type'] . "&f2={$_GET['f2']}&dt=" . $_GET['dt'] . "&f3={$_GET['f3']}'>" . $_GET['f3'] . '</a>';
+        if(is_numeric($_GET['f3'])){
+            $tmpN = number_format((string)$_GET['f3'], 2, '.', ' ');
+        }else{
+            $tmpN = $_GET['f3'];
+        }
+        $templateHTML = "<a href='?page=wb&type=" . $_GET['type'] . "&dt=" . $_GET['dt'] . "''>Заказы</a>  / " . (isset($tbl_keys[$_GET['f2']]) ? mb_ucfirst($tbl_keys[$_GET['f2']]) : '') . ": <a href='?page=wb&type=" . $_GET['type'] . "&f2={$_GET['f2']}&dt=" . $_GET['dt'] . "&f3={$_GET['f3']}'>" . $tmpN . '</a>';
     }
 
     if($tbl_rows) {
@@ -517,10 +618,20 @@ if ($_GET['type'] == 1 || $_GET['type'] == 4 || $_GET['type'] == 10) {
         //  echo "<h4><a href='?page=wb&type='.$_GET['type'].'&dt=". $_GET['dt'] ."''>Все отчеты</a>  / Поставка № <a href='?page=wb&type=7&rid=$_GET[rid]&dt=" .$_GET['dt']. "'>" . $_GET['rid'] . '</a> по штрихкоду: ' .$_GET['bc'] . '</h4>';
     }
     elseif (isset($_GET['f1'])) {
-        $templateHTML = "<a href='?page=wb&type=" . $_GET['type'] . "&dt=" . $_GET['dt'] . "''>".$text_ten."</a>  / Баркод № <a href='?page=wb&type=" . $_GET['type'] . "&f1={$_GET['f1']}&dt=" . $_GET['dt'] . "'>" . $_GET['f1'] . '</a>';
+        if(is_numeric($_GET['f1'])){
+            $tmpN = number_format((string)$_GET['f1'], 2, '.', ' ');
+        }else{
+            $tmpN = $_GET['f1'];
+        }
+        $templateHTML = "<a href='?page=wb&type=" . $_GET['type'] . "&dt=" . $_GET['dt'] . "''>".$text_ten."</a>  / Баркод № <a href='?page=wb&type=" . $_GET['type'] . "&f1={$_GET['f1']}&dt=" . $_GET['dt'] . "'>" . $tmpN . '</a>';
     }
     elseif (isset($_GET['f2'])) {
-        $templateHTML = "<a href='?page=wb&type=" . $_GET['type'] . "&dt=" . $_GET['dt'] . "''>".$text_ten."</a>  / " . (isset($tbl_keys[$_GET['f2']]) ? mb_ucfirst($tbl_keys[$_GET['f2']]) : '') . ": <a href='?page=wb&type=" . $_GET['type'] . "&f2={$_GET['f2']}&dt=" . $_GET['dt'] . "&f3={$_GET['f3']}'>" . $_GET['f3'] . '</a>';
+        if(is_numeric($_GET['f3'])){
+            $tmpN = number_format((string)$_GET['f3'], 2, '.', ' ');
+        }else{
+            $tmpN = $_GET['f3'];
+        }
+        $templateHTML = "<a href='?page=wb&type=" . $_GET['type'] . "&dt=" . $_GET['dt'] . "''>".$text_ten."</a>  / " . (isset($tbl_keys[$_GET['f2']]) ? mb_ucfirst($tbl_keys[$_GET['f2']]) : '') . ": <a href='?page=wb&type=" . $_GET['type'] . "&f2={$_GET['f2']}&dt=" . $_GET['dt'] . "&f3={$_GET['f3']}'>" . $tmpN . '</a>';
     }
 
             $tbl_rows = array_reverse($tbl_rows);
@@ -545,6 +656,18 @@ foreach ($tps_res as $key => $value) {
 
 $fields = array_keys($tbl_keys);
 
+if($_GET['type'] == 11){
+array_unshift($fields, 'checkbox_del');
+$columns[] = (object) [
+    'text' => '<span data-qtip="Выделение строк">Выделение строк</span>',
+    'id' => 'checkbox_del',
+    'dataIndex' => 'checkbox_del',
+    'sortable' => false,
+    'hideable' => true,
+    'width' => 45
+];
+
+}
 array_unshift($fields, 'image');
 
 //столбцы таблиц
@@ -554,7 +677,7 @@ $columns[] = (object) [
     'dataIndex' => 'image',
     'sortable' => false,
     'hideable' => true,
-    'width' => 45
+    'width' => 80
 ];
 if ($_GET['type'] == 9) {
     $columns[0]->width = 80;
@@ -639,7 +762,6 @@ if ($tbl_rows and count($tbl_rows)) {
 
         foreach ($sums as $fieldsum) {
             $fieldsum = trim($fieldsum);
-
             $g->$fieldsum = abs($g->$fieldsum);
         }
 
@@ -665,19 +787,27 @@ if ($tbl_rows and count($tbl_rows)) {
         if ($_GET['type'] == 5) {
             $flag = 0;
         }
-        // if ($flag == 1) continue;
 
-        // $CNT_SUM += $g->quantity;
+        if ($_GET['type'] == 1 and ($g->isCancel != 1 && $g->forPay > 0 && $g->doc_type_name != 'Возврат' && $g->finishedPrice > 0 && $g->RED != 1)) {
+             $PRICE_SUM += $g->forPay * $g->quantity;
+         }
+         elseif ($_GET['type'] == 2 and ($g->isCancel != 1 and $g->doc_type_name != 'Возврат' and $g->finishedPrice > 0 and $g->RED != 1)) {
+             $PRICE_SUM += $g->finishedPrice;
+         }
+         elseif ($_GET['type'] == 10) {
+             $PRICE_SUM += $g->finishedPrice;
+            // $PRICE_SUM += $g->totalPrice * ((100 - $g->discountPercent) / 100);
+         }
+         elseif(!in_array($_GET['type'],[1,2,10])) {
+             $PRICE_SUM += $g->totalPrice * ((100 - $g->discountPercent) / 100);
+         }
 
-        //   var_dump($PRICE_SUM);
-
-        if (($_GET['type'] == 1 and $g->forPay >= 0) || $_GET['type'] == 4) {
+    //  $g->isCancel == 1 || $g->forPay < 0 || $g->doc_type_name == 'Возврат' || $g->finishedPrice < 0 || $g->RED == 1
+    /*   if (($_GET['type'] == 1 and $g->forPay >= 0) || $_GET['type'] == 4) {
             $PRICE_SUM += $g->forPay * $g->quantity;
         }
         elseif ($_GET['type'] == 2 and $g->totalPrice >= 0 and $g->isCancel != 1) {
-            // ЗАКАЗЫ
             $PRICE_SUM += $g->finishedPrice;
-            // $PRICE_SUM += $g->totalPrice * ((100 - $g->discountPercent) / 100);
         }
         elseif ($_GET['type'] == 10) {
             $PRICE_SUM += $g->finishedPrice;
@@ -685,6 +815,7 @@ if ($tbl_rows and count($tbl_rows)) {
         elseif(!in_array($_GET['type'],[1,2,10])) {
             $PRICE_SUM += $g->totalPrice * ((100 - $g->discountPercent) / 100);
         }
+*/
 
         $data_cols['refund_color'] = $REFUND_COLOR;
 
@@ -728,13 +859,45 @@ if ($tbl_rows and count($tbl_rows)) {
 }
 $data = $data_rows;
 
+if((($_GET['type']==5 or $_GET['type']==11) and !$_GET['rid']) or (in_array($_GET['type'],[7,8]) and ($_GET['rid'] or $_GET['f1']))){
+  $rid="";
+  if($_GET['type']==7 and $_GET['rid']){$rid=' and incomeId="'.$_GET['rid'].'"';}
+  elseif($_GET['type']==8 and $_GET['f1']){$rid=' and supplierArticle="'.$_GET['f1'].'"';}
+  if(in_array($_GET['type'],[7,8])){$type=7;}else{$type=$_GET['type'];}
+
+  $result = mysqli_query($link, 'SELECT * FROM `goods` WHERE `userId`='.$USER["id"].' and `type`='.$type.$rid);
+
+  if ($result == false) {
+    print(mysqli_error($link));
+  }
+}
+elseif($_GET['type']==9 and !$_GET['rid']){
+
+  $result5 = mysqli_query($link, 'SELECT * FROM `goods` WHERE `userId`='.$USER["id"].' and `type`=5');
+
+  if ($result == false) {
+    print(mysqli_error($link));
+  }
+}
+if($_GET['type']==11 and !$_GET['rid']){
+
+  $result12 = mysqli_query($link, 'SELECT * FROM `goods` WHERE `userId`='.$USER["id"].' and `type`=12');
+
+  if ($result == false) {
+    print(mysqli_error($link));
+  }
+}
+
+/*
 if (in_array($_GET['type'],[5,9]) and !$_GET['rid']){
     $correct_lines = file_read('5');
 }elseif(in_array($_GET['type'],[7,8,9])){
     $correct_lines = file_read('7');
 }elseif(in_array($_GET['type'],[11])){
     $correct_lines = file_read('11');
+    $correct_lines_products = file_read('products');
 }
+*/
 
   if($_GET['type']!=11){
   $sums_report = explode("\n", 'totalPrice
@@ -842,13 +1005,22 @@ all_cost
 pribil
 ppvz_kvw_prc_base
 ppvz_kvw_prc
-marga');}
+marga
+storage_cost
+acceptance_fee
+other_deductions
+speed_back');
+}
+
 
 if($ss_dom_lat){
     foreach ($ss_dom_lat as $k => $item) {
-        $dat_null[] = $k;
+        $dat_null[] = $item;
+      //  var_dump($item);
     }
+
 }
+
 // ----
 if (in_array($_GET['type'],[1,2,10,6,9])){
     $dat_minus = explode("\n", 'incomeID
@@ -873,21 +1045,22 @@ isCancel
 cancel_dt');
 }
 
-if (in_array($_GET['type'],[7,8])) {
+if (in_array($_GET['type'],[7,8,9])) {
     foreach (explode("\n", $ss_dop) as $item){
         $item = ru2Lat(trim($item));
         $sum_s_r[] = $item;
-        if (!$_GET['f1'] and !$_GET['rid']){$sums_report[] = $item;}
+        if (!$_GET['f1'] and !$_GET['rid']){
+          $sums_report[] = $item;
+        }
+        if($_GET['type']==9 and $_GET['rid']){
+          $sums_report[] = $item;
+        }
     }
     $sums_report[] = $sum_s_r[] = 'Stoimosty_edinicy_tovara';
 }
 
 if ($ss_dop){
     $sum_m = explode("\n", ru2Lat($ss_dop));
-}
-
-if($data){
-//  require_once('blocks/data.php');
 }
 
 
@@ -910,126 +1083,93 @@ if($data){
               $dat->speed = '~ 0';
             }
         }
-        if($_GET['type']==11 and !$_GET['rid'] and !$_GET['f1']){
-          foreach ($correct_lines as $key => $correct_line) {
-                if ($dat->supplierArticle == $correct_line->supplierArticle and $dat->barcode == $correct_line->barcode) {
-                    foreach ($correct_line as $k=>$item) {
-                      if($k != 'barcode' and $k != 'supplierArticle'){
-                        $data[$l]->$k = $item;
-                      //  var_dump($data[$l]);
-                      }
-                    }
-                }
-            }
+
+        if($result and (($_GET['type']==7 and $_GET['rid']) or ($_GET['type']==8 and $_GET['f1']))){
+
+          foreach ($result as $key => $value) {
+            if($value['barcode']==$dat->barcode and $value['incomeId']==$dat->incomeId and $value['supplierArticle']==$dat->supplierArticle){
+              $tmp = $value['name'];
+              $dat->$tmp = (int)$value['value'];
+              if($_GET['type']==7)$dat->Obschaya_sebestoimosty_edinicy_tovara += (int)$value['value'];
+              if($_GET['type']==8)$dat->ss_one += (int)$value['value'];
+          }
         }
-        if (in_array($_GET['type'],[5,9]) and !$_GET['rid'] and $correct_lines) {
-            foreach ($correct_lines as $correct_line) {
-                if ($dat->realizationreport_id == $correct_line->realizationreport_id) {
-                    $data[$l]->storage_cost = $correct_line->storage_cost;
-                    $data[$l]->acceptance_fee = $correct_line->acceptance_fee;
-                    $data[$l]->other_deductions = $correct_line->other_deductions;
-                }
-            }
-            $dat->total_payable = $dat->ppvz_for_pay - ($dat->delivery_rub + $dat->storage_cost + $dat->other_deductions + $dat->acceptance_fee);
+        if($_GET['type']==7)$dat->Obschaya_sebestoimosty_s_uchetom_kolichestva = intval((int)$dat->quantity * (int)$dat->Obschaya_sebestoimosty_edinicy_tovara);
+        if($_GET['type']==8)$dat->ss_all = intval((int)$dat->quantity * (int)$dat->ss_one);
+
+      }else if($result and (($_GET['type']==7 and !$_GET['rid']) or ($_GET['type']==8 and !$_GET['f1']))){
+
+        foreach ($dat as $d_k => $da) {
+          if ($d_k == 'Stoimosty_edinicy_tovara' or in_array($d_k, $sum_m) or in_array('_' . $d_k, $sum_m)) {
+            if($_GET['type']==7)$dat->Obschaya_sebestoimosty += (int)$da;
+            if($_GET['type']==8)$dat->ss_all += (int)$da;
+          }
         }
+        if($_GET['type']==7)$dat->Srednyaya_sebestoimosty_edinicy = intval((int)$dat->Obschaya_sebestoimosty / (int)$dat->quantity);
+        if($_GET['type']==8)$data[$l]->ss_one = intval((int)$data[$l]->ss_all / (int)$data[$l]->quantity);
 
-        if ($_GET['rid'] and in_array($_GET['type'],[9])){
-          foreach ($correct_lines as $key => $correct_line) {//---
-                if ($dat->incomeId == $correct_line->incomeId and $dat->sa_name == $correct_line->supplierArticle and $dat->barcode == $correct_line->barcode) {
-                    foreach ($correct_line as $k=>$item) {
-                        if (array_key_exists($k,$ss_dom_lat)){
-                            $data[$l]->$k = $item;
-                            $data[$l]->ss_one += $item;
-                        }
-                    }
-                }
-            }
-            if ($pay == 'off'){$data[$l]->nalog7 = $data[$l]->retail_amount * $perc;}
-            else{$data[$l]->nalog7 = ($data[$l]->retail_amount - ($data[$l]->delivery_rub + $data[$l]->ppvz_vw + $data[$l]->ppvz_vw_nds + $data[$l]->ss_one)) * $perc;}
+      }
 
-            $data[$l]->all_cost = $data[$l]->delivery_rub + $data[$l]->ppvz_vw + $data[$l]->ppvz_vw_nds + $data[$l]->nalog7 + $data[$l]->ss_one;
-                 $data[$l]->pribil = $data[$l]->retail_amount - $data[$l]->all_cost;
-                 $data[$l]->marga = ($data[$l]->pribil / $data[$l]->all_cost)*100;
-                 $data[$l]->total_payable = $data[$l]->ppvz_for_pay - $data[$l]->delivery_rub;
-
-
-        }elseif (!$_GET['rid'] and in_array($_GET['type'],[9])){
-            foreach ($dat as $d_k => $da) {
-                if (array_key_exists($d_k,$ss_dom_lat)) {
-                    $data[$l]->ss_one += $da;
-                }
-            }
-            $data[$l]->all_cost = $data[$l]->storage_cost + $data[$l]->acceptance_fee + $data[$l]->other_deductions + $data[$l]->delivery_rub + $data[$l]->ppvz_vw + $data[$l]->ppvz_vw_nds + $data[$l]->nalog7 + $data[$l]->ss_one;
-            $data[$l]->pribil = $data[$l]->retail_amount - $data[$l]->all_cost;
-            $data[$l]->marga = ($data[$l]->pribil / $data[$l]->all_cost)*100;
-            if ($pay == 'off'){$data[$l]->nalog7 = $data[$l]->retail_amount * $perc;}
-            else{$data[$l]->nalog7 = ($data[$l]->retail_amount - $data[$l]->all_cost) * $perc;}
+      if ($result and $_GET['type']==5 and !$_GET['rid']){
+        foreach ($result as $key => $value) {
+          if($value['realizationreport_id']==$dat->realizationreport_id){
+            $tmp = $value['name'];
+            $dat->$tmp = (int) $value['value'];
+          }
         }
+        $dat->total_payable = $dat->ppvz_for_pay - ($dat->delivery_rub + $dat->storage_cost + $dat->other_deductions + $dat->acceptance_fee);
+      }
 
-        if (in_array($_GET['type'],[7,8])) {
-            if ($_GET['rid'] or $_GET['f1']) {
-                foreach ($correct_lines as $key => $correct_line) {
-                    if ((preg_barcode($dat->incomeId) == $correct_line->incomeId or $dat->incomeId == $correct_line->incomeId)
-                        and (preg_barcode($dat->supplierArticle) == $correct_line->supplierArticle or $dat->supplierArticle == $correct_line->supplierArticle)
-                        and $dat->barcode == $correct_line->barcode) {
-
-                        foreach ($correct_line as $key => $datumm) {
-                            if (($key == 'Stoimosty_edinicy_tovara' or in_array($key, $sum_m) or in_array('_' . $key, $sum_m))
-                                and ($key != 'id' and $key != 'incomeId' and $key != 'barcode' and $key != 'supplierArticle')) {
-
-                                $data[$l]->$key = $datumm;
-                                if ($_GET['type'] == 7) $data[$l]->Obschaya_sebestoimosty_edinicy_tovara += $datumm;
-                                elseif ($_GET['type'] == 8) $data[$l]->ss_one += $datumm;
-                            }
-                        }
-                    }
-                }
-                if ($_GET['type'] == 7) $data[$l]->Obschaya_sebestoimosty_s_uchetom_kolichestva = $data[$l]->quantity * $data[$l]->Obschaya_sebestoimosty_edinicy_tovara;
-                elseif ($_GET['type'] == 8) $data[$l]->ss_all = $data[$l]->quantity * $data[$l]->ss_one;
-
-            } elseif (!$_GET['rid'] and !$_GET['f1']) {
-                foreach ($dat as $d_k => $da) {
-                    if ($d_k == 'Stoimosty_edinicy_tovara' or in_array($d_k, $sum_m) or in_array('_' . $d_k, $sum_m)) {
-                      //  echo '<pre>';var_dump($d_k.' - '.$da);
-                        //$data[$l]->$d_k +=$da;
-                        if ($_GET['type'] == 7) $data[$l]->Obschaya_sebestoimosty += $da;
-                        elseif ($_GET['type'] == 8) $data[$l]->ss_all += $da;
-                    }
-                }
-
-                if ($_GET['type'] == 7) $data[$l]->Srednyaya_sebestoimosty_edinicy = $data[$l]->Obschaya_sebestoimosty / $data[$l]->quantity;
-                elseif ($_GET['type'] == 8) $data[$l]->ss_one = $data[$l]->ss_all / $data[$l]->quantity;
-            }
+      if ($result5 and $_GET['type']==9 and !$_GET['rid']){
+        foreach ($result5 as $key => $value) {
+          if($value['realizationreport_id']==$dat->realizationreport_id){
+            $tmp = $value['name'];
+            $dat->$tmp = (int) $value['value'];
+          }
         }
-
-      /*  if($sums_report){
-          foreach ($dat as $d_k => $da) {
-            foreach ($sums_report as $fieldsum) {
-                $fieldsum = trim($fieldsum);
-                if (is_numeric($da) and $d_k == $fieldsum) {
-                    if (in_array($_GET['type'],[1,10]) and $da < 0){$da *= -1;}
-                        $data[$l]->$d_k = number_format((string)$da, 2, '.', ' ');
-
-                }
-            }
-            if ($d_k == 'cancel_dt' and ($da == '0001-01-01 00:00:00' or $da == null or !$da)) {
-                $data[$l]->$d_k = '';
-            }
+        foreach ($dat as $d_k => $da) {
+          if ($d_k == 'Stoimosty_edinicy_tovara' or in_array($d_k, $sum_m) or in_array('_' . $d_k, $sum_m)) {
+            $dat->ss_one += (int)$da;
+          }
         }
-      }*/
+        $dat->total_payable = intval($dat->ppvz_for_pay - ($dat->delivery_rub + $dat->storage_cost + $dat->other_deductions + $dat->acceptance_fee));
+        if ($pay == 'off'){$dat->nalog7 = $dat->retail_amount * ($perc/100);}
+        else{$dat->nalog7 = ($dat->retail_amount - ($dat->storage_cost + $dat->acceptance_fee + $dat->other_deductions + $dat->delivery_rub + $dat->ppvz_vw + $dat->ppvz_vw_nds + $dat->nalog7 + $dat->ss_one)) * ($perc/100);}
+        $dat->all_cost = $dat->storage_cost + $dat->acceptance_fee + $dat->other_deductions + $dat->delivery_rub + $dat->ppvz_vw + $dat->ppvz_vw_nds + $dat->nalog7 + $dat->ss_one;
+        $dat->pribil = $dat->retail_amount - $dat->all_cost;
+        $dat->marga = ($dat->pribil / $dat->all_cost)*100;
+
+      }else if($_GET['type']==9 and $_GET['rid']){
+        if ($pay == 'off'){$dat->nalog7 = $dat->retail_amount * ($perc/100);}
+        else{$dat->nalog7 = ($dat->retail_amount - ($dat->delivery_rub + $dat->ppvz_vw + $dat->ppvz_vw_nds + $dat->ss_one)) * ($perc/100);}
+
+        $dat->all_cost = $dat->delivery_rub + $dat->ppvz_vw + $dat->ppvz_vw_nds + $dat->nalog7 + $dat->ss_one;
+        $dat->pribil = $dat->retail_amount - $dat->all_cost;
+        $dat->marga = ($dat->pribil / $dat->all_cost)*100;
+        $dat->total_payable = $dat->ppvz_for_pay - $dat->delivery_rub;
+      }
+
+      if($result and $_GET['type']==11){
+        foreach ($result as $key => $value) {
+          if($value['barcode']==$dat->barcode and $value['supplierArticle']==$dat->supplierArticle){
+            $tmp = $value['name'];
+            $dat->$tmp = (int)$value['value'];
+        }
+      }
+    }
 
         if ($dat_null){
             foreach ($dat_null as $kitem) {
                 $kitem = trim($kitem);
                 if (!$dat->$kitem || $dat->$kitem==null) {
-                    $dat->$kitem = 0;
+                    $dat->$kitem = (int)0;
                 }
             }
         }
         if ($dat_minus){
             foreach ($dat_minus as $kitem) {
                 $kitem =trim($kitem);
-                if (!$dat->$kitem or$dat->$kitem =='01.01.0001 00:00:00'){
+                if (!$dat->$kitem or $dat->$kitem =='01.01.0001 00:00:00'){
                     $dat->$kitem = '---';
                 }
             }
@@ -1037,66 +1177,13 @@ if($data){
         $l++;
     }
 
-
-
-    if (in_array($_GET['type'],[5,7,8,9])) {
-        $l = 0;
-        $arrCancel = ['date','dateClose','lastChangeDate','refund_color','supplierArticle', 'barcode', '', 'save', "subject", "category", "brand", "warehouseName", "status",
-        'realizationreport_id','rr_dt','image','rid','rrd_id','gi_id','subject_name','nm_id','brand_name','sa_name','doc_type_name','office_name','supplier_oper_name','order_dt','sale_dt',
-            'shk_id','gi_box_type_name','ppvz_office_id','ppvz_office_name','ppvz_supplier_id','ppvz_supplier_name','ppvz_inn','nmId'];
-
-        foreach ($data as $d_k_k => $dat) {
-            if (in_array($_GET['type'],[7,8,9])){
-                foreach ($dat as $gk => $gv) {
-                    if (!in_array($gk, $arrCancel)) {
-                        if (($_GET['f1'] and $gk != 'incomeId') or (!$_GET['f1'] and !$_GET['f2']) or ($_GET['f2'] and $gk != 'incomeId')){
-                           //var_dump($gk);
-                            if ($_GET['rid'] and $_GET['type']==9 and $gk == 'incomeId'){$ITOGO_SUMS['incomeId'] = 'Итого:';continue;}
-
-                            $ITOGO_SUMS[$gk] += intval(str_replace(" ", "", $gv));
-
-                        }
-                    }
-                }
-            }
-            if ($_GET['type']==8 and !$_GET['f1'] and !$_GET['f2']){
-                $data[$l]->incomeId = "<a href='?page=wb&type=" . $_GET['type'] . (isset($_GET['f1']) ? "&f1={$_GET['f1']}" : "") . "&f1=".$data[$l]->supplierArticle."&dt=".$_GET['dt']."'>".$data[$l]->incomeId." шт</a>";
-            }
-            $l++;
-        }
-
-if (in_array($_GET['type'],[7,8,9])){
-    if($_GET['type']!=9){$ITOGO_SUMS["incomeId"] = "Итого:";}
-    else{$ITOGO_SUMS["image"] = "Итого:";}
 }
-        if ($ITOGO_SUMS and in_array($_GET['type'],[7,8,9])){
-
-            foreach ($ITOGO_SUMS as $key => $ITOGO_SUM) {
-                if ($key != "image" and $key != "incomeId") {
-
-                    $ITOGO_SUMS[$key] = number_format((string)$ITOGO_SUM, 2, '.', ' ');
-
-                }
-            }
-            $data[] = $ITOGO_SUMS;
-        }
-    }
-}
-
-//  echo "<pre>"; var_dump($ITOGO_SUMS);
 
   //file_put_contents('cache/data.json', json_encode($data, JSON_PARTIAL_OUTPUT_ON_ERROR | JSON_ERROR_INF_OR_NAN));
 
-//if($_GET['type']==9 and !$_GET['rid']){$perc = file_get_contents('update/json/9.json');}
+$dom = ($_GET['type'] ? $_GET['type'] : '').($_GET['rid'] ? $_GET['rid'] : ($_GET['f1'] ? $_GET['f1'] : ""));
 
-$dom = $_GET['type'] ? $_GET['type'] : '';
-
-  //$pay1 = "<span id=\"pay-btnWrap\" data-ref=\"btnWrap\" role=\"presentation\" unselectable=\"on\" style=\"\" class=\"x-btn-wrap x-btn-wrap-default-toolbar-small x-btn-split x-btn-split-right\"><span id=\"pay-btnEl\" data-ref=\"btnEl\" role=\"presentation\" unselectable=\"on\" style=\"\" class=\"x-btn-button x-btn-button-default-toolbar-small x-btn-text    x-btn-button-center \"><span id=\"pay-btnIconEl\" data-ref=\"btnIconEl\" role=\"presentation\" unselectable=\"on\" class=\"x-btn-icon-el x-btn-icon-el-default-toolbar-small  \" style=\"\"></span><span id=\"pay-btnInnerEl\" data-ref=\"btnInnerEl\" unselectable=\"on\" class=\"x-btn-inner x-btn-inner-default-toolbar-small\">";
-  //$pay2 = "</span></span></span><span id=\"pay-arrowEl\" class=\"x-btn-arrow-el\" data-ref=\"arrowEl\" role=\"button\" hidefocus=\"on\" unselectable=\"on\" tabindex=\"0\" aria-haspopup=\"true\" aria-owns=\"menu-1015\" aria-hidden=\"false\" aria-disabled=\"false\" aria-labelledby=\"pay\" style=\"\" data-componentid=\"pay\"></span>";
-
-
-
-if ($config_return and ($_GET['type'] == 1 or $_GET['type'] == 2)){
+if ($_GET['type'] == 1 or $_GET['type'] == 2){
     $return_url = "?page=wb&type=$_GET[type]&r=".($config_return=='on' ? 'off' : 'on' );
     if (isset($_GET['dt'])){
         $return_url .= "&dt=$_GET[dt]";
@@ -1107,11 +1194,8 @@ if ($config_return and ($_GET['type'] == 1 or $_GET['type'] == 2)){
     if (isset($_GET['dt2'])){
         $return_url .= "&dt2=$_GET[dt2]";
     }
-
-    /*if ($return_url){
-        $ret = "<a href='".$return_url."' class='btn' style='margin-left:10px;padding: 5px 10px;border: 1px solid #ccc; '>".($config_return=='on' ? 'Откл' : 'Вкл')." возвраты </a>";
-    }*/
 }
+
 
 if (in_array($_GET['type'],[2,1,10])){
     require_once('blocks/bar/bar.php');
@@ -1126,6 +1210,33 @@ if(!in_array($_GET['type'],[7,8,9,5,11]) or ($_GET['type'] == 5 and $_GET['rid']
     $whileTbar = true;
 }
 
+
+if($result12 and $_GET['type']==11){
+  $tmpArr = [];
+  $i=0;
+  foreach ($result12 as $key => $value) {
+    $valTmp=false;
+    if($tmpArr[0]){
+      foreach ($tmpArr as $tmpK => $tmpV) {
+        if($tmpV['checkbox_del'] == $value['goods']){
+          $tmpArr[$tmpK][$value['name']] = $value['value'];
+          $valTmp=true;
+        }
+      }
+    }
+    if($valTmp==false){
+      $tmpArr[$i]['checkbox_del'] = $value['goods'];
+      $tmpArr[$i][$value['name']] = $value['value'];
+    }
+    $i++;
+  }
+  foreach ($tmpArr as $key => $value) {
+    array_unshift($data, $value);
+  }
+}
+
+//  var_dump($data[0]);
+
 ?>
 
 <thead>
@@ -1138,7 +1249,7 @@ if(!in_array($_GET['type'],[7,8,9,5,11]) or ($_GET['type'] == 5 and $_GET['rid']
 </thead>
 
 
-<div id="grid<?php echo $_GET['type'] ? $_GET['type'] : ''; ?>" class="grid"></div>
+<div id="grid<?php echo $_GET['type'] ? $_GET['type'] : ''; ?><?php echo $_GET['rid'] ? $_GET['rid'] : ($_GET['f1'] ? $_GET['f1'] : ""); ?>" class="grid"></div>
 
 
 <script>
@@ -1155,20 +1266,22 @@ if(!in_array($_GET['type'],[7,8,9,5,11]) or ($_GET['type'] == 5 and $_GET['rid']
 <script type="text/javascript" src="js/locale-ru.js"></script>
 
 <?php
-if(in_array($_GET['type'],[7,8,9])){
+if(in_array($_GET['type'],[9])){
   $updateType = $_GET['type'];
   require_once('blocks/interval/'.$updateType.'.php');
 }
-require_once('blocks/interval/all.php');
 
+require_once('blocks/renderer.php');
 ?>
 
 <script type = "text/javascript">
 
+    //console.log(document.referrer+' - '+document.location.href);
+
     <?php
-    if (in_array($_GET['type'],[6,7,8,9,11])){
+    /*if (in_array($_GET['type'],[6,7,8,9]) && document.referrer && document.location.href && document.referrer !== document.location.href && (performance.navigation.type==255 || performance.navigation.type==0)){
         echo 'localStorage.clear();';
-    }
+    }*/
     ?>
     if(performance.navigation.type == 2)
     {
@@ -1177,24 +1290,20 @@ require_once('blocks/interval/all.php');
 
     Ext.onReady(function() {
         Ext.QuickTips.init();
-        //var Editing = Ext.create('Ext.grid.plugin.CellEditing');
-        //var Editing = Ext.create('Ext.grid.plugin.RowEditing');
 
         Ext.define('Data', {
             extend: 'Ext.data.Model',
             fields: fields,
         });
 
-
-
         store = Ext.create('Ext.data.Store', {
             autoLoad: true,
             autoSync: true,
             model: 'Data',
             data: data,
-            proxy: {// описание прокси
-                type: 'rest', // способ взаимодействия с сервером
-                reader: {
+            proxy: {
+                type: 'rest',
+              reader: {
                     type: 'json',
                     rootProperty: 'data'
                 },
@@ -1210,19 +1319,11 @@ require_once('blocks/interval/all.php');
             }
         });
 
-        Ext.apply(Ext.data.SortTypes, {
-          asPerson : function (name) {
-            return name.replace(" ", "").replace(" ", "");
-          }
-        });
-
         store.load();
-       // console.log(change_groped_title(store));
-      //  Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());
+        Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());
 
         grid = Ext.create('Ext.grid.Panel', {
             renderTo: 'grid<?php echo $dom; ?>',
-          //  plugins: [Editing], // указали плагин для редактирования
             store: store,
             padding: '10 10 10 10',
             height: 600,
@@ -1242,7 +1343,14 @@ require_once('blocks/interval/all.php');
                     alert('click');
                   }
                 }
-            }<?php /*echo ($_GET['type']==8 ? ',{ftype: \'summary\'}' : '')*/?>
+            }
+
+            <?php if($data and (in_array($_GET['type'],[7,8,9]) or ($_GET['type']==5 and !$_GET['rid']))): ?>
+            ,{
+              ftype: 'summary'
+            }
+            <?php endif;?>
+
             ],
             stateId: 'grid<?php echo $dom; ?>',
             stateEvents: ['columnmove', 'columnresize', 'columnhide', 'columnshow'],
@@ -1252,7 +1360,7 @@ require_once('blocks/interval/all.php');
                 },
                 preserveScrollOnRefresh: true,
                 deferEmptyText: true,
-                emptyText: '<div class="grid-data-empty">Нет результатов</div>'
+                emptyText: '<div class="grid-data-empty"><font class="loading" color="#0059fc">Получение данных</font></div>'
             },
             tbar:[
 
@@ -1315,7 +1423,6 @@ require_once('blocks/interval/all.php');
 
                 <?php
                 if($templateHTML):
-                //if($_GET['f1'] or $_GET['f2'] or $_GET['rid'] or ($_GET['rid'] and $_GET['bc'])):
                 ?>
                 {
                     xtype : 'label',
@@ -1331,9 +1438,6 @@ require_once('blocks/interval/all.php');
                 {
                     xtype : 'label',
                     html  : ' ',
-                   /* style:{
-                        fontWeight: 'normal',
-                    },*/
                 },
                 <?php endif;?>
 
@@ -1341,6 +1445,8 @@ require_once('blocks/interval/all.php');
         });
 
         view = grid.getView();
+
+
         view.tip = Ext.create('Ext.tip.ToolTip', {
             target: view.el,
             delegate: view.cellSelector,
@@ -1353,12 +1459,12 @@ require_once('blocks/interval/all.php');
                   let re = /\B(?=(\d{3})+(?!\d))/g;
                     var gridColums = view.getGridColumns();
                     var column = gridColums[tip.triggerElement.cellIndex];
-                    var coltip = view.getRecord(tip.triggerElement.parentNode).get(column.dataIndex);
-                    if (coltip) {
-                        var val = column.text + ': ' + (Number(coltip).toFixed(2).replace(re, " "));
-                    }else{
+                  //  var coltip = view.getRecord(tip.triggerElement.parentNode).get(column.dataIndex);
+                  //  if (coltip) {
+                  //      var val = column.text + ': ' + (Number(coltip).toFixed(2).replace(re, " "));
+                  //  }else{
                         var val = column.text;
-                    }
+                  //  }
                     tip.update(val);
                 }
             }
@@ -1386,16 +1492,13 @@ require_once('blocks/interval/all.php');
                 let labelId = 1018;
                 let label = '';
                 let bool = false;
-
                 while (bool === false) {
-
                     label = $('#label-' + labelId);
                     if (label.length > 0) {
                         bool = true;
                     }
                     labelId -= 1;
                 }
-
                 label[0].innerHTML = change_groped_title(store);
             }
         }
@@ -1418,8 +1521,6 @@ require_once('blocks/interval/all.php');
            }
             return groupColText;
         }
-
-
 
     });
 

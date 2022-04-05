@@ -2,17 +2,27 @@
 
 require_once('blocks/func_key.php');
 require_once('blocks/func_tbl_keys.php');
-//------------------------------------------------------------------------------------------
-
-//if (!isset($_GET['dt'])) $_GET['dt'] = date('Y-m-d', time());
-//if (!isset($_GET['type'])) $_GET['type'] = 2;
 
 $v_api = ["success"=>false,"message"=>'<font color="red">Нет данных</font>'];
+writeStatus($link,$USER["id"],$_GET['type'],'1');
 if (trim($USER['wb_key']) != '')
 {
+
+  if($_GET['async']=='on'){
+    while(ob_get_level()) ob_end_clean();
+    header('Connection: close');
+    ignore_user_abort();
+    ob_start();
+    echo('Ожидайте');
+    $size = ob_get_length();
+    header("Content-Length: $size");
+    ob_end_flush();
+    flush();
+  }
+
     require_once('blocks/func_api.php');
 
-      if ($buf == "" || json_decode($buf2[1]) == NULL || time() - intval($buf2[0]) > 60*5 || strpos($buf, 'can\'t decode supplier key') !== false)
+      if ($buf == "" || $_GET['forcibly']=='on' || json_decode($buf2[1]) == NULL || time() - intval($buf2[0]) > 60*5 || strpos($buf, 'can\'t decode supplier key') !== false)
       {
           if ($api_url or $api_url_sales or $api_url_new){
               if (in_array($_GET['type'], [1,2,10])){$r_url_report =  json_decode(report_cache());}
@@ -29,14 +39,17 @@ if (trim($USER['wb_key']) != '')
               $r = json_decode($r);
               if ($r_url_report or $r){$r = unity_report($r_url_report, $r);}
             }
+            else{
+              $r = json_decode($r);
+            }
 
               if ($r and !in_array($r,[null,"[]","","can't decode supplier key","unauthorized","invalid token","supplier key not found"])){
-                  $r = json_decode($r);
 
-
-                //  if ($r_url_report and $r){$r = unity_report($r_url_report, $r);}
+                  if ($r_url_report and $r){$r = unity_report($r_url_report, $r);}
 
                   if (in_array($_GET['type'], [1, 2, 6, 10])) {
+                      stock_cache_old();
+                      stock_cache_new();
                       $r = arr_fbs_fbo($r);
                   }
                   if (in_array($_GET['type'], [1, 2, 6, 10])) {
@@ -51,14 +64,20 @@ if (trim($USER['wb_key']) != '')
 
                   if (!in_array($r[0], [null, ""])) {
                       $v_api["success"] = true;
-                      $v_api["message"] = '<font color="green">Данные обновлены. <a href="#" style="color: green;text-decoration: none;" onclick="parent.location.reload(); return false;">Перезагрузите страницу</a></font>';
+                      $v_api["message"] = '<font color="green">Данные обновлены. <a href="#" style="color: green; text-decoration: revert;" onclick="parent.location.reload(); return false;">Перезагрузите страницу</a></font>';
                       file_put_contents($fileN, time() . '@@---@@' . json_encode($r), LOCK_EX);
+                      writeStatus($link,$USER["id"],$_GET['type'],'3');
                   }
-              }else{$v_api["message"] = '<font color="red">Данные отсутствуют или нет ответа от API-сервера. <a href="#" style="color: green;text-decoration: none;" onclick="parent.location.reload(); return false;">Попробуйте позднее</a></font>';}
+              }else{
+                $v_api["message"] = '<font color="red">Данные отсутствуют или нет ответа от API-сервера. <a href="#" style="color: red; text-decoration: revert;" onclick="parent.location.reload(); return false;">Попробуйте позднее</a></font>';
+                writeStatus($link,$USER["id"],$_GET['type'],'0');
+              }
           }
       }else{
           $v_api["success"] = true;
-          $v_api["message"] = '<font color="red">Нет данных</font>';
+          $v_api["message"] = '<font color="green">Данные полученны успешно</font>';
+          writeStatus($link,$USER["id"],$_GET['type'],'2');
       }
+
 }
 echo json_encode($v_api);
