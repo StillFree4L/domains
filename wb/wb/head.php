@@ -34,8 +34,9 @@ function really_delete()
 
 	.table
 	{
-		font-size: 14px;
+    font: 300 13px/19px Open Sans, Helvetica Neue, helvetica, arial, verdana, sans-serif !important;
 	}
+
   .grid-data-empty{
     text-align: center;
   }
@@ -97,6 +98,18 @@ function really_delete()
       background: url(css/images/redact.png) no-repeat 8px;
       background-size: auto 70%;
     }
+    input#btn_pd_copy_val{
+      background: url(css/images/copy.png) no-repeat 8px;
+      background-size: auto 70%;
+    }
+    input#btn_pd_lst{
+      background: url(css/images/edit.png) no-repeat 8px;
+      background-size: auto 70%;
+    }
+    input#btn_pd_val{
+      background: url(css/images/redact.png) no-repeat 8px;
+      background-size: auto 70%;
+    }
 
 .btn_focus_val:focus{
   background-color: gray;
@@ -141,6 +154,18 @@ function really_delete()
   -webkit-user-select: text!important;
   -moz-user-select: text!important;
   -khtml-user-select: text!important;
+}
+
+.disabledforcibly{
+  background: #dfdbdb!important;
+  color: gray!important;
+}
+
+#grid-1009-body{
+  overflow-y: scroll;
+}
+.x-grid-view{
+  overflow-y: scroll;
 }
 
 </style>

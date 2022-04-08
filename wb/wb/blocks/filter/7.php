@@ -73,9 +73,9 @@ totalPrice цена из УПД';
 
     // if (!isset($_GET['rid']))
     // {
-    echo "<input class='btn btn-default' id='btn_pd_lst' value='Редактировать список полей' style='margin-left:10px;width: 260px;' onclick='$(\"#dop_fields_div\").toggle();$(\"#set_fields_div\").hide(); $(\"#btn_pd_lst\").addClass(\"btn-warning\");$(\"#btn_pd_val\").removeClass(\"btn-warning\");'> ";
+    echo "<input type='button' class='btn btn-default' id='btn_pd_lst' style='margin-left:10px;width: 35px;' onclick='$(\"#dop_fields_div\").toggle();$(\"#set_fields_div\").hide(); $(\"#btn_pd_lst\").addClass(\"btn-warning\");$(\"#btn_pd_val\").removeClass(\"btn-warning\");'> ";
 
-    echo '<div id="dop_fields_div" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; background: #efefef; display: none; padding: 10px; margin: 10px; border: 1px solid #ccc; "><img onclick="$(\'#dop_fields_div\').toggle();" style="width: 20px;cursor:pointer; float: right;" src="https://v1.iconsearch.ru/uploads/icons/bnw/32x32/fileclose.png"> Список Ваших полей для вычета - общие на каждую поставку';
+    echo '<div id="dop_fields_div" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; background: #efefef; display: none; padding: 10px; margin: 10px; border: 1px solid #ccc; "><img onclick="$(\'#dop_fields_div\').toggle();$(\'#btn_pd_lst\').removeClass(\'btn-warning\');" style="width: 20px;cursor:pointer; float: right;" src="https://v1.iconsearch.ru/uploads/icons/bnw/32x32/fileclose.png"> Список Ваших полей для вычета - общие на каждую поставку';
     echo "<textarea class='form-control' style='margin-top: 10px; margin-bottom: 10px; height: 150px;' id='dop_fileds' >$ss_dop_fields</textarea><td style='width: 10px;'> <input style='width: 200px;' class='btn btn-success' value='Сохранить список полей' onclick='save_list();'> ";
 
     echo '<script async>

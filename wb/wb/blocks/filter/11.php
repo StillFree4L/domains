@@ -10,12 +10,18 @@ $calc_divs = ['pribil','marga','sale_total','cost_defect','cost_log','cost_wb_co
     onclick="clearProduct()">
 <input class='btn btn-default btn_focus_val' id='btn_pd_redact_val' title='Массовое редактирование'  value='' style='margin-left:5px;width: 40px;padding: 0px;height: 30px;'
     onclick="$('#set_fields_div').show();$('#btn_pd_redact_val').addClass('btn-warning');">
+<input class='btn btn-default btn_focus_val' id='btn_pd_copy_val' title='Массовое редактирование'  value='' style='margin-left:5px;width: 40px;padding: 0px;height: 30px;'
+        onclick="copyProduct()">
 
 <br clear=all><div id="set_fields_div" style="float: left; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; background: #efefef; font-weight: normal; display: none; padding: 10px; margin: 10px; border: 1px solid #ccc; ">
   <img onclick="$('#set_fields_div').hide();$('#btn_pd_redact_val').removeClass('btn-warning');" style="width: 20px; cursor:pointer; float: right;" src="https://v1.iconsearch.ru/uploads/icons/bnw/32x32/fileclose.png">
   Установка значения полей для всех товаров
 <input type=button  onclick="number_update_all();$('#set_fields_div').hide();$('#btn_pd_redact_val').removeClass('btn-warning');" style="margin-left: 10px;" class='btn btn-success' value='Сохранить'>
-<table class="items table table-striped" style="width: 700px;margin-top: 20px;"><tr><th>Поле</th><th>Значение</th></tr>
+<table class="items table table-striped" style="width: 700px;margin-top: 20px;">
+  <tr>
+    <th style="font-weight: normal;">Поле</th>
+    <th style="font-weight: normal;">Значение</th>
+  </tr>
 <?php foreach($calc_dops as $key=>$value): ?>
 <tr>
   <td style="width: 250px;"><?=$tbl_keys[$value]?></td>
@@ -27,6 +33,24 @@ $calc_divs = ['pribil','marga','sale_total','cost_defect','cost_log','cost_wb_co
 </table>  </div> <br clear=all>
 
 <script type = "text/javascript">
+
+function copyProduct(){
+  let all = {};
+  let check_del = Ext.select(".check_del").elements;
+  if(check_del && check_del[0]){
+    let i=0,j=0;
+    while(i<check_del.length){
+      if(check_del[i].checked){
+        all[i] = store.data.map[check_del[i].getAttribute('idd')].data;
+        all[i].id='';
+      //  all[i].checkbox_del=Date.now();
+        store.insert(0,all[i]);
+      }
+      i++;
+    }
+      $.post("/wb/update.php?copy=12", {copy:all}, function (res){});
+  }
+}
 
 function number_update_all(){
 

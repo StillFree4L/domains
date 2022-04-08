@@ -19,207 +19,6 @@ if (trim($USER['wb_key']) != '')
 
 include('head.php');
 
-//var_dump(http("/wb/load.php?type=2"));
-
-?>
-
-<script defer type="text/javascript">
-
-$.ajax({
-  method: "GET",
-  url: "/wb/load.php?type=1",
-}).done(function() {
-  $.ajax({
-    method: "GET",
-    url: "/wb/load.php?type=2",
-  }).done(function() {
-    $.ajax({
-      method: "GET",
-      url: "/wb/load.php?type=5",
-    }).done(function() {
-      $.ajax({
-        method: "GET",
-        url: "/wb/load.php?type=6",
-      }).done(function() {
-        $.ajax({
-          method: "GET",
-          url: "/wb/load.php?type=7",
-        }).done(function() {
-          $.ajax({
-            method: "GET",
-            url: "/wb/load.php?type=8",
-          }).done(function() {
-            $.ajax({
-              method: "GET",
-              url: "/wb/load.php?type=9",
-            }).done(function() {
-              $.ajax({
-                method: "GET",
-                url: "/wb/load.php?type=10",
-              }).done(function() {
-                $.ajax({
-                  method: "GET",
-                  url: "/wb/load.php?type=11",
-                }).done(function() {
-                });
-              });
-            });
-          });
-        });
-      });
-    });
-  });
-});
-
- function typeLoad() {
-    $.ajax({
-      method: "GET",
-      url: "/wb/load.php?type=1&forcibly=on",
-    }).done(function() {
-      $.ajax({
-        method: "GET",
-        url: "/wb/load.php?type=2&forcibly=on",
-      }).done(function() {
-        $.ajax({
-          method: "GET",
-          url: "/wb/load.php?type=5&forcibly=on",
-        }).done(function() {
-          $.ajax({
-            method: "GET",
-            url: "/wb/load.php?type=6&forcibly=on",
-          }).done(function() {
-            $.ajax({
-              method: "GET",
-              url: "/wb/load.php?type=7&forcibly=on",
-            }).done(function() {
-              $.ajax({
-                method: "GET",
-                url: "/wb/load.php?type=8&forcibly=on",
-              }).done(function() {
-                $.ajax({
-                  method: "GET",
-                  url: "/wb/load.php?type=9&forcibly=on",
-                }).done(function() {
-                  $.ajax({
-                    method: "GET",
-                    url: "/wb/load.php?type=10&forcibly=on",
-                  }).done(function() {
-                    $.ajax({
-                      method: "GET",
-                      url: "/wb/load.php?type=11&forcibly=on",
-                    }).done(function(dt) {
-                      if($('.loadForcibly')[0]){$('.loadForcibly')[0].innerHTML = JSON.parse(dt).message;}
-                    });
-                  });
-                });
-              });
-            });
-          });
-        });
-      });
-    });
- }
-
-typeLoad();
-
-setTimeout(() => {
-  $.get("/wb/load.php?type=<?=$_GET['type']?>", function (dt){
-    if($('.grid-data-empty')[0]){$('.grid-data-empty')[0].innerHTML = JSON.parse(dt).message;}
-  });
-  $.get("/wb/valid.php", function (dt){
-      document.querySelectorAll('label#api_old')[0].innerHTML = 'Ключ api старый: '+JSON.parse(dt).data.url;
-      document.querySelectorAll('label#api_new')[0].innerHTML = 'Ключ api новый: '+JSON.parse(dt).data.url_new;
-      document.querySelectorAll('label#api_supplier')[0].innerHTML = 'Ключ поставщика: '+JSON.parse(dt).data.url_supplier;
-  });
-}, 1000);
-
-</script>
-
-<div class="panel panel-default" style="margin: 0px 10px 10px 10px;">
-    <div class="panel-heading" style="display: flex;"><h4 style="font-size: 13px;">Продажи и заказы Wildberries</h4>
-        <div class="dropdown" style="z-index: 99;">
-          <input class='dropbtn' title='Очистить строку'  value='' style='' onclick="myFunction()">
-            <div id="myDropdown" class="dropdown-content">
-                <form method="post">
-                    <fieldset>
-                        <p><label id="api_new" for="api">Ключ api новый: <font color="coral">проверка...</font></label><input style="width: 100%" type="text" name="key1" id="api" placeholder="<?=($auth ? 'введен' : 'не введен')?>"></p>
-                        <p><label id="api_old" style="padding-top: 5px" for="stats">Ключ api старый: <font color="coral">проверка...</font></label><input style="width: 100%" type="text" name="key2" id="stats" value="<?=$wb_key_new?>"></p>
-                        <p><label id="api_supplier" style="padding-top: 5px" for="supplierId">Ключ поставщика: <font color="coral">проверка...</font></label><input style="width: 100%" type="text" name="key3" id="supplierId" value="<?=$supplierId?>"></p>
-                        <p><label id="api_nalog" style="padding-top: 5px; margin-right:5px;" for="nalog">Процент налога: </label><input style="width: 3%" type="text" name="key4" id="nalog" value="<?=$perc?>">
-                          <label id="api_doh" style="padding-top: 5px; margin-right:5px;" for="doh1"><input type="radio" name="key5" value="off" id="doh1" <?=$pay=='off' ? "checked" : ""?>> Доходы</label>
-                          <label id="api_doh" style="padding-top: 5px; margin-right:5px;" for="doh2"><input type="radio" name="key5" value="on" id="doh2" <?=$pay=='on' ? "checked" : ""?>> Доходы - Расходы</label>
-                        </p>
-                    </fieldset>
-                    <p  style="padding-top: 5px"><input type="submit" value="Изменить"></p>
-                </form>
-            </div>
-        </div>
-        <h4 style="font-size: 13px;"><?=$buf2[0] ? date('d.m.Y H:i:s',$buf2[0]) : $buf2[0]?></h4>
-        <button class="btn btn-sm btn1 btn-color" id="quan" onclick="typeLoad();$('.loadForcibly').show();" style="margin-left: 10px;font-size: 10px;padding: 0px 5px;margin-top: px;">Обновить</button>
-        <h4 style="font-size: 13px; display:none" class="loadForcibly"><font class="loading" color="#0059fc">Получение данных</font></h4>
-
-    </div>
-    <script type="text/javascript">
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
-            <div class="panel-body">
-
-<?php
-
-if (isset($_GET['dt1'])) $dop_dts_range = '&dt1=' . $_GET['dt1'] . '&dt2=' . $_GET['dt2'];
-$tps_res = [2 => 'Заказы', 1 => 'Продажи', /*3 => 'Отмененные заказы', 4 => 'Отмененные продажи',*/ 10 => 'Возврат', 5 => 'Отчеты по реализации', 6 => 'Склад', 7 => 'Поставки', 8 => 'Себестоимость', 9 => 'Чистая прибыль', 11 => 'Калькулятор'];
-
-foreach ($tps_res as $key => $value)
-{
-    $pressed = '';
-    if ($key == $_GET['type']) $pressed = 'btn-success';
-    echo "<a  href='?page=wb&type=$key&dt=" . $_GET['dt'] . "&$dop_dts_range' class='btn btn-sm $pressed' style='rfloat: right; display: inline-block; qmargin: 0px 5px; border: 1px solid #ccc; '>$value </a> &nbsp;";
-}
-
-
-
-if (!in_array($_GET['type'],[5,6,8,9,11]))
-{
-    echo '<hr style="
-    margin-top: 10px;
-    margin-bottom: 10px;
-">';
-
-    $stats_res = ['Сегодня' => date('Y-m-d', time()) , 'Вчера' => date('Y-m-d', time() - 60 * 60 * 24) , '7 дней' => date('Y-m-d', time() - 60 * 60 * 24 * 7) ,
-    '30 дней' => date('Y-m-d', time() - 60 * 60 * 24 * 30) , '90 дней' => date('Y-m-d', time() - 60 * 60 * 24 * 90) ];
-    foreach ($stats_res as $key => $value)
-    {
-        $pressed = '';
-        if ($value == $_GET['dt'] && !isset($_GET['dt1'])) $pressed = 'btn-warning';
-        echo "<a  href='?page=wb&type=$_GET[type]&dt=" . $value . "' class='btn btn-sm  $pressed' style='border: 1px solid #ccc; '>$key </a> &nbsp;";
-    }
-
-
-?>
-
-<input type="text" style="height: 30px;" id="dd1" class="dsingle ddd form-control" name="dt1" value="<?=$_GET['dt1']; ?>"  placeholder="">
-<input type="text" style="height: 30px;" id="dd2" class="dsingle ddd form-control" name="dt2" value="<?=$_GET['dt2']; ?>"  placeholder="">
-
-<a href='#' onclick="go_filtr(); return false;" class='btn btn-sm' style='border: 1px solid #ccc; '>Фильтровать </a>
-
-<?php } ?>
-
-<?php if (in_array($_GET['type'],[2,1,10,9,5])):
-
   $resultCheckbox = mysqli_query($link, 'SELECT name,value FROM `params` WHERE userId='.$USER["id"]);
 
   foreach ($resultCheckbox as $key => $value) {
@@ -240,10 +39,173 @@ if (!in_array($_GET['type'],[5,6,8,9,11]))
       $optionCheckbox = ' шт';
   }
 
+$dataStatusData=file_reads($GLOBALS['wb_key_new']);;
 
-  ?>
+?>
 
-<?php endif;?>
+<script defer type="text/javascript">
+//async load data
+let i=1;
+while(i<12){
+  if(i===3 || i===4){i=5;}
+  $.ajax({
+    method: "GET",
+    url: "/wb/load.php?type="+i+"&async=on",
+    async: true,
+    timeout: 10000,
+  }).done(function() {
+      return false;
+    });
+  i++;
+}
+
+ function typeLoad() {
+   let i=1;
+   while(i<12){
+     if(i===3 || i===4){i=5;}
+     $.ajax({
+       method: "GET",
+       url: "/wb/load.php?type="+i+"&async=on&forcibly=on",
+       async: true,
+       timeout: 10000,
+     }).done(function() {
+         return false;
+       });
+     i++;
+   }
+ }
+
+//valid key
+setTimeout(() => {
+  $.get("/wb/status.php", function (dt){
+  if($('.grid-data-empty')[0]){
+      $('.grid-data-empty')[0].innerHTML = JSON.parse(dt).status;
+    }
+    $('.loadForcibly').show();
+      if(JSON.parse(dt).active===''){
+        $('.loadForcibly')[0].innerHTML = JSON.parse(dt).status;
+      }else{
+        $('.loadForcibly')[0].innerHTML = JSON.parse(dt).active;
+      }
+
+      if(JSON.parse(dt).forcibly===false){
+      //  $('#forcibly').addClass('disabledforcibly');
+      //  $('#forcibly').attr('disabled', true);
+      }else{
+      //  $('#forcibly').removeClass('disabledforcibly');
+      //  $('#forcibly').attr('disabled', false);
+      }
+  });
+  $.get("/wb/valid.php", function (dt){
+      document.querySelectorAll('label#api_old')[0].innerHTML = 'Ключ api старый: '+JSON.parse(dt).data.url;
+      document.querySelectorAll('label#api_new')[0].innerHTML = 'Ключ api новый: '+JSON.parse(dt).data.url_new;
+      document.querySelectorAll('label#api_supplier')[0].innerHTML = 'Ключ поставщика: '+JSON.parse(dt).data.url_supplier;
+  });
+}, 1000);
+
+setInterval(() => {
+  $.get("/wb/status.php", function (dt){
+  if($('.grid-data-empty')[0]){
+      $('.grid-data-empty')[0].innerHTML = JSON.parse(dt).status;
+    }
+    $('.loadForcibly').show();
+      if(JSON.parse(dt).active===''){
+        $('.loadForcibly')[0].innerHTML = JSON.parse(dt).status;
+      }else{
+        $('.loadForcibly')[0].innerHTML = JSON.parse(dt).active;
+      }
+
+      if(JSON.parse(dt).forcibly===false){
+      //  $('#forcibly').addClass('disabledforcibly');
+      //  $('#forcibly').attr('disabled', true);
+      }else{
+      //  $('#forcibly').removeClass('disabledforcibly');
+      //  $('#forcibly').attr('disabled', false);
+      }
+  });
+},2000);
+</script>
+
+<div class="panel panel-default" style="margin: 0px 10px 10px 10px;">
+    <div class="panel-heading" style="display: flex;"><h4 style="font-size: 13px;margin-top: 5px;">Продажи и заказы Wildberries</h4>
+        <div class="dropdown" style="z-index: 99;">
+          <input class='dropbtn' title='Очистить строку'  value='' style='margin-top: 4px;' onclick="myFunction()">
+            <div id="myDropdown" class="dropdown-content">
+                <form method="post">
+                    <fieldset>
+                        <p><label id="api_new" for="api">Ключ api новый: <font color="coral">проверка...</font></label><input style="width: 100%" type="text" name="key1" id="api" placeholder="<?=($auth ? 'введен' : 'не введен')?>"></p>
+                        <p><label id="api_old" style="padding-top: 5px" for="stats">Ключ api старый: <font color="coral">проверка...</font></label><input style="width: 100%" type="text" name="key2" id="stats" value="<?=$wb_key_new?>"></p>
+                        <p><label id="api_supplier" style="padding-top: 5px" for="supplierId">Ключ поставщика: <font color="coral">проверка...</font></label><input style="width: 100%" type="text" name="key3" id="supplierId" value="<?=$supplierId?>"></p>
+                        <p><label id="api_nalog" style="padding-top: 5px; margin-right:5px;" for="nalog">Процент налога: </label><input style="width: 3%" type="text" name="key4" id="nalog" value="<?=$perc?>">
+                          <label id="api_doh" style="padding-top: 5px; margin-right:5px;" for="doh1"><input type="radio" name="key5" value="off" id="doh1" <?=$pay=='off' ? "checked" : ""?>> Доходы</label>
+                          <label id="api_doh" style="padding-top: 5px; margin-right:5px;" for="doh2"><input type="radio" name="key5" value="on" id="doh2" <?=$pay=='on' ? "checked" : ""?>> Доходы - Расходы</label>
+                        </p>
+                    </fieldset>
+                    <p  style="padding-top: 5px"><input type="submit" value="Изменить"></p>
+                </form>
+            </div>
+        </div>
+        <h4 style="margin-top: 5px;font-size: 13px;"><?=$dataStatusData!=0 ? date('d.m.Y H:i:s T',$dataStatusData) : ""?></h4>
+        <button class="btn btn-sm btn1 btn-color" id="forcibly" onclick="typeLoad();$('.loadForcibly').show();" style="border-radius: 4px; margin-right: 10px; margin-left: 10px; font-size: 12px; padding: 4px 6px; margin-top: px;">Обновить</button>
+        <h4 style="margin-top: 5px;font-size: 13px; display:none;" class="loadForcibly"><font class="loading" color="#0059fc">Получение данных</font></h4>
+
+    </div>
+
+<script type='text/javascript'>
+
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+</script>
+            <div class="panel-body">
+
+<?php
+//category
+if (isset($_GET['dt1'])) $dop_dts_range = '&dt1=' . $_GET['dt1'] . '&dt2=' . $_GET['dt2'];
+$tps_res = [2 => 'Заказы', 1 => 'Продажи', /*3 => 'Отмененные заказы', 4 => 'Отмененные продажи',*/ 10 => 'Возврат', 5 => 'Отчеты по реализации', 6 => 'Склад', 7 => 'Поставки', 8 => 'Себестоимость', 9 => 'Чистая прибыль', 11 => 'Калькулятор'];
+
+foreach ($tps_res as $key => $value)
+{
+    $pressed = '';
+    if ($key == $_GET['type']) $pressed = 'btn-success';
+    echo "<a  href='?page=wb&type=$key&dt=" . $_GET['dt'] . "&$dop_dts_range' class='btn btn-sm $pressed' style='rfloat: right; display: inline-block; qmargin: 0px 5px; border: 1px solid #ccc; '>$value </a> &nbsp;";
+}
+
+//period
+if (!in_array($_GET['type'],[5,6,8,9,11]))
+{
+    echo '<hr style="margin-top: 10px; margin-bottom: 10px;">';
+
+    $stats_res = ['Сегодня' => date('Y-m-d', time()) , 'Вчера' => date('Y-m-d', time() - 60 * 60 * 24) , '7 дней' => date('Y-m-d', time() - 60 * 60 * 24 * 7) ,
+    '30 дней' => date('Y-m-d', time() - 60 * 60 * 24 * 30) , '90 дней' => date('Y-m-d', time() - 60 * 60 * 24 * 90) ];
+    foreach ($stats_res as $key => $value)
+    {
+        $pressed = '';
+        if ($value == $_GET['dt'] && !isset($_GET['dt1'])) $pressed = 'btn-warning';
+        echo "<a  href='?page=wb&type=$_GET[type]&dt=" . $value . "' class='btn btn-sm  $pressed' style='border: 1px solid #ccc; '>$key </a> &nbsp;";
+    }
+
+//filter
+?>
+
+<input type="text" style="height: 30px; <?=strtotime($_GET['dt1']) > strtotime($_GET['dt2']) ? 'color: red;' : ""?>" id="dd1" class="dsingle ddd form-control" name="dt1" value="<?=$_GET['dt1']; ?>"  placeholder="">
+<input type="text" style="height: 30px;" id="dd2" class="dsingle ddd form-control" name="dt2" value="<?=$_GET['dt2']; ?>"  placeholder="">
+
+<a href='#' onclick="go_filtr(); return false;" class='btn btn-sm' style='border: 1px solid #ccc; '>Фильтровать </a>
+
+<?php } ?>
 
 <?php if (in_array($_GET['type'],[2,1,10])):?>
 <div class="tools-container" style="display: inline;float: right;">
@@ -268,14 +230,14 @@ if (!in_array($_GET['type'],[5,6,8,9,11]))
    flatpickr(".dsingle", {
         "locale": "ru" , // locale for this instance only,
         enableTime: false,
-        dateFormat: "Y-m-d",
+        dateFormat: "d.m.Y",
     } );
 
 function go_filtr() {
 	a = '?page=wb&type=<?=$_GET['type']; ?>&dt1='+$('#dd1').val()+'&dt2='+$('#dd2').val();
 	document.location.href = a;
-
 }
+
 </script>
 
 <?php
@@ -442,7 +404,6 @@ priceWithDisc
 if ($_GET['type'] == 5 && !isset($_GET['rid']) && !isset($_GET['bc']))
 {
     $tbl_keys = make_tbl_keys('realizationreport_id Номер отчета
-rr_dt Дата операции
 quantity Количество продаж
 rid Уникальный идентификатор позиции заказа
 retail_price Цена розничная
@@ -788,10 +749,10 @@ if ($tbl_rows and count($tbl_rows)) {
             $flag = 0;
         }
 
-        if ($_GET['type'] == 1 and ($g->isCancel != 1 && $g->forPay > 0 && $g->doc_type_name != 'Возврат' && $g->finishedPrice > 0 && $g->RED != 1)) {
+        if ($_GET['type'] == 1 and ($g->isCancel != 1 && $g->forPay > 0 && $g->doc_type_name != 'Возврат' && $g->return_amount==0 && $g->finishedPrice > 0 && $g->RED != 1)) {
              $PRICE_SUM += $g->forPay * $g->quantity;
          }
-         elseif ($_GET['type'] == 2 and ($g->isCancel != 1 and $g->doc_type_name != 'Возврат' and $g->finishedPrice > 0 and $g->RED != 1)) {
+         elseif ($_GET['type'] == 2 and ($g->isCancel != 1 and $g->doc_type_name != 'Возврат' && $g->return_amount==0 and $g->finishedPrice > 0 and $g->RED != 1)) {
              $PRICE_SUM += $g->finishedPrice;
          }
          elseif ($_GET['type'] == 10) {
@@ -1249,7 +1210,7 @@ if($result12 and $_GET['type']==11){
 </thead>
 
 
-<div id="grid<?php echo $_GET['type'] ? $_GET['type'] : ''; ?><?php echo $_GET['rid'] ? $_GET['rid'] : ($_GET['f1'] ? $_GET['f1'] : ""); ?>" class="grid"></div>
+<div style="overflow: hidden;" id="grid<?php echo $_GET['type'] ? $_GET['type'] : ''; ?><?php echo $_GET['rid'] ? $_GET['rid'] : ($_GET['f1'] ? $_GET['f1'] : ""); ?>" class="grid"></div>
 
 
 <script>
@@ -1327,6 +1288,7 @@ require_once('blocks/renderer.php');
             store: store,
             padding: '10 10 10 10',
             height: 600,
+            autoscroll:false,
             enableColumnMove: true,
             enableColumnResize: true,
            // title: title,
@@ -1535,6 +1497,8 @@ require_once('blocks/renderer.php');
         grid.getStore().clearGrouping();
         return true;
     }
+
+
 
 </script>
 

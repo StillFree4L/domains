@@ -9,9 +9,8 @@ while(ij < columns.length){
     columns[ij].renderer = function(obj, x, y) {
       if(!obj){obj="";}
       let ids = x.classes[1].split('x-grid-cell-')[1]
-        //console.log(y.data.checkbox_del);
 
-      if(!y.data.checkbox_del){
+      if(!y.data.checkbox_del || y.data.edit==='1'){
         return "<a id="+ids+" idd='"+y.id+"' style='text-decoration: none; pointer-events: none; cursor: default;' href='?page=wb&type=<?=$_GET['type']?>'>"+obj+"</a>";
       }
       let numberId = y.data.checkbox_del;
@@ -62,7 +61,10 @@ while(ij < columns.length){
     //  let val = y.id;
       //if(y.data.checkbox_del){val = y.data.checkbox_del;}
       if(!obj){obj=y.id;}
+      if(y.data.checkbox_del || y.data.edit==='1'){
         return '<input type="checkbox" id="checkbox_del" idd="'+y.id+'" class="check_del" value="'+obj+'">';
+      }
+        return '<input type="checkbox" disabled id="checkbox_del" idd="'+y.id+'" class="check_del" value="'+obj+'">';
     }
   }
   ij++;

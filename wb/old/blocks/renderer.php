@@ -12,7 +12,7 @@ while(ij < columns.length){
         //console.log(y.data.checkbox_del);
 
       if(!y.data.checkbox_del){
-        return "<a id="+ids+" idd='"+y.id+"' href='?page=wb&type=<?=$_GET['type']?>'>"+obj+"</a>";
+        return "<a id="+ids+" idd='"+y.id+"' style='text-decoration: none; pointer-events: none; cursor: default;' href='?page=wb&type=<?=$_GET['type']?>'>"+obj+"</a>";
       }
       let numberId = y.data.checkbox_del;
       return "<input type=\"text\" id="+ids+" idd='"+y.id+"' onblur=\"number_update_add('"+numberId+"',this.value,this.id,this.getAttribute('idd'))\" class='inputValue' value='"+obj+"'>";
@@ -37,9 +37,9 @@ while(ij < columns.length){
       var re = /\B(?=(\d{3})+(?!\d))/g
       let ids = x.classes[1].split('x-grid-cell-')[1]
       if(!isNaN(obj)){
-        return "<a id="+ids+" idd='"+y.id+"' href='?page=wb&type=<?=$_GET['type']?>'>"+Number(obj).toFixed(0).replace(re," ")+"</a>";
+        return "<a id="+ids+" style='text-decoration: none; pointer-events: none; cursor: default;' idd='"+y.id+"' href='?page=wb&type=<?=$_GET['type']?>'>"+Number(obj).toFixed(0).replace(re," ")+"</a>";
       }
-      return "<a id="+ids+" idd='"+y.id+"' href='?page=wb&type=<?=$_GET['type']?>'>"+obj+"</a>";
+      return "<a id="+ids+" style='text-decoration: none; pointer-events: none; cursor: default;' idd='"+y.id+"' href='?page=wb&type=<?=$_GET['type']?>'>"+obj+"</a>";
     }
 
   }else if(ij > 1){

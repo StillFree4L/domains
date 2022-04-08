@@ -10,10 +10,10 @@
     }
 
     if (trim($ss_dop_fields) == '') $ss_dop_fields = "Затраты на поиск товара\n Затраты на забор товара\n Затраты на услуги фулфилмента\n Затраты на фото/видео материалы\n Затраты на внутреннюю рекламу\n Затраты на внешнюю рекламу\n Затраты на самовыкупы\n Затраты прочие";
-    if (!isset($_GET['f1'])) echo "<input class='btn btn-default' id='btn_pd_lst' value='Редактировать список полей' style='margin-left:10px;width: 260px;' onclick='$(\"#dop_fields_div\").toggle();$(\"#set_fields_div\").hide(); $(\"#btn_pd_lst\").addClass(\"btn-warning\");$(\"#btn_pd_val\").removeClass(\"btn-warning\");'> ";
-    if (isset($_GET['f1'])) echo "<input class='btn btn-default' id='btn_pd_val'  value='Установить значение поля для всех поставок ' style='margin-left:10px;width: 360px;' onclick='$(\"#dop_fields_div\").hide();$(\"#set_fields_div\").toggle(); $(\"#btn_pd_lst\").removeClass(\"btn-warning\");$(\"#btn_pd_val\").addClass(\"btn-warning\");'> ";
+    if (!isset($_GET['f1'])) echo "<input class='btn btn-default' id='btn_pd_lst' type='button' style='margin-left:10px;width: 35px;' onclick='$(\"#dop_fields_div\").toggle();$(\"#set_fields_div\").hide(); $(\"#btn_pd_lst\").addClass(\"btn-warning\");$(\"#btn_pd_val\").removeClass(\"btn-warning\");'> ";
+    if (isset($_GET['f1'])) echo "<input class='btn btn-default' id='btn_pd_val' style='margin-left:10px;width: 40px;' onclick='$(\"#dop_fields_div\").hide();$(\"#set_fields_div\").toggle(); $(\"#btn_pd_lst\").removeClass(\"btn-warning\");$(\"#btn_pd_val\").addClass(\"btn-warning\");'> ";
 
-    echo '<div id="dop_fields_div" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; background: #efefef; display: none; padding: 10px; margin: 10px; border: 1px solid #ccc; "><img onclick="$(\'#dop_fields_div\').toggle();" style="width: 20px; cursor:pointer; float: right;" src="https://v1.iconsearch.ru/uploads/icons/bnw/32x32/fileclose.png"> Список Ваших полей для вычета - общие на каждую поставку';
+    echo '<div id="dop_fields_div" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; background: #efefef; display: none; padding: 10px; margin: 10px; border: 1px solid #ccc; "><img onclick="$(\'#dop_fields_div\').toggle();$(\'#btn_pd_lst\').removeClass(\'btn-warning\');" style="width: 20px; cursor:pointer; float: right;" src="https://v1.iconsearch.ru/uploads/icons/bnw/32x32/fileclose.png"> Список Ваших полей для вычета - общие на каждую поставку';
     echo "<textarea class='form-control' style='margin-top: 10px; margin-bottom: 10px;height: 150px;' id='dop_fileds' >$ss_dop_fields</textarea><td style='width: 10px;'> <input style='width: 200px;' class='btn btn-success' value='Сохранить список полей' onclick='save_list();'> </div>";
 
     $ss_dop_fields = 'Стоимость единицы товара' . "\n" . $ss_dop_fields;
@@ -28,9 +28,9 @@
         $tbl_keys[ru2Lat($sf)] = $sf;
     }
 
-    echo '<br clear=all><div id="set_fields_div" style="float: left; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; background: #efefef; display: none; padding: 10px; margin: 10px; border: 1px solid #ccc; "> <img onclick="$(\'#set_fields_div\').toggle();" style="width: 20px;cursor:pointer; float: right;" src="https://v1.iconsearch.ru/uploads/icons/bnw/32x32/fileclose.png"> Установка значения полей для всех поставок по артикулу';
+    echo '<br clear=all><div id="set_fields_div" style="float: left; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; background: #efefef; display: none; padding: 10px; margin: 10px; border: 1px solid #ccc; "> <img onclick="$(\'#set_fields_div\').toggle();$(\'#btn_pd_val\').removeClass(\'btn-warning\');" style="width: 20px;cursor:pointer; float: right;" src="https://v1.iconsearch.ru/uploads/icons/bnw/32x32/fileclose.png"> Установка значения полей для всех поставок по артикулу';
     echo "<input type=button style='margin-left: 20px;'  onclick='number_update_all();' class='btn btn-success' value='Сохранить значения'>";
-    echo '<table class="items table table-striped" style="width: 700px;margin-top: 20px;"><tr><th>Поле</th><th>Значение</th></tr>';
+    echo '<table class="items table table-striped" style="width: 700px;margin-top: 20px;"><tr><th style="font-weight: normal;">Поле</th><th style="font-weight: normal;">Значение</th></tr>';
 
     foreach ($ss_dop_fields as $k => & $sf)
     {

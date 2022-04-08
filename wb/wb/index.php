@@ -19,39 +19,29 @@ if (trim($USER['wb_key']) != '')
 
 include('head.php');
 
+  $resultCheckbox = mysqli_query($link, 'SELECT name,value FROM `params` WHERE userId='.$USER["id"]);
+
+  foreach ($resultCheckbox as $key => $value) {
+    if($value['name'] == 'status'){
+      $statusCheckbox = $value['value'];
+    }
+    if($value['name'] == 'option'){
+      $optionCheckbox = $value['value'];
+    }
+    if($value['name'] == 'hide'){
+      $hideCheckbox = $value['value'];
+    }
+  }
+
+  if($optionCheckbox == "total"){
+      $optionCheckbox = ' руб';
+  }else{
+      $optionCheckbox = ' шт';
+  }
+
+$dataStatusData=file_reads($GLOBALS['wb_key_new']);;
+
 ?>
-
-<?php
-$resultStatusData = mysqli_query($link, 'SELECT type,status FROM `wb_data` WHERE userId='.$USER["id"]);
-$arrStatusData = [];
-$keyStatusData = ['0','1','2','3'];
-foreach ($resultStatusData as $key => $value) {
-  $arrStatusData[] = $value['status'];
-}
-?>
-<script type='text/javascript'>
-setTimeout(() => {
-<?php if(in_array("0",$arrStatusData)): ?>
-  $('.grid-data-empty')[0].innerHTML = '<font color="red">Данные отсутствуют или нет ответа от API-сервера. <a href="#" style="color: red; text-decoration: revert;" onclick="parent.location.reload(); return false;">Попробуйте позднее</a></font>';
-  $('.loadForcibly')[0].innerHTML = '<font color="red">Данные отсутствуют или нет ответа от API-сервера. <a href="#" style="color: red; text-decoration: revert;" onclick="parent.location.reload(); return false;">Попробуйте позднее</a></font>';
-<?php elseif(in_array("1",$arrStatusData)): ?>
-
-  $('.grid-data-empty')[0].innerHTML = '<font class="loading" color="#0059fc">Получение данных</font>';
-  $('.loadForcibly')[0].innerHTML = '<font class="loading" color="#0059fc">Получение данных</font>';
-
-<?php elseif(in_array("2",$arrStatusData)): ?>
-
-  $('.grid-data-empty')[0].innerHTML = '<font color="green">Данные полученны успешно</font>';
-  $('.loadForcibly')[0].innerHTML = '<font color="green">Данные полученны успешно</font>';
-
-<?php elseif(in_array("3",$arrStatusData)): ?>
-
-  $('.grid-data-empty')[0].innerHTML = '<font color="green">Данные обновлены. <a href="#" style="color: green; text-decoration: revert;" onclick="parent.location.reload(); return false;">Перезагрузите страницу</a></font>';
-  $('.loadForcibly')[0].innerHTML = '<font color="green">Данные обновлены. <a href="#" style="color: green; text-decoration: revert;" onclick="parent.location.reload(); return false;">Перезагрузите страницу</a></font>';
-
-<?php endif; ?>
-}, 1000);
-</script>
 
 <script defer type="text/javascript">
 //async load data
@@ -87,18 +77,59 @@ while(i<12){
 
 //valid key
 setTimeout(() => {
+  $.get("/wb/status.php", function (dt){
+  if($('.grid-data-empty')[0]){
+      $('.grid-data-empty')[0].innerHTML = JSON.parse(dt).status;
+    }
+    $('.loadForcibly').show();
+      if(JSON.parse(dt).active===''){
+        $('.loadForcibly')[0].innerHTML = JSON.parse(dt).status;
+      }else{
+        $('.loadForcibly')[0].innerHTML = JSON.parse(dt).active;
+      }
+
+      if(JSON.parse(dt).forcibly===false){
+        $('#forcibly').addClass('disabledforcibly');
+        $('#forcibly').attr('disabled', true);
+      }else{
+        $('#forcibly').removeClass('disabledforcibly');
+        $('#forcibly').attr('disabled', false);
+      }
+  });
   $.get("/wb/valid.php", function (dt){
       document.querySelectorAll('label#api_old')[0].innerHTML = 'Ключ api старый: '+JSON.parse(dt).data.url;
       document.querySelectorAll('label#api_new')[0].innerHTML = 'Ключ api новый: '+JSON.parse(dt).data.url_new;
       document.querySelectorAll('label#api_supplier')[0].innerHTML = 'Ключ поставщика: '+JSON.parse(dt).data.url_supplier;
   });
 }, 1000);
+
+setInterval(() => {
+  $.get("/wb/status.php", function (dt){
+  if($('.grid-data-empty')[0]){
+      $('.grid-data-empty')[0].innerHTML = JSON.parse(dt).status;
+    }
+    $('.loadForcibly').show();
+      if(JSON.parse(dt).active===''){
+        $('.loadForcibly')[0].innerHTML = JSON.parse(dt).status;
+      }else{
+        $('.loadForcibly')[0].innerHTML = JSON.parse(dt).active;
+      }
+
+      if(JSON.parse(dt).forcibly===false){
+        $('#forcibly').addClass('disabledforcibly');
+        $('#forcibly').attr('disabled', true);
+      }else{
+        $('#forcibly').removeClass('disabledforcibly');
+        $('#forcibly').attr('disabled', false);
+      }
+  });
+},5000);
 </script>
 
 <div class="panel panel-default" style="margin: 0px 10px 10px 10px;">
     <div class="panel-heading" style="display: flex;"><h4 style="font-size: 13px;margin-top: 5px;">Продажи и заказы Wildberries</h4>
         <div class="dropdown" style="z-index: 99;">
-          <input class='dropbtn' title='Очистить строку'  value='' style='margin-top: 4px;' onclick="myFunction()">
+          <input class='dropbtn' title='Редактировать'  value='' style='margin-top: 4px;' onclick="myFunction()">
             <div id="myDropdown" class="dropdown-content">
                 <form method="post">
                     <fieldset>
@@ -114,28 +145,30 @@ setTimeout(() => {
                 </form>
             </div>
         </div>
-        <h4 style="margin-top: 5px;font-size: 13px;"><?=$buf2[0] ? date('d.m.Y H:i:s T',$buf2[0]) : $buf2[0]?></h4>
-        <button class="btn btn-sm btn1 btn-color" id="quan" onclick="typeLoad();$('.loadForcibly').show();" style="border-radius: 4px; margin-right: 10px; margin-left: 10px; font-size: 12px; padding: 4px 6px; margin-top: px;">Обновить</button>
-        <h4 style="margin-top: 5px;font-size: 13px;" class="loadForcibly"><font class="loading" color="#0059fc">Получение данных</font></h4>
+        <h4 style="margin-top: 5px;font-size: 13px;"><?=$dataStatusData!=0 ? date('d.m.Y H:i:s T',$dataStatusData) : ""?></h4>
+        <button class="btn btn-sm btn1 btn-color" id="forcibly" onclick="typeLoad();$('.loadForcibly').show();" style="border-radius: 4px; margin-right: 10px; margin-left: 10px; font-size: 12px; padding: 4px 6px; margin-top: px;">Обновить</button>
+        <h4 style="margin-top: 5px;font-size: 13px; display:none;" class="loadForcibly"><font class="loading" color="#0059fc">Получение данных</font></h4>
 
     </div>
-    <script type="text/javascript">
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
+
+<script type='text/javascript'>
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
             <div class="panel-body">
 
 <?php
@@ -167,40 +200,12 @@ if (!in_array($_GET['type'],[5,6,8,9,11]))
 //filter
 ?>
 
-
 <input type="text" style="height: 30px; <?=strtotime($_GET['dt1']) > strtotime($_GET['dt2']) ? 'color: red;' : ""?>" id="dd1" class="dsingle ddd form-control" name="dt1" value="<?=$_GET['dt1']; ?>"  placeholder="">
 <input type="text" style="height: 30px;" id="dd2" class="dsingle ddd form-control" name="dt2" value="<?=$_GET['dt2']; ?>"  placeholder="">
 
 <a href='#' onclick="go_filtr(); return false;" class='btn btn-sm' style='border: 1px solid #ccc; '>Фильтровать </a>
 
 <?php } ?>
-
-<?php if (in_array($_GET['type'],[2,1,10,9,5])):
-
-  $resultCheckbox = mysqli_query($link, 'SELECT name,value FROM `params` WHERE userId='.$USER["id"]);
-
-  foreach ($resultCheckbox as $key => $value) {
-    if($value['name'] == 'status'){
-      $statusCheckbox = $value['value'];
-    }
-    if($value['name'] == 'option'){
-      $optionCheckbox = $value['value'];
-    }
-    if($value['name'] == 'hide'){
-      $hideCheckbox = $value['value'];
-    }
-  }
-
-  if($optionCheckbox == "total"){
-      $optionCheckbox = ' руб';
-  }else{
-      $optionCheckbox = ' шт';
-  }
-
-
-  ?>
-
-<?php endif;?>
 
 <?php if (in_array($_GET['type'],[2,1,10])):?>
 <div class="tools-container" style="display: inline;float: right;">
@@ -258,10 +263,15 @@ if (in_array($_GET['type'],[2,1,10])){
         $dt2_bar = $dt1_bar_org = $_GET['dt'];
         $dt2_bar_org = date('Y-m-d');
         if ($_GET['dt'] == date('Y-m-d')) {
-            $dt1_bar = date("Y-m-d", strtotime("-1 DAY"));
+            $dt1_bar = $dt2_bar = date("Y-m-d", strtotime("-1 DAY"));
+            $dt1_bar_org = $dt2_bar_org = $_GET['dt'];
+        } else if($stats_res['Вчера'] == $_GET['dt']){
+          $dt1_bar = $dt2_bar = date("Y-m-d", strtotime("-2 DAY"));
+          $dt1_bar_org = $dt2_bar_org = $_GET['dt'];
         } else {
             $dt1_bar = minusDate($_GET['dt'],date('d-m-Y'));
         }
+
     } else if($_GET['dt1'] == $_GET['dt2']) {
       $dt2_bar_org = $dt1_bar_org = $_GET['dt1'];
       $dt2_bar = $dt1_bar = date("Y-m-d", strtotime("-1 DAY",strtotime($_GET['dt1'])));
@@ -276,9 +286,10 @@ if (in_array($_GET['type'],[2,1,10])){
           //  echo '<pre>';var_dump($dt1_bar);
       //  }
 
-        //echo '<pre>';var_dump(  $dt1_bar.' - '.  $dt2_bar);
-    }
 
+    }
+      //echo '<pre>';var_dump(  $dt1_bar.' - '.  $dt2_bar);
+      //echo '<pre>';var_dump(  $dt1_bar_org.' - '.  $dt2_bar_org);
     require_once('blocks/bar/func.php');
 }
 
@@ -680,11 +691,6 @@ return_amount
 delivery_rub
 quantity'));
 
-function preg_barcode($barcode){
-    preg_match_all("'>(.*?)<'si", $barcode, $match);
-    return $match[1][1];
-}
-
 if ($tbl_rows and count($tbl_rows)) {
     foreach ($tbl_rows as $g) {
 
@@ -745,10 +751,10 @@ if ($tbl_rows and count($tbl_rows)) {
             $flag = 0;
         }
 
-        if ($_GET['type'] == 1 and ($g->isCancel != 1 && $g->forPay > 0 && $g->doc_type_name != 'Возврат' && $g->finishedPrice > 0 && $g->RED != 1)) {
+        if ($_GET['type'] == 1 and ($g->isCancel != 1 && $g->forPay > 0 && $g->doc_type_name != 'Возврат' && $g->return_amount==0 && $g->finishedPrice > 0 && $g->RED != 1)) {
              $PRICE_SUM += $g->forPay * $g->quantity;
          }
-         elseif ($_GET['type'] == 2 and ($g->isCancel != 1 and $g->doc_type_name != 'Возврат' and $g->finishedPrice > 0 and $g->RED != 1)) {
+         elseif ($_GET['type'] == 2 and ($g->isCancel != 1 and $g->doc_type_name != 'Возврат' && $g->return_amount==0 and $g->finishedPrice > 0 and $g->RED != 1)) {
              $PRICE_SUM += $g->finishedPrice;
          }
          elseif ($_GET['type'] == 10) {
@@ -823,7 +829,6 @@ if((($_GET['type']==5 or $_GET['type']==11) and !$_GET['rid']) or (in_array($_GE
   if(in_array($_GET['type'],[7,8])){$type=7;}else{$type=$_GET['type'];}
 
   $result = mysqli_query($link, 'SELECT * FROM `goods` WHERE `userId`='.$USER["id"].' and `type`='.$type.$rid);
-
   if ($result == false) {
     print(mysqli_error($link));
   }
@@ -831,16 +836,19 @@ if((($_GET['type']==5 or $_GET['type']==11) and !$_GET['rid']) or (in_array($_GE
 elseif($_GET['type']==9 and !$_GET['rid']){
 
   $result5 = mysqli_query($link, 'SELECT * FROM `goods` WHERE `userId`='.$USER["id"].' and `type`=5');
-
-  if ($result == false) {
+  if ($result5 == false) {
     print(mysqli_error($link));
   }
 }
 if($_GET['type']==11 and !$_GET['rid']){
 
   $result12 = mysqli_query($link, 'SELECT * FROM `goods` WHERE `userId`='.$USER["id"].' and `type`=12');
+  if ($result12 == false) {
+    print(mysqli_error($link));
+  }
 
-  if ($result == false) {
+  $result13 = mysqli_query($link, 'SELECT * FROM `goods` WHERE `userId`='.$USER["id"].' and `type`=13');
+  if ($result13 == false) {
     print(mysqli_error($link));
   }
 }
@@ -969,7 +977,6 @@ other_deductions
 speed_back');
 }
 
-
 if($ss_dom_lat){
     foreach ($ss_dom_lat as $k => $item) {
         $dat_null[] = $item;
@@ -1019,7 +1026,6 @@ if (in_array($_GET['type'],[7,8,9])) {
 if ($ss_dop){
     $sum_m = explode("\n", ru2Lat($ss_dop));
 }
-
 
 if($data){
     $l=0;
@@ -1284,6 +1290,7 @@ require_once('blocks/renderer.php');
             store: store,
             padding: '10 10 10 10',
             height: 600,
+            autoscroll:false,
             enableColumnMove: true,
             enableColumnResize: true,
            // title: title,

@@ -248,9 +248,9 @@ if($columnArr['dataTotal1'] and $columnArr['dataTotal2']){
 
 //валидация по периодам
 $dataArr['Текущий период'][] = $PRICE_SUM;//$series['sum']['dataTotal1'];
-$dataArr['Текущий период'][] = $series['sum']['dataQuan1'];
+$dataArr['Текущий период'][] = $CNT_SUM;
 $dataArr['Предыдущий период'][] = $PRICE_SUM_BAR;//$series['sum']['dataTotal2'];
-$dataArr['Предыдущий период'][] = $series['sum']['dataQuan2'];
+$dataArr['Предыдущий период'][] = $CNT_SUM_BAR;
 
 
 
@@ -408,7 +408,7 @@ if(!$bool){
         },
         chart: {
             spacingBottom: 20,
-            spacingTop: 20,
+            spacingTop: 10,
             spacingLeft: 20,
             spacingRight: 25,
             zoomType: 'xy',
@@ -421,7 +421,14 @@ if(!$bool){
                     let color1 = 'red';
                     let color2 = 'red';
                     if(differentSum >= 0){color1 = 'green';}if(differentQuan >= 0){color2 = 'green';}
-                    $('.highcharts-legend-item').last().append('<div style="margin-top:3px; margin-left:500px; width:1000px;">Разница: &nbsp;<span style="color: '+color1+'">' + differentSum.toFixed(2).replace(re, " ") + '</span> руб<span style="color: '+color2+'">' + ' &nbsp;' + differentQuan + '</span> шт</div>');
+                    let all = $('.highcharts-legend-item').last()[0];
+                    all.style.display = 'inline-block';
+                    all.style.width = '1000px';
+                    all.querySelector('span').style.position = 'relative';
+                    all.querySelector('span').style.float = 'left';
+                  //  console.log(all.querySelector('span'));
+                  //  $('.highcharts-legend-item span').last()[0].style.position = 'relative'
+                    $('.highcharts-legend-item').last().append('<div style="float: left; margin-top:3px; margin-left:40px; width:300px;">Разница: &nbsp;<span style="color: '+color1+'">' + differentSum.toFixed(2).replace(re, " ") + '</span> руб<span style="color: '+color2+'">' + ' &nbsp;' + differentQuan + '</span> шт</div>');
 
                 },
             }
@@ -524,7 +531,7 @@ if(!$bool){
                     },
                   },
                     style: {
-                        fontWeight: 'bold',
+                        fontWeight: 'normal',
                         font: "300 13px/19px 'Open Sans', 'Helvetica Neue', helvetica, arial, verdana, sans-serif",
                     }
                 }
@@ -534,7 +541,7 @@ if(!$bool){
         exporting: {
             buttons: {
                 contextButton: {
-                    y:  -20,
+                    y:    0,
                     align: 'right',
                     text: 'Дополнительно ',
                     enabled: true,

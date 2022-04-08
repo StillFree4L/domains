@@ -128,12 +128,31 @@ function really_delete()
   }
 }
 
-.btn-color{
+.btn-color {
   background: #fff;
 }
-.btn1{
+.btn1 {
   margin-right: 3px;
   border: 1px solid #ccc;
+}
+
+.x-grid-cell {
+  user-select: text !important;
+  -webkit-user-select: text!important;
+  -moz-user-select: text!important;
+  -khtml-user-select: text!important;
+}
+
+.disabledforcibly{
+  background: #dfdbdb!important;
+  color: gray!important;
+}
+
+#grid-1009-body{
+  overflow-y: scroll;
+}
+.x-grid-view{
+  overflow-y: scroll;
 }
 
 </style>

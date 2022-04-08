@@ -4,11 +4,30 @@ require_once('blocks/func_key.php');
 require_once('blocks/func_tbl_keys.php');
 
 $v_api = ["success"=>false,"message"=>'<font color="red">Нет данных</font>'];
+
+$data_time1 = time();
+
+barOption($link,'forcibly',$data_time1,$USER["id"]);
+writeStatus($link,$USER["id"],$_GET['type'],'1',$data_time1);
+
 if (trim($USER['wb_key']) != '')
 {
+
+  if($_GET['async']=='on'){
+    while(ob_get_level()) ob_end_clean();
+    header('Connection: close');
+    ignore_user_abort();
+    ob_start();
+    echo('Ожидайте');
+    $size = ob_get_length();
+    header("Content-Length: $size");
+    ob_end_flush();
+    flush();
+  }
+
     require_once('blocks/func_api.php');
 
-      if ($buf == "" || $_GET['forcibly']=='on' || json_decode($buf2[1]) == NULL || time() - intval($buf2[0]) > 60*5 || strpos($buf, 'can\'t decode supplier key') !== false)
+      if ($buf == "" || $_GET['forcibly']=='on' || json_decode($buf2[1]) == NULL || time() - intval($buf2[0]) > 60*60 || strpos($buf, 'can\'t decode supplier key') !== false)
       {
           if ($api_url or $api_url_sales or $api_url_new){
               if (in_array($_GET['type'], [1,2,10])){$r_url_report =  json_decode(report_cache());}
@@ -50,15 +69,22 @@ if (trim($USER['wb_key']) != '')
 
                   if (!in_array($r[0], [null, ""])) {
                       $v_api["success"] = true;
-                      $v_api["message"] = '<font color="green">Данные обновлены. <a href="#" style="color: green;" onclick="parent.location.reload(); return false;">Перезагрузите страницу</a></font>';
-                      file_put_contents($fileN, time() . '@@---@@' . json_encode($r), LOCK_EX);
+                      $v_api["message"] = '<font color="green">Данные обновлены. <a href="#" style="color: green; text-decoration: revert;" onclick="parent.location.reload(); return false;">Перезагрузите страницу</a></font>';
+                      $data_time = time();
+                      file_put_contents($fileN, $data_time.'@@---@@'.json_encode($r), LOCK_EX);
+                      writeStatus($link,$USER["id"],$_GET['type'],'3',$data_time);
                   }
-              }else{$v_api["message"] = '<font color="red">Данные отсутствуют или нет ответа от API-сервера. <a href="#" style="color: green;" onclick="parent.location.reload(); return false;">Попробуйте позднее</a></font>';}
+              }else{
+                $v_api["message"] = '<font color="red">Данные отсутствуют или нет ответа от API-сервера. <a href="#" style="color: red; text-decoration: revert;" onclick="parent.location.reload(); return false;">Попробуйте позднее</a></font>';
+                writeStatus($link,$USER["id"],$_GET['type'],'0',time());
+              }
           }
       }else{
           $v_api["success"] = true;
           $v_api["message"] = '<font color="green">Данные полученны успешно</font>';
+          writeStatus($link,$USER["id"],$_GET['type'],'2',time());
       }
 
 }
+
 echo json_encode($v_api);

@@ -99,6 +99,9 @@ $lenghtDate['quantity'] = number_format($lenghtDate['quantity'], 2, ',', ' ');
 
 $lenghtDate['all'] = 'Период: '.$lenghtDate['Текущий период'].'&nbsp;&nbsp;&nbsp;'.$columnArr['price'][1]['name'].': '.$lenghtDate['price'].' руб&nbsp;&nbsp;&nbsp;'.$columnArr['quantity'][0]['name'].': '.$lenghtDate['quantity'].' шт';
 
+
+
+
 ?>
 
 <script src="js/highcharts.js"></script>
@@ -397,7 +400,7 @@ Highcharts.setOptions({
                     },
                   },
                     style: {
-                      fontWeight: 'bold',
+                      fontWeight: 'normal',
                         font: "300 13px/19px 'Open Sans', 'Helvetica Neue', helvetica, arial, verdana, sans-serif",
                     }
                 }

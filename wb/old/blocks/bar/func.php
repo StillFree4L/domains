@@ -203,13 +203,12 @@ if ($tbl_rows_bar and count($tbl_rows_bar)) {
             $flag = 0;
         }
 
-        if (($_GET['type'] == 1 and $g->forPay >= 0) || $_GET['type'] == 4) {
+        if ($_GET['type'] == 1 and ($g->isCancel != 1 && $g->forPay > 0 && $g->doc_type_name != 'Возврат' && $g->return_amount==0 && $g->finishedPrice > 0 && $g->RED != 1)) {
             $PRICE_SUM_BAR += $g->forPay * $g->quantity;
         }
-        elseif ($_GET['type'] == 2 and $g->totalPrice >= 0 and $g->isCancel != 1) {
+        elseif ($_GET['type'] == 2 and ($g->isCancel != 1 and $g->doc_type_name != 'Возврат' && $g->return_amount==0 and $g->finishedPrice > 0 and $g->RED != 1)) {
             // ЗАКАЗЫ
             $PRICE_SUM_BAR += $g->finishedPrice;
-            // $PRICE_SUM += $g->totalPrice * ((100 - $g->discountPercent) / 100);
         }
         elseif ($_GET['type'] == 10) {
             $PRICE_SUM_BAR += $g->finishedPrice;

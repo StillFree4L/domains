@@ -1,7 +1,5 @@
 <?php
 
-
-
     require_once('blocks/func_key.php');
 
     $dt1 = date('Y-m-d', time() - 60 * 60 * 24 * 80);

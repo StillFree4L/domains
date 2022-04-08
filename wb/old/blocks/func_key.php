@@ -2,6 +2,7 @@
 //ключи
 
     error_reporting(0);
+
 $valid_passwords['admin'] = '123pass';
 $user = $_SERVER['PHP_AUTH_USER'];
 $pass = $_SERVER['PHP_AUTH_PW'];
@@ -25,9 +26,8 @@ require_once ('report.lib.php');
 
 $USER['id'] = 2;
 
-//$link = mysqli_connect("localhost", "root", "","wb");
-
-$link = mysqli_connect("localhost", "nvhelp_wb", "xSazFpm3","nvhelp_wb");
+  //$link = mysqli_connect("localhost", "root", "","wb");
+  $link = mysqli_connect("localhost", "nvhelp_wb", "xSazFpm3","nvhelp_wb");
 /*
 if ($link == false){
   print("Ошибка: Невозможно подключиться к MySQL " . mysqli_connect_error());

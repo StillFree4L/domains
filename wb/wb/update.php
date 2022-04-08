@@ -170,21 +170,6 @@ if(isset($_GET['all']) and $_GET['all']==11){
   }
 }
 
-function barOption($link,$name,$value,$user){
-  $result = mysqli_query($link, 'SELECT count(id)>0 FROM `params` WHERE name="'.$name.'" and userId='.$user);
-  $row = mysqli_fetch_row($result);
-
-  if ($row[0]>0){
-    $result = mysqli_query($link, 'UPDATE `params` SET value="'.$value.'" WHERE name="'.$name.'" and userId='.$user);
-  }else{
-    $result = mysqli_query($link, 'INSERT INTO `params` (userId,name,value) VALUES('.$user.',"'.$name.'","'.$value.'")');
-    if ($result == false) {
-      print(mysqli_error($link));
-    }
-  }
-  return true;
-}
-
 if(isset($_GET['status'])){
   echo barOption($link,'status',$_GET['status'],$USER["id"]);
 }
@@ -194,6 +179,27 @@ if(isset($_GET['option'])){
 if(isset($_POST['hide'])){
   $value = addslashes(json_encode($_POST['hide']));
   echo barOption($link,'hide',$value,$USER["id"]);
+}
+
+if(isset($_GET['copy'])){
+  $val=$goods='';
+  $i=0;
+  foreach ($_POST['copy'] as $pkey => $pvalue) {
+    if(!$pvalue['checkbox_del'] or $pvalue['edit']==1){$pvalue['edit']=1;}
+    else{$pvalue['edit']=0;}
+    $pvalue['checkbox_del']=time()+$i;
+      foreach ($pvalue as $key => $value) {
+        if($key!='checkbox_del' and $key!='id'){
+          $goods .= '('.$USER["id"].',12,"'.$pvalue['checkbox_del'].'",'.$pvalue['edit'].',"'.$key.'",\''.$value.'\'),';
+        }
+      }
+$i++;
+  }
+
+    if($goods!=''){$result = mysqli_query($link, 'INSERT INTO `goods` (userId,type,goods,edit,name,value) VALUES '.rtrim($goods, ","));}
+  if ($result == false) {
+    print(mysqli_error($link));
+  }
 }
 
  ?>

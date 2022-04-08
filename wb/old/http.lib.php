@@ -15,8 +15,6 @@ do
 }
 while(strstr($r, 'Realty.View.')===false || strstr($r, 'error-page__error-name')!==false);
 
-
-
 //----------------------------
 // post headers
 
@@ -26,8 +24,6 @@ while(strstr($r, 'Realty.View.')===false || strstr($r, 'error-page__error-name')
 								'X-Requested-With:XMLHttpRequest'
 							)
 		);
-
-
 */
 
 global $HTTP_COOKIE_FILE;
@@ -895,14 +891,62 @@ function file_read($name){
           continue;
         }
     }
-
     return $arr;
+}
+function file_reads($name){
+    $dir_file = 'cache/wb-cache/';
+    $arr = [];
+    $ids=0;
+    $files=glob($dir_file.$name."-*");
+
+    foreach($files as $file){
+      $buf = file_get_contents($file);
+      $buf2 = explode('@@---@@', $buf);
+      $arr[] = $buf2[0];
+    }
+    foreach ($arr as $key => $value) {
+      if($ids < $value){
+        $ids = $value;
+      }
+    }
+
+    return $ids;
 }
 
 function dop_list($dp_save_list){
-    $ss_dop_contents = json_decode(file_get_contents('update/json/list.json'));
-    if ($ss_dop_contents != '' and $ss_dop_contents->dp_save_list == $dp_save_list) {
-        $ss_dop_fields = $ss_dop_contents->list;
+  $ss_dop_contents = json_decode(file_get_contents('update/json/list.json'));
+  if ($ss_dop_contents != '' and $ss_dop_contents->dp_save_list == $dp_save_list) {
+    $ss_dop_fields = $ss_dop_contents->list;
+  }
+  return $ss_dop_fields;
+}
+
+function writeStatus($link,$userId,$type,$status,$data_time){
+  $result = mysqli_query($link, 'SELECT count(id)>0 FROM `data_status` WHERE userId='.$userId.' and type='.$type);
+  $row = mysqli_fetch_row($result);
+
+  if ($row[0]>0){
+    $result = mysqli_query($link, 'UPDATE `data_status` SET status="'.$status.'",data_time="'.$data_time.'" WHERE userId='.$userId.' and type='.$type);
+  }else{
+    $result = mysqli_query($link, 'INSERT INTO `data_status` (userId,type,status,data_time) VALUES('.$userId.','.$type.','.$status.','.$data_time.')');
+  }
+  if ($result == false) {
+    print(mysqli_error($link));
+    return false;
+  }
+  return true;
+}
+function barOption($link,$name,$value,$user){
+  $result = mysqli_query($link, 'SELECT count(id)>0 FROM `params` WHERE name="'.$name.'" and userId='.$user);
+  $row = mysqli_fetch_row($result);
+
+  if ($row[0]>0){
+    $result = mysqli_query($link, 'UPDATE `params` SET value="'.$value.'" WHERE name="'.$name.'" and userId='.$user);
+  }else{
+    $result = mysqli_query($link, 'INSERT INTO `params` (userId,name,value) VALUES('.$user.',"'.$name.'","'.$value.'")');
+    if ($result == false) {
+      print(mysqli_error($link));
     }
-    return $ss_dop_fields;
+  }
+  return true;
 }

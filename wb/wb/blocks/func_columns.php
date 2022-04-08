@@ -5,7 +5,7 @@ $renames  = ['Stoimosty_edinicy_tovara' => 'Стоимость товара',
     'Srednyaya_sebestoimosty_edinicy'=>'Средняя себестоимость'];
 
 //не скрывать в отчетах реализаций
-$hidden = ['realizationreport_id','rr_dt','return_amount','delivery_amount','quantity','retail_amount','ppvz_vw','ppvz_vw_nds'
+$hidden = ['realizationreport_id','return_amount','delivery_amount','quantity','retail_amount','ppvz_vw','ppvz_vw_nds'
     ,'storage_cost','acceptance_fee','other_deductions','ppvz_for_pay','delivery_rub','storage_cost', 'acceptance_fee',
     'other_deductions','total_payable'];
 

@@ -231,8 +231,8 @@ function stock_cache_old(){
 //кэшир склад new api
 function stock_cache_new(){
     $dir = 'cache/stocks';
-    $fileName = $dir.'/'.$GLOBALS['wb_key_new'].'-stocks_old.txt';
-    $http = 'https://suppliers-stats.wildberries.ru/api/v1/supplier/stocks?dateFrom=2000-03-25T21:00:00.000Z&key='.$GLOBALS['wb_key_new'];
+    $fileName = $dir.'/'.$GLOBALS['auth'].'-stocks.txt';
+    $http ='https://suppliers-api.wildberries.ru/api/v2/stocks?skip=0&take=2000';
     if (!file_exists($dir)) {
         mkdir($dir, 0777, true);
     }
@@ -243,10 +243,11 @@ function stock_cache_new(){
         if ($r==''){
             $r = http($http);
         }
-        if ($r!='') {
+        if ($r) {
             file_put_contents($fileName, time() . PHP_EOL);
-            foreach (json_decode($r) as $rs) {
-                file_put_contents($fileName, json_encode($rs).PHP_EOL, FILE_APPEND);
+
+            foreach (json_decode($r)->stocks as $rs) {
+                file_put_contents($fileName, json_encode($rs) . PHP_EOL, FILE_APPEND);
             }
             return true;
         }
@@ -409,9 +410,6 @@ function orders_object($r){
     $results = http_new_url($url1,json_encode($jsonDatas));
     $infos = http_new_url($url2);
 
-    stock_cache_old();
-    stock_cache_new();
-
     $r = $r->orders;
     $arr = array();
     $i = 0;
@@ -465,8 +463,6 @@ function sales_object($r){
 
     $results = http_new_url($url1,json_encode($jsonDatas));
     $infos = http_new_url($url2);
-
-    //stock_cache_old();
 
     $r = $r->orders;
     $arr = array();
@@ -891,30 +887,110 @@ function file_read($name){
           continue;
         }
     }
-
     return $arr;
+}
+function file_reads($name){
+    $dir_file = 'cache/wb-cache/';
+    $arr = [];
+    $ids=0;
+    $files=glob($dir_file.$name."-*");
+
+    foreach($files as $file){
+      $buf = file_get_contents($file);
+      $buf2 = explode('@@---@@', $buf);
+      $arr[] = $buf2[0];
+    }
+    foreach ($arr as $key => $value) {
+      if($ids < $value){
+        $ids = $value;
+      }
+    }
+
+    return $ids;
 }
 
 function dop_list($dp_save_list){
-    $ss_dop_contents = json_decode(file_get_contents('update/json/list.json'));
-    if ($ss_dop_contents != '' and $ss_dop_contents->dp_save_list == $dp_save_list) {
-        $ss_dop_fields = $ss_dop_contents->list;
-    }
-    return $ss_dop_fields;
+  $ss_dop_contents = json_decode(file_get_contents('update/json/list.json'));
+  if ($ss_dop_contents != '' and $ss_dop_contents->dp_save_list == $dp_save_list) {
+    $ss_dop_fields = $ss_dop_contents->list;
+  }
+  return $ss_dop_fields;
 }
 
-function writeStatus($link,$userId,$type,$status){
-  $result = mysqli_query($link, 'SELECT count(id)>0 FROM `wb_data` WHERE userId='.$userId.' and type='.$type);
+function writeStatus($link,$userId,$type,$status,$data_time){
+  $result = mysqli_query($link, 'SELECT count(id)>0 FROM `data_status` WHERE userId='.$userId.' and type='.$type);
   $row = mysqli_fetch_row($result);
 
   if ($row[0]>0){
-    $result = mysqli_query($link, 'UPDATE `wb_data` SET status="'.$status.'" WHERE userId='.$userId.' and type='.$type);
+    $result = mysqli_query($link, 'UPDATE `data_status` SET status="'.$status.'",data_time="'.$data_time.'" WHERE userId='.$userId.' and type='.$type);
   }else{
-    $result = mysqli_query($link, 'INSERT INTO `wb_data` (userId,type,status) VALUES('.$userId.','.$type.','.$status.')');
+    $result = mysqli_query($link, 'INSERT INTO `data_status` (userId,type,status,data_time) VALUES('.$userId.','.$type.','.$status.','.$data_time.')');
   }
   if ($result == false) {
     print(mysqli_error($link));
     return false;
   }
   return true;
+}
+
+function barOption($link,$name,$value,$user){
+  $result = mysqli_query($link, 'SELECT count(id)>0 FROM `params` WHERE name="'.$name.'" and userId='.$user);
+  $row = mysqli_fetch_row($result);
+
+  if ($row[0]>0){
+    $result = mysqli_query($link, 'UPDATE `params` SET value="'.$value.'" WHERE name="'.$name.'" and userId='.$user);
+  }else{
+    $result = mysqli_query($link, 'INSERT INTO `params` (userId,name,value) VALUES('.$user.',"'.$name.'","'.$value.'")');
+    if ($result == false) {
+      print(mysqli_error($link));
+    }
+  }
+  return true;
+}
+
+function preg_barcode($barcode){
+    preg_match_all("'>(.*?)<'si", $barcode, $match);
+    return $match[1][1];
+}
+
+function async_api($urls){
+  //$url = 'http://wb/wb/load.report.php?type='.$_GET['type'].'&load='.$url;
+  $tmp = [];
+
+  $multi = curl_multi_init();
+$channels = array();
+
+foreach ($urls as $kurl=>$url) {
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_HEADER, false);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    curl_multi_add_handle($multi, $ch);
+
+    $channels[$kurl] = $ch;
+}
+
+$active = null;
+do {
+    $mrc = curl_multi_exec($multi, $active);
+} while ($mrc == CURLM_CALL_MULTI_PERFORM);
+
+while ($active && $mrc == CURLM_OK) {
+    if (curl_multi_select($multi) == -1) {
+        continue;
+    }
+
+    do {
+        $mrc = curl_multi_exec($multi, $active);
+    } while ($mrc == CURLM_CALL_MULTI_PERFORM);
+}
+
+foreach ($channels as $k=>$channel) {
+    $tmp[$k] = curl_multi_getcontent($channel);
+    curl_multi_remove_handle($multi, $channel);
+}
+
+curl_multi_close($multi);
+  return $tmp;
 }

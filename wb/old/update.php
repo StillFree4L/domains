@@ -170,21 +170,6 @@ if(isset($_GET['all']) and $_GET['all']==11){
   }
 }
 
-function barOption($link,$name,$value,$user){
-  $result = mysqli_query($link, 'SELECT count(id)>0 FROM `params` WHERE name="'.$name.'" and userId='.$user);
-  $row = mysqli_fetch_row($result);
-
-  if ($row[0]>0){
-    $result = mysqli_query($link, 'UPDATE `params` SET value="'.$value.'" WHERE name="'.$name.'" and userId='.$user);
-  }else{
-    $result = mysqli_query($link, 'INSERT INTO `params` (userId,name,value) VALUES('.$user.',"'.$name.'","'.$value.'")');
-    if ($result == false) {
-      print(mysqli_error($link));
-    }
-  }
-  return true;
-}
-
 if(isset($_GET['status'])){
   echo barOption($link,'status',$_GET['status'],$USER["id"]);
 }
