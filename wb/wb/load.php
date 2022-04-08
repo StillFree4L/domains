@@ -84,7 +84,7 @@ if (trim($USER['wb_key']) != '')
             else{
               $r = json_decode($r);
             }
-            var_dump($r);
+            var_dump($tmp['r_url']);
 
 
               if ($r and !in_array($r,[null,"[]","","can't decode supplier key","unauthorized","invalid token","supplier key not found"])){
