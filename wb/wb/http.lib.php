@@ -960,7 +960,7 @@ function preg_barcode($barcode){
     preg_match_all("'>(.*?)<'si", $barcode, $match);
     return $match[1][1];
 }
-
+/*
 function async_api($urls){
   $tmp=$nameFile=[];
   $valid=false;
@@ -968,7 +968,9 @@ function async_api($urls){
     $name = microtime(true)."-".$v;
     //exec(" php load.report.php ".$_GET['type']." ".$v." >> cache/tmp/".$name." &");
     //exec("php load.report.php ".$_GET['type']." ".$v." > cache/tmp/".$name." &");
+    //"nohup php -c 'load.report.php ".$_GET['type']." ".$v."' > cache/tmp/".$name." 2>&1 &"
     exec("(php -f load.report.php '".$_GET['type']."|".$v."' &) >> cache/tmp/".$name." 2>&1");
+//  exec("nohup php -c 'load.report.php ".$_GET['type']." ".$v."' > cache/tmp/".$name." 2>&1 &");
     $nameFile[$v] = $name;
   }
 
@@ -986,8 +988,8 @@ function async_api($urls){
   }
 
   foreach ($nameFile as $key => $value) {
-    unlink('cache/tmp/'.$value);
+  //  unlink('cache/tmp/'.$value);
   }
 
   return $tmp;
-}
+}*/
