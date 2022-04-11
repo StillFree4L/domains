@@ -1,5 +1,0 @@
-<Files "key.txt">
-    Order Deny,Allow
-    Deny From All
-    Options -Indexes
-</Files>
