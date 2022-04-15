@@ -6,23 +6,24 @@ set_time_limit(0);
   header('Connection: close');
   ignore_user_abort();
   ob_start();
-  echo('Ожидайте');
+  echo('Ожидайте-'.$_GET['type']);
   $size = ob_get_length();
   header("Content-Length: $size");
   ob_end_flush();
   flush();
 }
-
+$start = microtime(true);
 require_once('blocks/func_key.php');
 require_once('blocks/func_tbl_keys.php');
 
-$v_api = ["success"=>false,"message"=>'<font color="red">Нет данных</font>'];
+mysqli_close($link);
 
+$v_api = ["success"=>false,"message"=>'<font color="red">Нет данных</font>'];
 $data_time1 = time();
 
 barOption($link,'forcibly',$data_time1,$USER["id"]);
 writeStatus($link,$USER["id"],$_GET['type'],'1',$data_time1);
-mysqli_close($link);
+
     require_once('blocks/func_api.php');
 
       if ($buf == "" || $_GET['forcibly']=='on' || json_decode($buf2[1]) == NULL || time() - intval($buf2[0]) > 60*60 || strpos($buf, 'can\'t decode supplier key') !== false)
@@ -30,15 +31,19 @@ mysqli_close($link);
       //  var_dump($api_url.' - '.$api_url_sales.' - '.$api_url_new);
         if ($api_url or $api_url_sales or $api_url_new){
 
-          if (in_array($_GET['type'], [1,2,10])){$r_url_report =  json_decode(report_cache());}
+           if (in_array($_GET['type'], [1,2,10])){$r_url_report =  json_decode(report_cache());}
 
           if ($api_url){$r_url = http_json($api_url);}
           if ($api_url_sales){$r_url_sales = http_json($api_url_sales);}
           if ($api_url_new){$r_url_new = http_json($api_url_new,true);}
 
+        //  var_dump($api_url);
+
+
           if ($r_url or $r_url_sales){
               $r = array_unite($r_url, $r_url_new, $r_url_sales);
           }
+
           $r = json_decode($r);
 
             if ((time() - intval($buf2[0]) > (60*60*24*2) or ($r and !in_array($r,[null,"[]","","can't decode supplier key","unauthorized","invalid token","supplier key not found"]))) and $r_url_report){
@@ -47,6 +52,7 @@ mysqli_close($link);
 
               if ($r and !in_array($r,[null,"[]","","can't decode supplier key","unauthorized","invalid token","supplier key not found"])){
 
+                  
                   if (in_array($_GET['type'], [1, 2, 6, 10])) {
                       stock_cache_old();
                       stock_cache_new();
@@ -61,6 +67,7 @@ mysqli_close($link);
                   if (in_array($_GET['type'], [9])) {
                       $r = sebes_pribil($r);
                   }
+
 
                     if($r){
                       $v_api["success"] = true;
@@ -85,7 +92,8 @@ mysqli_close($link);
           $v_api["message"] = '<font color="green">Данные полученны успешно</font>';
           writeStatus($link,$USER["id"],$_GET['type'],'2',time());
       }
-
+$time = microtime(true) - $start;
+$v_api["time"] = $time;
 echo json_encode($v_api);
 
 die();

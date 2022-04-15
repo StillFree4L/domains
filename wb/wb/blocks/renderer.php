@@ -14,7 +14,7 @@ while(ij < columns.length){
         return "<a id="+ids+" idd='"+y.id+"' style='text-decoration: none; pointer-events: none; cursor: default;' href='?page=wb&type=<?=$_GET['type']?>'>"+obj+"</a>";
       }
       let numberId = y.data.checkbox_del;
-      return "<input type=\"text\" id="+ids+" idd='"+y.id+"' onblur=\"number_update_add('"+numberId+"',this.value,this.id,this.getAttribute('idd'))\" class='inputValue' value='"+obj+"'>";
+      return "<input type=\"text\" id="+ids+" idd='"+y.id+"' onblur=\"number_update_add('"+numberId+"',this.value,this.id,this.getAttribute('idd'))\" onkeyup=\"inputKey(this,event);\" class='inputValue' tabindex=-1 value='"+obj+"'>";
     }
   }
   else if(ij == 16){
@@ -24,10 +24,10 @@ while(ij < columns.length){
       let ids = x.classes[1].split('x-grid-cell-')[1];
 
       if(!y.data.checkbox_del){
-        return "<input type=\"text\" id="+ids+" idd='"+y.id+"' onblur=\"number_update('"+y.id+"',this.value,this.id,'"+y.data.supplierArticle+"','"+y.data.barcode+"')\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');\" value='"+obj+"'>";
+        return "<input type=\"text\" id="+ids+" idd='"+y.id+"' onblur=\"number_update('"+y.id+"',this.value,this.id,'"+y.data.supplierArticle+"','"+y.data.barcode+"')\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');inputKey(this,event);\" tabindex=-1 value='"+obj+"'>";
       }
       let numberId = y.data.checkbox_del;
-      return "<input type=\"text\" id="+ids+" idd='"+y.id+"' onblur=\"number_update_add('"+numberId+"',this.value,this.id,this.getAttribute('idd'))\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');\" value='"+obj+"'>";
+      return "<input type=\"text\" id="+ids+" idd='"+y.id+"' onblur=\"number_update_add('"+numberId+"',this.value,this.id,this.getAttribute('idd'))\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');inputKey(this,event);\" tabindex=-1 value='"+obj+"'>";
     }
   }
   else if(ij > 21 || ij === 19 || ij === 18 || ij === 17 || ij === 14 || ij === 9){
@@ -48,11 +48,11 @@ while(ij < columns.length){
       let ids = x.classes[1].split('x-grid-cell-')[1];
 
       if(!y.data.checkbox_del){
-        return "<input type=\"text\" id="+ids+" idd='"+y.id+"' onblur=\"number_update('"+y.id+"',this.value,this.id,'"+y.data.supplierArticle+"','"+y.data.barcode+"')\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');\" value='"+obj+"'>";
+        return "<input type=\"text\" id="+ids+" idd='"+y.id+"' onblur=\"number_update('"+y.id+"',this.value,this.id,'"+y.data.supplierArticle+"','"+y.data.barcode+"')\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');inputKey(this,event);\" tabindex=-1 value='"+obj+"'>";
       }
 
       let numberId = y.data.checkbox_del;
-      return "<input type=\"text\" id="+ids+" idd='"+y.id+"' onblur=\"number_update_add('"+numberId+"',this.value,this.id,this.getAttribute('idd'))\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');\" value='"+obj+"'>";
+      return "<input type=\"text\" id="+ids+" idd='"+y.id+"' onblur=\"number_update_add('"+numberId+"',this.value,this.id,this.getAttribute('idd'))\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');inputKey(this,event);\" tabindex=-1 value='"+obj+"'>";
     }
   }
   else if(ij === 0){
@@ -62,9 +62,18 @@ while(ij < columns.length){
       //if(y.data.checkbox_del){val = y.data.checkbox_del;}
       if(!obj){obj=y.id;}
       if(y.data.checkbox_del || y.data.edit==='1'){
-        return '<input type="checkbox" id="checkbox_del" idd="'+y.id+'" class="check_del" value="'+obj+'">';
+        return '<input type="checkbox" id="checkbox_del" idd="'+y.id+'" onkeyup=\"inputKey(this,event);\" class="check_del" tabindex=-1 value="'+obj+'">';
       }
-        return '<input type="checkbox" disabled id="checkbox_del" idd="'+y.id+'" class="check_del" value="'+obj+'">';
+        return '<input type="checkbox" id="checkbox_del" idd="'+y.id+'" onkeyup=\"inputKey(this,event);\" class="check_del" tabindex=-1 value="'+obj+'">';
+    }
+  }
+  else if(ij === 1){
+    columns[ij].renderer = function(obj, x, y) {
+      let ids = x.classes[1].split('x-grid-cell-')[1]
+      if(!obj){
+        obj="<a id="+ids+" href='?page=wb&type=<?=$_GET['type']?>'></a>";
+      }
+        return obj;
     }
   }
   ij++;
@@ -89,18 +98,19 @@ while(ij < columns.length){
       columns[colAll[sums[ij].replace("\r", "")]].renderer = function(obj, x, y) {
         if(!obj){obj=0;}
         var re = /\B(?=(\d{3})+(?!\d))/g;
-        let ids = x.classes[1].split('x-grid-cell-')[1]
+        let ids = x.classes[1].split('x-grid-cell-')[1];
         if(!isNaN(obj)){
           if(obj < 0 ){obj = Number(Number(obj) * -1);}
-            return "<a href='?page=wb&type=<?=$_GET['type'].$f1?>&dt=<?=$_GET['dt']?>&f2="+ids+"&f3="+obj+"'>"+Number(obj).toFixed(2).replace(re, " ")+"</a>";
+            return "<a id="+ids+" href='?page=wb&type=<?=$_GET['type'].$f1?>&dt=<?=$_GET['dt']?>&f2="+ids+"&f3="+obj+"'>"+Number(obj).toFixed(2).replace(re, " ")+"</a>";
         }
-        return "<a href='?page=wb&type=<?=$_GET['type'].$f1?>&dt=<?=$_GET['dt']?>&f2="+ids+"&f3="+obj+"'>"+obj+"</a>";
+        return "<a id="+ids+" href='?page=wb&type=<?=$_GET['type'].$f1?>&dt=<?=$_GET['dt']?>&f2="+ids+"&f3="+obj+"'>"+obj+"</a>";
       }
     }
     ij++;
   }
 <?php endif; ?>
 
+  //  console.log(columns);
 
 //7 rid
 <?php if($_GET['type']==7 and $_GET['rid']): ?>
@@ -127,7 +137,7 @@ while(ij<fields.length){
         if(!isNaN(obj)){
             return "<a id="+ids+" idd='"+y.id+"' href='?page=wb&type=<?=$_GET['type'].$f1?>&dt=<?=$_GET['dt']?>&f2="+ids+"&f3="+obj+"'>"+obj.toFixed(2).replace(re, " ")+"</a>";
         }
-        return "<a href='?page=wb&type=<?=$_GET['type'].$f1?>&dt=<?=$_GET['dt']?>&f2="+ids+"&f3="+obj+"'>"+obj+"</a>";
+        return "<a id="+ids+" href='?page=wb&type=<?=$_GET['type'].$f1?>&dt=<?=$_GET['dt']?>&f2="+ids+"&f3="+obj+"'>"+obj+"</a>";
       }
     }else if(ij > 18){
         columns[ij].renderer = function(obj, x, y) {
@@ -135,7 +145,7 @@ while(ij<fields.length){
       if(!obj){obj="";}
       let ids = x.classes[1].split('x-grid-cell-')[1];
 
-    return "<input type='text' id="+ids+" idd='"+y.id+"' incomeId=<?=$_GET['rid']?> barcode='"+y.data.barcode+"' supplierArticle='"+y.data.supplierArticle+"' onblur=\"number_update('"+y.id+"',this.value,this.id,<?=$_GET['rid']?>,'"+y.data.supplierArticle+"','"+y.data.barcode+"')\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');\" value='"+obj+"'>";
+    return "<input type='text' id="+ids+" idd='"+y.id+"' incomeId=<?=$_GET['rid']?> barcode='"+y.data.barcode+"' supplierArticle='"+y.data.supplierArticle+"' onblur=\"number_update('"+y.id+"',this.value,this.id,<?=$_GET['rid']?>,'"+y.data.supplierArticle+"','"+y.data.barcode+"')\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');inputKey(this,event);\" tabindex=-1 value='"+obj+"'>";
 
       }
     }
@@ -217,7 +227,7 @@ while(ij<fields.length){
         if(!isNaN(obj)){
             return "<a id="+ids+" idd='"+y.id+"' href='?page=wb&type=<?=$_GET['type'].$f1?>&dt=<?=$_GET['dt']?>'>"+obj.toFixed(2).replace(re, " ")+"</a>";
         }
-        return "<a href='?page=wb&type=<?=$_GET['type'].$f1?>&dt=<?=$_GET['dt']?>&f2="+ids+"&f3="+obj+"'>"+obj+"</a>";
+        return "<a id="+ids+" href='?page=wb&type=<?=$_GET['type'].$f1?>&dt=<?=$_GET['dt']?>&f2="+ids+"&f3="+obj+"'>"+obj+"</a>";
       }
     }else if(ij > 15){
         columns[ij].renderer = function(obj, x, y) {
@@ -225,7 +235,7 @@ while(ij<fields.length){
       if(!obj){obj="";}
       let ids = x.classes[1].split('x-grid-cell-')[1];
 
-    return "<input type='text' id="+ids+" idd='"+y.id+"' incomeId='"+y.data.incomeId+"' barcode='"+y.data.barcode+"' supplierArticle='"+y.data.supplierArticle+"' onblur=\"number_update('"+y.id+"',this.value,this.id,'"+y.data.incomeId+"','"+y.data.supplierArticle+"','"+y.data.barcode+"')\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');\" value='"+obj+"'>";
+    return "<input type='text' id="+ids+" idd='"+y.id+"' incomeId='"+y.data.incomeId+"' barcode='"+y.data.barcode+"' supplierArticle='"+y.data.supplierArticle+"' onblur=\"number_update('"+y.id+"',this.value,this.id,'"+y.data.incomeId+"','"+y.data.supplierArticle+"','"+y.data.barcode+"')\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');inputKey(this,event);\" tabindex=-1 value='"+obj+"'>";
 
       }
     }
@@ -268,7 +278,7 @@ while(ij<fields.length){
         if(!isNaN(obj)){
             return "<a id="+ids+" idd='"+y.id+"' href='?page=wb&type=<?=$_GET['type'].$f1?>&f1="+y.data.supplierArticle+"&dt=<?=$_GET['dt']?>'>"+obj.toFixed(2).replace(re, " ")+"</a>";
         }
-        return "<a href='?page=wb&type=<?=$_GET['type'].$f1?>&f1="+y.data.supplierArticle+"&dt=<?=$_GET['dt']?>'>"+obj+"</a>";
+        return "<a id="+ids+" href='?page=wb&type=<?=$_GET['type'].$f1?>&f1="+y.data.supplierArticle+"&dt=<?=$_GET['dt']?>'>"+obj+"</a>";
       }
     }
     if(ij == 1){
@@ -278,7 +288,7 @@ while(ij<fields.length){
         if(!isNaN(obj)){
             return "<a id="+ids+" idd='"+y.id+"' href='?page=wb&type=<?=$_GET['type'].$f1?>&f1="+y.data.supplierArticle+"&dt=<?=$_GET['dt']?>'>"+obj+" шт</a>";
         }
-        return "<a href='?page=wb&type=<?=$_GET['type'].$f1?>&f1="+y.data.supplierArticle+"&dt=<?=$_GET['dt']?>'>"+obj+"</a>";
+        return "<a id="+ids+" href='?page=wb&type=<?=$_GET['type'].$f1?>&f1="+y.data.supplierArticle+"&dt=<?=$_GET['dt']?>'>"+obj+"</a>";
       }
     }
     ij++;
@@ -318,13 +328,13 @@ while(ij<fields.length){
         //  console.log(obj);
             return "<a id="+ids+" idd='"+y.id+"' href='?page=wb&type=<?=$_GET['type'].$f1?>&rid="+y.data.realizationreport_id+"'>"+Number(obj).toFixed(2).replace(re, " ")+"</a>";
         }
-        return "<a href='?page=wb&type=<?=$_GET['type'].$f1?>&dt=<?=$_GET['dt']?>&rid="+y.data.realizationreport_id+"'>"+obj+"</a>";
+        return "<a id="+ids+" href='?page=wb&type=<?=$_GET['type'].$f1?>&dt=<?=$_GET['dt']?>&rid="+y.data.realizationreport_id+"'>"+obj+"</a>";
       }
     }else if(ij > 7 && ij < 11){
       columns[ij].renderer = function(obj, x, y) {
         if(!obj){obj="";}
         let ids = x.classes[1].split('x-grid-cell-')[1];
-        return "<input type='text' id="+ids+" idd='"+y.id+"' realizationreport_id='"+y.data.realizationreport_id+"' onblur=\"number_update('"+y.id+"',this.value,this.id,'"+y.data.realizationreport_id+"')\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');\" value='"+obj+"'>";
+        return "<input type='text' id="+ids+" idd='"+y.id+"' realizationreport_id='"+y.data.realizationreport_id+"' onblur=\"number_update('"+y.id+"',this.value,this.id,'"+y.data.realizationreport_id+"')\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');inputKey(this,event);\" tabindex=-1 value='"+obj+"'>";
       }
     }
     ij++;
@@ -365,13 +375,13 @@ while(ij<fields.length){
         if(!isNaN(obj)){
             return "<a id="+ids+" idd='"+y.id+"' href='?page=wb&type=<?=$_GET['type'].$f1?>&rid="+y.data.realizationreport_id+"'>"+Number(obj).toFixed(2).replace(re, " ")+"</a>";
         }
-        return "<a href='?page=wb&type=<?=$_GET['type'].$f1?>&dt=<?=$_GET['dt']?>&rid="+y.data.realizationreport_id+"'>"+obj+"</a>";
+        return "<a id="+ids+" href='?page=wb&type=<?=$_GET['type'].$f1?>&dt=<?=$_GET['dt']?>&rid="+y.data.realizationreport_id+"'>"+obj+"</a>";
       }
     }else if(ij > 4 && ij < 8){
       columns[ij].renderer = function(obj, x, y) {
         if(!obj){obj="";}
         let ids = x.classes[1].split('x-grid-cell-')[1];
-        return "<input type='text' id="+ids+" idd='"+y.id+"' realizationreport_id='"+y.data.realizationreport_id+"' onblur=\"number_update('"+y.id+"',this.value,this.id,'"+y.data.realizationreport_id+"')\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');\" value='"+obj+"'>";
+        return "<input type='text' id="+ids+" idd='"+y.id+"' realizationreport_id='"+y.data.realizationreport_id+"' onblur=\"number_update('"+y.id+"',this.value,this.id,'"+y.data.realizationreport_id+"')\" class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');inputKey(this,event);\" tabindex=-1 value='"+obj+"'>";
       }
     }
     ij++;

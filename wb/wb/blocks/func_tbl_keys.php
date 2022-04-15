@@ -6,78 +6,52 @@ barcode Баркод
 subject Предмет
 category Категория
 brand Бренд
-strikethrough_price Зачеркнутая цена, руб
-sale_percent Скидка, %
-sale_total Скидка, руб
-totalPrice Розничная цена, руб
-stoimost Себестоимость, руб
-zatrat Доп расходы, руб
-wb_commission Комиссия WB, %
-cost_wb_commission Комиссия WB, руб
-cost_delivery Доставка, руб
-cost_amout Возврат, руб
-cost_log Логистика, руб
-  all_costs Все затраты, руб
-nalog7 Налоги, руб
-ransom Выкупа, %
-defect Брак, %
-cost_defect Брак, руб
-pribil Маржа
-marga ROI";
+strikethrough_price Зачеркнутая цена ₽
+sale_percent Скидка %
+sale_total Скидка ₽
+totalPrice Розничная цена ₽
+stoimost Себестоимость ₽
+zatrat Доп расходы ₽
+wb_commission Комиссия WB %
+cost_wb_commission Комиссия WB ₽
+cost_delivery Доставка ₽
+cost_amout Возврат ₽
+cost_log Логистика ₽
+all_costs Все затраты ₽
+nalog7 Налоги ₽
+ransom Выкупа %
+defect Брак %
+cost_defect Брак ₽
+pribil Маржа ₽
+marga ROI %";
 }
-/*
-if ($_GET['type'] == 11){
-  $calc_keys = "supplierArticle Артикул
-  barcode Баркод
-  subject Предмет
-  category Категория
-  brand Бренд
-strikethrough_price Зачеркнутая цена
-sale_percent Скидка, %
-sale_total Скидка, руб
-totalPrice Розничная цена
-stoimost Стоимость товара
-zatrat Доп расходы
-wb_commission Комиссия WB, %
-cost_wb_commission Комиссия WB, руб
-cost_delivery Стоимость доставки
-cost_amout Стоимость возврата
-cost_log Стоимость логистики
-nalog7 Налоги
-ransom % выкупа
-defect % брака
-cost_defect Затраты на брак
-pribil Чистая прибыль
-marga Маржинальность";
-}
-*/
 if (!isset($_GET['rid']) and $_GET['type'] == 9){
     $pribil_keys = 'realizationreport_id Номер отчета
-rr_dt Дата операции
-quantity Количество продаж
-retail_amount Сумма продаж(Возвратов)
-storage_cost Стоимость хранения
-acceptance_fee Стоимость платной приемки
-other_deductions Прочие удержания
-ppvz_for_pay К перечислению Продавцу за реализованный Товар
-ppvz_vw Вознаграждение Вайлдберриз (ВВ), без НДС
-ppvz_vw_nds НДС с Вознаграждения Вайлдберриз
-delivery_amount Кол-во доставок
-return_amount Кол-во возвратов
-delivery_rub Стоимость логистики
-total_payable Итого к оплате
-all_cost Все расходы
-nalog7 Налоги
-pribil Чистая прибыль
-marga Маржинальность, %
+rr_dt Операция дата
+quantity Продажи шт
+retail_amount Сумма продаж(Возвратов) ₽
+storage_cost Хранение ₽
+acceptance_fee Платной приемки ₽
+other_deductions Прочие удержания ₽
+ppvz_for_pay К перечислению Продавцу за реализованный Товар ₽
+ppvz_vw Вознаграждение Вайлдберриз (ВВ), без НДС ₽
+ppvz_vw_nds НДС с Вознаграждения Вайлдберриз ₽
+delivery_amount Доставки шт
+return_amount Возвраты шт
+delivery_rub Логистика ₽
+total_payable Итого к оплате ₽
+all_cost Все расходы ₽
+nalog7 Налоги ₽
+pribil Маржа ₽
+marga ROI %
 speed_back Скорость возврата инвестиций
-ss_one Общая себестоимость';
+ss_one Общая себестоимость ₽';
 
 }elseif (isset($_GET['rid']) and $_GET['type'] == 9){
     $pribil_keys = 'realizationreport_id Номер отчета
 suppliercontract_code Договор
 rid Уникальный идентификатор позиции заказа
-rr_dt Дата операции
+rr_dt Операция дата
 rrd_id Номер строки
 gi_id номер поставки
 subject_name Предмет
@@ -87,26 +61,26 @@ sa_name Артикул поставщика
 ts_name Размер
 barcode Баркод
 doc_type_name Тип документа
-quantity Количество продаж
-retail_price Цена розничная
-retail_amount Сумма продаж(Возвратов)
-sale_percent Согласованная скидка
-commission_percent Процент комиссии
+quantity Продажи шт
+retail_price Розничная цена ₽
+retail_amount Сумма продаж(Возвратов) ₽
+sale_percent Cкидка cогласованная %
+commission_percent Комиссия %
 office_name Склад
 supplier_oper_name Обоснование для оплаты
-order_dt Даты заказа
-sale_dt Дата продажи
+order_dt Заказ дата
+order_dt Продажа дата
 shk_id ШК
-retail_price_withdisc_rub Цена розничная с учетом согласованной скидки
-delivery_amount Кол-во доставок
-return_amount Кол-во возвратов
-delivery_rub Стоимость логистики
+retail_price_withdisc_rub Розничная цена с учетом согласованной скидки ₽
+delivery_amount Доставки шт
+return_amount Возвраты шт
+delivery_rub Логистика ₽
 gi_box_type_name Тип коробов
-product_discount_for_report Согласованный продуктовый дисконт
+product_discount_for_report Продуктовый дисконт согласованный %
 supplier_promo Промокод
-ppvz_spp_prc Скидка постоянного покупателя
-ppvz_kvw_prc_base Размер кВВ без НДС, % Базовый
-ppvz_kvw_prc Итоговый кВВ без НДС, %
+ppvz_spp_prc Постоянного покупателя скидка %
+ppvz_kvw_prc_base Размер кВВ без НДС % Базовый
+ppvz_kvw_prc Итоговый кВВ без НДС %
 ppvz_sales_commission Вознаграждение с продаж до вычета услуг поверенного, без НДС
 ppvz_for_pay К перечислению Продавцу за реализованный Товар
 ppvz_reward Возмещение Расходов услуг поверенного
@@ -121,63 +95,63 @@ declaration_number Номер таможенной декларации
 incomeId Поставки
 category категория
 status Текущий статус поставки
-total_payable Итого к оплате
-all_cost Все расходы
-nalog7 Налоги
-pribil Чистая прибыль
-marga Маржинальность, %
+total_payable Итого к оплате ₽
+all_cost Все расходы ₽
+nalog7 Налоги ₽
+pribil Маржа ₽
+marga ROI %
 speed_back Скорость возврата инвестиций
-ss_one Общая себестоимость';
+ss_one Общая себестоимость ₽';
 
 }
 
 if ($_GET['f1'] and $_GET['type'] == 8) {
     $sebes_keys = 'incomeId Поставки
-    date дата поступления
+    date Поступление дата
 supplierArticle Ваш артикул
 techSize Размер
 barcode Баркод
-quantity кол-во
+quantity Кол-во шт
 subject предмет
 category категория
 brand бренд
-dateClose дата принятия (закрытия) у нас
-lastChangeDate дата и время обновления информации в сервисе
+dateClose Принятия (закрытия) у нас дата
+lastChangeDate Обновления информации в сервисе дата и время
 warehouseName название склада
 status Текущий статус поставки
-ss_all Общая себестоимость с учётом количества
-ss_one Общая себестоимость единицы товара';
+ss_all Общая себестоимость с учётом количества ₽
+ss_one Общая себестоимость единицы товара ₽';
 }elseif (!$_GET['f1'] and $_GET['type'] == 8){
     $sebes_keys = 'incomeId Поставки
 supplierArticle Ваш артикул
 barcode Баркод
-quantity кол-во
+quantity Кол-во шт
 subject предмет
 category категория
 brand бренд
-ss_all Общая себестоимость
-ss_one Средняя себестоимость единицы';
+ss_all Общая себестоимость ₽
+ss_one Средняя себестоимость единицы ₽';
 }
 
 //=============================================
 
 $postav_keys = 'incomeId номер поставки
-date дата поступления
-quantity кол-во
+date Поступление дата
+quantity Кол-во шт
 status Текущий статус поставки
 warehouseName название склада
 subject предмет
 category категория
 brand бренд
-dateClose дата принятия (закрытия) у нас
-lastChangeDate дата и время обновления информации в сервисе
+dateClose Принятия (закрытия) у нас дата
+lastChangeDate Обновления информации в сервисе дата и время
 number номер УПД
-totalPrice цена из УПД
+totalPrice цена из УПД ₽
 ';
 
 //===========================================
 
-$sklad_keys = 'lastChangeDate Дата и время обновления информации в сервисе
+$sklad_keys = 'lastChangeDate Обновления информации в сервисе дата и время
 category Категория
 brand Бренд
 subject Предмет
@@ -185,26 +159,26 @@ barcode Баркод
 supplierArticle Артикул
 nmId Код WB
 techSize Размер
-fbs ФБС, остаток
-fbo ФБО, остаток
-fbs_fbo ФБС+ФБО, остаток
-quantity Кол-во, доступное для продажи
-quantityNotInOrders Кол-во не в заказе
-quantityFull Кол-во полное
-upush Упущенная выручка
+fbs ФБС, остаток шт
+fbo ФБО, остаток шт
+fbs_fbo ФБС+ФБО, остаток шт
+quantity Доступное для продажи шт
+quantityNotInOrders не в заказе шт
+quantityFull полное шт
+upush Упущенная выручка ₽
 speed Остатков хватит примерно, дни
-speed_7_order Скорость заказов за неделю, шт/день
-speed_7 Скорость продаж за неделю, шт/день
-speed_30 Скорость продаж за месяц, шт/день
-inWayToClient в пути к клиенту (штук)
-inWayFromClient в пути от клиента (штук)
-refund_7 % возврата за неделю
-refund_30 % возврата за месяц
-Price Цена
-Discount Дисконт
-price_min_discount Цена после вычета дисконта
+speed_7_order заказов за неделю шт/день
+speed_7 продаж за неделю шт/день
+speed_30 продаж за месяц шт/день
+inWayToClient к клиенту шт
+inWayFromClient от клиента шт
+refund_7 за неделю возврат %
+refund_30 за месяц возврат %
+Price Цена ₽
+Discount Дисконт %
+price_min_discount Цена после вычета дисконта ₽
 warehouseName Склад
-daysOnSite Кол-во дней на сайте
+daysOnSite на сайте, дни
 isSupply Договор поставки
 isRealization Договор реализации
 SCCode код контракта
@@ -214,7 +188,7 @@ SCCode код контракта
 $report_keys = 'realizationreport_id Номер отчета
 suppliercontract_code Договор
 rid Уникальный идентификатор позиции заказа
-rr_dt Дата операции
+rr_dt Операция дата
 rrd_id Номер строки
 gi_id номер поставки
 subject_name Предмет
@@ -224,26 +198,26 @@ sa_name Артикул поставщика
 ts_name Размер
 barcode Баркод
 doc_type_name Тип документа
-quantity Количество продаж
-retail_price Цена розничная
-retail_amount Сумма продаж(Возвратов)
-sale_percent Согласованная скидка
-commission_percent Процент комиссии
+quantity Продажи шт
+retail_price Розничная цена ₽
+retail_amount Сумма продаж(Возвратов) ₽
+sale_percent Согласованная скидка %
+commission_percent Комиссия %
 office_name Склад
 supplier_oper_name Обоснование для оплаты
-order_dt Даты заказа
-sale_dt Дата продажи
+order_dt Заказ дата
+order_dt Продажа дата
 shk_id ШК
-retail_price_withdisc_rub Цена розничная с учетом согласованной скидки
-delivery_amount Кол-во доставок
-return_amount Кол-во возвратов
-delivery_rub Стоимость логистики
+retail_price_withdisc_rub Розничная цена с учетом согласованной скидки
+delivery_amount Доставки шт
+return_amount Возвраты шт
+delivery_rub Логистика ₽
 gi_box_type_name Тип коробов
-product_discount_for_report Согласованный продуктовый дисконт
+product_discount_for_report Продуктовый дисконт согласованный %
 supplier_promo Промокод
-ppvz_spp_prc Скидка постоянного покупателя
-ppvz_kvw_prc_base Размер кВВ без НДС, % Базовый
-ppvz_kvw_prc Итоговый кВВ без НДС, %
+ppvz_spp_prc Постоянного покупателя скидка %
+ppvz_kvw_prc_base Размер кВВ без НДС % Базовый
+ppvz_kvw_prc Итоговый кВВ без НДС %
 ppvz_sales_commission Вознаграждение с продаж до вычета услуг поверенного, без НДС
 ppvz_for_pay К перечислению Продавцу за реализованный Товар
 ppvz_reward Возмещение Расходов услуг поверенного
@@ -258,22 +232,22 @@ declaration_number Номер таможенной декларации
 bonus_type_name Обоснование штрафов и доплат';
 
 $orders_keys = 'number № заказа
-date дата заказа
-lastChangeDate дата изменения
+date заказ дата
+lastChangeDate изменения дата
 supplierArticle артикул
 techSize размер
 barcode Баркод
-fbs ФБС, остаток
-fbo ФБО, остаток
-fbs_fbo ФБС+ФБО, остаток
-quantity кол-во
-totalPrice цена до скидки/промо/спп
-discountPercent итоговый дисконт
-finishedPrice итоговая цена
+fbs ФБС, остаток шт
+fbo ФБО, остаток шт
+fbs_fbo ФБС+ФБО, остаток шт
+quantity Кол-во шт
+totalPrice цена до скидки/промо/спп ₽
+discountPercent дисконт итоговый %
+finishedPrice цена итоговая ₽
 speed Остатков хватит примерно, дни
-speed_7_order Скорость заказов за неделю, шт/день
-speed_7 Скорость продаж за неделю, шт/день
-speed_30 Скорость продаж за месяц, шт/день
+speed_7_order за неделю заказов  шт/день
+speed_7 за неделю продаж шт/день
+speed_30 за месяц продаж шт/день
 warehouseName склад
 oblast область
 incomeID номер поставки
@@ -283,32 +257,32 @@ subject предмет
 category категория
 brand бренд
 isCancel отменен
-cancel_dt дата отмены заказа
+cancel_dt отмена заказа дата
 status статус
 userStatus статус клиента
 deliveryType тип доставки
 ';
 
 $sales_keys = 'number № документа
-date дата продажи
-lastChangeDate дата изменения
+date продажи дата
+lastChangeDate изменения дата
 supplierArticle артикул
 techSize размер
 barcode Баркод
-fbs ФБС, остаток
-fbo ФБО, остаток
-fbs_fbo ФБС+ФБО, остаток
-quantity кол-во
-totalPrice начальная розничная цена
-discountPercent скидка на товар
-isSupply договор поставки
-isRealization договор реализации
+fbs ФБС, остаток шт
+fbo ФБО, остаток шт
+fbs_fbo ФБС+ФБО, остаток шт
+quantity Кол-во шт
+totalPrice начальная розничная цена ₽
+discountPercent скидка на товар %
+isSupply поставки договор
+isRealization реализации договор
 orderId Номер заказа
 promoCodeDiscount промокод
 speed Остатков хватит примерно, дни
-speed_7_order Скорость заказов за неделю, шт/день
-speed_7 Скорость продаж за неделю, шт/день
-speed_30 Скорость продаж за месяц, шт/день
+speed_7_order за неделю заказов  шт/день
+speed_7 за неделю продаж шт/день
+speed_30 за месяц продаж шт/день
 warehouseName склад
 countryName страна
 oblastOkrugName округ
@@ -316,10 +290,10 @@ regionName регион
 incomeID номер поставки
 saleID ид. продажи/возврата
 odid ид. позиции заказа
-spp скидка постоянного покупателя
-forPay к перечислению поставщику
-finishedPrice фактическая цена
-priceWithDisc цена, от которой считается вознаграждение поставщика
+spp постоянного покупателя скидка %
+forPay к перечислению поставщику ₽
+finishedPrice фактическая цена ₽
+priceWithDisc цена, от которой считается вознаграждение поставщика ₽
 nmId код WB
 subject предмет
 category категория
@@ -332,16 +306,16 @@ deliveryType тип доставки
 
 $orders_sales_keys = 'number №
 date дата
-lastChangeDate дата изменения
+lastChangeDate изменения дата
 supplierArticle артикул
 techSize размер
 barcode Баркод
-fbs ФБС, остаток
-fbo ФБО, остаток
-fbs_fbo ФБС+ФБО, остаток
-quantity кол-во
-totalPrice цена до скидки/промо/спп
-discountPercent дисконт
+fbs ФБС, остаток шт
+fbo ФБО, остаток шт
+fbs_fbo ФБС+ФБО, остаток шт
+quantity Кол-во шт
+totalPrice цена до скидки/промо/спп ₽
+discountPercent дисконт %
 isSupply договор поставки
 isRealization договор реализации
 orderId Номер заказа
@@ -354,17 +328,17 @@ regionName регион
 incomeID номер поставки
 saleID ид. продажи/возврата
 odid ид. позиции заказа
-spp скидка постоянного покупателя
-forPay к перечислению поставщику
-finishedPrice фактическая цена
-priceWithDisc цена, от которой считается вознаграждение поставщика
+spp постоянного покупателя скидка %
+forPay к перечислению поставщику ₽
+finishedPrice фактическая цена ₽
+priceWithDisc цена, от которой считается вознаграждение поставщика ₽
 nmId код WB
 subject предмет
 category категория
 brand бренд
 IsStorno сторнирована
 isCancel отменен
-cancel_dt дата отмены заказа
+cancel_dt отмены заказа дата
 qualification уточнение
 status статус
 userStatus статус клиента

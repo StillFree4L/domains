@@ -1,7 +1,9 @@
 <?php
 //ключи
 
-    error_reporting(0);
+  ini_set('display_errors', 1);
+  error_reporting(E_ALL);
+  //error_reporting(0);
 
 $valid_passwords['admin'] = '123pass';
 $user = $_SERVER['PHP_AUTH_USER'];
@@ -25,14 +27,14 @@ require_once ('http.lib.php');
 require_once ('report.lib.php');
 
 $USER['id'] = 2;
-
+//bd
 $link = mysqliLink();
 
 mysqli_set_charset($link, "utf8");
 
 $resultCheckbox = mysqli_query($link, 'SELECT name,value FROM `params` WHERE userId='.$USER["id"]);
 $lines = [];
-
+//write key
 foreach ($resultCheckbox as $key => $value) {
   if($value['name'] == 'api_key'){
     $auth = $value['value'];
@@ -53,7 +55,7 @@ foreach ($resultCheckbox as $key => $value) {
     $pay = $value['value'];
   }
 }
-
+//params
 function paramsOption($link,$name,$value,$user){
   //var_dump('SELECT count(id)>0 FROM `params` WHERE name="'.$name.'" and userId='.$user);
   $result = mysqli_query($link, 'SELECT count(id)>0 FROM `params` WHERE name="'.$name.'" and userId='.$user);
@@ -69,7 +71,7 @@ function paramsOption($link,$name,$value,$user){
   }
   return $value;
 }
-//ODJiYWE5YTUtZmE2ZC00YzFjLWFmZDgtZTY3ZmZmOTZlNThj
+//key
 if ($_POST['key1']){
   $auth = paramsOption($link,'api_key',$_POST['key1'],$USER["id"]);
 }

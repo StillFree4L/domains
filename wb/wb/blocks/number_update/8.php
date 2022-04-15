@@ -11,14 +11,19 @@ function number_update(id,val,name,real,rid,barcode){
         if(map[id].data[ss_dop[i]]){sum += Number(map[id].data[ss_dop[i]]);}
         i++;
     }
-    map[id].data.ss_one = Number(sum);
-    map[id].data.ss_all = Number(Number(sum)*Number(map[id].data.quantity));
 
-    if(document.querySelector('a[id=ss_one][idd='+id+']')){
-      document.querySelector('a[id=ss_one][idd='+id+']').innerText = Number(sum).toFixed(2).replace(re," ");
+    if(Number(sum) !== map[id].data.ss_one){
+      map[id].data.ss_one = Number(sum);
+      if(document.querySelector('a[id=ss_one][idd='+id+']')){
+        document.querySelector('a[id=ss_one][idd='+id+']').innerText = Number(sum).toFixed(2).replace(re, " ");
+      }
     }
-    if(document.querySelector('a[id=ss_all][idd='+id+']')){
-      document.querySelector('a[id=ss_all][idd='+id+']').innerText = Number(Number(sum)*Number(map[id].data.quantity)).toFixed(2).replace(re," ");
+
+    if(Number(Number(sum)*Number(map[id].data.quantity)) !== map[id].data.ss_all){
+      map[id].data.ss_all = Number(Number(sum)*Number(map[id].data.quantity));
+      if(document.querySelector('a[id=ss_all][idd='+id+']')){
+        document.querySelector('a[id=ss_all][idd='+id+']').innerText = Number(Number(sum)*Number(map[id].data.quantity)).toFixed(2).replace(re, " ");
+      }
     }
 
     let j=0,jSum=0,jSumKol=0;

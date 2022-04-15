@@ -3,7 +3,6 @@
 require_once('blocks/func_key.php');
 require_once('blocks/func_tbl_keys.php');
 //------------------------------------------------------------------------------------------
-
 if (!isset($_GET['dt'])) $_GET['dt'] = date('Y-m-d', time());
 if (!isset($_GET['type'])) $_GET['type'] = 2;
 
@@ -68,19 +67,29 @@ while(i<12){
   i++;
 }
 
- function typeLoad() {
-   let i=1;
-   while(i<12){
-     if(i===3 || i===4){i=5;}
-     $.ajax({
-       method: "GET",
-       url: "/wb/load.php?type="+i+"&async=on&forcibly=on",
-       cache: false,
-       async: true,
-     });
-     i++;
-   }
- }
+/*
+function typeLoad() {
+    $.ajax({
+      method: "GET",
+      url: "/wb/load.async.php",
+      async: true,
+    });
+}
+*/
+
+function typeLoad() {
+  let i=1;
+  while(i<12){
+    if(i===3 || i===4){i=5;}
+    $.ajax({
+      method: "GET",
+      url: "/wb/load.php?type="+i+"&async=on&forcibly=on",
+      async: true,
+    });
+    i++;
+  }
+}
+
 
  function statusLoad() {
    $.get("/wb/status.php", function (dt){
@@ -95,11 +104,11 @@ while(i<12){
        }
 
        if(JSON.parse(dt).forcibly===false){
-      //   $('#forcibly').addClass('disabledforcibly');
-      //   $('#forcibly').attr('disabled', true);
+         $('#forcibly').addClass('disabledforcibly');
+         $('#forcibly').attr('disabled', true);
        }else{
-      //   $('#forcibly').removeClass('disabledforcibly');
-        // $('#forcibly').attr('disabled', false);
+         $('#forcibly').removeClass('disabledforcibly');
+         $('#forcibly').attr('disabled', false);
        }
    });
  }
@@ -116,7 +125,7 @@ setTimeout(() => {
 
 setInterval(() => {
   statusLoad();
-},2000);
+},4000);
 
 </script>
 
@@ -404,27 +413,27 @@ priceWithDisc
 if ($_GET['type'] == 5 && !isset($_GET['rid']) && !isset($_GET['bc']))
 {
     $tbl_keys = make_tbl_keys('realizationreport_id Номер отчета
-rr_dt Дата операции
-quantity Количество продаж
+rr_dt операция дата
+quantity продаж шт
 rid Уникальный идентификатор позиции заказа
-retail_price Цена розничная
-retail_amount Сумма продаж(Возвратов)
-sale_percent Согласованная скидка
-storage_cost Стоимость хранения
-acceptance_fee Стоимость платной приемки
-other_deductions Прочие удержания
-commission_percent Процент комиссии
+retail_price розничная цена ₽
+retail_amount Сумма продаж(Возвратов) ₽
+sale_percent скидка согласованная %
+storage_cost хранение ₽
+acceptance_fee платная приемка ₽
+other_deductions Прочие удержания ₽
+commission_percent комиссии %
 retail_price_withdisc_rub Цена розничная с учетом согласованной скидки
 ppvz_for_pay К перечислению Продавцу за реализованный Товар
 ppvz_vw Вознаграждение Вайлдберриз (ВВ), без НДС
 ppvz_vw_nds НДС с Вознаграждения Вайлдберриз
-delivery_amount Кол-во доставок
-return_amount Кол-во возвратов
-delivery_rub Стоимость логистики
-product_discount_for_report Согласованный продуктовый дисконт
+delivery_amount Доставка ₽
+return_amount Возврат ₽
+delivery_rub Логистика ₽
+product_discount_for_report продуктовый дисконт согласованный %
 supplier_promo Промокод
-ppvz_spp_prc Скидка постоянного покупателя
-total_payable Итого к оплате');
+ppvz_spp_prc постоянного покупателя скидка %
+total_payable Итого к оплате ₽');
 }
 
 ?>
@@ -784,11 +793,11 @@ if ($tbl_rows and count($tbl_rows)) {
             //var_dump($img);
             if (!isset($_GET['rid']) and $_GET['type'] != 5 and $_GET['type'] != 7 and $_GET['type'] != 9) {
                 $img = '';
-            } else $img = '<a href="https://www.wildberries.ru/catalog/' . $g->nm_id . '/detail.aspx?targetUrl=MS" target=_blank><img src="' . $img . '" style="height: 40px;"></a>';
+            } else $img = '<a id="image" href="https://www.wildberries.ru/catalog/' . $g->nm_id . '/detail.aspx?targetUrl=MS" target=_blank><img src="' . $img . '" style="height: 40px;"></a>';
 
         } else {
             $img = 'https://images.wbstatic.net/small/new/' . substr($g->nmId, 0, -4) . '0000/' . $g->nmId . '.jpg';
-            $img = '<a href="https://www.wildberries.ru/catalog/' . $g->nmId . '/detail.aspx?targetUrl=MS" target=_blank><img src="' . $img . '" style="height: 40px;"></a>';
+            $img = '<a id="image" href="https://www.wildberries.ru/catalog/' . $g->nmId . '/detail.aspx?targetUrl=MS" target=_blank><img src="' . $img . '" style="height: 40px;"></a>';
         }
 
         $data_cols['image'] = $img;
@@ -973,14 +982,19 @@ speed_back');
 
 if($ss_dom_lat){
     foreach ($ss_dom_lat as $k => $item) {
+      if($_GET['type']==9){
+        $dat_null[] = ru2Lat($item);
+      }
+      else{
         $dat_null[] = $item;
+      }
       //  var_dump($item);
     }
 
 }
 
 // ----
-if (in_array($_GET['type'],[1,2,10,6,9])){
+if (in_array($_GET['type'],[1,2,5,6,9,10])){
     $dat_minus = explode("\n", 'incomeID
 number
 orderId
@@ -1000,7 +1014,10 @@ category
 status
 office_name
 isCancel
-cancel_dt');
+cancel_dt
+office_name
+bonus_type_name
+gi_id');
 }
 
 if (in_array($_GET['type'],[7,8,9])) {
@@ -1120,6 +1137,8 @@ if($data){
                 $kitem = trim($kitem);
                 if (!$dat->$kitem || $dat->$kitem==null) {
                     $dat->$kitem = (int)0;
+                }else{
+                  $dat->$kitem = (int)$dat->$kitem;
                 }
             }
         }
@@ -1128,6 +1147,8 @@ if($data){
                 $kitem =trim($kitem);
                 if (!$dat->$kitem or $dat->$kitem =='01.01.0001 00:00:00'){
                     $dat->$kitem = '---';
+                }else{
+                  $dat->$kitem = (string)$dat->$kitem;
                 }
             }
         }
@@ -1135,6 +1156,8 @@ if($data){
     }
 
 }
+
+    //var_dump($data);
 
   //file_put_contents('cache/data.json', json_encode($data, JSON_PARTIAL_OUTPUT_ON_ERROR | JSON_ERROR_INF_OR_NAN));
 
@@ -1223,14 +1246,7 @@ mysqli_close($link);
 <script type="text/javascript" src="js/ext-all.js"></script>
 <script type="text/javascript" src="js/locale-ru.js"></script>
 
-<?php
-if(in_array($_GET['type'],[9])){
-  $updateType = $_GET['type'];
-  require_once('blocks/interval/'.$updateType.'.php');
-}
-
-require_once('blocks/renderer.php');
-?>
+<?php require_once('blocks/renderer.php'); ?>
 
 <script type = "text/javascript">
 
@@ -1405,8 +1421,7 @@ require_once('blocks/renderer.php');
 
         view = grid.getView();
 
-
-        view.tip = Ext.create('Ext.tip.ToolTip', {
+      /*  view.tip = Ext.create('Ext.tip.ToolTip', {
             target: view.el,
             delegate: view.cellSelector,
             anchor: 'bottom',
@@ -1418,7 +1433,8 @@ require_once('blocks/renderer.php');
                   let re = /\B(?=(\d{3})+(?!\d))/g;
                     var gridColums = view.getGridColumns();
                     var column = gridColums[tip.triggerElement.cellIndex];
-                  //  var coltip = view.getRecord(tip.triggerElement.parentNode).get(column.dataIndex);
+                    var coltip = view.getRecord(tip.triggerElement.parentNode).get(column.dataIndex);
+                  //  console.log(column);
                   //  if (coltip) {
                   //      var val = column.text + ': ' + (Number(coltip).toFixed(2).replace(re, " "));
                   //  }else{
@@ -1427,7 +1443,7 @@ require_once('blocks/renderer.php');
                     tip.update(val);
                 }
             }
-        });
+        });*/
 
         store.on('load', function(store) {
             showHideTbar(store);
@@ -1495,10 +1511,11 @@ require_once('blocks/renderer.php');
         return true;
     }
 
-
-
 </script>
 
+<?php if(in_array($_GET['type'],[5,7,8,9,11])): ?>
+  <script src="js/key.js"></script>
+<?php endif; ?>
 <?php
 //ввод данных через редактируемые ячейки
 if(in_array($_GET['type'],[5,7,8,9,11])){

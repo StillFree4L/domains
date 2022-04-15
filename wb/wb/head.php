@@ -161,13 +161,6 @@ function really_delete()
   color: gray!important;
 }
 
-#grid-1009-body{
-  overflow-y: scroll;
-}
-.x-grid-view{
-  overflow-y: scroll;
-}
-
 </style>
 
 </head>

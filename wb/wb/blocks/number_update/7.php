@@ -7,20 +7,23 @@ function number_update(id,val,name,real,rid,barcode){
     map[id].data[name]=Number(val);
 
     while(i<ss_dop.length){
-        if(map[id].data[ss_dop[i]]){sum += Number(map[id].data[ss_dop[i]]);}
+        if(map[id].data[ss_dop[i]]){
+          sum += Number(map[id].data[ss_dop[i]]);
+        }
         i++;
     }
 
-    if(map[id].data.Obschaya_sebestoimosty_edinicy_tovara !== Number(sum)){map[id].data.Obschaya_sebestoimosty_edinicy_tovara = Number(sum);}
-    if(map[id].data.Obschaya_sebestoimosty_s_uchetom_kolichestva !== Number(Number(sum)*Number(map[id].data.quantity))){map[id].data.Obschaya_sebestoimosty_s_uchetom_kolichestva = Number(Number(sum)*Number(map[id].data.quantity));}
-
-    if(document.querySelector('a[id=Obschaya_sebestoimosty_edinicy_tovara][idd='+id+']')
-    && document.querySelector('a[id=Obschaya_sebestoimosty_edinicy_tovara][idd='+id+']').innerText !== Number(sum).toFixed(2).replace(re," ")){
-      document.querySelector('a[id=Obschaya_sebestoimosty_edinicy_tovara][idd='+id+']').innerText = Number(sum).toFixed(2).replace(re," ");
+    if(Number(sum) !== map[id].data.Obschaya_sebestoimosty_edinicy_tovara){
+      map[id].data.Obschaya_sebestoimosty_edinicy_tovara = Number(sum);
+      if(document.querySelector('a[id=Obschaya_sebestoimosty_edinicy_tovara][idd='+id+']')){
+        document.querySelector('a[id=Obschaya_sebestoimosty_edinicy_tovara][idd='+id+']').innerText = Number(sum).toFixed(2).replace(re, " ");
+      }
     }
-    if(document.querySelector('a[id=Obschaya_sebestoimosty_s_uchetom_kolichestva][idd='+id+']')
-    && document.querySelector('a[id=Obschaya_sebestoimosty_s_uchetom_kolichestva][idd='+id+']').innerText !== Number(Number(sum)*Number(map[id].data.quantity)).toFixed(2).replace(re," ")){
-      document.querySelector('a[id=Obschaya_sebestoimosty_s_uchetom_kolichestva][idd='+id+']').innerText = Number(Number(sum)*Number(map[id].data.quantity)).toFixed(2).replace(re," ");
+    if(Number(Number(sum)*Number(map[id].data.quantity)) !== map[id].data.Obschaya_sebestoimosty_s_uchetom_kolichestva){
+      map[id].data.Obschaya_sebestoimosty_s_uchetom_kolichestva = Number(Number(sum)*Number(map[id].data.quantity));
+      if(document.querySelector('a[id=Obschaya_sebestoimosty_s_uchetom_kolichestva][idd='+id+']')){
+        document.querySelector('a[id=Obschaya_sebestoimosty_s_uchetom_kolichestva][idd='+id+']').innerText = Number(Number(sum)*Number(map[id].data.quantity)).toFixed(2).replace(re, " ");
+      }
     }
 
     let j=0,jSum=0,jSumKol=0;

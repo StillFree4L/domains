@@ -72,7 +72,7 @@ foreach ($tbl_keys as $k => $str){
         'sortable' => true,
         'hideable' => true,
         'useNull' => true,
-        'defaultValue' => '---',
+        'defaultValue' => '',
     ];
     if($_GET['type'] != 11){
       $column['xtype'] = 'templatecolumn';
@@ -89,39 +89,39 @@ foreach ($tbl_keys as $k => $str){
     }
     //редактируемые ячейки
     if ((in_array($_GET['type'],[5,9]) and $k=='realizationreport_id') or ($_GET['type'] == 7 and $k=='incomeId') or ($_GET['type'] == 8 and $k=='supplierArticle') ){
-        $column['tpl'] = "<a href='?page=wb&type=".$_GET['type'].'&'.$tpl[$_GET['type']].'\'><img height="20px" style="vertical-align: middle;" src="https://v1.iconsearch.ru/uploads/icons/gnomeicontheme/24x24/stock_list_bullet.png">{'.$k.'}</a>';
+        $column['tpl'] = "<a id=".$k." href='?page=wb&type=".$_GET['type'].'&'.$tpl[$_GET['type']].'\'><img height="20px" style="vertical-align: middle;" src="https://v1.iconsearch.ru/uploads/icons/gnomeicontheme/24x24/stock_list_bullet.png">{'.$k.'}</a>';
     }
     elseif (!$_GET['rid'] and !in_array($k,$or) and in_array($_GET['type'],[5])){
-        $column['tpl'] = "<a href='?page=wb&type=".$_GET['type'].$f1."&".$tpl[$_GET['type']]."'>{".$k."}</a>";
+        $column['tpl'] = "<a id=".$k." href='?page=wb&type=".$_GET['type'].$f1."&".$tpl[$_GET['type']]."'>{".$k."}</a>";
     }
     elseif (!$_GET['rid'] and (!in_array(ru2Lat($k),$ss_dopp) or !$_GET['rid'])
         and in_array($_GET['type'],[7])){
 
-        $column['tpl'] = "<a href='?page=wb&type=".$_GET['type'].$f1."&".$tpl[$_GET['type']]."'>{".$k."}</a>";
+        $column['tpl'] = "<a id=".$k." href='?page=wb&type=".$_GET['type'].$f1."&".$tpl[$_GET['type']]."'>{".$k."}</a>";
     }
     elseif (!$_GET['f1'] and (!in_array(ru2Lat($k),$ss_dopp) or !$_GET['f1'])
         and (($k != 'ss_one' and $k != 'ss_all'and $k!="quantity" or !$_GET['f1']) and $_GET['type']==8)
         and in_array($_GET['type'],[8])){
 
-        $column['tpl'] = "<a href='?page=wb&type=".$_GET['type'].$f1."&".$tpl[$_GET['type']]."'>{".$k."}</a>";
+        $column['tpl'] = "<a id=".$k." href='?page=wb&type=".$_GET['type'].$f1."&".$tpl[$_GET['type']]."'>{".$k."}</a>";
     }
     elseif (!$_GET['rid'] and !in_array($k,$or) and in_array($_GET['type'],[9])){
 
-        $column['tpl'] = "<a href='?page=wb&type=".$_GET['type'].$f1."&".$tpl[$_GET['type']]."'>{".$k."}</a>";
+        $column['tpl'] = "<a id=".$k." href='?page=wb&type=".$_GET['type'].$f1."&".$tpl[$_GET['type']]."'>{".$k."}</a>";
     }
     elseif ((in_array($k,$or) or ((($_GET['f1'] and $_GET['type']==8) or ($_GET['rid'] and $_GET['type']==7)) and in_array(ru2Lat($k),$ss_dopp)))
       and $_GET['type'] != 11){
 
-        $column['tpl'] = "<input type=\"text\" id='$k' ".$tpl_input[$_GET['type']]." class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');\" value='{".$k."}'>";
+        $column['tpl'] = "<input type=\"text\" id='$k' ".$tpl_input[$_GET['type']]." class='inputValue' onkeyup=\"this.value = this.value.replace(/[^^0-9\.]/g,'');inputKey(this,event);\" value='{".$k."}'>";
     }
     elseif (($_GET['type']==7 and array_key_exists($k,$tpl_a) and $_GET['rid']) or ($_GET['type']==8 and $_GET['f1'])){
 
-        $column['tpl'] = "<a href='?page=wb&type=".$_GET['type'].$f1."&dt=".$_GET['dt']."'><div class='".$tpl_a[$k]."' ".$tpl_a_div[$_GET['type']].">{" . $k . "}</div></a>";
+        $column['tpl'] = "<a id=".$k." href='?page=wb&type=".$_GET['type'].$f1."&dt=".$_GET['dt']."'><div class='".$tpl_a[$k]."' ".$tpl_a_div[$_GET['type']].">{" . $k . "}</div></a>";
     }
     /*elseif($_GET['type'] == 11 and in_array($k,$calc_divs)){
       //  $column['tpl'] = "<a id='$k' idd={id} href='?page=wb&type=".$_GET['type'].$f1."&dt=" . $_GET['dt']."&f2=".$k."&f3={".$k."}'>{".$k."}</a>";
     }*/elseif($_GET['type'] != 11){
-        $column['tpl'] = "<a href='?page=wb&type=".$_GET['type'].$f1."&dt=" . $_GET['dt']."&f2=".$k."&f3={".$k."}'>{".$k."}</a>";
+        $column['tpl'] = "<a id=".$k." href='?page=wb&type=".$_GET['type'].$f1."&dt=" . $_GET['dt']."&f2=".$k."&f3={".$k."}'>{".$k."}</a>";
     }
     $columns[] = (object) $column;
 }

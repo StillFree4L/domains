@@ -73,14 +73,11 @@ function http($url, $post=0, $ps = 0, $headers = 1)
   	curl_setopt($red_book_cms, CURLOPT_PROXY, $HTTP_CUR_PROXY);
   }
 
-
   global $HTTP_USER_PASS;
   if (trim($HTTP_USER_PASS) != '')
   {
     curl_setopt($red_book_cms, CURLOPT_USERPWD, $HTTP_USER_PASS);
   }
-
-
 
   # ������ User Agent ("�������" ������ ������ ������������),
   # ������ �������� �������� - ��������.
@@ -91,10 +88,10 @@ function http($url, $post=0, $ps = 0, $headers = 1)
 //  curl_setopt($red_book_cms, CURLOPT_TIMEOUT, 3);
 
 //echo " -proxy:$HTTP_CUR_PROXY - ";
-curl_setopt($red_book_cms, CURLOPT_CONNECTTIMEOUT, 3);
+curl_setopt($red_book_cms, CURLOPT_CONNECTTIMEOUT, 60);
 //curl_setopt($red_book_cms, CURLOPT_TIMEOUT, 2);
 //    curl_setopt($red_book_cms, CURLOPT_NOSIGNAL, 1);
-    curl_setopt($red_book_cms, CURLOPT_TIMEOUT_MS, 40000);
+    curl_setopt($red_book_cms, CURLOPT_TIMEOUT_MS, 60000);
 
 
 //$url = 'http://whoer.net/';
@@ -210,7 +207,7 @@ function stock_cache_old(){
     }
     file_put_contents($fileName, '',FILE_APPEND);
     $lines = file($fileName);
-    if ($lines[0] == "" || $lines[0] == null || json_decode($lines[1]) == NULL || time() - intval($lines[0]) > 60*5){
+    if ($lines[0] == "" || $lines[0] == null || json_decode($lines[1]) == NULL || time() - intval($lines[0]) > 60*120){
         $r = http($http);
         if ($r==''){
             $r = http($http);
@@ -238,7 +235,7 @@ function stock_cache_new(){
     }
     file_put_contents($fileName, '',FILE_APPEND);
     $lines = file($fileName);
-    if ($lines[0] == "" || json_decode($lines[1]) == NULL || time() - intval($lines[0]) > 60*5){
+    if ($lines[0] == "" || json_decode($lines[1]) == NULL || time() - intval($lines[0]) > 60*120){
         $r = http($http);
         if ($r==''){
             $r = http($http);
@@ -398,8 +395,8 @@ function card_info_stocks($array,$barcode,$results,$infos){
     return $array;
 }
 
-function orders_object($r,$results,$infos,$wb){
-    /*$url1 = 'https://suppliers-api.wildberries.ru/card/list';
+function orders_object($r){
+    $url1 = 'https://suppliers-api.wildberries.ru/card/list';
     $url2 = 'https://suppliers-api.wildberries.ru/public/api/v1/info';
     $wb = json_decode(http('https://suppliers-api.wildberries.ru/api/v2/warehouses'));
 
@@ -408,7 +405,7 @@ function orders_object($r,$results,$infos,$wb){
     $jsonDatas  = array('jsonrpc' => '2.0','params' => $params);
 
     $results = http_new_url($url1,json_encode($jsonDatas));
-    $infos = http_new_url($url2);*/
+    $infos = http_new_url($url2);
 
     $r = $r->orders;
     $arr = array();
@@ -452,8 +449,8 @@ function orders_object($r,$results,$infos,$wb){
     return $arr;
 }
 
-function sales_object($r,$results,$infos,$wb){
-  /*  $url1 = 'https://suppliers-api.wildberries.ru/card/list';
+function sales_object($r){
+    $url1 = 'https://suppliers-api.wildberries.ru/card/list';
     $url2 = 'https://suppliers-api.wildberries.ru/public/api/v1/info';
     $wb = json_decode(http('https://suppliers-api.wildberries.ru/api/v2/warehouses'));
 
@@ -462,7 +459,7 @@ function sales_object($r,$results,$infos,$wb){
     $jsonDatas  = array('jsonrpc' => '2.0','params' => $params);
 
     $results = http_new_url($url1,json_encode($jsonDatas));
-    $infos = http_new_url($url2);*/
+    $infos = http_new_url($url2);
 
     $r = $r->orders;
     $arr = array();
@@ -505,8 +502,8 @@ function sales_object($r,$results,$infos,$wb){
     return $arr;
 }
 
-function stocks_object($r,$results,$infos){
-  /*  $url1 = 'https://suppliers-api.wildberries.ru/card/list';
+function stocks_object($r){
+    $url1 = 'https://suppliers-api.wildberries.ru/card/list';
     $url2 = 'https://suppliers-api.wildberries.ru/public/api/v1/info';
    // $wb = json_decode(http('https://suppliers-api.wildberries.ru/api/v2/warehouses'));
 
@@ -515,7 +512,7 @@ function stocks_object($r,$results,$infos){
     $jsonDatas  = array('jsonrpc' => '2.0','params' => $params);
 
     $results = http_new_url($url1,json_encode($jsonDatas));
-    $infos = http_new_url($url2);*/
+    $infos = http_new_url($url2);
     $arr = array();
     $i = 0;
     foreach ($r->stocks as $col){
@@ -541,14 +538,14 @@ function stocks_object($r,$results,$infos){
     return $arr;
 }
 
-function type_object($r,$card_list,$v1_info,$warehouses){
+function type_object($r){
     if($_GET['type'] == 2 || $_GET['type'] == 10){
-        $r = orders_object($r,$card_list,$v1_info,$warehouses);
+        $r = orders_object($r);
         //$r = sales_object($r);
     }elseif($_GET['type'] == 1){
-        $r = sales_object($r,$card_list,$v1_info,$warehouses);
+        $r = sales_object($r);
     }elseif($_GET['type'] == 6){
-        $r = stocks_object($r,$card_list,$v1_info);
+        $r = stocks_object($r);
     }
    // var_dump($r);
     return $r;
@@ -563,9 +560,9 @@ function http_json($api_url,$v=false){
         $wbt++;
         if ($wbt > 10) {break;return null;}
     }
-    /*if ($v){
+    if ($v){
         return type_object(json_decode($r));
-    }*/
+    }
 
     return json_decode($r);
 }
@@ -676,7 +673,7 @@ function arr_fbs_fbo($r){
 
 function arr_postav($r){
     $arr = array();
-    $fileName_orders = 'cache/wb-cache/'.$GLOBALS['wb_key_new'].'-2-'.$GLOBALS['config_return'];
+    $fileName_orders = 'cache/wb-cache/'.$GLOBALS['wb_key_new'].'-2-on';
     $lines_orders = file_get_contents($fileName_orders);
     $lines_orders = explode('@@---@@', $lines_orders)[1];
 
@@ -802,14 +799,14 @@ function speed_fbo_fbs($tbl_rows){
                     }
                 }
             }
-            if ($cnt_orders + $cnt_sales != 0) {
+          if ($cnt_orders + $cnt_sales != 0) {
                 $g->ref_7 = ($cnt_refund_sales + $cnt_refund_orders);
                 $g->refa_7 = ($cnt_orders + $cnt_sales);
                 $g->refund_7 = intval(($cnt_refund_sales + $cnt_refund_orders) / ($cnt_orders + $cnt_sales) * 100) . '% <br>';
                 $g->refund_7 .= ($cnt_refund_sales + $cnt_refund_orders) . ' / ' . ($cnt_orders + $cnt_sales);
             }
 
-            if ($cnt_orders30 + $cnt_sales30 != 0) {
+          if ($cnt_orders30 + $cnt_sales30 != 0) {
                 $g->ref_30 .= ($cnt_refund_sales30 + $cnt_refund_orders30);
                 $g->refa_30 .= ($cnt_orders30 + $cnt_sales30);
                 $g->refund_30 = intval(round(($cnt_refund_sales30 + $cnt_refund_orders30) / ($cnt_orders30 + $cnt_sales30) * 100, 2)) . '% <br> ';
@@ -844,8 +841,7 @@ function sebes_pribil($rows){
     $tbl_rows = json_decode($stock2[1]);
     foreach ($rows as $key=>$row) {
         foreach ($tbl_rows as $tbl_row) {
-            if ($row->barcode == $tbl_row->barcode
-                and $row->sa_name == $tbl_row->supplierArticle){
+            if ($row->barcode == $tbl_row->barcode and $row->sa_name == $tbl_row->supplierArticle){
                 $rows[$key]->incomeId = $tbl_row->incomeId;
                // $rows[$key]->category = $tbl_row->category;
                 $rows[$key]->status = $tbl_row->status;
@@ -905,11 +901,11 @@ function dop_list($dp_save_list){
   }
   return $ss_dop_fields;
 }
-
+//bd
 function mysqliLink(){
-  $link = mysqli_connect("localhost", "root", "","wb");
-
-  //$link = mysqli_connect("localhost", "nvhelp_wb", "xSazFpm3","nvhelp_wb");
+  //$link = mysqli_connect("localhost", "root", "","wb");
+  //$link = mysqli_connect("localhost", "nvhelp_wb", "xSazFpm3","nvhelp_wb");//day-help
+  $link = mysqli_connect("localhost", "phpmyadmin", "nh#V3pW0ov","wb");//wb
 /*
 if ($link == false){
   print("Ошибка: Невозможно подключиться к MySQL " . mysqli_connect_error());

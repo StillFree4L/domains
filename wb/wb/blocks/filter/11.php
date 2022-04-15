@@ -2,16 +2,12 @@
 $calc_dops = ['strikethrough_price','sale_percent','totalPrice','stoimost','zatrat','wb_commission','cost_delivery','cost_amout','ransom','defect'];
 $calc_divs = ['pribil','marga','sale_total','cost_defect','cost_log','cost_wb_commission'];
  ?>
-<input class='btn btn-default' id='btn_pd_plus_val' title='Добавить свободный товар' value='+' style='margin-left:10px;width: 40px;padding: 0px;height: 30px;'
-  onclick="addProduct();">
-<input class='btn btn-default btn_focus_val' id='btn_pd_del_val' title='Удалить свободный товар'  value='' style='margin-left:5px;width: 40px;padding: 0px;height: 30px;'
-  onclick="delProduct()">
-<input class='btn btn-default btn_focus_val' id='btn_pd_clear_val' title='Очистить строку'  value='' style='margin-left:5px;width: 40px;padding: 0px;height: 30px;'
-    onclick="clearProduct()">
-<input class='btn btn-default btn_focus_val' id='btn_pd_redact_val' title='Массовое редактирование'  value='' style='margin-left:5px;width: 40px;padding: 0px;height: 30px;'
-    onclick="$('#set_fields_div').show();$('#btn_pd_redact_val').addClass('btn-warning');">
-<input class='btn btn-default btn_focus_val' id='btn_pd_copy_val' title='Массовое редактирование'  value='' style='margin-left:5px;width: 40px;padding: 0px;height: 30px;'
-        onclick="copyProduct()">
+
+<input class='btn btn-default' id='btn_pd_plus_val' title='Добавить свободный товар' value='+' style='margin-left:10px;width: 40px;padding: 0px;height: 30px;' onclick="addProduct();">
+<input class='btn btn-default btn_focus_val' id='btn_pd_redact_val' title='Массовое редактирование'  value='' style='margin-left:5px;width: 40px;padding: 0px;height: 30px;' onclick="$('#set_fields_div').show();$('#btn_pd_redact_val').addClass('btn-warning');">
+<input class='btn btn-default btn_focus_val' id='btn_pd_del_val' title='Удалить свободный товар'  value='' style='margin-left:5px;width: 40px;padding: 0px;height: 30px;' onclick="delProduct()">
+<input class='btn btn-default btn_focus_val' id='btn_pd_clear_val' title='Очистить строку'  value='' style='margin-left:5px;width: 40px;padding: 0px;height: 30px;' onclick="clearProduct()">
+<input class='btn btn-default btn_focus_val' id='btn_pd_copy_val' title='Копировать'  value='' style='margin-left:5px;width: 40px;padding: 0px;height: 30px;' onclick="copyProduct()">
 
 <br clear=all><div id="set_fields_div" style="float: left; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; background: #efefef; font-weight: normal; display: none; padding: 10px; margin: 10px; border: 1px solid #ccc; ">
   <img onclick="$('#set_fields_div').hide();$('#btn_pd_redact_val').removeClass('btn-warning');" style="width: 20px; cursor:pointer; float: right;" src="https://v1.iconsearch.ru/uploads/icons/bnw/32x32/fileclose.png">
